@@ -11,20 +11,20 @@ type ColorScheme = {
 
 const Colors: Record<ThemeType, ColorScheme> = {
     light: {
-        background: "#fffaf3",
+        background: "#FFFFFF",
         text: "#1e1e1e",
-        accent: "#ff7a00",
+        accent: "#007AFF",
         error: "#d32f2f",
-        lightness: "#ffe3c9",
-        darkness: "#004d4d",
+        lightness: "#E5E5EA",
+        darkness: "#8A8A8E",
     },
     dark: {
-        background: "#1a1a1a",
+        background: "#1C1C1E",
         text: "#f0f0f0",
-        accent: "#ff9500",
+        accent: "#0A84FF",
         error: "#ef5350",
-        lightness: "#3366cc",
-        darkness: "#009e60",
+        lightness: "#3A3A3C",
+        darkness: "#2C2C2E",
     },
 };
 

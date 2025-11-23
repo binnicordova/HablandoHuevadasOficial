@@ -6,7 +6,7 @@ const handleError = (operation: string, key: string, error: unknown): never => {
     throw error;
 };
 
-export const storage: IAsyncStorage<any> = {
+export const storage: IAsyncStorage<unknown> = {
     getItem: <T>(key: string, defaultValue?: T): Promise<T | undefined> =>
         AsyncStorage.getItem(key)
             .then((value) => (value ? JSON.parse(value) : defaultValue))

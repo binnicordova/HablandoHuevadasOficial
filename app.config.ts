@@ -2,7 +2,7 @@ import "dotenv/config";
 import type {ExpoConfig} from "@expo/config-types";
 
 const EAS_OWNER = process.env.EAS_OWNER; // by https://www.binnicordova.com
-const EAS_SLUG = "expo-boilerplate";
+const EAS_SLUG = "hablando-huevadas-oficial";
 const EAS_PROJECT_ID = process.env.EAS_PROJECT_ID;
 
 const VERSION = "0.0.3";
@@ -10,19 +10,19 @@ const VERSION_CODE = 3;
 
 const APP_VARIANTS = {
     development: {
-        identifier: "com.boilerplate.dev",
-        name: "Expo Boilerplate (Dev)",
-        scheme: "dev.boilerplate.com",
+        identifier: "com.hablandohuevadasoficial.dev",
+        name: "Hablando Huevadas (Dev)",
+        scheme: "dev.hablandohuevadasoficial.com",
     },
     preview: {
-        identifier: "com.boilerplate.preview",
-        name: "Expo Boilerplate (Preview)",
-        scheme: "preview.boilerplate.com",
+        identifier: "com.hablandohuevadasoficial.preview",
+        name: "Hablando Huevadas (Preview)",
+        scheme: "preview.hablandohuevadasoficial.com",
     },
     production: {
-        identifier: "com.boilerplate",
-        name: "Expo Boilerplate",
-        scheme: "boilerplate.com",
+        identifier: "com.hablandohuevadasoficial",
+        name: "Hablando Huevadas",
+        scheme: "hablandohuevadasoficial.com",
     },
 };
 
@@ -48,19 +48,19 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
     newArchEnabled: true,
     splash: {
         image: "./assets/splash.png",
-        resizeMode: "contain",
+        resizeMode: "cover",
         backgroundColor: "#ffffff",
     },
     updates: {
         fallbackToCacheTimeout: 0,
         url: `https://u.expo.dev/${EAS_PROJECT_ID}`,
         enabled: true,
+        checkAutomatically: "ON_LOAD",
     },
     assetBundlePatterns: ["**/*"],
     ios: {
         supportsTablet: true,
         bundleIdentifier: getUniqueIdentifier(),
-        version: VERSION,
     },
     android: {
         adaptiveIcon: {
@@ -68,8 +68,6 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
             backgroundColor: "#FFFFFF",
         },
         package: getUniqueIdentifier(),
-        versionCode: VERSION_CODE,
-        version: VERSION,
     },
     web: {
         favicon: "./assets/favicon.png",
@@ -84,9 +82,7 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
         },
     },
     owner: EAS_OWNER,
-    runtimeVersion: {
-        policy: "appVersion",
-    },
+    runtimeVersion: `${VERSION}+${VERSION_CODE}`,
     userInterfaceStyle: "automatic",
     plugins: [
         [
@@ -105,5 +101,6 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
                 enableBackgroundRemoteNotifications: true,
             },
         ],
+        "expo-updates",
     ],
 });

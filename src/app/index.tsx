@@ -1,147 +1,111 @@
-import {MasonryFlashList} from "@shopify/flash-list";
-import {router} from "expo-router";
-import {useAtomValue, useSetAtom} from "jotai";
-import {useEffect} from "react";
-import {RefreshControl, TouchableOpacity, View} from "react-native";
-import {AppBar} from "@/components/AppBar/AppBar";
-import {Button} from "@/components/Button/Button";
-import {Icon} from "@/components/Icon/Icon";
-import {Text} from "@/components/Text/Text";
-import {PATHS} from "@/constants/routes";
-import {STRINGS} from "@/constants/strings";
-import type {Category} from "@/models/category";
-import {
-    categoriesAtom,
-    categoriesErrorAtom,
-    categoriesLoadingAtom,
-    favoriteCategoriesAtom,
-    favoritesLastUpdatedAtom,
-    fetchCategoriesAtom,
-    toggleFavoriteCategoryAtom,
-} from "@/stores/categoriesStore";
-import {styles} from "@/styles";
-import {theme} from "@/theme/colors";
-import {FONT_SIZE} from "@/theme/fonts";
+import {FlashList} from "@shopify/flash-list";
+import {useRouter} from "expo-router";
+import {useAtom} from "jotai";
+import {useEffect, useState} from "react";
+import {Image, View} from "react-native";
+import {useSafeAreaInsets} from "react-native-safe-area-context";
+import {FloatingActionButton} from "@/components/FloatingActionButton/FloatingActionButton";
+import {VideoItem} from "@/components/VideoItem/VideoItem";
+import {VideoItemPlaceholder} from "@/components/VideoItem/VideoItemPlaceholder";
+import {VideoPlayer} from "@/components/VideoPlayer/VideoPlayer";
+import {VideoPlayerPlaceholder} from "@/components/VideoPlayer/VideoPlayerPlaceholder";
+import type {Video as VideoType} from "@/models/video";
+import {fetchVideos} from "@/services/service";
+import {videosAtom} from "@/stores/store";
 
-const ESTIMATED_ITEM_SIZE = 50;
-const COLUMNS = 2;
-
-type ItemProps = {
-    item: Category;
-    index: number;
+const getYoutubeVideoId = (url: string) => {
+    const regex =
+        /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/ ]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
 };
 
-const HomeScreen = () => {
-    const {text, background, accent} = theme();
-
-    const categories = useAtomValue(categoriesAtom);
-    const favoriteCategories = useAtomValue(favoriteCategoriesAtom);
-    const favoritesLastUpdated = useAtomValue(favoritesLastUpdatedAtom);
-    const loading = useAtomValue(categoriesLoadingAtom);
-    const error = useAtomValue(categoriesErrorAtom);
-    const fetchCategories = useSetAtom(fetchCategoriesAtom);
-    const toggleFavoriteCategory = useSetAtom(toggleFavoriteCategoryAtom);
+const Home: React.FC = () => {
+    const [videos, setVideos] = useAtom(videosAtom);
+    const [currentVideo, setCurrentVideo] = useState<VideoType | null>(null);
+    const [playing, setPlaying] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const insets = useSafeAreaInsets();
+    const router = useRouter();
 
     useEffect(() => {
-        fetchCategories();
-    }, [fetchCategories]);
+        const loadVideos = async () => {
+            try {
+                const fetchedVideos = await fetchVideos();
+                setVideos(fetchedVideos);
+                if (fetchedVideos.length > 0) {
+                    setCurrentVideo(fetchedVideos[0]);
+                    setPlaying(true);
+                }
+            } finally {
+                setLoading(false);
+            }
+        };
+        loadVideos();
+    }, [setVideos]);
 
-    const skip = () =>
-        router.push(
-            PATHS.WEB(
-                "https://www.linkedin.com/in/binni-cordova-a77000175",
-                "Binni Cordova"
-            )
-        );
-
-    const onContinue = async () => router.push(PATHS.NEWS);
-
-    const emptyList: React.FC = () => (
-        <Text type={error ? "error" : "default"} style={styles.informationText}>
-            {error || (loading ? STRINGS.loading : STRINGS.empty)}
-        </Text>
-    );
-
-    const header: React.FC = () => (
-        <>
-            <AppBar
-                title=""
-                actions={() => (
-                    <TouchableOpacity onPress={skip}>
-                        <Text type="label">
-                            See author, Binni Cordova, on LinkedIn
-                            <Icon
-                                name="chevron-double-right"
-                                size={FONT_SIZE[3]}
-                            />
-                        </Text>
-                    </TouchableOpacity>
-                )}
-            />
-            <View style={styles.body}>
-                <Text type="title">{STRINGS.home.title}</Text>
-                <Text type="label">{STRINGS.home.subtitle}</Text>
-            </View>
-            <View style={styles.body}>
-                <Text type="subtitle" style={styles.headList}>
-                    {STRINGS.home.message}
-                </Text>
-            </View>
-        </>
-    );
-
-    const renderItem = ({item, index}: ItemProps) => {
-        const isFavorite = favoriteCategories.includes(item.name);
-        const backgroundColor = isFavorite ? accent : background;
-        const color = isFavorite ? background : text;
-        return (
-            <TouchableOpacity
-                onPress={() => toggleFavoriteCategory(item)}
-                style={[
-                    styles.masonryCard,
-                    {backgroundColor, borderColor: color},
-                ]}
-            >
-                <Icon name={item.icon} size={FONT_SIZE[10]} color={color} />
-                <Text type="label" key={index} style={{color}}>
-                    {item.name}
-                </Text>
-            </TouchableOpacity>
-        );
+    const handleVideoPress = (video: VideoType) => {
+        setCurrentVideo(video);
+        setPlaying(true);
     };
 
-    const footer: React.FC = () => (
-        <View style={styles.body}>
-            <Text type="caption">{STRINGS.home.conditions}</Text>
-            <Button title={STRINGS.home.action} onPress={onContinue} />
-        </View>
-    );
+    const videoId = currentVideo ? getYoutubeVideoId(currentVideo.link) : null;
+
+    if (loading) {
+        return (
+            <View style={{flex: 1, paddingTop: insets.top}}>
+                <VideoPlayerPlaceholder />
+                <View style={{padding: 10}}>
+                    {[1, 2, 3, 4, 5].map((i) => (
+                        <VideoItemPlaceholder key={i} />
+                    ))}
+                </View>
+            </View>
+        );
+    }
 
     return (
-        <MasonryFlashList
-            refreshing={loading}
-            refreshControl={
-                <RefreshControl
-                    refreshing={loading}
-                    title={STRINGS.loading}
-                    tintColor={text}
-                    titleColor={text}
-                    progressBackgroundColor={background}
-                    onRefresh={fetchCategories}
-                />
-            }
-            data={categories}
-            renderItem={renderItem}
-            extraData={favoritesLastUpdated}
-            keyExtractor={(item: Category) => item.name}
-            numColumns={COLUMNS}
-            estimatedItemSize={ESTIMATED_ITEM_SIZE}
-            ListHeaderComponent={header}
-            ListEmptyComponent={emptyList}
-            ListFooterComponent={footer}
-            contentContainerStyle={styles.safeArea}
-        />
+        <View style={{flex: 1}}>
+            <Image
+                src={currentVideo?.thumbnail || ""}
+                style={{
+                    height: insets.top,
+                    width: "100%",
+                    resizeMode: "cover",
+                    filter: "blur(10px)",
+                }}
+                blurRadius={10}
+            />
+            <VideoPlayer
+                videoId={videoId}
+                playing={playing}
+                onStateChange={(event: string) => {
+                    if (event === "ended") {
+                        setPlaying(false);
+                    }
+                }}
+                height={200}
+            />
+            <FlashList
+                data={videos}
+                renderItem={({item}) => {
+                    return (
+                        <VideoItem
+                            item={item as VideoType}
+                            onPress={handleVideoPress}
+                        />
+                    );
+                }}
+                contentContainerStyle={{
+                    paddingBottom: insets.bottom,
+                    paddingLeft: insets.left,
+                    paddingRight: insets.right,
+                }}
+                estimatedItemSize={200}
+            />
+            <FloatingActionButton onPress={() => router.push("shorts")} />
+        </View>
     );
 };
 
-export default HomeScreen;
+export default Home;

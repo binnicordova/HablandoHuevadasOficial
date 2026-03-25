@@ -1,4 +1,5 @@
 export const STRINGS = {
+    appName: "Hablando Huevadas Oficial",
     notification: {
         alert_permission_title: "Push Notification Permission",
         alert_permission_message:

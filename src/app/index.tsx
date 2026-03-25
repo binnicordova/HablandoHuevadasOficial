@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {Image, View} from "react-native";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 import {FloatingActionButton} from "@/components/FloatingActionButton/FloatingActionButton";
+import PromoModal from "@/components/PromoModal/PromoModal";
 import {VideoItem} from "@/components/VideoItem/VideoItem";
 import {VideoItemPlaceholder} from "@/components/VideoItem/VideoItemPlaceholder";
 import {VideoPlayer} from "@/components/VideoPlayer/VideoPlayer";
@@ -27,6 +28,7 @@ const Home: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const insets = useSafeAreaInsets();
     const router = useRouter();
+    const [isPromoVisible, setPromoVisible] = useState(true);
 
     useEffect(() => {
         const loadVideos = async () => {
@@ -51,6 +53,10 @@ const Home: React.FC = () => {
 
     const videoId = currentVideo ? getYoutubeVideoId(currentVideo.link) : null;
 
+    const closePromoModal = () => {
+        setPromoVisible(false);
+    };
+
     if (loading) {
         return (
             <View style={{flex: 1, paddingTop: insets.top}}>
@@ -72,7 +78,6 @@ const Home: React.FC = () => {
                     height: insets.top,
                     width: "100%",
                     resizeMode: "cover",
-                    filter: "blur(10px)",
                 }}
                 blurRadius={10}
             />
@@ -84,7 +89,7 @@ const Home: React.FC = () => {
                         setPlaying(false);
                     }
                 }}
-                height={200}
+                height={220}
             />
             <FlashList
                 data={videos}
@@ -101,9 +106,9 @@ const Home: React.FC = () => {
                     paddingLeft: insets.left,
                     paddingRight: insets.right,
                 }}
-                estimatedItemSize={200}
             />
             <FloatingActionButton onPress={() => router.push("shorts")} />
+            <PromoModal visible={isPromoVisible} onClose={closePromoModal} />
         </View>
     );
 };

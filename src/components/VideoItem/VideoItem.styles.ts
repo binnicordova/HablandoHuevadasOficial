@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
         borderRadius: 12,
         shadowColor: "#000",
         shadowOffset: {
-            width: 0,
+            width: 2,
             height: 2,
         },
         shadowOpacity: 0.23,
@@ -23,13 +23,15 @@ export const styles = StyleSheet.create({
     thumbnail: {
         width: "100%",
         aspectRatio: 16 / 9,
-        borderRadius: 8,
+        borderTopLeftRadius: 12,
+        borderTopRightRadius: 12,
         marginBottom: SPACING[2],
         resizeMode: "cover",
     },
     textContainer: {
         flex: 1,
         paddingHorizontal: SPACING[2],
+        paddingBottom: SPACING[1],
     },
     infoContainer: {
         flexDirection: "row",

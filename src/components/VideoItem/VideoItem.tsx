@@ -25,7 +25,10 @@ export const VideoItem = ({item, onPress}: VideoItemProps) => {
                 />
             )}
             <View style={styles.textContainer}>
-                <Text type="label" style={{fontWeight: "bold"}}>
+                <Text
+                    type="label"
+                    style={{fontWeight: "bold", textAlign: "left"}}
+                >
                     {item.title}
                 </Text>
                 <View style={styles.infoContainer}>

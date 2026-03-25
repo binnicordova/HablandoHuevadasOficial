@@ -1,12 +1,12 @@
 import "dotenv/config";
 import type {ExpoConfig} from "@expo/config-types";
 
-const EAS_OWNER = process.env.EAS_OWNER; // by https://www.binnicordova.com
+const EAS_OWNER = process.env.EAS_OWNER ?? "llaapp"; // by https://www.binnicordova.com
 const EAS_SLUG = "hablando-huevadas-oficial";
-const EAS_PROJECT_ID = process.env.EAS_PROJECT_ID;
+const EAS_PROJECT_ID =
+    process.env.EAS_PROJECT_ID ?? "327f8c80-0a4f-4b78-84e1-465ebc3a1d19"; // by https://www.binnicordova.com
 
-const VERSION = "0.0.3";
-const VERSION_CODE = 3;
+const VERSION = "0.0.4";
 
 const APP_VARIANTS = {
     development: {
@@ -52,7 +52,7 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
         backgroundColor: "#ffffff",
     },
     updates: {
-        fallbackToCacheTimeout: 0,
+        fallbackToCacheTimeout: 1000 * 60,
         url: `https://u.expo.dev/${EAS_PROJECT_ID}`,
         enabled: true,
         checkAutomatically: "ON_LOAD",
@@ -82,7 +82,7 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
         },
     },
     owner: EAS_OWNER,
-    runtimeVersion: `${VERSION}+${VERSION_CODE}`,
+    runtimeVersion: VERSION,
     userInterfaceStyle: "automatic",
     plugins: [
         [

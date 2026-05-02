@@ -16,11 +16,18 @@ interface PromoModalProps {
     onClose: () => void;
 }
 
+const APPLINK =
+    "https://play.google.com/store/apps/details?id=com.hablandohuevadasoficial";
+
 const PromoModal: React.FC<PromoModalProps> = ({visible, onClose}) => {
     const [isSharing, setIsSharing] = useState(false);
 
-    const shareMessage =
-        "🎉 Estoy usando Hablando Huevadas Oficial. Súmate y comparte la app HablandoHuevadas para ayudarme a ganar 3 entradas gratis";
+    const shareMessage = `🎉 Si disfrutas Hablando Huevadas Oficial, ayúdanos a crecer compartiéndola con tus amigos y familiares.
+
+Descárgala aquí: ${APPLINK}
+
+Tu apoyo hace la diferencia y nos impulsa a seguir mejorando la experiencia para toda la comunidad. 💙
+#HablandoHuevadas #ComparteLaApp`;
 
     const handleShare = async () => {
         try {

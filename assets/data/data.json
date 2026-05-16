@@ -2,6 +2,36 @@
   "channel": "Hablando Huevadas",
   "videos": [
     {
+      "id": "WbhUSGpc-A0",
+      "link": "https://www.youtube.com/watch?v=WbhUSGpc-A0",
+      "title": "HABLANDO HUEVADAS - Duodécima Temporada [CAMILA LA COQUETA]",
+      "duration": 6040,
+      "duration_string": "1:40:40",
+      "thumbnail": "https://i.ytimg.com/vi/WbhUSGpc-A0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdQOSt0b7sOabGArcMOxFsOnjPVw",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/WbhUSGpc-A0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCsvbdKHnwfYufpLEabU38Aw8Xflw",
+          "height": 94,
+          "width": 168
+        },
+        {
+          "url": "https://i.ytimg.com/vi/WbhUSGpc-A0/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLALBiq52r-1__XcDN7dzSdHk_Nb9w",
+          "height": 110,
+          "width": 196
+        },
+        {
+          "url": "https://i.ytimg.com/vi/WbhUSGpc-A0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAC3WxPyybU9P1IGWw-r50OHfT7Kg",
+          "height": 138,
+          "width": 246
+        },
+        {
+          "url": "https://i.ytimg.com/vi/WbhUSGpc-A0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdQOSt0b7sOabGArcMOxFsOnjPVw",
+          "height": 188,
+          "width": 336
+        }
+      ]
+    },
+    {
       "id": "Hlu5jBgxPiA",
       "link": "https://www.youtube.com/watch?v=Hlu5jBgxPiA",
       "title": "HABLANDO HUEVADAS - Duodécima Temporada [EL HOMBRE MÁS FUERTE DEL MUNDO]",
@@ -15664,10 +15694,181 @@
   ],
   "shorts": [
     {
+      "id": "8BKvv7JKBtM",
+      "link": "https://www.youtube.com/shorts/8BKvv7JKBtM",
+      "title": "¡Una foto es una foto! 😛 #hablandohuevadas",
+      "view_count": 1000000,
+      "thumbnail": "https://i.ytimg.com/vi/8BKvv7JKBtM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDpSt1Yj1Omt7ETrhLxAfnF5H5ZMA&usqp=CCk",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/8BKvv7JKBtM/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLCh5Ln2WDb28z9qr7hRxY6r0HHgag&usqp=CCk",
+          "height": 720,
+          "width": 405
+        },
+        {
+          "url": "https://i.ytimg.com/vi/8BKvv7JKBtM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDpSt1Yj1Omt7ETrhLxAfnF5H5ZMA&usqp=CCk",
+          "height": 608,
+          "width": 405
+        }
+      ]
+    },
+    {
+      "id": "9fx_1p67HAY",
+      "link": "https://www.youtube.com/shorts/9fx_1p67HAY",
+      "title": "Jorge Luna y su pobreza interior 😶 #hablandohuevadas",
+      "view_count": 238000,
+      "thumbnail": "https://i.ytimg.com/vi/9fx_1p67HAY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBYsu_rZ6YsV0_zWcXvN2piu12M5Q&usqp=CCk",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/9fx_1p67HAY/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLAeDIBmfYuYEf61P0615lj9u1B1ig&usqp=CCk",
+          "height": 720,
+          "width": 405
+        },
+        {
+          "url": "https://i.ytimg.com/vi/9fx_1p67HAY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBYsu_rZ6YsV0_zWcXvN2piu12M5Q&usqp=CCk",
+          "height": 608,
+          "width": 405
+        }
+      ]
+    },
+    {
+      "id": "VePjb0Iaig8",
+      "link": "https://www.youtube.com/shorts/VePjb0Iaig8",
+      "title": "¡Muy molesto con la sirvienta! 😡 #hablandohuevadas",
+      "view_count": 93000,
+      "thumbnail": "https://i.ytimg.com/vi/VePjb0Iaig8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBTpkvVBjrDm1yZFCusuAT6F4eB9w&usqp=CCk",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/VePjb0Iaig8/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLBbYbSQK-dmrRVmGWEmqqSi2lJbhw&usqp=CCk",
+          "height": 720,
+          "width": 405
+        },
+        {
+          "url": "https://i.ytimg.com/vi/VePjb0Iaig8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBTpkvVBjrDm1yZFCusuAT6F4eB9w&usqp=CCk",
+          "height": 608,
+          "width": 405
+        }
+      ]
+    },
+    {
+      "id": "HvCNBwdmuZk",
+      "link": "https://www.youtube.com/shorts/HvCNBwdmuZk",
+      "title": "¿En serio, Ricardo Mendoza? 🤨 #hablandohuevadas",
+      "view_count": 280000,
+      "thumbnail": "https://i.ytimg.com/vi/HvCNBwdmuZk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCfMOBi8qtdW8m4r9XZq5RRV7nvbA&usqp=CCk",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/HvCNBwdmuZk/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLBI1ySIbM5d4vFJnL7F0KzQt7JFBQ&usqp=CCk",
+          "height": 720,
+          "width": 405
+        },
+        {
+          "url": "https://i.ytimg.com/vi/HvCNBwdmuZk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCfMOBi8qtdW8m4r9XZq5RRV7nvbA&usqp=CCk",
+          "height": 608,
+          "width": 405
+        }
+      ]
+    },
+    {
+      "id": "pJb839KFNfk",
+      "link": "https://www.youtube.com/shorts/pJb839KFNfk",
+      "title": "Jorge Luna se casó obligado 😂 #hablandohuevadas",
+      "view_count": 435000,
+      "thumbnail": "https://i.ytimg.com/vi/pJb839KFNfk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBpCE_Doqhbu-S8Ztp1aXPd41yNig&usqp=CCk",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/pJb839KFNfk/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLAwsaGqTxpPpZDuVHrL-W1pq8CA-A&usqp=CCk",
+          "height": 720,
+          "width": 405
+        },
+        {
+          "url": "https://i.ytimg.com/vi/pJb839KFNfk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBpCE_Doqhbu-S8Ztp1aXPd41yNig&usqp=CCk",
+          "height": 608,
+          "width": 405
+        }
+      ]
+    },
+    {
+      "id": "-ZJneCaA6CA",
+      "link": "https://www.youtube.com/shorts/-ZJneCaA6CA",
+      "title": "Camila, la coqueta 😅 #hablandohuevadas",
+      "view_count": 1100000,
+      "thumbnail": "https://i.ytimg.com/vi/-ZJneCaA6CA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAInnLhNavWABZrAxm9DnQKbfxC3w&usqp=CCk",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/-ZJneCaA6CA/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLCVcQ1VWrEqjbLK4mmhu3FYprDw7Q&usqp=CCk",
+          "height": 720,
+          "width": 405
+        },
+        {
+          "url": "https://i.ytimg.com/vi/-ZJneCaA6CA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAInnLhNavWABZrAxm9DnQKbfxC3w&usqp=CCk",
+          "height": 608,
+          "width": 405
+        }
+      ]
+    },
+    {
+      "id": "nSvtySmG4wg",
+      "link": "https://www.youtube.com/shorts/nSvtySmG4wg",
+      "title": "Powerlifting de enano 🥶 #hablandohuevadas",
+      "view_count": 2600000,
+      "thumbnail": "https://i.ytimg.com/vi/nSvtySmG4wg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBpqC7iTHpv79mbvbR1rQeAmwgftg&usqp=CCk",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/nSvtySmG4wg/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLA_baJza1DFQbTvWS00Jw0lEdmkrQ&usqp=CCk",
+          "height": 720,
+          "width": 405
+        },
+        {
+          "url": "https://i.ytimg.com/vi/nSvtySmG4wg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBpqC7iTHpv79mbvbR1rQeAmwgftg&usqp=CCk",
+          "height": 608,
+          "width": 405
+        }
+      ]
+    },
+    {
+      "id": "SFSIu1Egis8",
+      "link": "https://www.youtube.com/shorts/SFSIu1Egis8",
+      "title": "La señora que no quiere irse 🥶 #hablandohuevadas",
+      "view_count": 1500000,
+      "thumbnail": "https://i.ytimg.com/vi/SFSIu1Egis8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCawgT-CGNU6yZKPAYR7h2iVQ5SEw&usqp=CCk",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/SFSIu1Egis8/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLBTXr5T66vy5xoTxuaiFFD_n83Aqg&usqp=CCk",
+          "height": 720,
+          "width": 405
+        },
+        {
+          "url": "https://i.ytimg.com/vi/SFSIu1Egis8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCawgT-CGNU6yZKPAYR7h2iVQ5SEw&usqp=CCk",
+          "height": 608,
+          "width": 405
+        }
+      ]
+    },
+    {
+      "id": "QKhgnpNqQpU",
+      "link": "https://www.youtube.com/shorts/QKhgnpNqQpU",
+      "title": "Los altos precios de las bodas ⚠️ #hablandohuevadas",
+      "view_count": 462000,
+      "thumbnail": "https://i.ytimg.com/vi/QKhgnpNqQpU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDyzHYd1ez8T35aigwNqKnaSBXD4A&usqp=CCk",
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/QKhgnpNqQpU/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLDWrcVdkelLJKaiOkW162DzBAY6Ng&usqp=CCk",
+          "height": 720,
+          "width": 405
+        },
+        {
+          "url": "https://i.ytimg.com/vi/QKhgnpNqQpU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDyzHYd1ez8T35aigwNqKnaSBXD4A&usqp=CCk",
+          "height": 608,
+          "width": 405
+        }
+      ]
+    },
+    {
       "id": "bMGUxFZln3M",
       "link": "https://www.youtube.com/shorts/bMGUxFZln3M",
       "title": "Anda renegón Jorge Luna 😬 #hablandohuevadas",
-      "view_count": 21000,
+      "view_count": 217000,
       "thumbnail": "https://i.ytimg.com/vi/bMGUxFZln3M/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB1bXjiLsdJhQiQgczBsO51hvB5Gw&usqp=CCk",
       "thumbnails": [
         {
@@ -15686,7 +15887,7 @@
       "id": "M2fat0pmTJc",
       "link": "https://www.youtube.com/shorts/M2fat0pmTJc",
       "title": "Hijo original y cuidado de lujo 😎 #hablandohuevadas",
-      "view_count": 256000,
+      "view_count": 489000,
       "thumbnail": "https://i.ytimg.com/vi/M2fat0pmTJc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAF0RNfCUEwdZ2_ctROvxih5mXYwg&usqp=CCk",
       "thumbnails": [
         {
@@ -15705,7 +15906,7 @@
       "id": "FqZVFuUNw5o",
       "link": "https://www.youtube.com/shorts/FqZVFuUNw5o",
       "title": "Rusa duda si irse con peruano 🔥 #hablandohuevadas",
-      "view_count": 782000,
+      "view_count": 1800000,
       "thumbnail": "https://i.ytimg.com/vi/FqZVFuUNw5o/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAISJlftVvtM2iAUvqbWYiGQPthbg&usqp=CCk",
       "thumbnails": [
         {
@@ -15724,7 +15925,7 @@
       "id": "FehbYC-Y9b0",
       "link": "https://www.youtube.com/shorts/FehbYC-Y9b0",
       "title": "Hermano usó su cama sin permiso 😳 #hablandohuevadas",
-      "view_count": 42000,
+      "view_count": 295000,
       "thumbnail": "https://i.ytimg.com/vi/FehbYC-Y9b0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBUfpTD3ARulc10DaDPKSVaHL2EnQ&usqp=CCk",
       "thumbnails": [
         {
@@ -15743,7 +15944,7 @@
       "id": "mUf3CwFCRIc",
       "link": "https://www.youtube.com/shorts/mUf3CwFCRIc",
       "title": "¿Sobrina de Jorge Luna? 🤨 #hablandohuevadas",
-      "view_count": 766000,
+      "view_count": 1200000,
       "thumbnail": "https://i.ytimg.com/vi/mUf3CwFCRIc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBa_5DzAN0izvhnq_MxVvdZTSPBcQ&usqp=CCk",
       "thumbnails": [
         {
@@ -15762,7 +15963,7 @@
       "id": "wEyMs_rGWFQ",
       "link": "https://www.youtube.com/shorts/wEyMs_rGWFQ",
       "title": "Ricardo Mendoza anhela un piano 🥺 #hablandohuevadas",
-      "view_count": 66000,
+      "view_count": 128000,
       "thumbnail": "https://i.ytimg.com/vi/wEyMs_rGWFQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC77LKI_u3wyYz9lIcgpw_y9x7_SA&usqp=CCk",
       "thumbnails": [
         {
@@ -15781,7 +15982,7 @@
       "id": "1cMiO-nScIA",
       "link": "https://www.youtube.com/shorts/1cMiO-nScIA",
       "title": "Jorge Luna molesto con Temu 🤬 #hablandohuevadas",
-      "view_count": 404000,
+      "view_count": 471000,
       "thumbnail": "https://i.ytimg.com/vi/1cMiO-nScIA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDjyNJgzojRIKYfKtIHR10OQW1ooQ&usqp=CCk",
       "thumbnails": [
         {
@@ -15800,7 +16001,7 @@
       "id": "vgUYoGCMFzk",
       "link": "https://www.youtube.com/shorts/vgUYoGCMFzk",
       "title": "¿Buena idea de pedida de mano? 😛 #hablandohuevadas",
-      "view_count": 628000,
+      "view_count": 756000,
       "thumbnail": "https://i.ytimg.com/vi/vgUYoGCMFzk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAkkiD52h0t5VYHGsZvCrbl0OhjXQ&usqp=CCk",
       "thumbnails": [
         {
@@ -15819,7 +16020,7 @@
       "id": "XtLSpdhDnQw",
       "link": "https://www.youtube.com/shorts/XtLSpdhDnQw",
       "title": "Un pequeño besito 😂 #hablandohuevadas",
-      "view_count": 848000,
+      "view_count": 1600000,
       "thumbnail": "https://i.ytimg.com/vi/XtLSpdhDnQw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBhTNsU9hMF2f8vZ-H8BQ1bZGKhFg&usqp=CCk",
       "thumbnails": [
         {
@@ -15838,7 +16039,7 @@
       "id": "MHD299pTL3M",
       "link": "https://www.youtube.com/shorts/MHD299pTL3M",
       "title": "¿Un piano de cola en casa? 💅 #hablandohuevadas",
-      "view_count": 152000,
+      "view_count": 184000,
       "thumbnail": "https://i.ytimg.com/vi/MHD299pTL3M/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAvIzKL0XXU8SKw26G0FVq9e1QrlA&usqp=CCk",
       "thumbnails": [
         {
@@ -15857,7 +16058,7 @@
       "id": "pE_-ua2IFZg",
       "link": "https://www.youtube.com/shorts/pE_-ua2IFZg",
       "title": "Medidas extremas ante crisis del gas 🤣 #hablandohuevadas",
-      "view_count": 94000,
+      "view_count": 137000,
       "thumbnail": "https://i.ytimg.com/vi/pE_-ua2IFZg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC6D5WQeZPSr7aL5nQ-f6q6CsqX7Q&usqp=CCk",
       "thumbnails": [
         {
@@ -15876,7 +16077,7 @@
       "id": "fHZxPqtVe9U",
       "link": "https://www.youtube.com/shorts/fHZxPqtVe9U",
       "title": "Pedida de mano express 🥺 #hablandohuevadas",
-      "view_count": 537000,
+      "view_count": 738000,
       "thumbnail": "https://i.ytimg.com/vi/fHZxPqtVe9U/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDIT08kNUKv8JZXXi0V3l-QO3TMPA&usqp=CCk",
       "thumbnails": [
         {
@@ -15895,7 +16096,7 @@
       "id": "oR466eCe10o",
       "link": "https://www.youtube.com/shorts/oR466eCe10o",
       "title": "Jorgita Luna returns 🤣 #hablandohuevadas",
-      "view_count": 337000,
+      "view_count": 378000,
       "thumbnail": "https://i.ytimg.com/vi/oR466eCe10o/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDx4vT9xFSJ93dTA5yiXbjTDZUzxw&usqp=CCk",
       "thumbnails": [
         {
@@ -15914,7 +16115,7 @@
       "id": "8f7uoUDKiO4",
       "link": "https://www.youtube.com/shorts/8f7uoUDKiO4",
       "title": "Tóxica ve fantasmas 🙄 #hablandohuevadas",
-      "view_count": 941000,
+      "view_count": 1000000,
       "thumbnail": "https://i.ytimg.com/vi/8f7uoUDKiO4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB2To5zOPUQrOs5zzFheCsfe-dKkQ&usqp=CCk",
       "thumbnails": [
         {
@@ -15933,7 +16134,7 @@
       "id": "m7t9H-8Lj-U",
       "link": "https://www.youtube.com/shorts/m7t9H-8Lj-U",
       "title": "Se llevó el papel higiénico 😑 #hablandohuevadas",
-      "view_count": 1400000,
+      "view_count": 1600000,
       "thumbnail": "https://i.ytimg.com/vi/m7t9H-8Lj-U/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCoOX8AvoV2YwtfzY-l13sjYWoqeA&usqp=CCk",
       "thumbnails": [
         {
@@ -15952,7 +16153,7 @@
       "id": "AanCPnWjAes",
       "link": "https://www.youtube.com/shorts/AanCPnWjAes",
       "title": "El outfit perfecto 🥶 #hablandohuevadas",
-      "view_count": 1200000,
+      "view_count": 1300000,
       "thumbnail": "https://i.ytimg.com/vi/AanCPnWjAes/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCO6PZe4Z6R7R3Aafi3xgevUflOUA&usqp=CCk",
       "thumbnails": [
         {
@@ -15971,7 +16172,7 @@
       "id": "93nH2zWx6J4",
       "link": "https://www.youtube.com/shorts/93nH2zWx6J4",
       "title": "Una estampita, Jorge Luna 😶 #hablandohuevadas",
-      "view_count": 1700000,
+      "view_count": 1800000,
       "thumbnail": "https://i.ytimg.com/vi/93nH2zWx6J4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAAuJpeJ6flGBXiz1Xm_UPvv3b_RA&usqp=CCk",
       "thumbnails": [
         {
@@ -15990,7 +16191,7 @@
       "id": "hJSmaGyBM-U",
       "link": "https://www.youtube.com/shorts/hJSmaGyBM-U",
       "title": "Los bebés son tontos 😅 #hablandohuevadas",
-      "view_count": 203000,
+      "view_count": 242000,
       "thumbnail": "https://i.ytimg.com/vi/hJSmaGyBM-U/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAO6bPiarwH8_3oUxzctaMg2coe9w&usqp=CCk",
       "thumbnails": [
         {
@@ -16009,7 +16210,7 @@
       "id": "MexHYOiqVr0",
       "link": "https://www.youtube.com/shorts/MexHYOiqVr0",
       "title": "Otro nivel de toxicidad 💀 #hablandohuevadas",
-      "view_count": 866000,
+      "view_count": 904000,
       "thumbnail": "https://i.ytimg.com/vi/MexHYOiqVr0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCdj91mXdPMq-_oGXda0swkwjbMOw&usqp=CCk",
       "thumbnails": [
         {
@@ -16028,7 +16229,7 @@
       "id": "OhB6QBqaxRY",
       "link": "https://www.youtube.com/shorts/OhB6QBqaxRY",
       "title": "¿Cómo duerme el hijo original? 😂 #hablandohuevadas",
-      "view_count": 452000,
+      "view_count": 484000,
       "thumbnail": "https://i.ytimg.com/vi/OhB6QBqaxRY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCb3HdENsSqvxEXLBp-mmypecSmZA&usqp=CCk",
       "thumbnails": [
         {
@@ -16047,7 +16248,7 @@
       "id": "wIxBdeS_jfc",
       "link": "https://www.youtube.com/shorts/wIxBdeS_jfc",
       "title": "¡El bebé no duerme boca abajo! ⚠️ #hablandohuevadas",
-      "view_count": 230000,
+      "view_count": 252000,
       "thumbnail": "https://i.ytimg.com/vi/wIxBdeS_jfc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC7fQ3IwUCrEKIhZ2NOQBeYHgID1A&usqp=CCk",
       "thumbnails": [
         {
@@ -16066,7 +16267,7 @@
       "id": "FO6kggxSh08",
       "link": "https://www.youtube.com/shorts/FO6kggxSh08",
       "title": "Peruana la pasó bien en España 😏 #hablandohuevadas",
-      "view_count": 961000,
+      "view_count": 1000000,
       "thumbnail": "https://i.ytimg.com/vi/FO6kggxSh08/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAjZ57nw5_8nb9805r3Yue5YYQZoQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16085,7 +16286,7 @@
       "id": "i2L5QT3YNiU",
       "link": "https://www.youtube.com/shorts/i2L5QT3YNiU",
       "title": "Almohadas seguras para el bebé 😎 #hablandohuevadas",
-      "view_count": 266000,
+      "view_count": 291000,
       "thumbnail": "https://i.ytimg.com/vi/i2L5QT3YNiU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCLLvaathe7BKMvFDm3hR2F3njU5Q&usqp=CCk",
       "thumbnails": [
         {
@@ -16104,7 +16305,7 @@
       "id": "MSfVyeeYfgg",
       "link": "https://www.youtube.com/shorts/MSfVyeeYfgg",
       "title": "Hijo original creció muy rápido 😂 #hablandohuevadas",
-      "view_count": 268000,
+      "view_count": 296000,
       "thumbnail": "https://i.ytimg.com/vi/MSfVyeeYfgg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBTQAczb4HGjLrHq5aX-2cLHmjzfg&usqp=CCk",
       "thumbnails": [
         {
@@ -16123,7 +16324,7 @@
       "id": "-A0wLLCvtWE",
       "link": "https://www.youtube.com/shorts/-A0wLLCvtWE",
       "title": "Loquísima por Jorge y Ricardo 😍 #hablandohuevadas",
-      "view_count": 453000,
+      "view_count": 493000,
       "thumbnail": "https://i.ytimg.com/vi/-A0wLLCvtWE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCN_N4dZmB1huXhhSWxXE6nqSyOEA&usqp=CCk",
       "thumbnails": [
         {
@@ -16142,7 +16343,7 @@
       "id": "spjMuXMeSEc",
       "link": "https://www.youtube.com/shorts/spjMuXMeSEc",
       "title": "Un señor muy oriental 😛 #hablandohuevadas",
-      "view_count": 1900000,
+      "view_count": 2200000,
       "thumbnail": "https://i.ytimg.com/vi/spjMuXMeSEc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCjMYKc81oRCT2z5VvJp12mNaK6Ag&usqp=CCk",
       "thumbnails": [
         {
@@ -16161,7 +16362,7 @@
       "id": "lfhYwf621cQ",
       "link": "https://www.youtube.com/shorts/lfhYwf621cQ",
       "title": "Changuito mión de México 😎 #hablandohuevadas",
-      "view_count": 3400000,
+      "view_count": 4000000,
       "thumbnail": "https://i.ytimg.com/vi/lfhYwf621cQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC3JiGr_ETEX-RI-Gh0Qpsu-V_TLg&usqp=CCk",
       "thumbnails": [
         {
@@ -16180,7 +16381,7 @@
       "id": "VE_zsu4AP2o",
       "link": "https://www.youtube.com/shorts/VE_zsu4AP2o",
       "title": "El nombre de ella en el pecho 💀 #hablandohuevadas",
-      "view_count": 1800000,
+      "view_count": 1900000,
       "thumbnail": "https://i.ytimg.com/vi/VE_zsu4AP2o/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCK9o8AxthFZXrzAPeGKZWkW0HzVA&usqp=CCk",
       "thumbnails": [
         {
@@ -16199,7 +16400,7 @@
       "id": "Y05xasuEoZQ",
       "link": "https://www.youtube.com/shorts/Y05xasuEoZQ",
       "title": "Hombre precioso con peruana 😳 #hablandohuevadas",
-      "view_count": 2000000,
+      "view_count": 2200000,
       "thumbnail": "https://i.ytimg.com/vi/Y05xasuEoZQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAPeRIe1BDVWNVy7Ijz0Yrsvq80EA&usqp=CCk",
       "thumbnails": [
         {
@@ -16218,7 +16419,7 @@
       "id": "KIwFFXny6ko",
       "link": "https://www.youtube.com/shorts/KIwFFXny6ko",
       "title": "¡Educa bien a tu hijo original! 🥶 #hablandohuevadas",
-      "view_count": 312000,
+      "view_count": 331000,
       "thumbnail": "https://i.ytimg.com/vi/KIwFFXny6ko/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDXBLB2_w9RPhryBMG342ZwP7boGQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16237,7 +16438,7 @@
       "id": "SIgazOjtR1I",
       "link": "https://www.youtube.com/shorts/SIgazOjtR1I",
       "title": "Pareja joven se tatúa sus nombres 💀 #hablandohuevadas",
-      "view_count": 1300000,
+      "view_count": 1400000,
       "thumbnail": "https://i.ytimg.com/vi/SIgazOjtR1I/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDlgOalsfvnP7C8pydVoVjjZg3keg&usqp=CCk",
       "thumbnails": [
         {
@@ -16256,7 +16457,7 @@
       "id": "hbimqmKQMYg",
       "link": "https://www.youtube.com/shorts/hbimqmKQMYg",
       "title": "Jorge Luna habla en chino 🤣 #hablandohuevadas",
-      "view_count": 4200000,
+      "view_count": 4600000,
       "thumbnail": "https://i.ytimg.com/vi/hbimqmKQMYg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDPQ0YIiojcp7FOpZTxgMsugYVg2A&usqp=CCk",
       "thumbnails": [
         {
@@ -16275,7 +16476,7 @@
       "id": "egBxp6oPoqE",
       "link": "https://www.youtube.com/shorts/egBxp6oPoqE",
       "title": "Curvo por fuera, firme por dentro ⚠️ #hablandohuevadas",
-      "view_count": 1300000,
+      "view_count": 1400000,
       "thumbnail": "https://i.ytimg.com/vi/egBxp6oPoqE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD0egNYabY4cvhk3uvjieJjiU0frQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16294,7 +16495,7 @@
       "id": "C8W1ouE1SlY",
       "link": "https://www.youtube.com/shorts/C8W1ouE1SlY",
       "title": "Parpadeo involuntario 🥶 #hablandohuevadas",
-      "view_count": 407000,
+      "view_count": 433000,
       "thumbnail": "https://i.ytimg.com/vi/C8W1ouE1SlY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDplypsPxK3mlVAWeUeE-2JDJ79HQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16313,7 +16514,7 @@
       "id": "5jCJ19Mw2Uc",
       "link": "https://www.youtube.com/shorts/5jCJ19Mw2Uc",
       "title": "Jesucristo y Pie grande 😳 #hablandohuevadas",
-      "view_count": 160000,
+      "view_count": 181000,
       "thumbnail": "https://i.ytimg.com/vi/5jCJ19Mw2Uc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAeIUPy0jFdorbRr8YTf1HG_fQ6zw&usqp=CCk",
       "thumbnails": [
         {
@@ -16332,7 +16533,7 @@
       "id": "HWrhZmrelaY",
       "link": "https://www.youtube.com/shorts/HWrhZmrelaY",
       "title": "Volverás, amiga ❤️ #hablandohuevadas",
-      "view_count": 256000,
+      "view_count": 276000,
       "thumbnail": "https://i.ytimg.com/vi/HWrhZmrelaY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCE7L5HXKAZmIetsUYxz55oAwh_BQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16351,7 +16552,7 @@
       "id": "8Q7DgqnUbRM",
       "link": "https://www.youtube.com/shorts/8Q7DgqnUbRM",
       "title": "El mejor regalo de cumple ❤️ #hablandohuevadas",
-      "view_count": 1000000,
+      "view_count": 1100000,
       "thumbnail": "https://i.ytimg.com/vi/8Q7DgqnUbRM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD0TbtpVFv-hscPdsbTNUq54llaQQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16370,7 +16571,7 @@
       "id": "e96Y_GXKcSI",
       "link": "https://www.youtube.com/shorts/e96Y_GXKcSI",
       "title": "Dibujos precisos de Jorge y Ricardo 😂 #hablandohuevadas",
-      "view_count": 888000,
+      "view_count": 949000,
       "thumbnail": "https://i.ytimg.com/vi/e96Y_GXKcSI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDbBYi7k38HnFgWyYXke6_XJUCJzQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16389,7 +16590,7 @@
       "id": "JeqKjmBywRE",
       "link": "https://www.youtube.com/shorts/JeqKjmBywRE",
       "title": "Los severos castigos de antes 💀 #hablandohuevadas",
-      "view_count": 1200000,
+      "view_count": 1300000,
       "thumbnail": "https://i.ytimg.com/vi/JeqKjmBywRE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAV5xBYEjHRGw9WwjZPe40MJZBuPg&usqp=CCk",
       "thumbnails": [
         {
@@ -16408,7 +16609,7 @@
       "id": "Y4YI1sji4gc",
       "link": "https://www.youtube.com/shorts/Y4YI1sji4gc",
       "title": "¿Quisieras ser reanimado de viejo? 😶 #hablandohuevadas",
-      "view_count": 737000,
+      "view_count": 774000,
       "thumbnail": "https://i.ytimg.com/vi/Y4YI1sji4gc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLChXQ23DYZVydA3cyDOUd7I8hjKng&usqp=CCk",
       "thumbnails": [
         {
@@ -16427,7 +16628,7 @@
       "id": "t85Bi2Rolcg",
       "link": "https://www.youtube.com/shorts/t85Bi2Rolcg",
       "title": "¿Por qué se ríen de esto? 🤨 #hablandohuevadas",
-      "view_count": 1700000,
+      "view_count": 1800000,
       "thumbnail": "https://i.ytimg.com/vi/t85Bi2Rolcg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB9fLSe1LAsKWjVKuNrGpKEdF3NLg&usqp=CCk",
       "thumbnails": [
         {
@@ -16446,7 +16647,7 @@
       "id": "Sqpk3ZSxCaI",
       "link": "https://www.youtube.com/shorts/Sqpk3ZSxCaI",
       "title": "Una duda bastante genuina 😬",
-      "view_count": 419000,
+      "view_count": 438000,
       "thumbnail": "https://i.ytimg.com/vi/Sqpk3ZSxCaI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDIOxS7hl0PSQcr1nYEdjMok3Y35g&usqp=CCk",
       "thumbnails": [
         {
@@ -16465,7 +16666,7 @@
       "id": "PC3rwNJt6FU",
       "link": "https://www.youtube.com/shorts/PC3rwNJt6FU",
       "title": "¡Eso te quita autoridad! 😬 #hablandohuevadas",
-      "view_count": 173000,
+      "view_count": 185000,
       "thumbnail": "https://i.ytimg.com/vi/PC3rwNJt6FU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAxzswAh2ZMiou6CRD7unDhbTf-Bw&usqp=CCk",
       "thumbnails": [
         {
@@ -16484,7 +16685,7 @@
       "id": "EAPBgsLfa-s",
       "link": "https://www.youtube.com/shorts/EAPBgsLfa-s",
       "title": "¡Ricardo Mendoza dictatorial! 😂 #hablandohuevadas",
-      "view_count": 220000,
+      "view_count": 231000,
       "thumbnail": "https://i.ytimg.com/vi/EAPBgsLfa-s/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAWxd47UcXYu0Lg7UzSMJHBadyZvg&usqp=CCk",
       "thumbnails": [
         {
@@ -16503,7 +16704,7 @@
       "id": "QT2WUgRDJ_Q",
       "link": "https://www.youtube.com/shorts/QT2WUgRDJ_Q",
       "title": "Indignación razonable 🙄 #hablandohuevadas",
-      "view_count": 359000,
+      "view_count": 381000,
       "thumbnail": "https://i.ytimg.com/vi/QT2WUgRDJ_Q/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB-dZae88X-1K6XKT57jWCP_YbhgA&usqp=CCk",
       "thumbnails": [
         {
@@ -16522,7 +16723,7 @@
       "id": "g5H9il9hA4E",
       "link": "https://www.youtube.com/shorts/g5H9il9hA4E",
       "title": "Estos padres no se quieren ⚠️ #hablandohuevadas",
-      "view_count": 7000000,
+      "view_count": 8200000,
       "thumbnail": "https://i.ytimg.com/vi/g5H9il9hA4E/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA1puqJQxWnwSqVmTu-QHl-Uqv8Tw&usqp=CCk",
       "thumbnails": [
         {
@@ -16541,7 +16742,7 @@
       "id": "cj5YDeDSUSM",
       "link": "https://www.youtube.com/shorts/cj5YDeDSUSM",
       "title": "Un pollo que me dice papá 😶 #hablandohuevadas",
-      "view_count": 146000,
+      "view_count": 159000,
       "thumbnail": "https://i.ytimg.com/vi/cj5YDeDSUSM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAZO3_pQ9dVVOzdSKDOPE3q7aaiEQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16560,7 +16761,7 @@
       "id": "Y7CuT6VsZp0",
       "link": "https://www.youtube.com/shorts/Y7CuT6VsZp0",
       "title": "Infiel desde el más allá 💀 #hablandohuevadas",
-      "view_count": 740000,
+      "view_count": 767000,
       "thumbnail": "https://i.ytimg.com/vi/Y7CuT6VsZp0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCxzoygxq470rG5S6fbPrGchZU6lQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16579,7 +16780,7 @@
       "id": "PfDQPROwXt0",
       "link": "https://www.youtube.com/shorts/PfDQPROwXt0",
       "title": "Siente que sus padres no lo quieren 🥺 #hablandohuevadas",
-      "view_count": 1600000,
+      "view_count": 1700000,
       "thumbnail": "https://i.ytimg.com/vi/PfDQPROwXt0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCTukMKNoDg1S3CHGKTKj9k1dx5vw&usqp=CCk",
       "thumbnails": [
         {
@@ -16598,7 +16799,7 @@
       "id": "qF17kftJ0Vk",
       "link": "https://www.youtube.com/shorts/qF17kftJ0Vk",
       "title": "Hijo original harto del país 😂 #hablandohuevadas",
-      "view_count": 272000,
+      "view_count": 283000,
       "thumbnail": "https://i.ytimg.com/vi/qF17kftJ0Vk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA0HYdHMoWw1YHbELzYMKy1BJlV1g&usqp=CCk",
       "thumbnails": [
         {
@@ -16617,7 +16818,7 @@
       "id": "La5HKCaqPhc",
       "link": "https://www.youtube.com/shorts/La5HKCaqPhc",
       "title": "Hijo original madrugador 😓 #hablandohuevadas",
-      "view_count": 164000,
+      "view_count": 173000,
       "thumbnail": "https://i.ytimg.com/vi/La5HKCaqPhc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBpc936QANczLiuGqmbaaPi3nc_-w&usqp=CCk",
       "thumbnails": [
         {
@@ -16636,7 +16837,7 @@
       "id": "Vwl6wH8Z5kI",
       "link": "https://www.youtube.com/shorts/Vwl6wH8Z5kI",
       "title": "Gasolinero bien lento 🙄 #hablandohuevadas",
-      "view_count": 1200000,
+      "view_count": 1300000,
       "thumbnail": "https://i.ytimg.com/vi/Vwl6wH8Z5kI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLARczYgVYP-SfKt_quS10dKCzVqyw&usqp=CCk",
       "thumbnails": [
         {
@@ -16655,7 +16856,7 @@
       "id": "QSN6HjZQqqI",
       "link": "https://www.youtube.com/shorts/QSN6HjZQqqI",
       "title": "Jorge Luna trae locas a todas 😂 #hablandohuevadas",
-      "view_count": 583000,
+      "view_count": 612000,
       "thumbnail": "https://i.ytimg.com/vi/QSN6HjZQqqI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA38hwBdQ_vCHysIEasOYpaj8f3AQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16674,7 +16875,7 @@
       "id": "dhMYmK7Onr8",
       "link": "https://www.youtube.com/shorts/dhMYmK7Onr8",
       "title": "Jorge Luna y su difícil prueba 😳 #hablandohuevadas",
-      "view_count": 170000,
+      "view_count": 182000,
       "thumbnail": "https://i.ytimg.com/vi/dhMYmK7Onr8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB6IedHatz95t8DS7JcsifLD50c0Q&usqp=CCk",
       "thumbnails": [
         {
@@ -16693,7 +16894,7 @@
       "id": "g-zvnHzxE9I",
       "link": "https://www.youtube.com/shorts/g-zvnHzxE9I",
       "title": "Niño pegado al celular 💀 #hablandohuevadas",
-      "view_count": 5500000,
+      "view_count": 6400000,
       "thumbnail": "https://i.ytimg.com/vi/g-zvnHzxE9I/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBSWV2a7wHTH--UnJE3d0pYqZXzeQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16712,7 +16913,7 @@
       "id": "QC2v14LN3q8",
       "link": "https://www.youtube.com/shorts/QC2v14LN3q8",
       "title": "No quiso tener hijos 😂 #hablandohuevadas",
-      "view_count": 201000,
+      "view_count": 211000,
       "thumbnail": "https://i.ytimg.com/vi/QC2v14LN3q8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDK_xf5fBSuOcMn0g7dADtOQCSQxw&usqp=CCk",
       "thumbnails": [
         {
@@ -16731,7 +16932,7 @@
       "id": "qjgtPcMAWdA",
       "link": "https://www.youtube.com/shorts/qjgtPcMAWdA",
       "title": "Re troll resultó el señor 😂 #hablandohuevadas",
-      "view_count": 1200000,
+      "view_count": 1300000,
       "thumbnail": "https://i.ytimg.com/vi/qjgtPcMAWdA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBfaPi7E2yaCdbcWsSJH9_6nYYxAw&usqp=CCk",
       "thumbnails": [
         {
@@ -16750,7 +16951,7 @@
       "id": "CaBii_x-W9s",
       "link": "https://www.youtube.com/shorts/CaBii_x-W9s",
       "title": "Pánico al despertar 💀 #hablandohuevadas",
-      "view_count": 278000,
+      "view_count": 288000,
       "thumbnail": "https://i.ytimg.com/vi/CaBii_x-W9s/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDmbRn6caJDFzd19WGQ12fwJM5Elg&usqp=CCk",
       "thumbnails": [
         {
@@ -16769,7 +16970,7 @@
       "id": "M1Hjk3Z0lK4",
       "link": "https://www.youtube.com/shorts/M1Hjk3Z0lK4",
       "title": "Complejo por dientes chuecos 😶 #hablandohuevadas",
-      "view_count": 520000,
+      "view_count": 534000,
       "thumbnail": "https://i.ytimg.com/vi/M1Hjk3Z0lK4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBhd_XeoQFF891TtWtTY7aYE2u_nw&usqp=CCk",
       "thumbnails": [
         {
@@ -16788,7 +16989,7 @@
       "id": "v16JGCZdBV4",
       "link": "https://www.youtube.com/shorts/v16JGCZdBV4",
       "title": "Sé que me fuiste infiel 💔 #hablandohuevadas",
-      "view_count": 742000,
+      "view_count": 762000,
       "thumbnail": "https://i.ytimg.com/vi/v16JGCZdBV4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBg3S8skYBd1_V3jzJakpUmCA2k6g&usqp=CCk",
       "thumbnails": [
         {
@@ -16807,7 +17008,7 @@
       "id": "Ji47M7SKw64",
       "link": "https://www.youtube.com/shorts/Ji47M7SKw64",
       "title": "No le hace nada de gracia 🙄 #hablandohuevadas",
-      "view_count": 1900000,
+      "view_count": 2000000,
       "thumbnail": "https://i.ytimg.com/vi/Ji47M7SKw64/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDMXB_Ft2076SJATaGKzLs4qo8MYw&usqp=CCk",
       "thumbnails": [
         {
@@ -16826,7 +17027,7 @@
       "id": "Wh-tGeSzxVw",
       "link": "https://www.youtube.com/shorts/Wh-tGeSzxVw",
       "title": "¿Necesitas ayuda, amiga? 😳 #hablandohuevadas",
-      "view_count": 1900000,
+      "view_count": 2000000,
       "thumbnail": "https://i.ytimg.com/vi/Wh-tGeSzxVw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDe1W65Pd6HfWQt2MjR8bCzeil8Lw&usqp=CCk",
       "thumbnails": [
         {
@@ -16845,7 +17046,7 @@
       "id": "SzOCBBXX2ps",
       "link": "https://www.youtube.com/shorts/SzOCBBXX2ps",
       "title": "Aprendiendo inglés 😛 #hablandohuevadas",
-      "view_count": 362000,
+      "view_count": 369000,
       "thumbnail": "https://i.ytimg.com/vi/SzOCBBXX2ps/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCASGwCdkPnH2UvaGmiNHgRTfyDNQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16864,7 +17065,7 @@
       "id": "fOacLIC4WlE",
       "link": "https://www.youtube.com/shorts/fOacLIC4WlE",
       "title": "Harta de los clientes 🙄 #hablandohuevadas",
-      "view_count": 1700000,
+      "view_count": 1800000,
       "thumbnail": "https://i.ytimg.com/vi/fOacLIC4WlE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDqnEJnWmN03aHK3FgV5BSFoq39CQ&usqp=CCk",
       "thumbnails": [
         {
@@ -16883,7 +17084,7 @@
       "id": "JV08m3osuvM",
       "link": "https://www.youtube.com/shorts/JV08m3osuvM",
       "title": "Te quitan tu DNI para trabajar 💀 #hablandohuevadas",
-      "view_count": 220000,
+      "view_count": 226000,
       "thumbnail": "https://i.ytimg.com/vi/JV08m3osuvM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD4O_YTzqLZYHovihbQn_en2PfZ_w&usqp=CCk",
       "thumbnails": [
         {
@@ -16902,7 +17103,7 @@
       "id": "sedtpNZRT-I",
       "link": "https://www.youtube.com/shorts/sedtpNZRT-I",
       "title": "Quiero que me la coman 😛 #hablandohuevadas",
-      "view_count": 85000,
+      "view_count": 89000,
       "thumbnail": "https://i.ytimg.com/vi/sedtpNZRT-I/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCUQbw44TS6AFFt43z3vtDXpK3oOA&usqp=CCk",
       "thumbnails": [
         {
@@ -16921,7 +17122,7 @@
       "id": "lgh_VDBB1lY",
       "link": "https://www.youtube.com/shorts/lgh_VDBB1lY",
       "title": "Elecciones 2026 😂 #hablandohuevadas",
-      "view_count": 255000,
+      "view_count": 261000,
       "thumbnail": "https://i.ytimg.com/vi/lgh_VDBB1lY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDK8OkHNmHv8-mqc6VKOGTAkZhEBA&usqp=CCk",
       "thumbnails": [
         {
@@ -16940,7 +17141,7 @@
       "id": "RhInDCLgXXA",
       "link": "https://www.youtube.com/shorts/RhInDCLgXXA",
       "title": "La señora tiene frío 🥺 #hablandohuevadas",
-      "view_count": 1800000,
+      "view_count": 1900000,
       "thumbnail": "https://i.ytimg.com/vi/RhInDCLgXXA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBKEZuDL5ytvHd7xVtnMJkUaF9TbA&usqp=CCk",
       "thumbnails": [
         {
@@ -16959,7 +17160,7 @@
       "id": "KCgSLUQPUXE",
       "link": "https://www.youtube.com/shorts/KCgSLUQPUXE",
       "title": "No pasó casting por pie pequeño 😓 #hablandohuevadas",
-      "view_count": 155000,
+      "view_count": 161000,
       "thumbnail": "https://i.ytimg.com/vi/KCgSLUQPUXE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCPooo_lh5Y2coqPKi93Xw2fm-ntA&usqp=CCk",
       "thumbnails": [
         {
@@ -16978,7 +17179,7 @@
       "id": "mRlem6ihNvU",
       "link": "https://www.youtube.com/shorts/mRlem6ihNvU",
       "title": "Ridícula cédula electoral 🙄 #hablandohuevadas",
-      "view_count": 320000,
+      "view_count": 324000,
       "thumbnail": "https://i.ytimg.com/vi/mRlem6ihNvU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCVYD-2nR0me12_xY3tUc7E_NRc_g&usqp=CCk",
       "thumbnails": [
         {
@@ -16997,7 +17198,7 @@
       "id": "8jskN03D8F8",
       "link": "https://www.youtube.com/shorts/8jskN03D8F8",
       "title": "Descansa en paz, mejor nadador 💀 #hablandohuevadas",
-      "view_count": 495000,
+      "view_count": 501000,
       "thumbnail": "https://i.ytimg.com/vi/8jskN03D8F8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDaP6cdUjQTkJS2O_bAYO4EFS7Y5Q&usqp=CCk",
       "thumbnails": [
         {
@@ -17016,7 +17217,7 @@
       "id": "TnU_DvGx1fA",
       "link": "https://www.youtube.com/shorts/TnU_DvGx1fA",
       "title": "Niño élite come pan con azúcar 😎 #hablandohuevadas",
-      "view_count": 2700000,
+      "view_count": 3000000,
       "thumbnail": "https://i.ytimg.com/vi/TnU_DvGx1fA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCu5G003q_4mPHhlQ8fRk_fA3633A&usqp=CCk",
       "thumbnails": [
         {
@@ -17035,7 +17236,7 @@
       "id": "BRgsLKfl-Hk",
       "link": "https://www.youtube.com/shorts/BRgsLKfl-Hk",
       "title": "El terror para mamás 💀 #hablandohuevadas",
-      "view_count": 228000,
+      "view_count": 232000,
       "thumbnail": "https://i.ytimg.com/vi/BRgsLKfl-Hk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDHlfPlX8-iw_7Fek_8GEqEmGH6gA&usqp=CCk",
       "thumbnails": [
         {
@@ -17054,7 +17255,7 @@
       "id": "iE0L7GCxT08",
       "link": "https://www.youtube.com/shorts/iE0L7GCxT08",
       "title": "Sincera petición 😶 #hablandohuevadas",
-      "view_count": 845000,
+      "view_count": 855000,
       "thumbnail": "https://i.ytimg.com/vi/iE0L7GCxT08/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBYLms8Dbv5Ids4epyujYeAe1w0kg&usqp=CCk",
       "thumbnails": [
         {
@@ -17073,7 +17274,7 @@
       "id": "3qIz2BkXZSg",
       "link": "https://www.youtube.com/shorts/3qIz2BkXZSg",
       "title": "Se tatuó a la que no le da bola 💀 #hablandohuevadas",
-      "view_count": 847000,
+      "view_count": 870000,
       "thumbnail": "https://i.ytimg.com/vi/3qIz2BkXZSg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAW3BWFNt01OCdNvinZF91APwy_Dg&usqp=CCk",
       "thumbnails": [
         {
@@ -17092,7 +17293,7 @@
       "id": "YAf6i1YvCj4",
       "link": "https://www.youtube.com/shorts/YAf6i1YvCj4",
       "title": "Instaló Tinder y salió mal 💀 #hablandohuevadas",
-      "view_count": 669000,
+      "view_count": 674000,
       "thumbnail": "https://i.ytimg.com/vi/YAf6i1YvCj4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAJTdZm46deyqwzM55xj0IIy89cVQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17111,7 +17312,7 @@
       "id": "n90yO3VunqY",
       "link": "https://www.youtube.com/shorts/n90yO3VunqY",
       "title": "¡No lo hagas, amor! 😭 #hablandohuevadas",
-      "view_count": 201000,
+      "view_count": 205000,
       "thumbnail": "https://i.ytimg.com/vi/n90yO3VunqY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBdJgBquOClNQ0silFM7QvvQb_LXQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17130,7 +17331,7 @@
       "id": "Ed0tNnwU6mw",
       "link": "https://www.youtube.com/shorts/Ed0tNnwU6mw",
       "title": "Mi primera chamba ⛔ #hablandohuevadas",
-      "view_count": 1300000,
+      "view_count": 1400000,
       "thumbnail": "https://i.ytimg.com/vi/Ed0tNnwU6mw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA9iEzIi3GrBL5XzomhxN6eIwEx0Q&usqp=CCk",
       "thumbnails": [
         {
@@ -17149,7 +17350,7 @@
       "id": "dKqeDeEtDP8",
       "link": "https://www.youtube.com/shorts/dKqeDeEtDP8",
       "title": "¡No lo hagas, amor! 😭 #hablandohuevadas",
-      "view_count": 736000,
+      "view_count": 739000,
       "thumbnail": "https://i.ytimg.com/vi/dKqeDeEtDP8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCoNtUaQ9uPvJDyvn7ZF8BYbjR5ng&usqp=CCk",
       "thumbnails": [
         {
@@ -17168,7 +17369,7 @@
       "id": "R6ko4LXtKug",
       "link": "https://www.youtube.com/shorts/R6ko4LXtKug",
       "title": "Muy loca por Jorge Luna 😍 #hablandohuevadas",
-      "view_count": 1500000,
+      "view_count": 1700000,
       "thumbnail": "https://i.ytimg.com/vi/R6ko4LXtKug/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC5WAGjeqsUSsBhAAnMghtLay9FzA&usqp=CCk",
       "thumbnails": [
         {
@@ -17187,7 +17388,7 @@
       "id": "WSS9CvCuKkA",
       "link": "https://www.youtube.com/shorts/WSS9CvCuKkA",
       "title": "Sonido de pollo de hule 🤨 #hablandohuevadas",
-      "view_count": 924000,
+      "view_count": 939000,
       "thumbnail": "https://i.ytimg.com/vi/WSS9CvCuKkA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD0hpcgjbenhNF1Yg0kn1LIfQhEiQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17206,7 +17407,7 @@
       "id": "S4sEy01dNrA",
       "link": "https://www.youtube.com/shorts/S4sEy01dNrA",
       "title": "Sin gas nos vamos al diablo 💀 #hablandohuevadas",
-      "view_count": 160000,
+      "view_count": 163000,
       "thumbnail": "https://i.ytimg.com/vi/S4sEy01dNrA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDYQmqeFHXAJJ2_Mfsu46KZY5t2kQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17225,7 +17426,7 @@
       "id": "Ly2MWpEUMFE",
       "link": "https://www.youtube.com/shorts/Ly2MWpEUMFE",
       "title": "Argentino vive en terrible distrito 💀 #hablandohuevadas",
-      "view_count": 6700000,
+      "view_count": 7400000,
       "thumbnail": "https://i.ytimg.com/vi/Ly2MWpEUMFE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA4Xqj_HYVTgoeDVCJWprS3_9I-Iw&usqp=CCk",
       "thumbnails": [
         {
@@ -17282,7 +17483,7 @@
       "id": "T6kUqtDK3sg",
       "link": "https://www.youtube.com/shorts/T6kUqtDK3sg",
       "title": "Ex le terminó y él quiere volver ⚠️ #hablandohuevadas",
-      "view_count": 3000000,
+      "view_count": 3300000,
       "thumbnail": "https://i.ytimg.com/vi/T6kUqtDK3sg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCBAJTDszAMPJLcEzAQW3AgwcaQSQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17301,7 +17502,7 @@
       "id": "A5lXDSRf8GQ",
       "link": "https://www.youtube.com/shorts/A5lXDSRf8GQ",
       "title": "Crisis de gas en Perú ⚠️ #hablandohuevadas",
-      "view_count": 232000,
+      "view_count": 235000,
       "thumbnail": "https://i.ytimg.com/vi/A5lXDSRf8GQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA-0oMlrIzk19o_odj33G3MG-AOzQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17320,7 +17521,7 @@
       "id": "sQNTMQOuDIA",
       "link": "https://www.youtube.com/shorts/sQNTMQOuDIA",
       "title": "Ligando a la de 60 años 😳 #hablandohuevadas",
-      "view_count": 890000,
+      "view_count": 899000,
       "thumbnail": "https://i.ytimg.com/vi/sQNTMQOuDIA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD98QgXxZQfpsg-YhZ7-JZPSFcQbA&usqp=CCk",
       "thumbnails": [
         {
@@ -17339,7 +17540,7 @@
       "id": "r1i-RTo8J9I",
       "link": "https://www.youtube.com/shorts/r1i-RTo8J9I",
       "title": "Aspirante a ginecólogo 🤨 #hablandohuevadas",
-      "view_count": 2600000,
+      "view_count": 2700000,
       "thumbnail": "https://i.ytimg.com/vi/r1i-RTo8J9I/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCbYjcK4NgAsT4wABbWRooxwzjFNQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17358,7 +17559,7 @@
       "id": "JVHfQf39Eas",
       "link": "https://www.youtube.com/shorts/JVHfQf39Eas",
       "title": "¡Mucho cuidado, hombres! 💀 #hablandohuevadas",
-      "view_count": 146000,
+      "view_count": 150000,
       "thumbnail": "https://i.ytimg.com/vi/JVHfQf39Eas/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCXklu5KIJEwimsr7TNH_9DnCeY0g&usqp=CCk",
       "thumbnails": [
         {
@@ -17377,7 +17578,7 @@
       "id": "5DgKvd7Gm5Q",
       "link": "https://www.youtube.com/shorts/5DgKvd7Gm5Q",
       "title": "¡Ven si te atreves, diabetes! 🤬 #hablandohuevadas",
-      "view_count": 984000,
+      "view_count": 994000,
       "thumbnail": "https://i.ytimg.com/vi/5DgKvd7Gm5Q/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBC8YlimTsOiCnkWUG0Xu5qot_lOA&usqp=CCk",
       "thumbnails": [
         {
@@ -17396,7 +17597,7 @@
       "id": "p7lacvcq2ZE",
       "link": "https://www.youtube.com/shorts/p7lacvcq2ZE",
       "title": "El bingo de Jorge Luna 🥶 #hablandohuevadas",
-      "view_count": 167000,
+      "view_count": 170000,
       "thumbnail": "https://i.ytimg.com/vi/p7lacvcq2ZE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDdIPCKSbbzBMU6Dj0fVME3My0uhA&usqp=CCk",
       "thumbnails": [
         {
@@ -17415,7 +17616,7 @@
       "id": "nDaCE91JEN8",
       "link": "https://www.youtube.com/shorts/nDaCE91JEN8",
       "title": "Zapatillas horribles 💀 #hablandohuevadas",
-      "view_count": 795000,
+      "view_count": 845000,
       "thumbnail": "https://i.ytimg.com/vi/nDaCE91JEN8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA2X6UdySB_8ZysIZT2SSs_JUkkhw&usqp=CCk",
       "thumbnails": [
         {
@@ -17434,7 +17635,7 @@
       "id": "y0_VSfuRCBg",
       "link": "https://www.youtube.com/shorts/y0_VSfuRCBg",
       "title": "No colabora el amiguito 😂 #hablandohuevadas",
-      "view_count": 2000000,
+      "view_count": 2100000,
       "thumbnail": "https://i.ytimg.com/vi/y0_VSfuRCBg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAlOuoCqceUPSOX98ncXs8r6n61Dg&usqp=CCk",
       "thumbnails": [
         {
@@ -17453,7 +17654,7 @@
       "id": "pIoDWtNEyTc",
       "link": "https://www.youtube.com/shorts/pIoDWtNEyTc",
       "title": "¡Guerra de salchichas! 🤨 #hablandohuevadas",
-      "view_count": 109000,
+      "view_count": 112000,
       "thumbnail": "https://i.ytimg.com/vi/pIoDWtNEyTc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCc98RCysASQfBTXkcZcdkG1W3LHA&usqp=CCk",
       "thumbnails": [
         {
@@ -17472,7 +17673,7 @@
       "id": "463WMaCNG0s",
       "link": "https://www.youtube.com/shorts/463WMaCNG0s",
       "title": "Jorge Luna, ¿miedo o nostalgia? 😶 #hablandohuevadas",
-      "view_count": 220000,
+      "view_count": 224000,
       "thumbnail": "https://i.ytimg.com/vi/463WMaCNG0s/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAW59WMQ6rbArigiEB1wM1ZAbexIw&usqp=CCk",
       "thumbnails": [
         {
@@ -17491,7 +17692,7 @@
       "id": "kFqy3578UiQ",
       "link": "https://www.youtube.com/shorts/kFqy3578UiQ",
       "title": "¡Menudos dibujitos! 😂 #hablandohuevadas",
-      "view_count": 171000,
+      "view_count": 174000,
       "thumbnail": "https://i.ytimg.com/vi/kFqy3578UiQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCqQg9B6kywIqu4ECLVaLOr-r8xfw&usqp=CCk",
       "thumbnails": [
         {
@@ -17510,7 +17711,7 @@
       "id": "_XFCOr8Lb_c",
       "link": "https://www.youtube.com/shorts/_XFCOr8Lb_c",
       "title": "Apellido divino 😱 #hablandohuevadas",
-      "view_count": 226000,
+      "view_count": 230000,
       "thumbnail": "https://i.ytimg.com/vi/_XFCOr8Lb_c/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB842UrXPypHFTfRUMUJ0EDDlouhQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17529,7 +17730,7 @@
       "id": "aqUK5SPeR5c",
       "link": "https://www.youtube.com/shorts/aqUK5SPeR5c",
       "title": "Tú no tienes amigos 😶 #hablandohuevadas",
-      "view_count": 156000,
+      "view_count": 158000,
       "thumbnail": "https://i.ytimg.com/vi/aqUK5SPeR5c/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCDSmpy8YpqS9aSOO3is_gmtdkIJA&usqp=CCk",
       "thumbnails": [
         {
@@ -17548,7 +17749,7 @@
       "id": "qn585_BZXpQ",
       "link": "https://www.youtube.com/shorts/qn585_BZXpQ",
       "title": "Eso es superarse, Escamilla ⚠️ #hablandohuevadas",
-      "view_count": 129000,
+      "view_count": 131000,
       "thumbnail": "https://i.ytimg.com/vi/qn585_BZXpQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAEpkjCzG-YWAikOlb3TCyJ8xu81Q&usqp=CCk",
       "thumbnails": [
         {
@@ -17567,7 +17768,7 @@
       "id": "NoAsiNGcuLc",
       "link": "https://www.youtube.com/shorts/NoAsiNGcuLc",
       "title": "¡Nunca aceptes eso, Escamilla! ⛔ #hablandohuevadas",
-      "view_count": 222000,
+      "view_count": 225000,
       "thumbnail": "https://i.ytimg.com/vi/NoAsiNGcuLc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB8msz12ObQ6dCIqBoVhZ8STJC3kw&usqp=CCk",
       "thumbnails": [
         {
@@ -17605,7 +17806,7 @@
       "id": "Q0Vy4XLvdlg",
       "link": "https://www.youtube.com/shorts/Q0Vy4XLvdlg",
       "title": "Difícil lidiar con un novio grande 😳 #hablandohuevadas",
-      "view_count": 135000,
+      "view_count": 138000,
       "thumbnail": "https://i.ytimg.com/vi/Q0Vy4XLvdlg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAHJMQFUrDu7G37ta71aasWscRELA&usqp=CCk",
       "thumbnails": [
         {
@@ -17643,7 +17844,7 @@
       "id": "m1ygLYYvQbo",
       "link": "https://www.youtube.com/shorts/m1ygLYYvQbo",
       "title": "Para Escamilla son aplausos 😂 #hablandohuevadas",
-      "view_count": 86000,
+      "view_count": 88000,
       "thumbnail": "https://i.ytimg.com/vi/m1ygLYYvQbo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDZz5Km2aA3cJPJVy0l6j2UYKMyfQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17681,7 +17882,7 @@
       "id": "3uEwzU456Ao",
       "link": "https://www.youtube.com/shorts/3uEwzU456Ao",
       "title": "Siempre hay que pedir permiso 😳 #hablandohuevadas",
-      "view_count": 86000,
+      "view_count": 87000,
       "thumbnail": "https://i.ytimg.com/vi/3uEwzU456Ao/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCKDfznckRcNEJFilHckp18OtHbAg&usqp=CCk",
       "thumbnails": [
         {
@@ -17719,7 +17920,7 @@
       "id": "c0R4KcZpQP8",
       "link": "https://www.youtube.com/shorts/c0R4KcZpQP8",
       "title": "Esposita quiere ir a Finlandia 🙄 #hablandohuevadas",
-      "view_count": 629000,
+      "view_count": 651000,
       "thumbnail": "https://i.ytimg.com/vi/c0R4KcZpQP8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBf53YoNCUb3_OEARWFI5BMaqym-A&usqp=CCk",
       "thumbnails": [
         {
@@ -17738,7 +17939,7 @@
       "id": "WwNGsX7YimI",
       "link": "https://www.youtube.com/shorts/WwNGsX7YimI",
       "title": "Jorge se regaló a Franco 😛 #hablandohuevadas",
-      "view_count": 122000,
+      "view_count": 124000,
       "thumbnail": "https://i.ytimg.com/vi/WwNGsX7YimI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCXfY83XypJJYRo6J4fOAqD7tQDVw&usqp=CCk",
       "thumbnails": [
         {
@@ -17757,7 +17958,7 @@
       "id": "52Lbkv3Ki9g",
       "link": "https://www.youtube.com/shorts/52Lbkv3Ki9g",
       "title": "Maldad pura, Franco Escamilla 😂 #hablandohuevadas",
-      "view_count": 81000,
+      "view_count": 83000,
       "thumbnail": "https://i.ytimg.com/vi/52Lbkv3Ki9g/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAHwOxwpsOn4Lq6kU9UoizSlYwboA&usqp=CCk",
       "thumbnails": [
         {
@@ -17776,7 +17977,7 @@
       "id": "lP2IGZtasHI",
       "link": "https://www.youtube.com/shorts/lP2IGZtasHI",
       "title": "Doxeo innecesario 🤨 #hablandohuevadas",
-      "view_count": 77000,
+      "view_count": 79000,
       "thumbnail": "https://i.ytimg.com/vi/lP2IGZtasHI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC0C07L5nOXSzoFfNWO0q2o7YVFQA&usqp=CCk",
       "thumbnails": [
         {
@@ -17795,7 +17996,7 @@
       "id": "0X2TL_lgxaM",
       "link": "https://www.youtube.com/shorts/0X2TL_lgxaM",
       "title": "Despedida de soltera 😳 #hablandohuevadas",
-      "view_count": 67000,
+      "view_count": 68000,
       "thumbnail": "https://i.ytimg.com/vi/0X2TL_lgxaM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD-ODtLbMOZc_s9NzJyrxmP_-X0Cg&usqp=CCk",
       "thumbnails": [
         {
@@ -17814,7 +18015,7 @@
       "id": "eGTOModTfN8",
       "link": "https://www.youtube.com/shorts/eGTOModTfN8",
       "title": "Doxeo innecesario 🤨 #hablandohuevadas",
-      "view_count": 282000,
+      "view_count": 283000,
       "thumbnail": "https://i.ytimg.com/vi/eGTOModTfN8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDzNpVe1ILDaIGq39E-dTpvlZrpZQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17833,7 +18034,7 @@
       "id": "__SUFk-nsgQ",
       "link": "https://www.youtube.com/shorts/__SUFk-nsgQ",
       "title": "Despedida de soltera 😳 #hablandohuevadas",
-      "view_count": 70000,
+      "view_count": 71000,
       "thumbnail": "https://i.ytimg.com/vi/__SUFk-nsgQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBHpQP7naluopCFTmalXX3pXdhN_Q&usqp=CCk",
       "thumbnails": [
         {
@@ -17871,7 +18072,7 @@
       "id": "F2o1HlnfS2Y",
       "link": "https://www.youtube.com/shorts/F2o1HlnfS2Y",
       "title": "Jorge se regaló a Franco 😛 #hablandohuevadas",
-      "view_count": 78000,
+      "view_count": 79000,
       "thumbnail": "https://i.ytimg.com/vi/F2o1HlnfS2Y/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBIJXVYQ8LltxwXq_jJxSSHwXOgfA&usqp=CCk",
       "thumbnails": [
         {
@@ -17890,7 +18091,7 @@
       "id": "Dw1PndNw-nY",
       "link": "https://www.youtube.com/shorts/Dw1PndNw-nY",
       "title": "Apellido divino 😱 #hablandohuevadas",
-      "view_count": 209000,
+      "view_count": 211000,
       "thumbnail": "https://i.ytimg.com/vi/Dw1PndNw-nY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDI-qHD4tgafZLLdgYZRRzbxIlXnQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17909,7 +18110,7 @@
       "id": "eDslTKVqXkA",
       "link": "https://www.youtube.com/shorts/eDslTKVqXkA",
       "title": "Jorge Luna, ¿miedo o nostalgia? 😶 #hablandohuevadas",
-      "view_count": 266000,
+      "view_count": 268000,
       "thumbnail": "https://i.ytimg.com/vi/eDslTKVqXkA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC-lHov2MaGU3u5BnFHufz6xZX6SQ&usqp=CCk",
       "thumbnails": [
         {
@@ -17928,7 +18129,7 @@
       "id": "nEjtkjM7peQ",
       "link": "https://www.youtube.com/shorts/nEjtkjM7peQ",
       "title": "¡Menudos dibujitos! 😂 #hablandohuevadas",
-      "view_count": 110000,
+      "view_count": 111000,
       "thumbnail": "https://i.ytimg.com/vi/nEjtkjM7peQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDXh6Odm3qWRfm5WHRHYxrjX5EwWA&usqp=CCk",
       "thumbnails": [
         {
@@ -17947,7 +18148,7 @@
       "id": "YIREGvvagDI",
       "link": "https://www.youtube.com/shorts/YIREGvvagDI",
       "title": "¡Guerra de salchichas! 🤨 #hablandohuevadas",
-      "view_count": 85000,
+      "view_count": 86000,
       "thumbnail": "https://i.ytimg.com/vi/YIREGvvagDI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC0JZXCfCtZ0h2K-sb90jYQEXLi0A&usqp=CCk",
       "thumbnails": [
         {
@@ -17966,7 +18167,7 @@
       "id": "V6r3EvTo3WY",
       "link": "https://www.youtube.com/shorts/V6r3EvTo3WY",
       "title": "Hija tiene nombre de videojuego 🤨 #hablandohuevadas",
-      "view_count": 191000,
+      "view_count": 193000,
       "thumbnail": "https://i.ytimg.com/vi/V6r3EvTo3WY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC7nQNDV1PR4zn0wJngiwS_Usdbqw&usqp=CCk",
       "thumbnails": [
         {
@@ -17985,7 +18186,7 @@
       "id": "HHF1Wa4OVW8",
       "link": "https://www.youtube.com/shorts/HHF1Wa4OVW8",
       "title": "Jorge Luna hace pelear a parejas 🥶 #hablandohuevadas",
-      "view_count": 314000,
+      "view_count": 352000,
       "thumbnail": "https://i.ytimg.com/vi/HHF1Wa4OVW8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBNmXW4NDUZIIq0TByzXEC2wtekwQ&usqp=CCk",
       "thumbnails": [
         {
@@ -18004,7 +18205,7 @@
       "id": "x5pTrrdGhhg",
       "link": "https://www.youtube.com/shorts/x5pTrrdGhhg",
       "title": "La bendición de Jorge Luna 🔥 #hablandohuevadas",
-      "view_count": 609000,
+      "view_count": 613000,
       "thumbnail": "https://i.ytimg.com/vi/x5pTrrdGhhg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC43BVFgsM5VIv-90fbwV36Sef_Kw&usqp=CCk",
       "thumbnails": [
         {
@@ -18042,7 +18243,7 @@
       "id": "jBojYkPgdhQ",
       "link": "https://www.youtube.com/shorts/jBojYkPgdhQ",
       "title": "La bebé es bendecida 🥺 #hablandohuevadas",
-      "view_count": 2100000,
+      "view_count": 2300000,
       "thumbnail": "https://i.ytimg.com/vi/jBojYkPgdhQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCNkF2HJnU6WAukc_PAioezzHbePw&usqp=CCk",
       "thumbnails": [
         {
@@ -18061,7 +18262,7 @@
       "id": "gky3W7_wURQ",
       "link": "https://www.youtube.com/shorts/gky3W7_wURQ",
       "title": "¡Edna Moda! 😱 #hablandohuevadas",
-      "view_count": 480000,
+      "view_count": 491000,
       "thumbnail": "https://i.ytimg.com/vi/gky3W7_wURQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAH32RM_nqCYkKUfQKqS1l-LsfLqg&usqp=CCk",
       "thumbnails": [
         {
@@ -18080,7 +18281,7 @@
       "id": "EwVxip4UYPY",
       "link": "https://www.youtube.com/shorts/EwVxip4UYPY",
       "title": "La atacó un toro 💀 #hablandohuevadas",
-      "view_count": 663000,
+      "view_count": 770000,
       "thumbnail": "https://i.ytimg.com/vi/EwVxip4UYPY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAth9VXcQKp8iJtX0qDP_rVk2hBJw&usqp=CCk",
       "thumbnails": [
         {
@@ -18118,7 +18319,7 @@
       "id": "mBXC-XZJhP4",
       "link": "https://www.youtube.com/shorts/mBXC-XZJhP4",
       "title": "¿Irías al pasado o al futuro? 😶 #hablandohuevadas",
-      "view_count": 1000000,
+      "view_count": 1100000,
       "thumbnail": "https://i.ytimg.com/vi/mBXC-XZJhP4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDuKg39F9ApcTHdZBMTigyxSLe4eQ&usqp=CCk",
       "thumbnails": [
         {
@@ -18137,7 +18338,7 @@
       "id": "8iGxFtIJOsk",
       "link": "https://www.youtube.com/shorts/8iGxFtIJOsk",
       "title": "¡Cierre la puerta, suegra! 😳 #hablandohuevadas",
-      "view_count": 86000,
+      "view_count": 88000,
       "thumbnail": "https://i.ytimg.com/vi/8iGxFtIJOsk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB3jes9_q89t748OW3oMEBp3ptwYA&usqp=CCk",
       "thumbnails": [
         {
@@ -18156,7 +18357,7 @@
       "id": "2i3yLwkZrSM",
       "link": "https://www.youtube.com/shorts/2i3yLwkZrSM",
       "title": "¿Por qué se tapa la cara? 💀 #hablandohuevadas",
-      "view_count": 2500000,
+      "view_count": 2800000,
       "thumbnail": "https://i.ytimg.com/vi/2i3yLwkZrSM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBpL_H69OeRiXD005HyAPqt9QpgBw&usqp=CCk",
       "thumbnails": [
         {
@@ -18175,7 +18376,7 @@
       "id": "uHAA0gHuWVg",
       "link": "https://www.youtube.com/shorts/uHAA0gHuWVg",
       "title": "Un peculiar maquillaje 😳 #hablandohuevadas",
-      "view_count": 3200000,
+      "view_count": 3400000,
       "thumbnail": "https://i.ytimg.com/vi/uHAA0gHuWVg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBoQLh8dGFk_L6db-MsVI10j6M4sA&usqp=CCk",
       "thumbnails": [
         {
@@ -18194,7 +18395,7 @@
       "id": "4VU283MzDs4",
       "link": "https://www.youtube.com/shorts/4VU283MzDs4",
       "title": "Cosplay de Tanjiro Kamado 😗 #hablandohuevadas",
-      "view_count": 222000,
+      "view_count": 224000,
       "thumbnail": "https://i.ytimg.com/vi/4VU283MzDs4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBpuYxHRk-UVrxjy27uWIZ9CnJqDQ&usqp=CCk",
       "thumbnails": [
         {
@@ -18213,7 +18414,7 @@
       "id": "nXtntNZE2Ec",
       "link": "https://www.youtube.com/shorts/nXtntNZE2Ec",
       "title": "Novia Therian 🤨 #hablandohuevadas",
-      "view_count": 344000,
+      "view_count": 346000,
       "thumbnail": "https://i.ytimg.com/vi/nXtntNZE2Ec/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAnWjKORjzUpim1dev8jW_EsSovzg&usqp=CCk",
       "thumbnails": [
         {
@@ -18232,7 +18433,7 @@
       "id": "W4Xljm6Pm5M",
       "link": "https://www.youtube.com/shorts/W4Xljm6Pm5M",
       "title": "Señora con parche 🤨 #hablandohuevadas",
-      "view_count": 631000,
+      "view_count": 635000,
       "thumbnail": "https://i.ytimg.com/vi/W4Xljm6Pm5M/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBFjFYWIirMS2gfnwFJanY6GH1_0A&usqp=CCk",
       "thumbnails": [
         {
@@ -18251,7 +18452,7 @@
       "id": "TXsSvwm-MJo",
       "link": "https://www.youtube.com/shorts/TXsSvwm-MJo",
       "title": "Clítoris en llamas...#hablandohuevadas",
-      "view_count": 79000,
+      "view_count": 81000,
       "thumbnail": "https://i.ytimg.com/vi/TXsSvwm-MJo/oardefault.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLABg2vO1Bm5m3-uoB9TwqyU2eMRcA&usqp=CCk",
       "thumbnails": [
         {
@@ -18270,7 +18471,7 @@
       "id": "WEqSd9AS7EY",
       "link": "https://www.youtube.com/shorts/WEqSd9AS7EY",
       "title": "Otaku amigo...#hablandohuevadas",
-      "view_count": 195000,
+      "view_count": 196000,
       "thumbnail": "https://i.ytimg.com/vi/WEqSd9AS7EY/oardefault.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDQUJ1rHMoGUvAtmPV3Sf79ZioBYg&usqp=CCk",
       "thumbnails": [
         {
@@ -18289,7 +18490,7 @@
       "id": "E0xa3s-IIqY",
       "link": "https://www.youtube.com/shorts/E0xa3s-IIqY",
       "title": "Nos deniegan inscripción de marca...#hablandohuevadas",
-      "view_count": 222000,
+      "view_count": 223000,
       "thumbnail": "https://i.ytimg.com/vi/E0xa3s-IIqY/oardefault.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA55OiP96NeZvR_XopAx9KeDscbbA&usqp=CCk",
       "thumbnails": [
         {
@@ -18308,7 +18509,7 @@
       "id": "YQON4BgzT1Q",
       "link": "https://www.youtube.com/shorts/YQON4BgzT1Q",
       "title": "Propuesta de matrimonio...#hablandohuevadas",
-      "view_count": 124000,
+      "view_count": 125000,
       "thumbnail": "https://i.ytimg.com/vi/YQON4BgzT1Q/oardefault.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD0q3UCV3Z7e2sLANB99eDUsbu3vQ&usqp=CCk",
       "thumbnails": [
         {
@@ -18346,7 +18547,7 @@
       "id": "q6Mcuy_WY6s",
       "link": "https://www.youtube.com/shorts/q6Mcuy_WY6s",
       "title": "Manzana de Adán gigante...#hablandohuevadas",
-      "view_count": 175000,
+      "view_count": 177000,
       "thumbnail": "https://i.ytimg.com/vi/q6Mcuy_WY6s/oardefault.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAUBiPqFwDZts958A_ykby5yEphsg&usqp=CCk",
       "thumbnails": [
         {
@@ -18365,7 +18566,7 @@
       "id": "GMsYAou0QbM",
       "link": "https://www.youtube.com/shorts/GMsYAou0QbM",
       "title": "Jorge Luna, ¿miedo o nostalgia? 😶 #hablandohuevadas",
-      "view_count": 613000,
+      "view_count": 614000,
       "thumbnail": "https://i.ytimg.com/vi/GMsYAou0QbM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCm3ktvEUx0DTaE0QmVDBmHGPTDXg&usqp=CCk",
       "thumbnails": [
         {
@@ -18384,7 +18585,7 @@
       "id": "5Nx_BuE0GCU",
       "link": "https://www.youtube.com/shorts/5Nx_BuE0GCU",
       "title": "Hija tiene nombre de videojuego 🤨 #hablandohuevadas",
-      "view_count": 1500000,
+      "view_count": 1600000,
       "thumbnail": "https://i.ytimg.com/vi/5Nx_BuE0GCU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCtDFNryUAXlxdJoc4K7oyZTskycA&usqp=CCk",
       "thumbnails": [
         {
@@ -18403,7 +18604,7 @@
       "id": "F4CQQkxJgHE",
       "link": "https://www.youtube.com/shorts/F4CQQkxJgHE",
       "title": "¡Guerra de salchichas! 🤨 #hablandohuevadas",
-      "view_count": 61000,
+      "view_count": 62000,
       "thumbnail": "https://i.ytimg.com/vi/F4CQQkxJgHE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA59bqKFl27c3krqOi382SQ9prgRA&usqp=CCk",
       "thumbnails": [
         {
@@ -18422,7 +18623,7 @@
       "id": "e73F3nUxAio",
       "link": "https://www.youtube.com/shorts/e73F3nUxAio",
       "title": "Se besó con otro y dice que es IA 💀 #hablandohuevadas",
-      "view_count": 4100000,
+      "view_count": 4500000,
       "thumbnail": "https://i.ytimg.com/vi/e73F3nUxAio/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDs1TPvMQoRwtGLfBPdqmytlMuANQ&usqp=CCk",
       "thumbnails": [
         {
@@ -18441,7 +18642,7 @@
       "id": "yzDR5XnpD3c",
       "link": "https://www.youtube.com/shorts/yzDR5XnpD3c",
       "title": "Jorge Luna hace pelear a parejas 🥶 #hablandohuevadas",
-      "view_count": 723000,
+      "view_count": 745000,
       "thumbnail": "https://i.ytimg.com/vi/yzDR5XnpD3c/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB7eJKKq2bjrZSsVWdEM7IAnoejXg&usqp=CCk",
       "thumbnails": [
         {
@@ -18460,7 +18661,7 @@
       "id": "7h0hoUxuPS8",
       "link": "https://www.youtube.com/shorts/7h0hoUxuPS8",
       "title": "¡Menudos dibujitos! 😂 #hablandohuevadas",
-      "view_count": 429000,
+      "view_count": 430000,
       "thumbnail": "https://i.ytimg.com/vi/7h0hoUxuPS8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAAqNCk68_sstfYmK0XLoB4sHsPCg&usqp=CCk",
       "thumbnails": [
         {
@@ -18479,7 +18680,7 @@
       "id": "PMZAQ9qv8tM",
       "link": "https://www.youtube.com/shorts/PMZAQ9qv8tM",
       "title": "Apellido divino 😱 #hablandohuevadas",
-      "view_count": 2900000,
+      "view_count": 3000000,
       "thumbnail": "https://i.ytimg.com/vi/PMZAQ9qv8tM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBDN2up-jeDKxgxHxiRXnuy3L7G_Q&usqp=CCk",
       "thumbnails": [
         {
@@ -18498,7 +18699,7 @@
       "id": "WIW7YYzcdbg",
       "link": "https://www.youtube.com/shorts/WIW7YYzcdbg",
       "title": "Ricardo Mendoza y los Therians 🥶 #hablandohuevadas",
-      "view_count": 469000,
+      "view_count": 470000,
       "thumbnail": "https://i.ytimg.com/vi/WIW7YYzcdbg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAUZZu8f6qeeKsOL8q5tsrKdYk0Rg&usqp=CCk",
       "thumbnails": [
         {
@@ -18517,7 +18718,7 @@
       "id": "MbPwArD_ysk",
       "link": "https://www.youtube.com/shorts/MbPwArD_ysk",
       "title": "Al diablo la fiesta de 15 🙄 #hablandohuevadas",
-      "view_count": 2300000,
+      "view_count": 2600000,
       "thumbnail": "https://i.ytimg.com/vi/MbPwArD_ysk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBCk0zagW9MmEclPuuOkk-2MUc3LA&usqp=CCk",
       "thumbnails": [
         {
@@ -18536,7 +18737,7 @@
       "id": "0SAMukoHdOo",
       "link": "https://www.youtube.com/shorts/0SAMukoHdOo",
       "title": "Historia de terror de joven de 15 💀 #hablandohuevadas",
-      "view_count": 382000,
+      "view_count": 384000,
       "thumbnail": "https://i.ytimg.com/vi/0SAMukoHdOo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB1nkrudlbICKo5zm4pK5_0rEYMZA&usqp=CCk",
       "thumbnails": [
         {
@@ -18555,7 +18756,7 @@
       "id": "kGiLL4fELhI",
       "link": "https://www.youtube.com/shorts/kGiLL4fELhI",
       "title": "¿Madre LPH? 🤨 #hablandohuevadas",
-      "view_count": 365000,
+      "view_count": 366000,
       "thumbnail": "https://i.ytimg.com/vi/kGiLL4fELhI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBl94z8q1zE2yIpZnmlvtbbGMDC3g&usqp=CCk",
       "thumbnails": [
         {
@@ -18574,7 +18775,7 @@
       "id": "ggKm2IYEg1g",
       "link": "https://www.youtube.com/shorts/ggKm2IYEg1g",
       "title": "Regalo de Jorge a Ricardo 🥺 #hablandohuevadas",
-      "view_count": 2100000,
+      "view_count": 2200000,
       "thumbnail": "https://i.ytimg.com/vi/ggKm2IYEg1g/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDjm6ZeTXTqe-9lhWWbE0F0YAxHtg&usqp=CCk",
       "thumbnails": [
         {
@@ -18593,7 +18794,7 @@
       "id": "Y2N_Ef0_3NE",
       "link": "https://www.youtube.com/shorts/Y2N_Ef0_3NE",
       "title": "Regulador de temperatura 🥶 #hablandohuevadas",
-      "view_count": 179000,
+      "view_count": 180000,
       "thumbnail": "https://i.ytimg.com/vi/Y2N_Ef0_3NE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA4qPjOx4zC-8L1WzXAzFhQePm74g&usqp=CCk",
       "thumbnails": [
         {
@@ -18612,7 +18813,7 @@
       "id": "fhoNFQDI8u8",
       "link": "https://www.youtube.com/shorts/fhoNFQDI8u8",
       "title": "Roblox arruinó su vida ⚠️ #hablandohuevadas",
-      "view_count": 653000,
+      "view_count": 662000,
       "thumbnail": "https://i.ytimg.com/vi/fhoNFQDI8u8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB4VTr_NJyAICV-l0lWLGXVXeoTFw&usqp=CCk",
       "thumbnails": [
         {
@@ -18631,7 +18832,7 @@
       "id": "YI761UhjrN0",
       "link": "https://www.youtube.com/shorts/YI761UhjrN0",
       "title": "Pintura rara, joven rara 🤨 #hablandohuevadas",
-      "view_count": 1600000,
+      "view_count": 1800000,
       "thumbnail": "https://i.ytimg.com/vi/YI761UhjrN0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLADdZAU-If-rp5AXGWId096n262TQ&usqp=CCk",
       "thumbnails": [
         {
@@ -18650,7 +18851,7 @@
       "id": "lRbsaMiysWU",
       "link": "https://www.youtube.com/shorts/lRbsaMiysWU",
       "title": "¡Hijo, hijastro, cuartos distintos! 🤬 #hablandohuevadas",
-      "view_count": 177000,
+      "view_count": 178000,
       "thumbnail": "https://i.ytimg.com/vi/lRbsaMiysWU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAAAmRAlmb2c069QXiPGHhdA8VtLg&usqp=CCk",
       "thumbnails": [
         {
@@ -18688,7 +18889,7 @@
       "id": "ThKu9Ta5sNY",
       "link": "https://www.youtube.com/shorts/ThKu9Ta5sNY",
       "title": "Su novia lo agrede a él 💀 #hablandohuevadas",
-      "view_count": 2000000,
+      "view_count": 2100000,
       "thumbnail": "https://i.ytimg.com/vi/ThKu9Ta5sNY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDxdwJaI6yMD2pOdVsJGzxBz_pbyg&usqp=CCk",
       "thumbnails": [
         {
@@ -18707,7 +18908,7 @@
       "id": "EwVrQmXEu0U",
       "link": "https://www.youtube.com/shorts/EwVrQmXEu0U",
       "title": "¿Elsa de Frozen? 🤨 #hablandohuevadas",
-      "view_count": 871000,
+      "view_count": 881000,
       "thumbnail": "https://i.ytimg.com/vi/EwVrQmXEu0U/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAMcBsbxuyRusuqYi5zc6ElCoZZWw&usqp=CCk",
       "thumbnails": [
         {
@@ -18726,7 +18927,7 @@
       "id": "uTvFa9OBymM",
       "link": "https://www.youtube.com/shorts/uTvFa9OBymM",
       "title": "Casas color menta 🤨 #hablandohuevadas",
-      "view_count": 592000,
+      "view_count": 594000,
       "thumbnail": "https://i.ytimg.com/vi/uTvFa9OBymM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBtQ36xYWN97LvUOk4-BTC_6DgEvg&usqp=CCk",
       "thumbnails": [
         {
@@ -18745,7 +18946,7 @@
       "id": "ND4EheSL9ZY",
       "link": "https://www.youtube.com/shorts/ND4EheSL9ZY",
       "title": "Jorge Luna va a aprender inglés 😱 #hablandohuevadas",
-      "view_count": 2300000,
+      "view_count": 2400000,
       "thumbnail": "https://i.ytimg.com/vi/ND4EheSL9ZY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAxZ_PxDt7NWIwKS6cOcJJTAewgrQ&usqp=CCk",
       "thumbnails": [
         {
@@ -18764,7 +18965,7 @@
       "id": "U8mlNuI3rsw",
       "link": "https://www.youtube.com/shorts/U8mlNuI3rsw",
       "title": "¡Un joven responsable! 😮 #hablandohuevadas",
-      "view_count": 341000,
+      "view_count": 342000,
       "thumbnail": "https://i.ytimg.com/vi/U8mlNuI3rsw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA6iKD-0-ottKfZK9RdsftTLnvSXA&usqp=CCk",
       "thumbnails": [
         {
@@ -18783,7 +18984,7 @@
       "id": "PIOwDmJ6aro",
       "link": "https://www.youtube.com/shorts/PIOwDmJ6aro",
       "title": "La buena vecina 🔥 #hablandohuevadas",
-      "view_count": 391000,
+      "view_count": 392000,
       "thumbnail": "https://i.ytimg.com/vi/PIOwDmJ6aro/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCQBWNcJo5EASgub0hYxwkF5XAXVw&usqp=CCk",
       "thumbnails": [
         {
@@ -18802,7 +19003,7 @@
       "id": "iR2rrC1SEp0",
       "link": "https://www.youtube.com/shorts/iR2rrC1SEp0",
       "title": "Trágicas confesiones 😓 #hablandohuevadas",
-      "view_count": 756000,
+      "view_count": 757000,
       "thumbnail": "https://i.ytimg.com/vi/iR2rrC1SEp0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBAie3wWImCeo158XwzXa7-09e-9w&usqp=CCk",
       "thumbnails": [
         {
@@ -18821,7 +19022,7 @@
       "id": "NCVl89xnXhQ",
       "link": "https://www.youtube.com/shorts/NCVl89xnXhQ",
       "title": "Terrible forma de volver con el ex 💀 #hablandohuevadas",
-      "view_count": 576000,
+      "view_count": 577000,
       "thumbnail": "https://i.ytimg.com/vi/NCVl89xnXhQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBqbe6v8i0G8CbrYffzfVa5CBuyvw&usqp=CCk",
       "thumbnails": [
         {
@@ -18878,7 +19079,7 @@
       "id": "AUuyuTM7vUE",
       "link": "https://www.youtube.com/shorts/AUuyuTM7vUE",
       "title": "El arte más viejo del mundo 🥶 #hablandohuevadas",
-      "view_count": 128000,
+      "view_count": 129000,
       "thumbnail": "https://i.ytimg.com/vi/AUuyuTM7vUE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBfqQT3ux5ORXez0hc6nDJYqGEuXA&usqp=CCk",
       "thumbnails": [
         {
@@ -18897,7 +19098,7 @@
       "id": "KbW-qmalp0Q",
       "link": "https://www.youtube.com/shorts/KbW-qmalp0Q",
       "title": "Jorge Luna ajeno a su propia casa 😂 #hablandohuevadas",
-      "view_count": 1400000,
+      "view_count": 1500000,
       "thumbnail": "https://i.ytimg.com/vi/KbW-qmalp0Q/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAKh18qPdLLPOJOd51cpdOoOhgBQA&usqp=CCk",
       "thumbnails": [
         {
@@ -18916,7 +19117,7 @@
       "id": "Qv-cMK83Pdo",
       "link": "https://www.youtube.com/shorts/Qv-cMK83Pdo",
       "title": "¿Y esa forma de saludar? 🤨 #hablandohuevadas",
-      "view_count": 124000,
+      "view_count": 125000,
       "thumbnail": "https://i.ytimg.com/vi/Qv-cMK83Pdo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA0hHC0eqSvIj_Jtc6D2G0hzORDnQ&usqp=CCk",
       "thumbnails": [
         {
@@ -19011,7 +19212,7 @@
       "id": "vzTW_ytMda0",
       "link": "https://www.youtube.com/shorts/vzTW_ytMda0",
       "title": "Chileno salchipapa 😎 #hablandohuevadas",
-      "view_count": 3000000,
+      "view_count": 3100000,
       "thumbnail": "https://i.ytimg.com/vi/vzTW_ytMda0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAS8F3_UyDOX9RO0YC8w0wMPY9ZBQ&usqp=CCk",
       "thumbnails": [
         {
@@ -19030,7 +19231,7 @@
       "id": "XhL_6Ym5-LM",
       "link": "https://www.youtube.com/shorts/XhL_6Ym5-LM",
       "title": "¡Ciego, fíjate por dónde vas! 🤬 #hablandohuevadas",
-      "view_count": 829000,
+      "view_count": 831000,
       "thumbnail": "https://i.ytimg.com/vi/XhL_6Ym5-LM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDrr6RmdyjcphVo6G49GUjllT640A&usqp=CCk",
       "thumbnails": [
         {
@@ -19068,7 +19269,7 @@
       "id": "HL_H8RgmHW0",
       "link": "https://www.youtube.com/shorts/HL_H8RgmHW0",
       "title": "¿Mucha leche a un recién nacido? 🤨 #hablandohuevadas",
-      "view_count": 224000,
+      "view_count": 225000,
       "thumbnail": "https://i.ytimg.com/vi/HL_H8RgmHW0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAfRGjS6wn4MdJ0-mi5GODd_KtJNA&usqp=CCk",
       "thumbnails": [
         {
@@ -19087,7 +19288,7 @@
       "id": "0XNx6SFMWRQ",
       "link": "https://www.youtube.com/shorts/0XNx6SFMWRQ",
       "title": "Ricardo Mendoza ahora es papá 🥶 #hablandohuevadas",
-      "view_count": 665000,
+      "view_count": 672000,
       "thumbnail": "https://i.ytimg.com/vi/0XNx6SFMWRQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDM39H-p3lDs6jyNpUnRM0RnISfBw&usqp=CCk",
       "thumbnails": [
         {
@@ -19106,7 +19307,7 @@
       "id": "8tz3KNenhxc",
       "link": "https://www.youtube.com/shorts/8tz3KNenhxc",
       "title": "Sin albur, Franco Escamilla 🥶 #hablandohuevadas",
-      "view_count": 147000,
+      "view_count": 148000,
       "thumbnail": "https://i.ytimg.com/vi/8tz3KNenhxc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD19LBZJaxNsZcsupC-NjDQYnz32A&usqp=CCk",
       "thumbnails": [
         {
@@ -19144,7 +19345,7 @@
       "id": "rUuJv3nDu3w",
       "link": "https://www.youtube.com/shorts/rUuJv3nDu3w",
       "title": "Joven artista en silla de ruedas ⚠️ #hablandohuevadas",
-      "view_count": 124000,
+      "view_count": 125000,
       "thumbnail": "https://i.ytimg.com/vi/rUuJv3nDu3w/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLASeokPTCMrZ9x-ik2qYVb28_T_Ag&usqp=CCk",
       "thumbnails": [
         {
@@ -19163,7 +19364,7 @@
       "id": "JsnJKT9ARfw",
       "link": "https://www.youtube.com/shorts/JsnJKT9ARfw",
       "title": "Hermana se tuneó ahí abajo 😳 #hablandohuevadas",
-      "view_count": 75000,
+      "view_count": 76000,
       "thumbnail": "https://i.ytimg.com/vi/JsnJKT9ARfw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD-obyEor1gEmaR2EPSzqo_f4DZqA&usqp=CCk",
       "thumbnails": [
         {
@@ -19182,7 +19383,7 @@
       "id": "YBGoKM0ECmA",
       "link": "https://www.youtube.com/shorts/YBGoKM0ECmA",
       "title": "Franco Escamilla ve a El Cojo ⚠️ #hablandohuevadas",
-      "view_count": 110000,
+      "view_count": 111000,
       "thumbnail": "https://i.ytimg.com/vi/YBGoKM0ECmA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDCNo__MFvmTJDvvPiuX5GywHUu9w&usqp=CCk",
       "thumbnails": [
         {
@@ -19201,7 +19402,7 @@
       "id": "xXWmuSgR8tY",
       "link": "https://www.youtube.com/shorts/xXWmuSgR8tY",
       "title": "¡No confundas las películas! 🤣 #hablandohuevadas",
-      "view_count": 92000,
+      "view_count": 93000,
       "thumbnail": "https://i.ytimg.com/vi/xXWmuSgR8tY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAy9XJOwet5ROR0YRDl61NehOFesA&usqp=CCk",
       "thumbnails": [
         {
@@ -19277,7 +19478,7 @@
       "id": "n9nxmSwAiXc",
       "link": "https://www.youtube.com/shorts/n9nxmSwAiXc",
       "title": "Ricardo Mendoza yendo solo 🤨 #hablandohuevadas",
-      "view_count": 100000,
+      "view_count": 101000,
       "thumbnail": "https://i.ytimg.com/vi/n9nxmSwAiXc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCwSwuHc7YKZ972Ku8WoHM-W6LlIg&usqp=CCk",
       "thumbnails": [
         {
@@ -19296,7 +19497,7 @@
       "id": "ykfD2hiQWF0",
       "link": "https://www.youtube.com/shorts/ykfD2hiQWF0",
       "title": "Confíe, jefe Ricardo Mendoza 🥶 #hablandohuevadas",
-      "view_count": 683000,
+      "view_count": 686000,
       "thumbnail": "https://i.ytimg.com/vi/ykfD2hiQWF0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDpv9UXAm0vwV5BtlGEL7lOxazlUg&usqp=CCk",
       "thumbnails": [
         {
@@ -19334,7 +19535,7 @@
       "id": "aSCs30GZNzc",
       "link": "https://www.youtube.com/shorts/aSCs30GZNzc",
       "title": "Relación entre chofer y pasajero ❤️ #hablandohuevadas",
-      "view_count": 197000,
+      "view_count": 198000,
       "thumbnail": "https://i.ytimg.com/vi/aSCs30GZNzc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAYj1Fu4JQPzl8RtkIBZOusX9RoRg&usqp=CCk",
       "thumbnails": [
         {
@@ -19391,7 +19592,7 @@
       "id": "3p7QCvPzLoE",
       "link": "https://www.youtube.com/shorts/3p7QCvPzLoE",
       "title": "¡Cuidado, venezolanos! ⚠️ #hablandohuevadas",
-      "view_count": 924000,
+      "view_count": 925000,
       "thumbnail": "https://i.ytimg.com/vi/3p7QCvPzLoE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAW6g-VrZ62_iMciOhXfdpvOyMRDA&usqp=CCk",
       "thumbnails": [
         {
@@ -19429,7 +19630,7 @@
       "id": "8JIhjIArFMk",
       "link": "https://www.youtube.com/shorts/8JIhjIArFMk",
       "title": "Préstamos con solo DNI ⛔ #hablandohuevadas",
-      "view_count": 195000,
+      "view_count": 196000,
       "thumbnail": "https://i.ytimg.com/vi/8JIhjIArFMk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAK1H3PmskxtT-6E-CSrQKwqGzg6Q&usqp=CCk",
       "thumbnails": [
         {
@@ -19486,7 +19687,7 @@
       "id": "Db6Bf24iGDM",
       "link": "https://www.youtube.com/shorts/Db6Bf24iGDM",
       "title": "El padre echó a perder todo 🙄 #hablandohuevadas",
-      "view_count": 2500000,
+      "view_count": 2700000,
       "thumbnail": "https://i.ytimg.com/vi/Db6Bf24iGDM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD3T0Qn9yaXpfMKlyP8xaMVxaJQ1A&usqp=CCk",
       "thumbnails": [
         {
@@ -19505,7 +19706,7 @@
       "id": "c4Sgm9ZgEb0",
       "link": "https://www.youtube.com/shorts/c4Sgm9ZgEb0",
       "title": "Te entiendo, Jorge Luna 🥺 #hablandohuevadas",
-      "view_count": 170000,
+      "view_count": 171000,
       "thumbnail": "https://i.ytimg.com/vi/c4Sgm9ZgEb0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDTvK5vqM5miPN8E2QbC-vXh0UMyw&usqp=CCk",
       "thumbnails": [
         {
@@ -19524,7 +19725,7 @@
       "id": "7s47Cedx8HI",
       "link": "https://www.youtube.com/shorts/7s47Cedx8HI",
       "title": "Franco Escamilla no puede más 🤣 #hablandohuevadas",
-      "view_count": 90000,
+      "view_count": 91000,
       "thumbnail": "https://i.ytimg.com/vi/7s47Cedx8HI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLArvJB0-DB6P_fD36iOxCkCuzgXvw&usqp=CCk",
       "thumbnails": [
         {
@@ -19543,7 +19744,7 @@
       "id": "XIvvlH8K60g",
       "link": "https://www.youtube.com/shorts/XIvvlH8K60g",
       "title": "¡Esa película no es! 😂 #hablandohuevadas",
-      "view_count": 336000,
+      "view_count": 337000,
       "thumbnail": "https://i.ytimg.com/vi/XIvvlH8K60g/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC_xIVpIhLopT2R15T4484efNm11g&usqp=CCk",
       "thumbnails": [
         {
@@ -19600,7 +19801,7 @@
       "id": "_DQsGASoSvY",
       "link": "https://www.youtube.com/shorts/_DQsGASoSvY",
       "title": "Es el mejor, Escamilla 🤣 #hablandohuevadas",
-      "view_count": 54000,
+      "view_count": 55000,
       "thumbnail": "https://i.ytimg.com/vi/_DQsGASoSvY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBNE9aSvtm-4iV1VythkCz3U-vWeQ&usqp=CCk",
       "thumbnails": [
         {
@@ -19638,7 +19839,7 @@
       "id": "wJaVuFWpCT4",
       "link": "https://www.youtube.com/shorts/wJaVuFWpCT4",
       "title": "Boda por orquesta gratis 🥺 #hablandohuevadas",
-      "view_count": 2800000,
+      "view_count": 2900000,
       "thumbnail": "https://i.ytimg.com/vi/wJaVuFWpCT4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDHEZgtTfo5XZGaNvUG3lAH0kw_hw&usqp=CCk",
       "thumbnails": [
         {
@@ -19828,7 +20029,7 @@
       "id": "ICjtHlyVOXo",
       "link": "https://www.youtube.com/shorts/ICjtHlyVOXo",
       "title": "Detiene pelea de pareja, sale mal #hablandohuevadas",
-      "view_count": 186000,
+      "view_count": 187000,
       "thumbnail": "https://i.ytimg.com/vi/ICjtHlyVOXo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLALNaYRNRYLN78qhq793xBwZ6ISgw&usqp=CCk",
       "thumbnails": [
         {
@@ -19847,7 +20048,7 @@
       "id": "AqukZ35wMIU",
       "link": "https://www.youtube.com/shorts/AqukZ35wMIU",
       "title": "Vizcacha o bis cach...?? #hablandohuevadas",
-      "view_count": 467000,
+      "view_count": 468000,
       "thumbnail": "https://i.ytimg.com/vi/AqukZ35wMIU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBqXjk0IY6fdKm7xXVACZuB_ok5ag&usqp=CCk",
       "thumbnails": [
         {
@@ -19904,7 +20105,7 @@
       "id": "kX3f87lfeRg",
       "link": "https://www.youtube.com/shorts/kX3f87lfeRg",
       "title": "Gusto por historias entre hombres ⚠️ #hablandohuevadas",
-      "view_count": 106000,
+      "view_count": 107000,
       "thumbnail": "https://i.ytimg.com/vi/kX3f87lfeRg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLADKOjX8Bpn7WCRKWKEQgA3Fm099A&usqp=CCk",
       "thumbnails": [
         {
@@ -19923,7 +20124,7 @@
       "id": "drcNE9FHwYw",
       "link": "https://www.youtube.com/shorts/drcNE9FHwYw",
       "title": "Gusto por historias entre hombres ⚠️ #hablandohuevadas",
-      "view_count": 417000,
+      "view_count": 418000,
       "thumbnail": "https://i.ytimg.com/vi/drcNE9FHwYw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA3DbGmhE2O9Kjg45DRgi82N2_2PQ&usqp=CCk",
       "thumbnails": [
         {
@@ -19980,7 +20181,7 @@
       "id": "ItirdRZFCDs",
       "link": "https://www.youtube.com/shorts/ItirdRZFCDs",
       "title": "Pincho de metal ⚠️ #hablandohuevadas",
-      "view_count": 639000,
+      "view_count": 640000,
       "thumbnail": "https://i.ytimg.com/vi/ItirdRZFCDs/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC90o71cP6l_sySGMpoWxzS6thMgQ&usqp=CCk",
       "thumbnails": [
         {
@@ -20037,7 +20238,7 @@
       "id": "y1TwspL-W70",
       "link": "https://www.youtube.com/shorts/y1TwspL-W70",
       "title": "No se roba, ladroncito ⛔ #hablandohuevadas",
-      "view_count": 102000,
+      "view_count": 103000,
       "thumbnail": "https://i.ytimg.com/vi/y1TwspL-W70/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDNeSy4s5UpZnjM1BsdxQWucDlIpA&usqp=CCk",
       "thumbnails": [
         {
@@ -20094,7 +20295,7 @@
       "id": "Tke6MJx9FcY",
       "link": "https://www.youtube.com/shorts/Tke6MJx9FcY",
       "title": "¡Aparta tu enorme brazo! 🙄 #hablandohuevadas",
-      "view_count": 483000,
+      "view_count": 484000,
       "thumbnail": "https://i.ytimg.com/vi/Tke6MJx9FcY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBE-vKnnJDv2qI80HWPMSaeAKtN5Q&usqp=CCk",
       "thumbnails": [
         {
@@ -20132,7 +20333,7 @@
       "id": "TA_wN_8SqVQ",
       "link": "https://www.youtube.com/shorts/TA_wN_8SqVQ",
       "title": "Pedida de mano boliviana 💀 #hablandohuevadas",
-      "view_count": 899000,
+      "view_count": 900000,
       "thumbnail": "https://i.ytimg.com/vi/TA_wN_8SqVQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCOiQ5j-owHrX438D9kBpeaaIGraw&usqp=CCk",
       "thumbnails": [
         {
@@ -20151,7 +20352,7 @@
       "id": "VqE75beKp2M",
       "link": "https://www.youtube.com/shorts/VqE75beKp2M",
       "title": "Fría mami boliviana 🥶 #hablandohuevadas",
-      "view_count": 860000,
+      "view_count": 861000,
       "thumbnail": "https://i.ytimg.com/vi/VqE75beKp2M/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDKAoa5xF7JSdQx3KQz3xD2WLKoBA&usqp=CCk",
       "thumbnails": [
         {
@@ -20189,7 +20390,7 @@
       "id": "FQvz5Q1eSeY",
       "link": "https://www.youtube.com/shorts/FQvz5Q1eSeY",
       "title": "¡No ve nada de nada! 🥶 #hablandohuevadas",
-      "view_count": 966000,
+      "view_count": 967000,
       "thumbnail": "https://i.ytimg.com/vi/FQvz5Q1eSeY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCt7yOIYVjQ9_W1nHVHs3nJ69gN3g&usqp=CCk",
       "thumbnails": [
         {
@@ -20303,7 +20504,7 @@
       "id": "0mdM83dWFOw",
       "link": "https://www.youtube.com/shorts/0mdM83dWFOw",
       "title": "Confesiones de una aeromoza ⚠️ #hablandohuevadas",
-      "view_count": 6600000,
+      "view_count": 6900000,
       "thumbnail": "https://i.ytimg.com/vi/0mdM83dWFOw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAxYISlltHilhsu9hBbJsG9tP-Hlg&usqp=CCk",
       "thumbnails": [
         {
@@ -20341,7 +20542,7 @@
       "id": "RjWCO17bsJw",
       "link": "https://www.youtube.com/shorts/RjWCO17bsJw",
       "title": "Franco Escamilla y las madres 🔥 #hablandohuevadas",
-      "view_count": 872000,
+      "view_count": 873000,
       "thumbnail": "https://i.ytimg.com/vi/RjWCO17bsJw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBVwfz0kjPvT6VJSSrIf-INOqBacg&usqp=CCk",
       "thumbnails": [
         {
@@ -20379,7 +20580,7 @@
       "id": "6ai1r7syOpU",
       "link": "https://www.youtube.com/shorts/6ai1r7syOpU",
       "title": "Dedito en la mano 😳 #hablandohuevadas",
-      "view_count": 285000,
+      "view_count": 286000,
       "thumbnail": "https://i.ytimg.com/vi/6ai1r7syOpU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBs1HdnjQ_AjJFhV6paM_hn6_9pbA&usqp=CCk",
       "thumbnails": [
         {
@@ -20455,7 +20656,7 @@
       "id": "uCnuzIb-3KQ",
       "link": "https://www.youtube.com/shorts/uCnuzIb-3KQ",
       "title": "Embarazo del exnovio 💀 #hablandohuevadas",
-      "view_count": 3600000,
+      "view_count": 3900000,
       "thumbnail": "https://i.ytimg.com/vi/uCnuzIb-3KQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAqSezIU_Ek2za1H23HZjQSXE8MjA&usqp=CCk",
       "thumbnails": [
         {
@@ -20512,7 +20713,7 @@
       "id": "p9iidWqE9-U",
       "link": "https://www.youtube.com/shorts/p9iidWqE9-U",
       "title": "Él solito se arruina más #hablandohuevadas",
-      "view_count": 252000,
+      "view_count": 253000,
       "thumbnail": "https://i.ytimg.com/vi/p9iidWqE9-U/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCbNrZXVB3Eek7duBjH9L59nGsq5g&usqp=CCk",
       "thumbnails": [
         {
@@ -20550,7 +20751,7 @@
       "id": "gMGaTjqZ4iU",
       "link": "https://www.youtube.com/shorts/gMGaTjqZ4iU",
       "title": "El hijo de Ricardo Mendoza 😂 #hablandohuevadas",
-      "view_count": 320000,
+      "view_count": 321000,
       "thumbnail": "https://i.ytimg.com/vi/gMGaTjqZ4iU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD-cQ3_KJaMrY4hdqrz5ZX4RDy6Jw&usqp=CCk",
       "thumbnails": [
         {
@@ -20588,7 +20789,7 @@
       "id": "ubDeTrnwK5Q",
       "link": "https://www.youtube.com/shorts/ubDeTrnwK5Q",
       "title": "Fotos grupales de chicas 🙄 #hablandohuevadas",
-      "view_count": 417000,
+      "view_count": 418000,
       "thumbnail": "https://i.ytimg.com/vi/ubDeTrnwK5Q/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBcmxbrVzdk4v9emuVPY97wdyB0qA&usqp=CCk",
       "thumbnails": [
         {
@@ -20968,7 +21169,7 @@
       "id": "BNV9Kn6HufQ",
       "link": "https://www.youtube.com/shorts/BNV9Kn6HufQ",
       "title": "Me hicieron reír, llorar y más 😳 #hablandohuevadas",
-      "view_count": 138000,
+      "view_count": 139000,
       "thumbnail": "https://i.ytimg.com/vi/BNV9Kn6HufQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDsOf9ZGDqOh5xvPXvYmY9L7eZkfQ&usqp=CCk",
       "thumbnails": [
         {
@@ -20987,7 +21188,7 @@
       "id": "GN_NtxIJi8Q",
       "link": "https://www.youtube.com/shorts/GN_NtxIJi8Q",
       "title": "¡Está mal dicho! ⛔ #hablandohuevadas",
-      "view_count": 141000,
+      "view_count": 142000,
       "thumbnail": "https://i.ytimg.com/vi/GN_NtxIJi8Q/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCfL2IzvXvJ0-fxcEVUpfeX-OA_MA&usqp=CCk",
       "thumbnails": [
         {
@@ -21025,7 +21226,7 @@
       "id": "UjlIpN8EOFA",
       "link": "https://www.youtube.com/shorts/UjlIpN8EOFA",
       "title": "Franco explica el color de Jorge 🥶 #hablandohuevadas",
-      "view_count": 499000,
+      "view_count": 500000,
       "thumbnail": "https://i.ytimg.com/vi/UjlIpN8EOFA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBK-qv5LmzqyQ_OydGwa5Z3_Yb6Bg&usqp=CCk",
       "thumbnails": [
         {
@@ -21082,7 +21283,7 @@
       "id": "tGGYXvcUFTU",
       "link": "https://www.youtube.com/shorts/tGGYXvcUFTU",
       "title": "Fantasías y realidades 😒 #hablandohuevadas",
-      "view_count": 152000,
+      "view_count": 153000,
       "thumbnail": "https://i.ytimg.com/vi/tGGYXvcUFTU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC4YqIQrdZ8C6zZuUc-4UOQ9fSy_A&usqp=CCk",
       "thumbnails": [
         {
@@ -21177,7 +21378,7 @@
       "id": "sX6e8aStHNM",
       "link": "https://www.youtube.com/shorts/sX6e8aStHNM",
       "title": "Mujeres ilusionadas 🥺 #hablandohuevadas",
-      "view_count": 4500000,
+      "view_count": 4600000,
       "thumbnail": "https://i.ytimg.com/vi/sX6e8aStHNM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAs7nSBCK7NyrQv8dnm6_WG9cw4zw&usqp=CCk",
       "thumbnails": [
         {
@@ -21196,7 +21397,7 @@
       "id": "q9sdIigQdYw",
       "link": "https://www.youtube.com/shorts/q9sdIigQdYw",
       "title": "No se logra comedia en todo sitio ⚠️ #hablandohuevadas",
-      "view_count": 275000,
+      "view_count": 276000,
       "thumbnail": "https://i.ytimg.com/vi/q9sdIigQdYw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDwMdRi2Dj8-k83U-tXmciv9VG_kQ&usqp=CCk",
       "thumbnails": [
         {
@@ -21253,7 +21454,7 @@
       "id": "EDMY811nK_M",
       "link": "https://www.youtube.com/shorts/EDMY811nK_M",
       "title": "Tralalero Tralala 🤨 #hablandohuevadas",
-      "view_count": 396000,
+      "view_count": 397000,
       "thumbnail": "https://i.ytimg.com/vi/EDMY811nK_M/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBNvQx1q1sLv0qka9v7GUgB0ie5Tg&usqp=CCk",
       "thumbnails": [
         {
@@ -21329,7 +21530,7 @@
       "id": "DLcThqkDrDY",
       "link": "https://www.youtube.com/shorts/DLcThqkDrDY",
       "title": "Jorge Wazowski 🤨 #hablandohuevadas",
-      "view_count": 715000,
+      "view_count": 718000,
       "thumbnail": "https://i.ytimg.com/vi/DLcThqkDrDY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAsxmHUyvYfZVbpA_f35VjDd8GnyQ&usqp=CCk",
       "thumbnails": [
         {
@@ -21348,7 +21549,7 @@
       "id": "MgZFkJKQw1I",
       "link": "https://www.youtube.com/shorts/MgZFkJKQw1I",
       "title": "El amor más puro 🥶 #hablandohuevadas",
-      "view_count": 358000,
+      "view_count": 360000,
       "thumbnail": "https://i.ytimg.com/vi/MgZFkJKQw1I/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDnbZqwV6fp06iHqcqpanXk8jwtUw&usqp=CCk",
       "thumbnails": [
         {
@@ -21386,7 +21587,7 @@
       "id": "wUkPCeKLVAg",
       "link": "https://www.youtube.com/shorts/wUkPCeKLVAg",
       "title": "Regalito para Juanita 🥺 #hablandohuevadas",
-      "view_count": 1200000,
+      "view_count": 1300000,
       "thumbnail": "https://i.ytimg.com/vi/wUkPCeKLVAg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA-H5KGzN4CcKNYyIO6xwZABainVA&usqp=CCk",
       "thumbnails": [
         {
@@ -21405,7 +21606,7 @@
       "id": "0IcA0Jj8RLc",
       "link": "https://www.youtube.com/shorts/0IcA0Jj8RLc",
       "title": "Jorge Luna era castigado así 💀 #hablandohuevadas",
-      "view_count": 527000,
+      "view_count": 528000,
       "thumbnail": "https://i.ytimg.com/vi/0IcA0Jj8RLc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBjJ9koXBbdjXqCE9yRAnefRMBDkA&usqp=CCk",
       "thumbnails": [
         {
@@ -21424,7 +21625,7 @@
       "id": "m5QCsEQ-cBs",
       "link": "https://www.youtube.com/shorts/m5QCsEQ-cBs",
       "title": "Personal reza en pleno vuelo 💀 #hablandohuevadas",
-      "view_count": 181000,
+      "view_count": 182000,
       "thumbnail": "https://i.ytimg.com/vi/m5QCsEQ-cBs/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAxIwLKBM4MpvN-ZJ4WWzMrFNKjDg&usqp=CCk",
       "thumbnails": [
         {
@@ -21443,7 +21644,7 @@
       "id": "y0gQpH6S5Zw",
       "link": "https://www.youtube.com/shorts/y0gQpH6S5Zw",
       "title": "Jorge Luna, miedo a los aviones 😓 #hablandohuevadas",
-      "view_count": 216000,
+      "view_count": 218000,
       "thumbnail": "https://i.ytimg.com/vi/y0gQpH6S5Zw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDB5w7xiirVJBV8pO3glb5FuJo3Ew&usqp=CCk",
       "thumbnails": [
         {
@@ -21462,7 +21663,7 @@
       "id": "lt8mQLpkN-k",
       "link": "https://www.youtube.com/shorts/lt8mQLpkN-k",
       "title": "¡No mires mucho al espejo! 💀 #hablandohuevadas",
-      "view_count": 412000,
+      "view_count": 414000,
       "thumbnail": "https://i.ytimg.com/vi/lt8mQLpkN-k/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAMHRKMPH5Fhy5713mz3rtyhwvjLg&usqp=CCk",
       "thumbnails": [
         {
@@ -21538,7 +21739,7 @@
       "id": "YFjLotB9z7g",
       "link": "https://www.youtube.com/shorts/YFjLotB9z7g",
       "title": "¿Especuliar? 🤨 #hablandohuevadas",
-      "view_count": 123000,
+      "view_count": 124000,
       "thumbnail": "https://i.ytimg.com/vi/YFjLotB9z7g/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAMY53Wfrmdp-WfEqFasTao2-LZsw&usqp=CCk",
       "thumbnails": [
         {
@@ -21633,7 +21834,7 @@
       "id": "1eVuGtAkY7E",
       "link": "https://www.youtube.com/shorts/1eVuGtAkY7E",
       "title": "El color exacto de Jorge Luna 🥶 #hablandohuevadas",
-      "view_count": 2800000,
+      "view_count": 2900000,
       "thumbnail": "https://i.ytimg.com/vi/1eVuGtAkY7E/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD3KWU8xp3mVk8K859G-uFFkaAx4Q&usqp=CCk",
       "thumbnails": [
         {
@@ -21652,7 +21853,7 @@
       "id": "0XdBGPVorp4",
       "link": "https://www.youtube.com/shorts/0XdBGPVorp4",
       "title": "Un apodo buenísimo 🥶 #hablandohuevadas",
-      "view_count": 902000,
+      "view_count": 908000,
       "thumbnail": "https://i.ytimg.com/vi/0XdBGPVorp4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDtdqLI_gUApTja7Y5RaHpYgTdO6w&usqp=CCk",
       "thumbnails": [
         {
@@ -21690,7 +21891,7 @@
       "id": "Voc03e5vCkg",
       "link": "https://www.youtube.com/shorts/Voc03e5vCkg",
       "title": "Llamativa y joven madre 🙃 #hablandohuevadas",
-      "view_count": 192000,
+      "view_count": 193000,
       "thumbnail": "https://i.ytimg.com/vi/Voc03e5vCkg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB3CEiHdY2bE7q1LyTOayo-aT-XhA&usqp=CCk",
       "thumbnails": [
         {
@@ -21709,7 +21910,7 @@
       "id": "shFRkI8n6fE",
       "link": "https://www.youtube.com/shorts/shFRkI8n6fE",
       "title": "Ricardo Mendoza en la bodega 🥶 #hablandohuevadas",
-      "view_count": 104000,
+      "view_count": 105000,
       "thumbnail": "https://i.ytimg.com/vi/shFRkI8n6fE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDzOBfjvkmZcZklgIhQ3Tv2ZzfUWA&usqp=CCk",
       "thumbnails": [
         {
@@ -21747,7 +21948,7 @@
       "id": "rGZOTC0uWDM",
       "link": "https://www.youtube.com/shorts/rGZOTC0uWDM",
       "title": "Una familia cachetona 😂 #hablandohuevadas",
-      "view_count": 946000,
+      "view_count": 963000,
       "thumbnail": "https://i.ytimg.com/vi/rGZOTC0uWDM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAW_ZnHsVkDbUAfk99DlbfTeBns_g&usqp=CCk",
       "thumbnails": [
         {
@@ -21918,7 +22119,7 @@
       "id": "BgedF9XcxdY",
       "link": "https://www.youtube.com/shorts/BgedF9XcxdY",
       "title": "Una ciudad con un terrible calor 💀 #hablandohuevadas",
-      "view_count": 312000,
+      "view_count": 313000,
       "thumbnail": "https://i.ytimg.com/vi/BgedF9XcxdY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDNFs6jK1KlK4L2vcvwIa4uZBc3Iw&usqp=CCk",
       "thumbnails": [
         {
@@ -21937,7 +22138,7 @@
       "id": "IkBiOPFtAsQ",
       "link": "https://www.youtube.com/shorts/IkBiOPFtAsQ",
       "title": "Quiere buscar el amor ❤️ 🔥 #hablandohuevadas",
-      "view_count": 144000,
+      "view_count": 145000,
       "thumbnail": "https://i.ytimg.com/vi/IkBiOPFtAsQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCGGpyadv1tjuWcIboR8GUYe4VdBg&usqp=CCk",
       "thumbnails": [
         {
@@ -21956,7 +22157,7 @@
       "id": "RAwTP2Hql90",
       "link": "https://www.youtube.com/shorts/RAwTP2Hql90",
       "title": "Las bolsas plásticas de antes 😪 #hablandohuevadas",
-      "view_count": 145000,
+      "view_count": 146000,
       "thumbnail": "https://i.ytimg.com/vi/RAwTP2Hql90/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCo5NxbtJAnG5kN2_6LaVQApNIN0A&usqp=CCk",
       "thumbnails": [
         {
@@ -21975,7 +22176,7 @@
       "id": "XgvRjh1mhHc",
       "link": "https://www.youtube.com/shorts/XgvRjh1mhHc",
       "title": "Llamativa y joven madre 🙃 #hablandohuevadas",
-      "view_count": 4400000,
+      "view_count": 4700000,
       "thumbnail": "https://i.ytimg.com/vi/XgvRjh1mhHc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAjFWCv4FTeFnaWPemLkuADFSwWbg&usqp=CCk",
       "thumbnails": [
         {
@@ -21994,7 +22195,7 @@
       "id": "qoMtfLruANw",
       "link": "https://www.youtube.com/shorts/qoMtfLruANw",
       "title": "El olor del Tocosh 💀 #hablandohuevadas",
-      "view_count": 4600000,
+      "view_count": 4800000,
       "thumbnail": "https://i.ytimg.com/vi/qoMtfLruANw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAuXP47w6TRHFwJeBeNxQF5pJLXNQ&usqp=CCk",
       "thumbnails": [
         {
@@ -22013,7 +22214,7 @@
       "id": "VIQXYg9GK80",
       "link": "https://www.youtube.com/shorts/VIQXYg9GK80",
       "title": "Jorge y Ricardo tienen miedo 💀 #hablandohuevadas",
-      "view_count": 2100000,
+      "view_count": 2200000,
       "thumbnail": "https://i.ytimg.com/vi/VIQXYg9GK80/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCSfjXnVJgQvTZVkkKdggIsLCwKMA&usqp=CCk",
       "thumbnails": [
         {
@@ -22051,7 +22252,7 @@
       "id": "l_njCN1vnkM",
       "link": "https://www.youtube.com/shorts/l_njCN1vnkM",
       "title": "Curado Ricardo Mendoza 🔥 #hablandohuevadas",
-      "view_count": 911000,
+      "view_count": 922000,
       "thumbnail": "https://i.ytimg.com/vi/l_njCN1vnkM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDtrRKbRchkbia_F6Q63gipJ-AlTg&usqp=CCk",
       "thumbnails": [
         {
@@ -22070,7 +22271,7 @@
       "id": "h33fm1UWgGM",
       "link": "https://www.youtube.com/shorts/h33fm1UWgGM",
       "title": "Pegada al celular 🤣 #hablandohuevadas",
-      "view_count": 2200000,
+      "view_count": 2300000,
       "thumbnail": "https://i.ytimg.com/vi/h33fm1UWgGM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCmKxqacNVgjKUagMHgeldS6f8r7w&usqp=CCk",
       "thumbnails": [
         {
@@ -22127,7 +22328,7 @@
       "id": "jzXCbUi6Rkg",
       "link": "https://www.youtube.com/shorts/jzXCbUi6Rkg",
       "title": "Jorge Luna en miniatura 😂 #hablandohuevadas",
-      "view_count": 5400000,
+      "view_count": 5700000,
       "thumbnail": "https://i.ytimg.com/vi/jzXCbUi6Rkg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCa-HYAcuSmb1NHEuMpuclEBRHB8Q&usqp=CCk",
       "thumbnails": [
         {
@@ -22374,7 +22575,7 @@
       "id": "i6mm0gwvW7g",
       "link": "https://www.youtube.com/shorts/i6mm0gwvW7g",
       "title": "Jorge Luna, romance puro 🥶 #hablandohuevadas",
-      "view_count": 916000,
+      "view_count": 917000,
       "thumbnail": "https://i.ytimg.com/vi/i6mm0gwvW7g/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAnVPCB7zIN1rqC3XftmOyy0bEF4w&usqp=CCk",
       "thumbnails": [
         {
@@ -22412,7 +22613,7 @@
       "id": "CGXExa1cEu8",
       "link": "https://www.youtube.com/shorts/CGXExa1cEu8",
       "title": "¡Esa canción no, Jorge Luna! 🤨 #hablandohuevadas",
-      "view_count": 982000,
+      "view_count": 983000,
       "thumbnail": "https://i.ytimg.com/vi/CGXExa1cEu8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCHcqJyjC6h9tX7gPau8Ybr5WQoCw&usqp=CCk",
       "thumbnails": [
         {
@@ -22450,7 +22651,7 @@
       "id": "TAkW2jbXvnY",
       "link": "https://www.youtube.com/shorts/TAkW2jbXvnY",
       "title": "El celular más resistente 😱 #hablandohuevadas",
-      "view_count": 5300000,
+      "view_count": 5400000,
       "thumbnail": "https://i.ytimg.com/vi/TAkW2jbXvnY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAG7dqDnuct5nZVJLKmAcDzkKQJXw&usqp=CCk",
       "thumbnails": [
         {
@@ -22469,7 +22670,7 @@
       "id": "D0qCCFVtKP4",
       "link": "https://www.youtube.com/shorts/D0qCCFVtKP4",
       "title": "Ella se hablaba con varios 😞 #hablandohuevadas",
-      "view_count": 831000,
+      "view_count": 832000,
       "thumbnail": "https://i.ytimg.com/vi/D0qCCFVtKP4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBc8rEQjyq3AE36baJ_CjHJPG4zNA&usqp=CCk",
       "thumbnails": [
         {
@@ -22507,7 +22708,7 @@
       "id": "DE_F9YrdnTw",
       "link": "https://www.youtube.com/shorts/DE_F9YrdnTw",
       "title": "La alumna favorita ❤️ 🔥 #hablandohuevadas",
-      "view_count": 5700000,
+      "view_count": 6000000,
       "thumbnail": "https://i.ytimg.com/vi/DE_F9YrdnTw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCAKnxAlYuugF2i2so82GApmNXoaQ&usqp=CCk",
       "thumbnails": [
         {
@@ -22545,7 +22746,7 @@
       "id": "pMvRUz8o8BU",
       "link": "https://www.youtube.com/shorts/pMvRUz8o8BU",
       "title": "Abuela de 99 8 años 🥶 #hablandohuevadas",
-      "view_count": 1900000,
+      "view_count": 2000000,
       "thumbnail": "https://i.ytimg.com/vi/pMvRUz8o8BU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDvVP3qAwo-lYsd6d8J1tr6qbiOiQ&usqp=CCk",
       "thumbnails": [
         {
@@ -22583,7 +22784,7 @@
       "id": "uGUEHDTKrzs",
       "link": "https://www.youtube.com/shorts/uGUEHDTKrzs",
       "title": "Venezolana en Ecuador 💀 #hablandohuevadas",
-      "view_count": 169000,
+      "view_count": 170000,
       "thumbnail": "https://i.ytimg.com/vi/uGUEHDTKrzs/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAWxhjUec9lt3MKj7ArdzJj8Kj1oA&usqp=CCk",
       "thumbnails": [
         {
@@ -22602,7 +22803,7 @@
       "id": "jofIiHmOS_Y",
       "link": "https://www.youtube.com/shorts/jofIiHmOS_Y",
       "title": "Una wawita de 180 meses 🙄 #hablandohuevadas",
-      "view_count": 699000,
+      "view_count": 700000,
       "thumbnail": "https://i.ytimg.com/vi/jofIiHmOS_Y/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCazB7DNrwyrmJRh4SOVDDQmE5tMw&usqp=CCk",
       "thumbnails": [
         {
@@ -22697,7 +22898,7 @@
       "id": "ZSfWY81ycv4",
       "link": "https://www.youtube.com/shorts/ZSfWY81ycv4",
       "title": "Bautizado como Ricardo Mendoza 🥶 #hablandohuevadas",
-      "view_count": 114000,
+      "view_count": 115000,
       "thumbnail": "https://i.ytimg.com/vi/ZSfWY81ycv4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDU0HU1RVSEFMGVX46biMcFbvmhtw&usqp=CCk",
       "thumbnails": [
         {
@@ -22792,7 +22993,7 @@
       "id": "aHmKHhILDkA",
       "link": "https://www.youtube.com/shorts/aHmKHhILDkA",
       "title": "ChatGPT y la comedia 🙄 #hablandohuevadas",
-      "view_count": 932000,
+      "view_count": 933000,
       "thumbnail": "https://i.ytimg.com/vi/aHmKHhILDkA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLADMphSdf5aSxhrpUiYekgUFfzaAw&usqp=CCk",
       "thumbnails": [
         {
@@ -22811,7 +23012,7 @@
       "id": "ZzvAjLWQzyc",
       "link": "https://www.youtube.com/shorts/ZzvAjLWQzyc",
       "title": "Un león la meó 💀 #hablandohuevadas",
-      "view_count": 236000,
+      "view_count": 237000,
       "thumbnail": "https://i.ytimg.com/vi/ZzvAjLWQzyc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLChHt-j26A0rH62WkdMykIYjA2Dsw&usqp=CCk",
       "thumbnails": [
         {
@@ -22887,7 +23088,7 @@
       "id": "K8wj1gPWfmY",
       "link": "https://www.youtube.com/shorts/K8wj1gPWfmY",
       "title": "Aspirante a comediante 🤣 #hablandohuevadas",
-      "view_count": 3600000,
+      "view_count": 3700000,
       "thumbnail": "https://i.ytimg.com/vi/K8wj1gPWfmY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCWQ5G0vMeChrP2fEgdfvltKBJcTQ&usqp=CCk",
       "thumbnails": [
         {
@@ -23096,7 +23297,7 @@
       "id": "EsP3DUXg-tM",
       "link": "https://www.youtube.com/shorts/EsP3DUXg-tM",
       "title": "Hijo oculta trágico secreto ⚠️ #hablandohuevadas",
-      "view_count": 6900000,
+      "view_count": 7300000,
       "thumbnail": "https://i.ytimg.com/vi/EsP3DUXg-tM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLABZBTjtP2JE-xfN2c9pW-ckMUP9Q&usqp=CCk",
       "thumbnails": [
         {
@@ -23153,7 +23354,7 @@
       "id": "xxMDh5kbYlg",
       "link": "https://www.youtube.com/shorts/xxMDh5kbYlg",
       "title": "Esposita con el seguridad 😳 #hablandohuevadas",
-      "view_count": 760000,
+      "view_count": 761000,
       "thumbnail": "https://i.ytimg.com/vi/xxMDh5kbYlg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCz8ZYtGSlUlyJowvHS6cuiZbMY9Q&usqp=CCk",
       "thumbnails": [
         {
@@ -23191,7 +23392,7 @@
       "id": "bslBdA3NVCU",
       "link": "https://www.youtube.com/shorts/bslBdA3NVCU",
       "title": "Óvulo inútil 😂 #hablandohuevadas",
-      "view_count": 134000,
+      "view_count": 135000,
       "thumbnail": "https://i.ytimg.com/vi/bslBdA3NVCU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCWjrAk0Br01VZ4AaQ7hvb6wQgAPQ&usqp=CCk",
       "thumbnails": [
         {
@@ -23305,7 +23506,7 @@
       "id": "1mGythUG7cs",
       "link": "https://www.youtube.com/shorts/1mGythUG7cs",
       "title": "¡Qué fértil, señor Jorge Luna! 😎 #hablandohuevadas",
-      "view_count": 145000,
+      "view_count": 146000,
       "thumbnail": "https://i.ytimg.com/vi/1mGythUG7cs/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDynF2fFYf4rLhqeLMwJchw4lUTLQ&usqp=CCk",
       "thumbnails": [
         {
@@ -23495,7 +23696,7 @@
       "id": "bARkbTbz5vc",
       "link": "https://www.youtube.com/shorts/bARkbTbz5vc",
       "title": "Un hombre real bebe leche 😗 #hablandohuevadas",
-      "view_count": 162000,
+      "view_count": 163000,
       "thumbnail": "https://i.ytimg.com/vi/bARkbTbz5vc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD2EnyFMICz4YP92jyYa2piHKSNMw&usqp=CCk",
       "thumbnails": [
         {
@@ -23742,7 +23943,7 @@
       "id": "eUjdey4MAvU",
       "link": "https://www.youtube.com/shorts/eUjdey4MAvU",
       "title": "Ecuatoriano ligón 🔥 #hablandohuevadas",
-      "view_count": 5200000,
+      "view_count": 5300000,
       "thumbnail": "https://i.ytimg.com/vi/eUjdey4MAvU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCHgUkPXkEobpUPhk0R1ueGbJa6RQ&usqp=CCk",
       "thumbnails": [
         {
@@ -23913,7 +24114,7 @@
       "id": "vb1XUa8PZE4",
       "link": "https://www.youtube.com/shorts/vb1XUa8PZE4",
       "title": "Italiano al volante en Perú 💀 #hablandohuevadas",
-      "view_count": 3900000,
+      "view_count": 4100000,
       "thumbnail": "https://i.ytimg.com/vi/vb1XUa8PZE4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAra5lCHiSTIKMzagss9B-ezav13Q&usqp=CCk",
       "thumbnails": [
         {
@@ -23932,7 +24133,7 @@
       "id": "2N5KdE7wd4c",
       "link": "https://www.youtube.com/shorts/2N5KdE7wd4c",
       "title": "Un raro sistema de salud ⚠️ #hablandohuevadas",
-      "view_count": 3200000,
+      "view_count": 3400000,
       "thumbnail": "https://i.ytimg.com/vi/2N5KdE7wd4c/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB0HPKG_Ija6nRbd29pwt6z30j5_w&usqp=CCk",
       "thumbnails": [
         {
@@ -24027,7 +24228,7 @@
       "id": "2RUfvmdA4Vk",
       "link": "https://www.youtube.com/shorts/2RUfvmdA4Vk",
       "title": "118 mil USD y Jorge Luna es tuyo 😳 #hablandohuevadas",
-      "view_count": 92000,
+      "view_count": 93000,
       "thumbnail": "https://i.ytimg.com/vi/2RUfvmdA4Vk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC8sLV8Tzo8uELGihsuWmKuKELV2w&usqp=CCk",
       "thumbnails": [
         {
@@ -24084,7 +24285,7 @@
       "id": "ux3a5QJRHi4",
       "link": "https://www.youtube.com/shorts/ux3a5QJRHi4",
       "title": "¡Los hijastros no heredan! ⚠️️ #hablandohuevadas",
-      "view_count": 369000,
+      "view_count": 370000,
       "thumbnail": "https://i.ytimg.com/vi/ux3a5QJRHi4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDCMjjpFFIpyZSoEEdvy_kzTn3TTQ&usqp=CCk",
       "thumbnails": [
         {
@@ -24217,7 +24418,7 @@
       "id": "TpGFKtdxXuw",
       "link": "https://www.youtube.com/shorts/TpGFKtdxXuw",
       "title": "El mayor temor de Jorge Luna ⚠️ #hablandohuevadas",
-      "view_count": 574000,
+      "view_count": 575000,
       "thumbnail": "https://i.ytimg.com/vi/TpGFKtdxXuw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBlYfc0pSZ6ZxV_gdfox4p4DTt35Q&usqp=CCk",
       "thumbnails": [
         {
@@ -24426,7 +24627,7 @@
       "id": "HyooWdB1lm8",
       "link": "https://www.youtube.com/shorts/HyooWdB1lm8",
       "title": "¡Hola, qué tal! Mi papá me dejó 🥶 #hablandohuevadas",
-      "view_count": 6100000,
+      "view_count": 6300000,
       "thumbnail": "https://i.ytimg.com/vi/HyooWdB1lm8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDgTpORMpyjYsw3XH7gVp7fVL4SfA&usqp=CCk",
       "thumbnails": [
         {
@@ -24730,7 +24931,7 @@
       "id": "rWQr82PzGY4",
       "link": "https://www.youtube.com/shorts/rWQr82PzGY4",
       "title": "¡Déjame terminar, Jorge Luna! 🤬 #hablandohuevadas",
-      "view_count": 142000,
+      "view_count": 143000,
       "thumbnail": "https://i.ytimg.com/vi/rWQr82PzGY4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDORKnAGsnvd-xw_j6gBstkCzV6jw&usqp=CCk",
       "thumbnails": [
         {
@@ -24844,7 +25045,7 @@
       "id": "7uBVu5Nxmeg",
       "link": "https://www.youtube.com/shorts/7uBVu5Nxmeg",
       "title": "Hijo e hijastro, ¿igual trato? 🥶 #hablandohuevadas",
-      "view_count": 328000,
+      "view_count": 329000,
       "thumbnail": "https://i.ytimg.com/vi/7uBVu5Nxmeg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAyXsyZ2Hk709FuqzpE4tmyNdifrg&usqp=CCk",
       "thumbnails": [
         {
@@ -24863,7 +25064,7 @@
       "id": "i71IhvxmfbY",
       "link": "https://www.youtube.com/shorts/i71IhvxmfbY",
       "title": "Su ex quiere volver con ella ⛔ #hablandohuevadas",
-      "view_count": 3300000,
+      "view_count": 3400000,
       "thumbnail": "https://i.ytimg.com/vi/i71IhvxmfbY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCBdUk_8dvKubi44ztS1BatxPVfzg&usqp=CCk",
       "thumbnails": [
         {
@@ -24939,7 +25140,7 @@
       "id": "axFOEwHA8Qo",
       "link": "https://www.youtube.com/shorts/axFOEwHA8Qo",
       "title": "Perdón Bolivia, Chile nos obligó 🥶 #hablandohuevadas",
-      "view_count": 437000,
+      "view_count": 438000,
       "thumbnail": "https://i.ytimg.com/vi/axFOEwHA8Qo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBYl27PVZ84umwZ8a1qKuuydS6xAQ&usqp=CCk",
       "thumbnails": [
         {
@@ -25167,7 +25368,7 @@
       "id": "OjsxwKSDwS4",
       "link": "https://www.youtube.com/shorts/OjsxwKSDwS4",
       "title": "Teme por el trabajo de su papá 😂 #hablandohuevadas",
-      "view_count": 2600000,
+      "view_count": 2700000,
       "thumbnail": "https://i.ytimg.com/vi/OjsxwKSDwS4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCN90HTL4V7tMGgG6-HxTgG1fD3aQ&usqp=CCk",
       "thumbnails": [
         {
@@ -25338,7 +25539,7 @@
       "id": "Gi2DtvakAWg",
       "link": "https://www.youtube.com/shorts/Gi2DtvakAWg",
       "title": "Ricardo Mendoza pica cebolla a mano 🖐️ #hablandohuevadas",
-      "view_count": 165000,
+      "view_count": 166000,
       "thumbnail": "https://i.ytimg.com/vi/Gi2DtvakAWg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDjLluXmtv_ap4EY7lLP5wY5iC-0A&usqp=CCk",
       "thumbnails": [
         {
@@ -25547,7 +25748,7 @@
       "id": "T4KlNHLfoa4",
       "link": "https://www.youtube.com/shorts/T4KlNHLfoa4",
       "title": "El mejor papá que puede haber 🥺 #hablandohuevadas",
-      "view_count": 3900000,
+      "view_count": 4200000,
       "thumbnail": "https://i.ytimg.com/vi/T4KlNHLfoa4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBWtLYAoWUL6XZvlFO0LWLr-Lcj-Q&usqp=CCk",
       "thumbnails": [
         {
@@ -25813,7 +26014,7 @@
       "id": "aoldXIO_ctI",
       "link": "https://www.youtube.com/shorts/aoldXIO_ctI",
       "title": "¡Que le duela a la embarazada! 🤬 #hablandohuevadas",
-      "view_count": 221000,
+      "view_count": 222000,
       "thumbnail": "https://i.ytimg.com/vi/aoldXIO_ctI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA3tW65h1bd6q1fZhevzWXMRNNTOQ&usqp=CCk",
       "thumbnails": [
         {
@@ -25832,7 +26033,7 @@
       "id": "vyuyfTZp1LQ",
       "link": "https://www.youtube.com/shorts/vyuyfTZp1LQ",
       "title": "Canadiense y familia peruana 😗 #hablandohuevadas",
-      "view_count": 7000000,
+      "view_count": 7100000,
       "thumbnail": "https://i.ytimg.com/vi/vyuyfTZp1LQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLARAoqNsKbedIon59vnpnfUWmxEeQ&usqp=CCk",
       "thumbnails": [
         {
@@ -26250,7 +26451,7 @@
       "id": "lAzdPX4UhoY",
       "link": "https://www.youtube.com/shorts/lAzdPX4UhoY",
       "title": "Dibujo para Jorge Luna 🥶 #hablandohuevadas",
-      "view_count": 286000,
+      "view_count": 287000,
       "thumbnail": "https://i.ytimg.com/vi/lAzdPX4UhoY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAbb3PL7RlMGnJeqDdVS5ge09xvqw&usqp=CCk",
       "thumbnails": [
         {
@@ -26497,7 +26698,7 @@
       "id": "VuJHSSuEdKw",
       "link": "https://www.youtube.com/shorts/VuJHSSuEdKw",
       "title": "¿Vivirá Jorge más que su suegra? ⚠️ #hablandohuevadas",
-      "view_count": 713000,
+      "view_count": 714000,
       "thumbnail": "https://i.ytimg.com/vi/VuJHSSuEdKw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBR--0_fKj56KeOL6L62ZXes0oPdg&usqp=CCk",
       "thumbnails": [
         {
@@ -26554,7 +26755,7 @@
       "id": "RbIclvyyNqo",
       "link": "https://www.youtube.com/shorts/RbIclvyyNqo",
       "title": "Vacas sin derechos 🥶 #hablandohuevadas",
-      "view_count": 4800000,
+      "view_count": 5000000,
       "thumbnail": "https://i.ytimg.com/vi/RbIclvyyNqo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDOYn2yXBX_5CMyvwvuRDsRisDkAg&usqp=CCk",
       "thumbnails": [
         {
@@ -26934,7 +27135,7 @@
       "id": "Ukcq5lkwkak",
       "link": "https://www.youtube.com/shorts/Ukcq5lkwkak",
       "title": "Joven no sabe nada de la vida 🤨 #hablandohuevadas",
-      "view_count": 3600000,
+      "view_count": 3700000,
       "thumbnail": "https://i.ytimg.com/vi/Ukcq5lkwkak/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDxkapfP-QEg_U7I7W60cSrW_JSLA&usqp=CCk",
       "thumbnails": [
         {
@@ -27143,7 +27344,7 @@
       "id": "vMB5UKc6zI0",
       "link": "https://www.youtube.com/shorts/vMB5UKc6zI0",
       "title": "Juanita harta de Jorge Luna 😠 #hablandohuevadas",
-      "view_count": 745000,
+      "view_count": 746000,
       "thumbnail": "https://i.ytimg.com/vi/vMB5UKc6zI0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBpL-GO10sQwBM3GjVGRJ_E2coqjg&usqp=CCk",
       "thumbnails": [
         {
@@ -27200,7 +27401,7 @@
       "id": "yFGsNL5kMmk",
       "link": "https://www.youtube.com/shorts/yFGsNL5kMmk",
       "title": "¡Ya, pues, Ricardo Mendoza! 🔥 #hablandohuevadas",
-      "view_count": 476000,
+      "view_count": 477000,
       "thumbnail": "https://i.ytimg.com/vi/yFGsNL5kMmk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAdKcR94r1288YvXssJT81RmTPJCw&usqp=CCk",
       "thumbnails": [
         {
@@ -27485,7 +27686,7 @@
       "id": "esmrmeZj-SM",
       "link": "https://www.youtube.com/shorts/esmrmeZj-SM",
       "title": "Jorge Luna y abuela de 100 años 🥶 #hablandohuevadas",
-      "view_count": 183000,
+      "view_count": 184000,
       "thumbnail": "https://i.ytimg.com/vi/esmrmeZj-SM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDlTuzgYclAw-1e6hmKOcA4caxdcA&usqp=CCk",
       "thumbnails": [
         {
@@ -27542,7 +27743,7 @@
       "id": "owVm94--IIk",
       "link": "https://www.youtube.com/shorts/owVm94--IIk",
       "title": "Qué pesadas que son 🙄 #hablandohuevadas",
-      "view_count": 8000000,
+      "view_count": 8200000,
       "thumbnail": "https://i.ytimg.com/vi/owVm94--IIk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBi8Ou7aF49CV2hkD6vwplTySuebQ&usqp=CCk",
       "thumbnails": [
         {
@@ -27922,7 +28123,7 @@
       "id": "T43Biox7Huk",
       "link": "https://www.youtube.com/shorts/T43Biox7Huk",
       "title": "Jorge Luna no quiere guías 🤬 #hablandohuevadas",
-      "view_count": 431000,
+      "view_count": 432000,
       "thumbnail": "https://i.ytimg.com/vi/T43Biox7Huk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAI2s08S2fTxF-JV1fuqqVfNMz2SA&usqp=CCk",
       "thumbnails": [
         {
@@ -28017,7 +28218,7 @@
       "id": "V6rD6YXQ_sg",
       "link": "https://www.youtube.com/shorts/V6rD6YXQ_sg",
       "title": "Jorge Luna y el loquito ⚠️ #hablandohuevadas",
-      "view_count": 807000,
+      "view_count": 808000,
       "thumbnail": "https://i.ytimg.com/vi/V6rD6YXQ_sg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDogvAn-QbDFXQMzxmUIM_Fz1hn0A&usqp=CCk",
       "thumbnails": [
         {
@@ -28169,7 +28370,7 @@
       "id": "07MqRrjD5pw",
       "link": "https://www.youtube.com/shorts/07MqRrjD5pw",
       "title": "Qué músculos y qué voz 🤣 #hablandohuevadas",
-      "view_count": 9800000,
+      "view_count": 10000000,
       "thumbnail": "https://i.ytimg.com/vi/07MqRrjD5pw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCQGvsTBU11yXKWrPdmONeF-VZGTA&usqp=CCk",
       "thumbnails": [
         {
@@ -28207,7 +28408,7 @@
       "id": "mBvASYsm2mc",
       "link": "https://www.youtube.com/shorts/mBvASYsm2mc",
       "title": "Peruana y el aseo en España ⚠️️ #hablandohuevadas",
-      "view_count": 506000,
+      "view_count": 507000,
       "thumbnail": "https://i.ytimg.com/vi/mBvASYsm2mc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCzWvTZ5Fih23vnZRcxJ7gdl6kUSA&usqp=CCk",
       "thumbnails": [
         {
@@ -28397,7 +28598,7 @@
       "id": "zKuaZuAjsB0",
       "link": "https://www.youtube.com/shorts/zKuaZuAjsB0",
       "title": "Sueco con peruana 🥶 #hablandohuevadas",
-      "view_count": 8300000,
+      "view_count": 8600000,
       "thumbnail": "https://i.ytimg.com/vi/zKuaZuAjsB0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCF7OW07IVEmCgxIMTtsogzlOzsRg&usqp=CCk",
       "thumbnails": [
         {
@@ -28435,7 +28636,7 @@
       "id": "ddX8_yHBqII",
       "link": "https://www.youtube.com/shorts/ddX8_yHBqII",
       "title": "Mi esposa quiere romanticismo ⚠️ #hablandohuevadas",
-      "view_count": 117000,
+      "view_count": 118000,
       "thumbnail": "https://i.ytimg.com/vi/ddX8_yHBqII/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC_e7Uw9mbfForFawBT-M_uhHIFkg&usqp=CCk",
       "thumbnails": [
         {
@@ -28606,7 +28807,7 @@
       "id": "HaEIF29hHnw",
       "link": "https://www.youtube.com/shorts/HaEIF29hHnw",
       "title": "Ricardo Mendoza va a ser papá #hablandohuevadas",
-      "view_count": 450000,
+      "view_count": 451000,
       "thumbnail": "https://i.ytimg.com/vi/HaEIF29hHnw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDG_RFU9xFU6wGUW2xvw7ti7YutIg&usqp=CCk",
       "thumbnails": [
         {
@@ -28625,7 +28826,7 @@
       "id": "Q9m8E-g27lY",
       "link": "https://www.youtube.com/shorts/Q9m8E-g27lY",
       "title": "Ya no hay fuego entre ellos 🥶 #hablandohuevadas",
-      "view_count": 10000000,
+      "view_count": 11000000,
       "thumbnail": "https://i.ytimg.com/vi/Q9m8E-g27lY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA6DJVn22nl5UY41nnlJ3AZq5PZzg&usqp=CCk",
       "thumbnails": [
         {
@@ -28663,7 +28864,7 @@
       "id": "N0wkmy_fwYY",
       "link": "https://www.youtube.com/shorts/N0wkmy_fwYY",
       "title": "Jorge Luna siente frío en el baño 🥶 #hablandohuevadas",
-      "view_count": 289000,
+      "view_count": 290000,
       "thumbnail": "https://i.ytimg.com/vi/N0wkmy_fwYY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCCj8kXxRGIRTxgtrk7NDbbY2NFuA&usqp=CCk",
       "thumbnails": [
         {
@@ -28929,7 +29130,7 @@
       "id": "lSakJT4ycOA",
       "link": "https://www.youtube.com/shorts/lSakJT4ycOA",
       "title": "Juanita electricista 😂 #hablandohuevadas",
-      "view_count": 216000,
+      "view_count": 217000,
       "thumbnail": "https://i.ytimg.com/vi/lSakJT4ycOA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBX7WbRSpTdjbuTBqwuMneOJiaWpQ&usqp=CCk",
       "thumbnails": [
         {
@@ -29176,7 +29377,7 @@
       "id": "fB6qsADWdu4",
       "link": "https://www.youtube.com/shorts/fB6qsADWdu4",
       "title": "Lo operarán y tiene miedo 🥺 #hablandohuevadas",
-      "view_count": 5400000,
+      "view_count": 5700000,
       "thumbnail": "https://i.ytimg.com/vi/fB6qsADWdu4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDED8-qtdEUzD7rPzAFA53_MqoZuA&usqp=CCk",
       "thumbnails": [
         {
@@ -29252,7 +29453,7 @@
       "id": "t8paH-tsksY",
       "link": "https://www.youtube.com/shorts/t8paH-tsksY",
       "title": "Ella quiere un autógrafo 🥺 #hablandohuevadas",
-      "view_count": 8500000,
+      "view_count": 8700000,
       "thumbnail": "https://i.ytimg.com/vi/t8paH-tsksY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBxyidDPNGoUy0Br4kr3S5fLB52_w&usqp=CCk",
       "thumbnails": [
         {
@@ -29442,7 +29643,7 @@
       "id": "CYgquZemS_I",
       "link": "https://www.youtube.com/shorts/CYgquZemS_I",
       "title": "Ricardo Mendoza idea tributaria 🤣 #hablandohuevadas",
-      "view_count": 122000,
+      "view_count": 123000,
       "thumbnail": "https://i.ytimg.com/vi/CYgquZemS_I/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDXrXS3_yXo09JQZz7xpchEahf4wA&usqp=CCk",
       "thumbnails": [
         {
@@ -29765,7 +29966,7 @@
       "id": "Ukp4zu3vdK0",
       "link": "https://www.youtube.com/shorts/Ukp4zu3vdK0",
       "title": "Un Power Ranger plateado 😳 #hablandohuevadas",
-      "view_count": 5000000,
+      "view_count": 5100000,
       "thumbnail": "https://i.ytimg.com/vi/Ukp4zu3vdK0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCIDaO7ExXOKLdde87TdIS3FThxEw&usqp=CCk",
       "thumbnails": [
         {
@@ -29822,7 +30023,7 @@
       "id": "vUIw0CqHvLI",
       "link": "https://www.youtube.com/shorts/vUIw0CqHvLI",
       "title": "MrBeast e Ibai Llanos 🤨 #hablandohuevadas",
-      "view_count": 354000,
+      "view_count": 355000,
       "thumbnail": "https://i.ytimg.com/vi/vUIw0CqHvLI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAc9ilfAgJq1mTnbI-ouJ44U1V31Q&usqp=CCk",
       "thumbnails": [
         {
@@ -30411,7 +30612,7 @@
       "id": "drfiF9RMJFU",
       "link": "https://www.youtube.com/shorts/drfiF9RMJFU",
       "title": "¡EL TOUR MUNDIAL! 🇫🇷FRANCIA🇫🇷 20 SEP/Torre Eiffel.",
-      "view_count": 119000,
+      "view_count": 120000,
       "thumbnail": "https://i.ytimg.com/vi/drfiF9RMJFU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBisI5BsiLAT_tzbO0MritP3HdA3A&usqp=CCk",
       "thumbnails": [
         {
@@ -30734,7 +30935,7 @@
       "id": "shTiDXGM6Ac",
       "link": "https://www.youtube.com/shorts/shTiDXGM6Ac",
       "title": "¡No soy! ¡Soy hombre! 😠 #hablandohuevadas",
-      "view_count": 625000,
+      "view_count": 626000,
       "thumbnail": "https://i.ytimg.com/vi/shTiDXGM6Ac/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCdrzqBDEifdvl-unTs2_BRHLzYZA&usqp=CCk",
       "thumbnails": [
         {
@@ -30791,7 +30992,7 @@
       "id": "Ep5188jVKBw",
       "link": "https://www.youtube.com/shorts/Ep5188jVKBw",
       "title": "Jorge Luna no gusta de sorpresas 😶 #hablandohuevadas",
-      "view_count": 337000,
+      "view_count": 338000,
       "thumbnail": "https://i.ytimg.com/vi/Ep5188jVKBw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC61KKjmih2MOHW42onal-1jaIn2A&usqp=CCk",
       "thumbnails": [
         {
@@ -30867,7 +31068,7 @@
       "id": "ru4VWSSOgr0",
       "link": "https://www.youtube.com/shorts/ru4VWSSOgr0",
       "title": "La más chismosa del mundo ⛔ #hablandohuevadas",
-      "view_count": 8100000,
+      "view_count": 8900000,
       "thumbnail": "https://i.ytimg.com/vi/ru4VWSSOgr0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB3mrAgY95-4ve_s7VVGZQhWYOkNw&usqp=CCk",
       "thumbnails": [
         {
@@ -31057,7 +31258,7 @@
       "id": "UMT9uc3B4Pg",
       "link": "https://www.youtube.com/shorts/UMT9uc3B4Pg",
       "title": "Jorge Luna a juicio contra él mismo ⚠️ #hablandohuevadas",
-      "view_count": 712000,
+      "view_count": 713000,
       "thumbnail": "https://i.ytimg.com/vi/UMT9uc3B4Pg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCu7l0A719_xOKcogtQYWik3Pis6g&usqp=CCk",
       "thumbnails": [
         {
@@ -31152,7 +31353,7 @@
       "id": "smXhhsacEdA",
       "link": "https://www.youtube.com/shorts/smXhhsacEdA",
       "title": "Cual mosquito contra la malla 😳 #hablandohuevadas",
-      "view_count": 48000,
+      "view_count": 49000,
       "thumbnail": "https://i.ytimg.com/vi/smXhhsacEdA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBqX4xyCI_Li8b6A0K1UL78BMYB9Q&usqp=CCk",
       "thumbnails": [
         {
@@ -31247,7 +31448,7 @@
       "id": "IernXC-R8HY",
       "link": "https://www.youtube.com/shorts/IernXC-R8HY",
       "title": "Se lleva muy bien con el suegro 😳 #hablandohuevadas",
-      "view_count": 5700000,
+      "view_count": 5800000,
       "thumbnail": "https://i.ytimg.com/vi/IernXC-R8HY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBbZIt7AH13US7TTwtRw0NGdS-iWg&usqp=CCk",
       "thumbnails": [
         {
@@ -31304,7 +31505,7 @@
       "id": "DWuqTo6qvcI",
       "link": "https://www.youtube.com/shorts/DWuqTo6qvcI",
       "title": "Ricardo Mendoza prueba Tocosh 💀 #hablandohuevadas",
-      "view_count": 438000,
+      "view_count": 439000,
       "thumbnail": "https://i.ytimg.com/vi/DWuqTo6qvcI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDschKGUggjdQrT3lC2nyyOkwON6Q&usqp=CCk",
       "thumbnails": [
         {
@@ -31456,7 +31657,7 @@
       "id": "pdqkVXvRHe8",
       "link": "https://www.youtube.com/shorts/pdqkVXvRHe8",
       "title": "¿Starbucks es de pudientes? 🤨 #hablandohuevadas",
-      "view_count": 122000,
+      "view_count": 123000,
       "thumbnail": "https://i.ytimg.com/vi/pdqkVXvRHe8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAliEFpInbK-z_-Tv3pFUxzAvE8ag&usqp=CCk",
       "thumbnails": [
         {
@@ -31513,7 +31714,7 @@
       "id": "xmG-rJb6IvI",
       "link": "https://www.youtube.com/shorts/xmG-rJb6IvI",
       "title": "¡Qué peinados son estos! 😂 #hablandohuevadas",
-      "view_count": 644000,
+      "view_count": 647000,
       "thumbnail": "https://i.ytimg.com/vi/xmG-rJb6IvI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLACeqD78tczsR56Y3ZydjKGkS3xGQ&usqp=CCk",
       "thumbnails": [
         {
@@ -31589,7 +31790,7 @@
       "id": "1r1tHp9qVSw",
       "link": "https://www.youtube.com/shorts/1r1tHp9qVSw",
       "title": "Mamá de Jorge Luna se quiebra 🥶 #hablandohuevadas",
-      "view_count": 438000,
+      "view_count": 439000,
       "thumbnail": "https://i.ytimg.com/vi/1r1tHp9qVSw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBfBkHbym7ULxarryKiIAwdDNIF0g&usqp=CCk",
       "thumbnails": [
         {
@@ -31798,7 +31999,7 @@
       "id": "xkLbXIdzkRg",
       "link": "https://www.youtube.com/shorts/xkLbXIdzkRg",
       "title": "Ucranianos adoptados ⚠️ #hablandohuevadas",
-      "view_count": 6400000,
+      "view_count": 6800000,
       "thumbnail": "https://i.ytimg.com/vi/xkLbXIdzkRg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC8mAtlt4PzHbtOSfsG66VLUYfKEw&usqp=CCk",
       "thumbnails": [
         {
@@ -32615,7 +32816,7 @@
       "id": "LJsxJ0GYERs",
       "link": "https://www.youtube.com/shorts/LJsxJ0GYERs",
       "title": "Gemelas peques 🥺 #hablandohuevadas",
-      "view_count": 14000000,
+      "view_count": 15000000,
       "thumbnail": "https://i.ytimg.com/vi/LJsxJ0GYERs/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAYU5TXdcZd4ZVjTJsCmNT2jeQYmA&usqp=CCk",
       "thumbnails": [
         {
@@ -32786,7 +32987,7 @@
       "id": "MVWQv1QiyT4",
       "link": "https://www.youtube.com/shorts/MVWQv1QiyT4",
       "title": "¡Mi madre no dijo eso! 😒 #hablandohuevadas",
-      "view_count": 155000,
+      "view_count": 156000,
       "thumbnail": "https://i.ytimg.com/vi/MVWQv1QiyT4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBqVrsuCjNdstsYGtpOoEochvnsVw&usqp=CCk",
       "thumbnails": [
         {
@@ -33223,7 +33424,7 @@
       "id": "_TePr33IOqk",
       "link": "https://www.youtube.com/shorts/_TePr33IOqk",
       "title": "Juanita no le cree a Jorge Luna 🙄 #hablandohuevadas",
-      "view_count": 682000,
+      "view_count": 683000,
       "thumbnail": "https://i.ytimg.com/vi/_TePr33IOqk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBdsP-97rTw1jDJUJkhuHo3fLwL-Q&usqp=CCk",
       "thumbnails": [
         {
@@ -33698,7 +33899,7 @@
       "id": "h2A4_5UaBEo",
       "link": "https://www.youtube.com/shorts/h2A4_5UaBEo",
       "title": "Juanita habla en inglés 😂 #hablandohuevadas",
-      "view_count": 892000,
+      "view_count": 894000,
       "thumbnail": "https://i.ytimg.com/vi/h2A4_5UaBEo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLANwBcLSgbJqfbv38yQhs3LD0c_rg&usqp=CCk",
       "thumbnails": [
         {
@@ -34344,7 +34545,7 @@
       "id": "zoYVP3de5Yg",
       "link": "https://www.youtube.com/shorts/zoYVP3de5Yg",
       "title": "No para de tragar saliva nunca 🤨 #hablandohuevadas",
-      "view_count": 9700000,
+      "view_count": 10000000,
       "thumbnail": "https://i.ytimg.com/vi/zoYVP3de5Yg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAf2cvMMUeSim7H0MYPuSRd0DHxNg&usqp=CCk",
       "thumbnails": [
         {
@@ -34610,7 +34811,7 @@
       "id": "RCefxyTY3vM",
       "link": "https://www.youtube.com/shorts/RCefxyTY3vM",
       "title": "Jorge Luna trollea a Juanita 🥶 #hablandohuevadas",
-      "view_count": 352000,
+      "view_count": 353000,
       "thumbnail": "https://i.ytimg.com/vi/RCefxyTY3vM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCL0GgPKytzfgc2u70JcpT4Skp09g&usqp=CCk",
       "thumbnails": [
         {
@@ -35123,7 +35324,7 @@
       "id": "MJ3JfuVBilI",
       "link": "https://www.youtube.com/shorts/MJ3JfuVBilI",
       "title": "Selección de Hockey peruana 🥶 #hablandohuevadas",
-      "view_count": 340000,
+      "view_count": 341000,
       "thumbnail": "https://i.ytimg.com/vi/MJ3JfuVBilI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCnHKQx6Tb0pJjMFkatGpgQ6RSRRg&usqp=CCk",
       "thumbnails": [
         {
@@ -36244,7 +36445,7 @@
       "id": "iC5ECRgn37M",
       "link": "https://www.youtube.com/shorts/iC5ECRgn37M",
       "title": "Padrastro se topa con el papá 😂 #hablandohuevadas",
-      "view_count": 76000,
+      "view_count": 77000,
       "thumbnail": "https://i.ytimg.com/vi/iC5ECRgn37M/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAp60lOGo_BvPqIDmZXHD0iYLS-9A&usqp=CCk",
       "thumbnails": [
         {
@@ -36301,7 +36502,7 @@
       "id": "FTiQNoUP5aE",
       "link": "https://www.youtube.com/shorts/FTiQNoUP5aE",
       "title": "Muda con pésimo traductor 😂 #hablandohuevadas",
-      "view_count": 19000000,
+      "view_count": 20000000,
       "thumbnail": "https://i.ytimg.com/vi/FTiQNoUP5aE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDYgbWvyF090DoMr2rJAP0QnkqzpA&usqp=CCk",
       "thumbnails": [
         {
@@ -36681,7 +36882,7 @@
       "id": "8wbwGbPx24c",
       "link": "https://www.youtube.com/shorts/8wbwGbPx24c",
       "title": "Juanita se lleva insumos de Jorge 😂 #hablandohuevadas",
-      "view_count": 82000,
+      "view_count": 83000,
       "thumbnail": "https://i.ytimg.com/vi/8wbwGbPx24c/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD5Sg1qa6Mdztvzdr7Oj6DbFd7Gqw&usqp=CCk",
       "thumbnails": [
         {
@@ -36966,7 +37167,7 @@
       "id": "zmmSfHCjoSo",
       "link": "https://www.youtube.com/shorts/zmmSfHCjoSo",
       "title": "El chico talento colmó mi paciencia 😪 #hablandohuevadas",
-      "view_count": 15000000,
+      "view_count": 16000000,
       "thumbnail": "https://i.ytimg.com/vi/zmmSfHCjoSo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDcih2M025aicIRsEa_cL6kedCo4w&usqp=CCk",
       "thumbnails": [
         {
@@ -37061,7 +37262,7 @@
       "id": "NWWThr8zyK8",
       "link": "https://www.youtube.com/shorts/NWWThr8zyK8",
       "title": "50 años juntos y bien activos 😎 #hablandohuevadas",
-      "view_count": 9500000,
+      "view_count": 9800000,
       "thumbnail": "https://i.ytimg.com/vi/NWWThr8zyK8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBD3PnZEVrfNMUzawS742XpSzP0XA&usqp=CCk",
       "thumbnails": [
         {
@@ -37080,7 +37281,7 @@
       "id": "J6rdfAzW-0s",
       "link": "https://www.youtube.com/shorts/J6rdfAzW-0s",
       "title": "Juanita guerrillera 🥶 #hablandohuevadas",
-      "view_count": 217000,
+      "view_count": 218000,
       "thumbnail": "https://i.ytimg.com/vi/J6rdfAzW-0s/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDiYpio6jcM7fYAf4w2ns6whdF3ng&usqp=CCk",
       "thumbnails": [
         {
@@ -37118,7 +37319,7 @@
       "id": "gN3GX11teA4",
       "link": "https://www.youtube.com/shorts/gN3GX11teA4",
       "title": "Jorge Luna muy frío con Eva Ayllón 🥶 #hablandohuevadas",
-      "view_count": 420000,
+      "view_count": 421000,
       "thumbnail": "https://i.ytimg.com/vi/gN3GX11teA4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDBP7gXRYDqdp4RdHgEC4qThG6JiA&usqp=CCk",
       "thumbnails": [
         {
@@ -37270,7 +37471,7 @@
       "id": "lZM1ThUKQag",
       "link": "https://www.youtube.com/shorts/lZM1ThUKQag",
       "title": "Cómo duerme la esposa 🙄 #hablandohuevadas",
-      "view_count": 243000,
+      "view_count": 244000,
       "thumbnail": "https://i.ytimg.com/vi/lZM1ThUKQag/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD5n6X4nSAxXnAFhYk22q4VCfoYpg&usqp=CCk",
       "thumbnails": [
         {
@@ -37384,7 +37585,7 @@
       "id": "8Tg2H1cds3o",
       "link": "https://www.youtube.com/shorts/8Tg2H1cds3o",
       "title": "La Costanera de Argentina 😯 #hablandohuevadas",
-      "view_count": 94000,
+      "view_count": 95000,
       "thumbnail": "https://i.ytimg.com/vi/8Tg2H1cds3o/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCrWdP75jps-yAgsETXUIoqF2Wlbw&usqp=CCk",
       "thumbnails": [
         {
@@ -37517,7 +37718,7 @@
       "id": "P4qwBQiM1NE",
       "link": "https://www.youtube.com/shorts/P4qwBQiM1NE",
       "title": "Su padre está grave y él vende flores #hablandohuevadas",
-      "view_count": 969000,
+      "view_count": 971000,
       "thumbnail": "https://i.ytimg.com/vi/P4qwBQiM1NE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAaAL-ixlTpbGJWAS5IYZO2OsAK3A&usqp=CCk",
       "thumbnails": [
         {
@@ -37574,7 +37775,7 @@
       "id": "YQgPgt3LyQY",
       "link": "https://www.youtube.com/shorts/YQgPgt3LyQY",
       "title": "Distinguir a un peruano en otro país 😬 #hablandohuevadas",
-      "view_count": 271000,
+      "view_count": 272000,
       "thumbnail": "https://i.ytimg.com/vi/YQgPgt3LyQY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAr_6G_jg6cBgNw3BiDvS3wTLTb8Q&usqp=CCk",
       "thumbnails": [
         {
@@ -37954,7 +38155,7 @@
       "id": "J3Q518eqfpw",
       "link": "https://www.youtube.com/shorts/J3Q518eqfpw",
       "title": "Joven advirtió a su madre ⛔ #hablandohuevadas",
-      "view_count": 7900000,
+      "view_count": 8100000,
       "thumbnail": "https://i.ytimg.com/vi/J3Q518eqfpw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAuPzBPzl_mZzVnNB2grHK2hlg5aQ&usqp=CCk",
       "thumbnails": [
         {
@@ -38049,7 +38250,7 @@
       "id": "hC9xMl8PZ2E",
       "link": "https://www.youtube.com/shorts/hC9xMl8PZ2E",
       "title": "¿Te ríes al escribir «jajaja»? 🤨 #hablandohuevadas",
-      "view_count": 598000,
+      "view_count": 599000,
       "thumbnail": "https://i.ytimg.com/vi/hC9xMl8PZ2E/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCMrl7v9NZ-qoaYW7MBmxJ3yo0eOA&usqp=CCk",
       "thumbnails": [
         {
@@ -38068,7 +38269,7 @@
       "id": "sQrhuOmlSNY",
       "link": "https://www.youtube.com/shorts/sQrhuOmlSNY",
       "title": "El lenguaje de los jóvenes 🤨 #hablandohuevadas",
-      "view_count": 4300000,
+      "view_count": 4600000,
       "thumbnail": "https://i.ytimg.com/vi/sQrhuOmlSNY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBAzGFLOwpvT3Zoz_0YkeQVzglNqA&usqp=CCk",
       "thumbnails": [
         {
@@ -38258,7 +38459,7 @@
       "id": "6fNf3AVcKrE",
       "link": "https://www.youtube.com/shorts/6fNf3AVcKrE",
       "title": "Americano con peruana 😳 #hablandohuevadas",
-      "view_count": 6000000,
+      "view_count": 6300000,
       "thumbnail": "https://i.ytimg.com/vi/6fNf3AVcKrE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBsvbGpTSgNf4t2dZ6AxKIEMXZ86w&usqp=CCk",
       "thumbnails": [
         {
@@ -38334,7 +38535,7 @@
       "id": "ZigfPzb9DoU",
       "link": "https://www.youtube.com/shorts/ZigfPzb9DoU",
       "title": "¡Cuántos fans argentinos! 😱 #hablandohuevadas",
-      "view_count": 978000,
+      "view_count": 980000,
       "thumbnail": "https://i.ytimg.com/vi/ZigfPzb9DoU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAoIcgLVe0Avfa0d-EgOb1PSLsOKA&usqp=CCk",
       "thumbnails": [
         {
@@ -38448,7 +38649,7 @@
       "id": "HSOdJ7H8Sc8",
       "link": "https://www.youtube.com/shorts/HSOdJ7H8Sc8",
       "title": "Ricardo Mendoza en Argentina 🥶 #hablandohuevadas",
-      "view_count": 399000,
+      "view_count": 400000,
       "thumbnail": "https://i.ytimg.com/vi/HSOdJ7H8Sc8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBHLWlMMDwCJee6YrD3YNIJ1jazTg&usqp=CCk",
       "thumbnails": [
         {
@@ -38733,7 +38934,7 @@
       "id": "jI2Y43jCOWk",
       "link": "https://www.youtube.com/shorts/jI2Y43jCOWk",
       "title": "No sabe a qué se dedica su novia 😂 #hablandohuevadas",
-      "view_count": 9000000,
+      "view_count": 9100000,
       "thumbnail": "https://i.ytimg.com/vi/jI2Y43jCOWk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCxXPd5Gsn3glBnq6gLiV1lFkkXMQ&usqp=CCk",
       "thumbnails": [
         {
@@ -38771,7 +38972,7 @@
       "id": "_6I_-raaihc",
       "link": "https://www.youtube.com/shorts/_6I_-raaihc",
       "title": "Holandés y conductora de TV 😗 #hablandohuevadas",
-      "view_count": 7000000,
+      "view_count": 7200000,
       "thumbnail": "https://i.ytimg.com/vi/_6I_-raaihc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBfVWjhIEtjYYMKZwXi0FmEqakpig&usqp=CCk",
       "thumbnails": [
         {
@@ -39056,7 +39257,7 @@
       "id": "hVu-R9B7jAM",
       "link": "https://www.youtube.com/shorts/hVu-R9B7jAM",
       "title": "Jorge Luna compró sin saber 🥺 #hablandohuevadas",
-      "view_count": 111000,
+      "view_count": 112000,
       "thumbnail": "https://i.ytimg.com/vi/hVu-R9B7jAM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBmqq9bNZtUF04AjLBaz6a9fnwfnQ&usqp=CCk",
       "thumbnails": [
         {
@@ -39246,7 +39447,7 @@
       "id": "LOyrO5FKO3U",
       "link": "https://www.youtube.com/shorts/LOyrO5FKO3U",
       "title": "Él y su novia nunca hicieron nada 😏 #hablandohuevadas",
-      "view_count": 7500000,
+      "view_count": 7600000,
       "thumbnail": "https://i.ytimg.com/vi/LOyrO5FKO3U/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAWg4mPZXii062xznXnYNWcfaIO6Q&usqp=CCk",
       "thumbnails": [
         {
@@ -39474,7 +39675,7 @@
       "id": "knI5wS9Pql4",
       "link": "https://www.youtube.com/shorts/knI5wS9Pql4",
       "title": "Jorge Luna y el amor de su vida 😬 #hablandohuevadas",
-      "view_count": 179000,
+      "view_count": 181000,
       "thumbnail": "https://i.ytimg.com/vi/knI5wS9Pql4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDTg0Fh11Zpa-X_zFZkTlo7mhCNvw&usqp=CCk",
       "thumbnails": [
         {
@@ -39531,7 +39732,7 @@
       "id": "SVj4hNyQaPw",
       "link": "https://www.youtube.com/shorts/SVj4hNyQaPw",
       "title": "F en el chat por ese chiste 😞 #hablandohuevadas",
-      "view_count": 122000,
+      "view_count": 123000,
       "thumbnail": "https://i.ytimg.com/vi/SVj4hNyQaPw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBVdLWdURHeb92LeAr9izNw9ltcNg&usqp=CCk",
       "thumbnails": [
         {
@@ -40329,7 +40530,7 @@
       "id": "zH4PBj8K8mQ",
       "link": "https://www.youtube.com/shorts/zH4PBj8K8mQ",
       "title": "El Papa es peruano, Perú es clave 😎 #hablandohuevadas",
-      "view_count": 229000,
+      "view_count": 230000,
       "thumbnail": "https://i.ytimg.com/vi/zH4PBj8K8mQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDIWiAXDsUkyGw9kAyBY2e5kxI5xw&usqp=CCk",
       "thumbnails": [
         {
@@ -40557,7 +40758,7 @@
       "id": "7Mf9RvW_fOM",
       "link": "https://www.youtube.com/shorts/7Mf9RvW_fOM",
       "title": "Has comido alfajor, amigo 🥶 #hablandohuevadas",
-      "view_count": 378000,
+      "view_count": 379000,
       "thumbnail": "https://i.ytimg.com/vi/7Mf9RvW_fOM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBHXQGKO1Ua-bdtI2r6gDuDIF26eg&usqp=CCk",
       "thumbnails": [
         {
@@ -40633,7 +40834,7 @@
       "id": "BZL7tNb-gL8",
       "link": "https://www.youtube.com/shorts/BZL7tNb-gL8",
       "title": "Su cráneo está en el estómago 😳 #hablandohuevadas",
-      "view_count": 2100000,
+      "view_count": 2800000,
       "thumbnail": "https://i.ytimg.com/vi/BZL7tNb-gL8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBULKDnJ_---PZSUvegc7Y2GR1U-A&usqp=CCk",
       "thumbnails": [
         {
@@ -40956,7 +41157,7 @@
       "id": "Jf5_MX2IHXA",
       "link": "https://www.youtube.com/shorts/Jf5_MX2IHXA",
       "title": "Jorge Luna quiere una nueva casa 😳 #hablandohuevadas",
-      "view_count": 169000,
+      "view_count": 170000,
       "thumbnail": "https://i.ytimg.com/vi/Jf5_MX2IHXA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCv4-qAKyH2mqGNJe2xffxVHYKSaA&usqp=CCk",
       "thumbnails": [
         {
@@ -41469,7 +41670,7 @@
       "id": "OifVOHslWvc",
       "link": "https://www.youtube.com/shorts/OifVOHslWvc",
       "title": "Sirvienta venezolana vs peruana ⚠️ #hablandohuevadas",
-      "view_count": 632000,
+      "view_count": 633000,
       "thumbnail": "https://i.ytimg.com/vi/OifVOHslWvc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAiq0MJJ_tR-oWG54jUl8EbY8O5mw&usqp=CCk",
       "thumbnails": [
         {
@@ -42837,7 +43038,7 @@
       "id": "oiACgLreV_k",
       "link": "https://www.youtube.com/shorts/oiACgLreV_k",
       "title": "Gian Marco y Ricardo Mendoza cantan 🔥 #hablandohuevadas",
-      "view_count": 270000,
+      "view_count": 272000,
       "thumbnail": "https://i.ytimg.com/vi/oiACgLreV_k/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBGfi07DeSyQkFSEbf2hjvlGAv6QA&usqp=CCk",
       "thumbnails": [
         {
@@ -44300,7 +44501,7 @@
       "id": "lgwgSFU-qXo",
       "link": "https://www.youtube.com/shorts/lgwgSFU-qXo",
       "title": "Rarísima respiración 🤨 #HablandoHuevadas",
-      "view_count": 410000,
+      "view_count": 411000,
       "thumbnail": "https://i.ytimg.com/vi/lgwgSFU-qXo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBYj4nO6hhE4D6fME4rciKzewdbzw&usqp=CCk",
       "thumbnails": [
         {
@@ -44357,7 +44558,7 @@
       "id": "unRaF5r-G9k",
       "link": "https://www.youtube.com/shorts/unRaF5r-G9k",
       "title": "Seguridad ñajañaja 😂 #hablandohuevadas",
-      "view_count": 166000,
+      "view_count": 167000,
       "thumbnail": "https://i.ytimg.com/vi/unRaF5r-G9k/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBtEBupt8oEsBh8zpTszLkg1pvWCg&usqp=CCk",
       "thumbnails": [
         {
@@ -44927,7 +45128,7 @@
       "id": "vO8JH4wRxmo",
       "link": "https://www.youtube.com/shorts/vO8JH4wRxmo",
       "title": "Alumna de Hogwarts 😳 #HablandoHuevadas",
-      "view_count": 588000,
+      "view_count": 633000,
       "thumbnail": "https://i.ytimg.com/vi/vO8JH4wRxmo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLArbc5qaMh4ygOZAjo9Ku0wvSWrgg&usqp=CCk",
       "thumbnails": [
         {
@@ -45421,7 +45622,7 @@
       "id": "NJNli1XqJvY",
       "link": "https://www.youtube.com/shorts/NJNli1XqJvY",
       "title": "Acento mexicano muy marcado 😅",
-      "view_count": 571000,
+      "view_count": 572000,
       "thumbnail": "https://i.ytimg.com/vi/NJNli1XqJvY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCdEQvq3Zz2ov_NjdPPMLDFoTPlcQ&usqp=CCk",
       "thumbnails": [
         {
@@ -47264,7 +47465,7 @@
       "id": "CvrK-duYx2E",
       "link": "https://www.youtube.com/shorts/CvrK-duYx2E",
       "title": "Alemana con peruano en Chorrillos 😳  #hablandohuevadas",
-      "view_count": 26000000,
+      "view_count": 27000000,
       "thumbnail": "https://i.ytimg.com/vi/CvrK-duYx2E/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAzO1R23Y1mAcX9SxwYOnBwcJ53Ng&usqp=CCk",
       "thumbnails": [
         {
@@ -47302,7 +47503,7 @@
       "id": "Dkfem75f0HU",
       "link": "https://www.youtube.com/shorts/Dkfem75f0HU",
       "title": "Versión futura de Jorge Luna 😂  #hablandohuevadas",
-      "view_count": 398000,
+      "view_count": 399000,
       "thumbnail": "https://i.ytimg.com/vi/Dkfem75f0HU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBkzXFleeYlRBmY5wq5EkY7He25Nw&usqp=CCk",
       "thumbnails": [
         {
@@ -48214,7 +48415,7 @@
       "id": "gJaEIkpW9ow",
       "link": "https://www.youtube.com/shorts/gJaEIkpW9ow",
       "title": "Jorge Luna y su abuela ⚠️  #hablandohuevadas",
-      "view_count": 824000,
+      "view_count": 825000,
       "thumbnail": "https://i.ytimg.com/vi/gJaEIkpW9ow/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAO74yAJwSDLpunsrxEZkbTKdKzBg&usqp=CCk",
       "thumbnails": [
         {
@@ -48385,7 +48586,7 @@
       "id": "uMKe-QDMwSk",
       "link": "https://www.youtube.com/shorts/uMKe-QDMwSk",
       "title": "Trabajador que sufre por dentro 😓  #hablandohuevadas",
-      "view_count": 412000,
+      "view_count": 416000,
       "thumbnail": "https://i.ytimg.com/vi/uMKe-QDMwSk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAl-FkBqFBLwG2-iBzVPsy0Xwqu8A&usqp=CCk",
       "thumbnails": [
         {
@@ -49943,7 +50144,7 @@
       "id": "qGS8fgGPlZw",
       "link": "https://www.youtube.com/shorts/qGS8fgGPlZw",
       "title": "Madre ejemplar 😶  #hablandohuevadas",
-      "view_count": 692000,
+      "view_count": 693000,
       "thumbnail": "https://i.ytimg.com/vi/qGS8fgGPlZw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCQDQVBDg4_HQnwdGCwKTi6hagkUQ&usqp=CCk",
       "thumbnails": [
         {
@@ -49981,7 +50182,7 @@
       "id": "hR-Um4FxL8I",
       "link": "https://www.youtube.com/shorts/hR-Um4FxL8I",
       "title": "Su hijo no está con ella 🥺 #HablandoHuevadas",
-      "view_count": 6800000,
+      "view_count": 7600000,
       "thumbnail": "https://i.ytimg.com/vi/hR-Um4FxL8I/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLC49Ne6r8mA60iAQi9aUTqoOFKxEA&usqp=CCk",
       "thumbnails": [
         {
@@ -50019,7 +50220,7 @@
       "id": "sDsM4oG0fdQ",
       "link": "https://www.youtube.com/shorts/sDsM4oG0fdQ",
       "title": "Es demasiado tímido 😶 #HablandoHuevadas",
-      "view_count": 695000,
+      "view_count": 699000,
       "thumbnail": "https://i.ytimg.com/vi/sDsM4oG0fdQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCgc2rszVx_XB-HsJ3ZXL_nvO6CfQ&usqp=CCk",
       "thumbnails": [
         {
@@ -50646,7 +50847,7 @@
       "id": "fLkDAd8MJ9s",
       "link": "https://www.youtube.com/shorts/fLkDAd8MJ9s",
       "title": "Me recuerdas a mi mamá 😳  #hablandohuevadas",
-      "view_count": 1400000,
+      "view_count": 1500000,
       "thumbnail": "https://i.ytimg.com/vi/fLkDAd8MJ9s/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBCBBKbd5_x8X-3qirWhBVxuj2Q9g&usqp=CCk",
       "thumbnails": [
         {
@@ -51178,7 +51379,7 @@
       "id": "jAHdGX4vdCg",
       "link": "https://www.youtube.com/shorts/jAHdGX4vdCg",
       "title": "Eres muy peruano 🥶  #hablandohuevadas",
-      "view_count": 858000,
+      "view_count": 863000,
       "thumbnail": "https://i.ytimg.com/vi/jAHdGX4vdCg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBj-zCUrSMcI8QQEKA0J--DsrgO5w&usqp=CCk",
       "thumbnails": [
         {
@@ -51254,7 +51455,7 @@
       "id": "tdZwO5XCOPs",
       "link": "https://www.youtube.com/shorts/tdZwO5XCOPs",
       "title": "Juanita recibe a Jorge Luna 🥺  #hablandohuevadas",
-      "view_count": 314000,
+      "view_count": 315000,
       "thumbnail": "https://i.ytimg.com/vi/tdZwO5XCOPs/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAaAxeHplVFWFORzNUUajA8OwPZlQ&usqp=CCk",
       "thumbnails": [
         {
@@ -51406,7 +51607,7 @@
       "id": "QPhKBm5JddA",
       "link": "https://www.youtube.com/shorts/QPhKBm5JddA",
       "title": "Grave error de cómico español 💀  #hablandohuevadas",
-      "view_count": 9700000,
+      "view_count": 10000000,
       "thumbnail": "https://i.ytimg.com/vi/QPhKBm5JddA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCjmE5TonolkQxXGlrtAXF3W1ICog&usqp=CCk",
       "thumbnails": [
         {
@@ -52223,7 +52424,7 @@
       "id": "TwF8yUdYbps",
       "link": "https://www.youtube.com/shorts/TwF8yUdYbps",
       "title": "Abogado de expresidente 💀  #hablandohuevadas",
-      "view_count": 458000,
+      "view_count": 459000,
       "thumbnail": "https://i.ytimg.com/vi/TwF8yUdYbps/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAEPrG1MuJpdaWiu9JY1qdkRk4IsA&usqp=CCk",
       "thumbnails": [
         {
@@ -53135,7 +53336,7 @@
       "id": "1b3wvUPDRBc",
       "link": "https://www.youtube.com/shorts/1b3wvUPDRBc",
       "title": "QUECA LE MANDA INDIRECTA BIEN DIRECTA A KATIA PALMA  #comedia #humor #chapatumoney",
-      "view_count": 279000,
+      "view_count": 280000,
       "thumbnail": "https://i.ytimg.com/vi/1b3wvUPDRBc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCodk106BsAy2ihLFzD9xrlp_TQZQ&usqp=CCk",
       "thumbnails": [
         {
@@ -53800,7 +54001,7 @@
       "id": "JbQwVgh_yek",
       "link": "https://www.youtube.com/shorts/JbQwVgh_yek",
       "title": "CHAPASA Y POPER SE VOLVIERON A ENFRENTAR  #comedia #humor #chapatumoney",
-      "view_count": 199000,
+      "view_count": 200000,
       "thumbnail": "https://i.ytimg.com/vi/JbQwVgh_yek/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDmEvudwyHEWaN8VvbHtgeo7NTKuA&usqp=CCk",
       "thumbnails": [
         {
@@ -54047,7 +54248,7 @@
       "id": "n0Pp8QPk3jY",
       "link": "https://www.youtube.com/shorts/n0Pp8QPk3jY",
       "title": "La sobrina secreta de Jorge Luna ⚠️  #hablandohuevadas",
-      "view_count": 8100000,
+      "view_count": 8600000,
       "thumbnail": "https://i.ytimg.com/vi/n0Pp8QPk3jY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAbwBnqELvmd2f3luOOZj1t0sYsrw&usqp=CCk",
       "thumbnails": [
         {
@@ -54978,7 +55179,7 @@
       "id": "vRfPahqnDL0",
       "link": "https://www.youtube.com/shorts/vRfPahqnDL0",
       "title": "¡No soporto a mi hermana! 😡  #hablandohuevadas",
-      "view_count": 8400000,
+      "view_count": 10000000,
       "thumbnail": "https://i.ytimg.com/vi/vRfPahqnDL0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDmQ630FrxVJb3poKCbr1SHj3UlRw&usqp=CCk",
       "thumbnails": [
         {
@@ -55225,7 +55426,7 @@
       "id": "C78m2yb4Yao",
       "link": "https://www.youtube.com/shorts/C78m2yb4Yao",
       "title": "El pasado trágico de Jorge Luna 😞  #hablandohuevadas",
-      "view_count": 799000,
+      "view_count": 800000,
       "thumbnail": "https://i.ytimg.com/vi/C78m2yb4Yao/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDczdHdy2AyolNpaJOKror-y1PT-Q&usqp=CCk",
       "thumbnails": [
         {
@@ -55244,7 +55445,7 @@
       "id": "Jj3LOoo5-Mk",
       "link": "https://www.youtube.com/shorts/Jj3LOoo5-Mk",
       "title": "Papelitos peculiares 🤨  #hablandohuevadas",
-      "view_count": 299000,
+      "view_count": 300000,
       "thumbnail": "https://i.ytimg.com/vi/Jj3LOoo5-Mk/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCvehyxiNVqOLp1x_uHp9lFPPI0xw&usqp=CCk",
       "thumbnails": [
         {
@@ -55567,7 +55768,7 @@
       "id": "jfZTIqha-EI",
       "link": "https://www.youtube.com/shorts/jfZTIqha-EI",
       "title": "La puso en un colegio especial 😬  #hablandohuevadas",
-      "view_count": 4000000,
+      "view_count": 4100000,
       "thumbnail": "https://i.ytimg.com/vi/jfZTIqha-EI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD__1pVuHGs8obCUcQ7arqvJxzpCw&usqp=CCk",
       "thumbnails": [
         {
@@ -55795,7 +55996,7 @@
       "id": "FQNsDnryHWw",
       "link": "https://www.youtube.com/shorts/FQNsDnryHWw",
       "title": "Sobre el Madison Square Garden ❤️  #hablandohuevadas",
-      "view_count": 363000,
+      "view_count": 364000,
       "thumbnail": "https://i.ytimg.com/vi/FQNsDnryHWw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD8CFuRDrVjOOQTNYjAVRqF0vQyFQ&usqp=CCk",
       "thumbnails": [
         {
@@ -56118,7 +56319,7 @@
       "id": "uJPxP2cXlfA",
       "link": "https://www.youtube.com/shorts/uJPxP2cXlfA",
       "title": "Odio las faltas de ortografía 🤬  #hablandohuevadas",
-      "view_count": 3400000,
+      "view_count": 3800000,
       "thumbnail": "https://i.ytimg.com/vi/uJPxP2cXlfA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA33zqak9ZRsbLq0DQ2o3fb3ASWoA&usqp=CCk",
       "thumbnails": [
         {
@@ -56479,7 +56680,7 @@
       "id": "qzNqaPd8WFM",
       "link": "https://www.youtube.com/shorts/qzNqaPd8WFM",
       "title": "El idioma más antiguo de Europa 😱  #hablandohuevadas",
-      "view_count": 42000000,
+      "view_count": 43000000,
       "thumbnail": "https://i.ytimg.com/vi/qzNqaPd8WFM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDPN0yibIygYg1S-b6G6l5R94WWuQ&usqp=CCk",
       "thumbnails": [
         {
@@ -56707,7 +56908,7 @@
       "id": "e1yY_jl3maM",
       "link": "https://www.youtube.com/shorts/e1yY_jl3maM",
       "title": "Caminadora de 3 mil dólares 😱  #hablandohuevadas",
-      "view_count": 303000,
+      "view_count": 304000,
       "thumbnail": "https://i.ytimg.com/vi/e1yY_jl3maM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBGcsEtl1LYXlaeWWpcU-iV4wKt7w&usqp=CCk",
       "thumbnails": [
         {
@@ -56783,7 +56984,7 @@
       "id": "F1K0uj1uEhg",
       "link": "https://www.youtube.com/shorts/F1K0uj1uEhg",
       "title": "Mejor amiga accede ir a un hotel 🔥  #hablandohuevadas",
-      "view_count": 3200000,
+      "view_count": 3800000,
       "thumbnail": "https://i.ytimg.com/vi/F1K0uj1uEhg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBdTk8cHbLGIkTo8qHaifJmMt0F9A&usqp=CCk",
       "thumbnails": [
         {
@@ -58246,7 +58447,7 @@
       "id": "ENrb1g4LEig",
       "link": "https://www.youtube.com/shorts/ENrb1g4LEig",
       "title": "YA SUÉLTENLO A MATEO  #humor  #comedia #chapatumoney",
-      "view_count": 180000,
+      "view_count": 182000,
       "thumbnail": "https://i.ytimg.com/vi/ENrb1g4LEig/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCl-ZozCuWecpxf-MXpDo9eQtk6wQ&usqp=CCk",
       "thumbnails": [
         {
@@ -58379,7 +58580,7 @@
       "id": "p19PWx5u718",
       "link": "https://www.youtube.com/shorts/p19PWx5u718",
       "title": "Trabaja en en una empresa y faltó mintiendo (Parte 2)",
-      "view_count": 605000,
+      "view_count": 606000,
       "thumbnail": "https://i.ytimg.com/vi/p19PWx5u718/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAB-gTzk9L5BVnyWOHtIztMQRBAYQ&usqp=CCk",
       "thumbnails": [
         {
@@ -58607,7 +58808,7 @@
       "id": "McvpalnATFo",
       "link": "https://www.youtube.com/shorts/McvpalnATFo",
       "title": "Loca por José José 😍  #hablandohuevadas",
-      "view_count": 726000,
+      "view_count": 727000,
       "thumbnail": "https://i.ytimg.com/vi/McvpalnATFo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDM2TiUaSqa8cRNxYGCz13IqTEnMA&usqp=CCk",
       "thumbnails": [
         {
@@ -58645,7 +58846,7 @@
       "id": "73-uGxPT5S8",
       "link": "https://www.youtube.com/shorts/73-uGxPT5S8",
       "title": "Madre agresiva 💀  #hablandohuevadas",
-      "view_count": 583000,
+      "view_count": 588000,
       "thumbnail": "https://i.ytimg.com/vi/73-uGxPT5S8/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDZEKopeHFC64YSX8VBMgl399Etfg&usqp=CCk",
       "thumbnails": [
         {
@@ -59082,7 +59283,7 @@
       "id": "_FAxqP8LR0A",
       "link": "https://www.youtube.com/shorts/_FAxqP8LR0A",
       "title": "En Lima hay enormes filas 🙄  #hablandohuevadas",
-      "view_count": 575000,
+      "view_count": 576000,
       "thumbnail": "https://i.ytimg.com/vi/_FAxqP8LR0A/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAGt1TA-JoTJ9xhQq6iEXBEUKZNig&usqp=CCk",
       "thumbnails": [
         {
@@ -59481,7 +59682,7 @@
       "id": "GvuV5hZ3G3Q",
       "link": "https://www.youtube.com/shorts/GvuV5hZ3G3Q",
       "title": "Le da asco el sonido de vomitar 😂  #hablandohuevadas",
-      "view_count": 171000,
+      "view_count": 172000,
       "thumbnail": "https://i.ytimg.com/vi/GvuV5hZ3G3Q/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLB0PrqIcENhgy11xulJgcRHG7svNA&usqp=CCk",
       "thumbnails": [
         {
@@ -59557,7 +59758,7 @@
       "id": "kYCqYNH-_EU",
       "link": "https://www.youtube.com/shorts/kYCqYNH-_EU",
       "title": "Quiere ser piloto en Argentina 😂  #hablandohuevadas",
-      "view_count": 604000,
+      "view_count": 606000,
       "thumbnail": "https://i.ytimg.com/vi/kYCqYNH-_EU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCmHEkPOYfQeIyAOUuHQGLvqstUJA&usqp=CCk",
       "thumbnails": [
         {
@@ -59652,7 +59853,7 @@
       "id": "5vo7S5nzdz0",
       "link": "https://www.youtube.com/shorts/5vo7S5nzdz0",
       "title": "Ricardo y el iPhone de su esclavo 😂  #hablandohuevadas",
-      "view_count": 147000,
+      "view_count": 148000,
       "thumbnail": "https://i.ytimg.com/vi/5vo7S5nzdz0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDnTfRbBGv6-1XC2Ba2gUdP3osLYw&usqp=CCk",
       "thumbnails": [
         {
@@ -59823,7 +60024,7 @@
       "id": "hPYRN6nFktQ",
       "link": "https://www.youtube.com/shorts/hPYRN6nFktQ",
       "title": "Jorge Luna prestó 20 mil soles 😳  #hablandohuevadas",
-      "view_count": 2300000,
+      "view_count": 2400000,
       "thumbnail": "https://i.ytimg.com/vi/hPYRN6nFktQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBpz5B0quhg4b5dfE2xQWfBUfnvHw&usqp=CCk",
       "thumbnails": [
         {
@@ -59842,7 +60043,7 @@
       "id": "CDhWR02JHbA",
       "link": "https://www.youtube.com/shorts/CDhWR02JHbA",
       "title": "Beso arcoíris 🤮  #hablandohuevadas",
-      "view_count": 165000,
+      "view_count": 166000,
       "thumbnail": "https://i.ytimg.com/vi/CDhWR02JHbA/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDd11E4hMv1eokU5qxwtGRl8pV2Gg&usqp=CCk",
       "thumbnails": [
         {
@@ -59880,7 +60081,7 @@
       "id": "jg7O_CAoeAU",
       "link": "https://www.youtube.com/shorts/jg7O_CAoeAU",
       "title": "Rusa con peruano 😳  #hablandohuevadas",
-      "view_count": 9200000,
+      "view_count": 9900000,
       "thumbnail": "https://i.ytimg.com/vi/jg7O_CAoeAU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLA-14PIPvwbzrewD0HFUHOVc7phNw&usqp=CCk",
       "thumbnails": [
         {
@@ -59937,7 +60138,7 @@
       "id": "mUj4BDkhT_0",
       "link": "https://www.youtube.com/shorts/mUj4BDkhT_0",
       "title": "De familia alemana 😮  #hablandohuevadas",
-      "view_count": 6400000,
+      "view_count": 7100000,
       "thumbnail": "https://i.ytimg.com/vi/mUj4BDkhT_0/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLByBe1jifZjY-9XTbDdrbFYz88NSQ&usqp=CCk",
       "thumbnails": [
         {
@@ -60507,7 +60708,7 @@
       "id": "cjGFDDADD10",
       "link": "https://www.youtube.com/shorts/cjGFDDADD10",
       "title": "Argentino náufrago 😂  #hablandohuevadas",
-      "view_count": 669000,
+      "view_count": 670000,
       "thumbnail": "https://i.ytimg.com/vi/cjGFDDADD10/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBg2d3lFMKmUik3eZKj0iByjhQAhQ&usqp=CCk",
       "thumbnails": [
         {
@@ -60564,7 +60765,7 @@
       "id": "hmg46vlArGc",
       "link": "https://www.youtube.com/shorts/hmg46vlArGc",
       "title": "Jorge y Ricardo quieren besarse ❤️  #hablandohuevadas",
-      "view_count": 1700000,
+      "view_count": 1800000,
       "thumbnail": "https://i.ytimg.com/vi/hmg46vlArGc/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDgcoPX4bR5SsEfLmb_CzRBDHRAkg&usqp=CCk",
       "thumbnails": [
         {
@@ -61191,7 +61392,7 @@
       "id": "jOgcBrKv8I4",
       "link": "https://www.youtube.com/shorts/jOgcBrKv8I4",
       "title": "\"SUSCRÍBETE CON 5 LUKITAS Y PARTICIPA DEL PRIVADITO DE NO SOMOS TV\" ¡APURA OYE!",
-      "view_count": 53000,
+      "view_count": 54000,
       "thumbnail": "https://i.ytimg.com/vi/jOgcBrKv8I4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAdx3iWOHcWZPd-aMkYuwWuXRAh0A&usqp=CCk",
       "thumbnails": [
         {
@@ -61267,7 +61468,7 @@
       "id": "IG5c7qw_6jY",
       "link": "https://www.youtube.com/shorts/IG5c7qw_6jY",
       "title": "Mi ex se inventó un embarazo 💀  #hablandohuevadas",
-      "view_count": 667000,
+      "view_count": 668000,
       "thumbnail": "https://i.ytimg.com/vi/IG5c7qw_6jY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD1vr3Doio2mFJRhMbYe3oaaw5iNQ&usqp=CCk",
       "thumbnails": [
         {
@@ -61514,7 +61715,7 @@
       "id": "Q_Jn5L1GOGw",
       "link": "https://www.youtube.com/shorts/Q_Jn5L1GOGw",
       "title": "Risa de motor malogrado 😂  #HablandoHuevadas",
-      "view_count": 5200000,
+      "view_count": 6600000,
       "thumbnail": "https://i.ytimg.com/vi/Q_Jn5L1GOGw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAZIu1hGjXAnNTTW0y1i1gMi1ldOA&usqp=CCk",
       "thumbnails": [
         {
@@ -62027,7 +62228,7 @@
       "id": "Ky8aoO5yKsM",
       "link": "https://www.youtube.com/shorts/Ky8aoO5yKsM",
       "title": "Espejito Espejito",
-      "view_count": 133000,
+      "view_count": 134000,
       "thumbnail": "https://i.ytimg.com/vi/Ky8aoO5yKsM/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBjcRE-5nhcoVl5M4yIWxXsMF8_1Q&usqp=CCk",
       "thumbnails": [
         {
@@ -62559,7 +62760,7 @@
       "id": "wtH3zsfm01k",
       "link": "https://www.youtube.com/shorts/wtH3zsfm01k",
       "title": "Joven aprende a socializar 😂  #hablandohuevadas",
-      "view_count": 4300000,
+      "view_count": 4800000,
       "thumbnail": "https://i.ytimg.com/vi/wtH3zsfm01k/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAO3hbkJ4YkdW8eWvJ3IMy5NUYe1w&usqp=CCk",
       "thumbnails": [
         {
@@ -62730,7 +62931,7 @@
       "id": "e9bIBUInHQQ",
       "link": "https://www.youtube.com/shorts/e9bIBUInHQQ",
       "title": "Chilenos que discuten 😂  #hablandohuevadas",
-      "view_count": 379000,
+      "view_count": 380000,
       "thumbnail": "https://i.ytimg.com/vi/e9bIBUInHQQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDhEGKZhdmaFV0M7tM4T76jJcpP4A&usqp=CCk",
       "thumbnails": [
         {
@@ -63338,7 +63539,7 @@
       "id": "YoX3QbYxT4Q",
       "link": "https://www.youtube.com/shorts/YoX3QbYxT4Q",
       "title": "La ex de Ricardo Mendoza 💀",
-      "view_count": 18000000,
+      "view_count": 19000000,
       "thumbnail": "https://i.ytimg.com/vi/YoX3QbYxT4Q/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCCeoMIRFmdgNq0ttDK_dE0317Qbw&usqp=CCk",
       "thumbnails": [
         {
@@ -63566,7 +63767,7 @@
       "id": "yNbpfVvtFUE",
       "link": "https://www.youtube.com/shorts/yNbpfVvtFUE",
       "title": "Ricardo Mendoza imita acentos 😂  #hablandohuevadas",
-      "view_count": 509000,
+      "view_count": 510000,
       "thumbnail": "https://i.ytimg.com/vi/yNbpfVvtFUE/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAFcV0hMMj9LDICq2SawiI0xFtSnQ&usqp=CCk",
       "thumbnails": [
         {
@@ -63737,7 +63938,7 @@
       "id": "yYfmti0EtIQ",
       "link": "https://www.youtube.com/shorts/yYfmti0EtIQ",
       "title": "Padre con la voz muy aguda 😂  #hablandohuevadas",
-      "view_count": 972000,
+      "view_count": 973000,
       "thumbnail": "https://i.ytimg.com/vi/yYfmti0EtIQ/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDy_V-k3dfz8gFQtOMn_yujH8ndKQ&usqp=CCk",
       "thumbnails": [
         {
@@ -63908,7 +64109,7 @@
       "id": "DoOcZR8mwhg",
       "link": "https://www.youtube.com/shorts/DoOcZR8mwhg",
       "title": "¿Cómo reparar el control remoto? 🤨  #hablandohuevadas",
-      "view_count": 1900000,
+      "view_count": 2000000,
       "thumbnail": "https://i.ytimg.com/vi/DoOcZR8mwhg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDpUwPDnpennNP8LXu-21Gtp_XJqQ&usqp=CCk",
       "thumbnails": [
         {
@@ -64079,7 +64280,7 @@
       "id": "MfqflEVDT2E",
       "link": "https://www.youtube.com/shorts/MfqflEVDT2E",
       "title": "¿Tiene 42 años? 😳  #hablandohuevadas",
-      "view_count": 3000000,
+      "view_count": 3100000,
       "thumbnail": "https://i.ytimg.com/vi/MfqflEVDT2E/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDNHcXFc7xv7cVwsLBAlhfrRTUXjg&usqp=CCk",
       "thumbnails": [
         {
@@ -64440,7 +64641,7 @@
       "id": "zjxBUi1q0Gg",
       "link": "https://www.youtube.com/shorts/zjxBUi1q0Gg",
       "title": "El hijo de Jorge, Equisdé 🤙  #hablandohuevadas",
-      "view_count": 926000,
+      "view_count": 927000,
       "thumbnail": "https://i.ytimg.com/vi/zjxBUi1q0Gg/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBoGl9oFvbDOR_8p_YzkowfiJAE7w&usqp=CCk",
       "thumbnails": [
         {
@@ -65200,7 +65401,7 @@
       "id": "wJs4w2dSEP4",
       "link": "https://www.youtube.com/shorts/wJs4w2dSEP4",
       "title": "Ecuatoriana con peruano ❤️  #hablandohuevadas",
-      "view_count": 964000,
+      "view_count": 965000,
       "thumbnail": "https://i.ytimg.com/vi/wJs4w2dSEP4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAxd00hz3kFtSeNKJMFJ53ksKpHiA&usqp=CCk",
       "thumbnails": [
         {
@@ -65371,7 +65572,7 @@
       "id": "qL0OIdlViVw",
       "link": "https://www.youtube.com/shorts/qL0OIdlViVw",
       "title": "Fantasmas de Cono y Miraflores 💀  #humor #hablandohuevadas #comedia",
-      "view_count": 438000,
+      "view_count": 439000,
       "thumbnail": "https://i.ytimg.com/vi/qL0OIdlViVw/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAMgKMvuZcHg5s47AawUOkQfNyexw&usqp=CCk",
       "thumbnails": [
         {
@@ -65580,7 +65781,7 @@
       "id": "mVqrTd5C1G4",
       "link": "https://www.youtube.com/shorts/mVqrTd5C1G4",
       "title": "Se cree extranjero 🙄  #humor #hablandohuevadas #alertahumornegro",
-      "view_count": 901000,
+      "view_count": 902000,
       "thumbnail": "https://i.ytimg.com/vi/mVqrTd5C1G4/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAxNvPN69HGBgZ6W9uUTpMy_kBGIg&usqp=CCk",
       "thumbnails": [
         {
@@ -65922,7 +66123,7 @@
       "id": "0dDsj30z69Q",
       "link": "https://www.youtube.com/shorts/0dDsj30z69Q",
       "title": "Mi abuela falleció 🥺  #humor #hablandohuevadas #alertahumornegro",
-      "view_count": 527000,
+      "view_count": 528000,
       "thumbnail": "https://i.ytimg.com/vi/0dDsj30z69Q/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLAvuLzUPp1CApIKO_QnyL0sGSFMkQ&usqp=CCk",
       "thumbnails": [
         {
@@ -66967,7 +67168,7 @@
       "id": "uk0XMBlfx2E",
       "link": "https://www.youtube.com/shorts/uk0XMBlfx2E",
       "title": "Su madre se fue con otro hombre y lo abandonó  #hablandohuevadas #humor #fyp",
-      "view_count": 27000000,
+      "view_count": 28000000,
       "thumbnail": "https://i.ytimg.com/vi/uk0XMBlfx2E/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDBJmwbx2NnxTdAz3GCKgmPPD4Ezw&usqp=CCk",
       "thumbnails": [
         {
@@ -67195,7 +67396,7 @@
       "id": "3UuBzaB6SPI",
       "link": "https://www.youtube.com/shorts/3UuBzaB6SPI",
       "title": "Familia hermosa  #humor #hablandohuevadas #fyp",
-      "view_count": 6900000,
+      "view_count": 7000000,
       "thumbnail": "https://i.ytimg.com/vi/3UuBzaB6SPI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLBaGOtorHJvTGLx18DNX-4bbRZRlw&usqp=CCk",
       "thumbnails": [
         {
@@ -67765,7 +67966,7 @@
       "id": "uhCc5Dd6wOo",
       "link": "https://www.youtube.com/shorts/uhCc5Dd6wOo",
       "title": "Vende pan con pollo dentro de su academia  #hablandohuevadas #fyp",
-      "view_count": 10000000,
+      "view_count": 11000000,
       "thumbnail": "https://i.ytimg.com/vi/uhCc5Dd6wOo/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCgknM50-rNENavwSDcNgxea6LCmQ&usqp=CCk",
       "thumbnails": [
         {
@@ -69703,7 +69904,7 @@
       "id": "OxagHfwh5NI",
       "link": "https://www.youtube.com/shorts/OxagHfwh5NI",
       "title": "Un chico guapo en contraste #hablandohuevadas #humor",
-      "view_count": 19000000,
+      "view_count": 20000000,
       "thumbnail": "https://i.ytimg.com/vi/OxagHfwh5NI/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLDGVDSJFXoa6Gdy65273DQIB9ApBw&usqp=CCk",
       "thumbnails": [
         {
@@ -69874,7 +70075,7 @@
       "id": "ECmoYr69ZRY",
       "link": "https://www.youtube.com/shorts/ECmoYr69ZRY",
       "title": "Situaciones con el inodoro #hablandohuevadas #humor",
-      "view_count": 904000,
+      "view_count": 905000,
       "thumbnail": "https://i.ytimg.com/vi/ECmoYr69ZRY/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLD0nA1uUYzP-9VxQT2tjwBybJZ5cA&usqp=CCk",
       "thumbnails": [
         {
@@ -70273,7 +70474,7 @@
       "id": "b2BkhkyBXaU",
       "link": "https://www.youtube.com/shorts/b2BkhkyBXaU",
       "title": "Anécdota con la madre de Ricardo Mendoza #hablandohuevadas",
-      "view_count": 1500000,
+      "view_count": 1600000,
       "thumbnail": "https://i.ytimg.com/vi/b2BkhkyBXaU/oar2.jpg?sqp=-oaymwEgCJUDEOAESFWQAgHyq4qpAw8IARUAAIhCcAHAAQbIAQE=&rs=AOn4CLCj_OQ1RVFNhWJ-u1CHLsIgoyPsAw&usqp=CCk",
       "thumbnails": [
         {
@@ -70558,7 +70759,7 @@
       "id": "xjyrhdCHE34",
       "link": "https://www.youtube.com/shorts/xjyrhdCHE34",
       "title": "SHOW SÁBADO 22 de abril en CDMX 💥🎟️#hablandohuevadas #cdmx #comedy",
-      "view_count": 350000,
+      "view_count": 351000,
       "thumbnail": "https://i.ytimg.com/vi/xjyrhdCHE34/hq720.jpg?sqp=-oaymwEdCI4CEOADSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLBzRZlasDAeqBqTJjmfEanaT8aOcQ",
       "thumbnails": [
         {

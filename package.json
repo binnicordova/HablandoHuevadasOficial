@@ -34,6 +34,7 @@
         "eas-preview": "eas build --platform android --profile preview",
         "types": "tsc --noEmit --skipLibCheck",
         "reset-project": "node ./scripts/reset-project.js",
+        "update:videos": "node ./scripts/update-videos-list.js",
         "generate:branding": "node ./scripts/generate-branding.js",
         "prepare": "husky",
         "precheck": "lint-staged"

@@ -1,100 +1,162 @@
-import Constants from "expo-constants";
 import * as Notifications from "expo-notifications";
 import {router} from "expo-router";
+import {useAtom, useAtomValue} from "jotai";
+import {useCallback, useEffect} from "react";
 import {Alert, Linking} from "react-native";
+import {COPY} from "@/constants/copy";
 import {PATHS} from "@/constants/routes";
-import {STORAGE_ID} from "@/constants/storage";
-import {STRINGS} from "@/constants/strings";
-import {theme} from "@/theme/colors";
-import {scheduleLocalNotification} from "@/utils/notification";
-import {storage} from "@/utils/storage";
+import {track} from "@/services/analytics";
+import {getDailyPick} from "@/services/catalog";
+import {settingsAtom, streakAtom} from "@/stores/store";
+import {
+    cancelAllScheduled,
+    ensureAndroidChannel,
+    getPermissionStatus,
+    NOTIFICATION_IDS,
+    registerNotificationHandler,
+    requestPermission,
+    scheduleComeback,
+    scheduleDailyDigest,
+    scheduleStreakReminder,
+} from "@/utils/notification";
 
-export const ANDROID_CHANNEL_ID = "default";
-const ANDROID_CONFIG = {
-    name: "default",
-    importance: Notifications.AndroidImportance.MAX,
-    vibrationPattern: [0, 250, 250, 250],
-    lightColor: theme().accent,
+type NotificationData = {
+    videoId?: string;
+    url?: string;
+    intent?: string;
 };
 
-const handleNotificationConfig = {
-    shouldShowAlert: true,
-    shouldPlaySound: true,
-    shouldSetBadge: false,
-    shouldShowBanner: true,
-    shouldShowList: true,
+const routeFromData = (data: NotificationData | undefined) => {
+    if (!data) return;
+    track({name: "notification_opened", intent: data.intent ?? "daily"});
+    if (data.videoId) {
+        router.push(PATHS.VIDEO(data.videoId));
+        return;
+    }
+    if (data.url) {
+        router.push(PATHS.WEB(data.url, COPY.appName));
+        return;
+    }
+    router.push(PATHS.HOME);
 };
 
-export const initNotification = () => {
-    const registerForPushNotificationsAsync = async () => {
-        Notifications.setNotificationChannelAsync(
-            ANDROID_CHANNEL_ID,
-            ANDROID_CONFIG
-        );
+/**
+ * Registers the notification handler, the Android channel and the tap router.
+ *
+ * Mount this exactly once, from the root layout. Registering the response
+ * listener per consumer would route a single tap once per mounted hook.
+ */
+export const useNotificationRouting = () => {
+    useEffect(() => {
+        registerNotificationHandler();
+        ensureAndroidChannel();
+    }, []);
 
-        const {status: existingStatus} =
-            await Notifications.getPermissionsAsync();
-        let finalStatus = existingStatus;
-        if (existingStatus !== Notifications.PermissionStatus.GRANTED) {
-            const {status} = await Notifications.requestPermissionsAsync();
-            finalStatus = status;
-        }
-
-        return finalStatus;
-    };
-
-    const getToken = async (): Promise<string> => {
-        const projectId =
-            Constants?.expoConfig?.extra?.eas?.projectId ??
-            Constants?.easConfig?.projectId;
-        const token = (
-            await Notifications.getExpoPushTokenAsync({
-                projectId,
-            })
-        ).data;
-        return token;
-    };
-
-    registerForPushNotificationsAsync()
-        .then(async (finalStatus) => {
-            if (![Notifications.PermissionStatus.GRANTED].includes(finalStatus))
-                await Alert.alert(
-                    STRINGS.notification.alert_permission_title,
-                    STRINGS.notification.alert_permission_message,
-                    [
-                        {
-                            text: STRINGS.notification.alert_permission_button,
-                            onPress: () => Linking.openSettings(),
-                        },
-                    ]
-                );
-            return finalStatus;
-        })
-        .then(async () => {
-            const token = await getToken();
-            storage.setItem(STORAGE_ID.notificationToken, token);
-        })
-        .then(() => {
-            Notifications.setNotificationHandler({
-                handleNotification: async () => handleNotificationConfig,
-            });
-            Notifications.addNotificationReceivedListener((notification) => {
-                const title =
-                    notification.request.content.title || STRINGS.appName;
-                const body =
-                    notification.request.content.body || STRINGS.appName;
-                const url = notification.request.content.data.url as string;
-                scheduleLocalNotification(title, body as string, {url});
-            });
+    useEffect(() => {
+        const responseSub =
             Notifications.addNotificationResponseReceivedListener(
                 (response) => {
-                    const title =
-                        response.notification.request.content.body ||
-                        STRINGS.appName;
-                    const url = response.notification.request.content.data
-                        .url as string;
-                    if (url) router.push(PATHS.WEB(url, title));
+                    routeFromData(
+                        response.notification.request.content.data as
+                            | NotificationData
+                            | undefined
+                    );
                 }
             );
-        });
+
+        // Cold start from a notification tap.
+        Notifications.getLastNotificationResponseAsync()
+            .then((response) => {
+                if (!response) return;
+                routeFromData(
+                    response.notification.request.content.data as
+                        | NotificationData
+                        | undefined
+                );
+            })
+            .catch(() => {});
+
+        return () => {
+            responseSub.remove();
+        };
+    }, []);
+};
+
+/**
+ * Notification settings and scheduling. Safe to mount from any screen: the
+ * re-arm effect is guarded to run once per launch, and nothing here registers
+ * a listener.
+ *
+ * It never requests permission on its own. `enable()` is called from the opt-in
+ * card, after the user has already watched something.
+ */
+let syncedThisLaunch = false;
+
+export const useNotifications = () => {
+    const [settings, setSettings] = useAtom(settingsAtom);
+    const streak = useAtomValue(streakAtom);
+
+    // Re-arm the rolling reminders once per launch.
+    useEffect(() => {
+        if (syncedThisLaunch) return;
+        syncedThisLaunch = true;
+
+        const sync = async () => {
+            const status = await getPermissionStatus();
+            if (status !== Notifications.PermissionStatus.GRANTED) return;
+            if (!settings.dailyNotification) return;
+            await scheduleDailyDigest(settings.reminderHour, getDailyPick());
+            await scheduleStreakReminder(streak.current);
+            await scheduleComeback();
+        };
+        sync();
+    }, [settings.dailyNotification, settings.reminderHour, streak.current]);
+
+    const enable = useCallback(async (): Promise<boolean> => {
+        const granted = await requestPermission();
+        track({name: "notification_opt_in", granted});
+        if (!granted) {
+            Alert.alert(
+                COPY.notification.blockedTitle,
+                COPY.notification.blockedBody,
+                [
+                    {text: COPY.notification.optInDismiss, style: "cancel"},
+                    {
+                        text: COPY.notification.blockedAction,
+                        onPress: () => Linking.openSettings(),
+                    },
+                ]
+            );
+            return false;
+        }
+        setSettings((current) => ({...current, dailyNotification: true}));
+        await scheduleDailyDigest(settings.reminderHour, getDailyPick());
+        await scheduleStreakReminder(streak.current);
+        await scheduleComeback();
+        return true;
+    }, [setSettings, settings.reminderHour, streak.current]);
+
+    const disable = useCallback(async () => {
+        setSettings((current) => ({...current, dailyNotification: false}));
+        await cancelAllScheduled();
+    }, [setSettings]);
+
+    const setReminderHour = useCallback(
+        async (hour: number) => {
+            setSettings((current) => ({...current, reminderHour: hour}));
+            if (settings.dailyNotification) {
+                await scheduleDailyDigest(hour, getDailyPick());
+            }
+        },
+        [setSettings, settings.dailyNotification]
+    );
+
+    return {
+        enabled: settings.dailyNotification,
+        reminderHour: settings.reminderHour,
+        enable,
+        disable,
+        setReminderHour,
+        ids: NOTIFICATION_IDS,
+    };
 };

@@ -1,16 +1,21 @@
 import {StyleSheet} from "react-native";
-import {SPACING} from "@/theme/spacing";
+import {MIN_TOUCH, RADII, SPACE} from "@/constants/theme";
 
 export const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         alignItems: "center",
-        padding: SPACING[4],
+        gap: SPACE.sm,
+        paddingHorizontal: SPACE.md,
+        paddingVertical: SPACE.xs,
+        minHeight: MIN_TOUCH + SPACE.xs,
     },
-    title: {
-        flex: 1,
-        textAlign: "left",
-        overflow: "hidden",
-        paddingHorizontal: SPACING[2],
+    back: {
+        width: MIN_TOUCH - 8,
+        height: MIN_TOUCH - 8,
+        borderRadius: RADII.pill,
+        alignItems: "center",
+        justifyContent: "center",
     },
+    title: {flex: 1},
 });

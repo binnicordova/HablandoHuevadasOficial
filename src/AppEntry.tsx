@@ -1,7 +1,9 @@
 import {initBackgroundFetch} from "./hooks/useBackgroundFetch";
-import {initNotification} from "./hooks/useNotification";
+import {registerNotificationHandler} from "./utils/notification";
 
+// Must run before the first notification can arrive; both calls are no-ops in
+// environments that do not support them (Expo Go, web).
+registerNotificationHandler();
 initBackgroundFetch();
-initNotification();
 
 import "expo-router/entry";

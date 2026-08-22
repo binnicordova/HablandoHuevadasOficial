@@ -1,32 +1,16 @@
 import {StyleSheet} from "react-native";
-import {theme} from "@/theme/colors";
-
-const colors = theme();
+import {MIN_TOUCH, PRESS, RADII, SPACE} from "@/constants/theme";
 
 export const styles = StyleSheet.create({
     container: {
         position: "absolute",
-        bottom: 80,
-        right: 20,
-        width: 60,
-        height: 60,
-        borderRadius: 30,
-        backgroundColor: colors.accent,
+        bottom: SPACE.lg,
+        right: SPACE.md,
+        width: MIN_TOUCH + 8,
+        height: MIN_TOUCH + 8,
+        borderRadius: RADII.pill,
         justifyContent: "center",
         alignItems: "center",
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-        overflow: "hidden",
     },
-    icon: {
-        width: "100%",
-        height: "100%",
-        zIndex: 999,
-    },
+    pressed: {opacity: PRESS.opacity, transform: [{scale: 0.94}]},
 });

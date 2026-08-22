@@ -1,15 +1,23 @@
 type StorageIdType = {
-    categories: string;
-    favoriteCategories: string;
-    favoritesLastUpdated: string;
-    notificationToken: string;
-    articles: string;
+    /** Ids the user marked as favourites. */
+    favorites: string;
+    /** Recently watched entries with resume position. */
+    history: string;
+    /** Daily open streak. */
+    streak: string;
+    /** User controlled preferences (notifications, reminder hour, autoplay). */
+    settings: string;
+    /** Counters used to time prompts so we never ask before delivering value. */
+    engagement: string;
+    /** Search terms the user typed, for one-tap repeat searches. */
+    recentSearches: string;
 };
 
 export const STORAGE_ID: StorageIdType = {
-    categories: "categories",
-    favoriteCategories: "favoriteCategories",
-    favoritesLastUpdated: "favoritesLastUpdated",
-    notificationToken: "notificationToken",
-    articles: "articles",
+    favorites: "hh.favorites.v1",
+    history: "hh.history.v1",
+    streak: "hh.streak.v1",
+    settings: "hh.settings.v1",
+    engagement: "hh.engagement.v1",
+    recentSearches: "hh.recentSearches.v1",
 };

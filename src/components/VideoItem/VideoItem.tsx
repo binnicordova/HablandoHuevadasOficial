@@ -7,7 +7,7 @@ import {Text} from "@/components/Text/Text";
 import {ELEVATION} from "@/constants/theme";
 import type {CatalogItem} from "@/models/video";
 import {useTheme} from "@/theme/colors";
-import {formatViews} from "@/utils/format";
+import {displayTitle, formatLikes, formatViews} from "@/utils/format";
 import {tapFeedback} from "@/utils/haptics";
 import {styles} from "./VideoItem.styles";
 
@@ -40,7 +40,7 @@ export const VideoItem = ({
                 pressed && styles.pressed,
             ]}
             accessibilityRole="button"
-            accessibilityLabel={`Reproducir: ${item.title}`}
+            accessibilityLabel={`Reproducir: ${displayTitle(item)}`}
             onPress={() => {
                 tapFeedback();
                 onPress(item);
@@ -126,7 +126,7 @@ export const VideoItem = ({
                         numberOfLines={2}
                         style={styles.title}
                     >
-                        {item.title}
+                        {displayTitle(item)}
                     </Text>
                     <FavoriteButton
                         id={item.id}
@@ -134,9 +134,28 @@ export const VideoItem = ({
                         style={styles.favorite}
                     />
                 </View>
-                <Text variant="caption" tone="faint">
-                    {formatViews(item.view_count)}
-                </Text>
+                <View style={styles.metaRow}>
+                    {item.season_short ? (
+                        <View
+                            style={[
+                                styles.seasonChip,
+                                {borderColor: colors.borderStrong},
+                            ]}
+                        >
+                            <Text variant="micro" tone="muted">
+                                {item.season_short}
+                            </Text>
+                        </View>
+                    ) : null}
+                    <Text variant="caption" tone="faint">
+                        {[
+                            formatViews(item.view_count),
+                            formatLikes(item.like_count),
+                        ]
+                            .filter(Boolean)
+                            .join(" · ")}
+                    </Text>
+                </View>
             </View>
         </Pressable>
     );

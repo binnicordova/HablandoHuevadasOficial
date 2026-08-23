@@ -9,7 +9,10 @@ import {GestureHandlerRootView} from "react-native-gesture-handler";
 import {SafeAreaProvider} from "react-native-safe-area-context";
 import {COLORS} from "@/constants/theme";
 import {useEngagement} from "@/hooks/useEngagement";
-import {useNotificationRouting} from "@/hooks/useNotification";
+import {
+    useNotificationRouting,
+    useNotifications,
+} from "@/hooks/useNotification";
 import {useStreak} from "@/hooks/useStreak";
 import {styles} from "@/styles";
 import {useTheme} from "@/theme/colors";
@@ -30,6 +33,13 @@ const SessionBootstrap = () => {
     useStreak();
     useEngagement();
     useNotificationRouting();
+    /*
+     * Re-arms the notification schedule once per launch. It lives here rather
+     * than on Inicio because a cold start from a notification tap opens the
+     * video screen, and the schedule has to roll forward however the app was
+     * opened — not only when the home tab happens to mount.
+     */
+    useNotifications();
     return null;
 };
 

@@ -61,7 +61,9 @@ Si quieres apoyar mi trabajo y ayudarme a seguir añadiendo características a e
 - [x] ⏯️ **Seguir viendo**: retoma cada episodio donde lo dejaste.
 - [x] 🔥 **Racha diaria**: mantén tu racha viendo un clip al día.
 - [x] 🔗 **Compartir Videos**: comparte a WhatsApp, TikTok o Instagram en un toque.
-- [x] 🔔 **Notificaciones locales**: la huevada del día a la hora que elijas.
+- [x] 🔔 **Notificaciones inteligentes**: varias al día, elegidas según lo que ves, en tus horas; bajan solas si las ignoras.
+- [x] ⚡ **Autoplay en Shorts**: cada short arranca al deslizar y salta al siguiente cuando termina.
+- [x] 🏷️ **Títulos limpios y temporadas**: el catálogo se lee por episodio, no por el título gritado de YouTube.
 - [x] 🌗 **Modo oscuro**: sigue el ajuste del sistema.
 - [x] 📴 **Catálogo offline**: explora, busca y organiza sin conexión.
 - [x] 🌐 **Multiplataforma**: Android y iPhone, compatible con Expo Go.
@@ -72,7 +74,6 @@ Si quieres apoyar mi trabajo y ayudarme a seguir añadiendo características a e
 - [ ] 🎬 **Clips descargables para redes**: exporta un clip vertical con marca de agua.
 - [ ] 🗨️ **Chat Comunitario**: conéctate con otros fans de Hablando Huevadas.
 - [ ] 💬 **Comentarios por Segundo**: comentarios sincronizados con momentos del video.
-- [ ] 🎛️ **Soundboard**: los audios más recordados, listos para compartir.
 
 📊 Auditoría de producto y crecimiento: [`docs/product-audit.md`](docs/product-audit.md) · ASO/CRO: [`docs/aso-cro.md`](docs/aso-cro.md)
 

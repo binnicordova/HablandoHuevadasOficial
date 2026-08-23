@@ -1,7 +1,21 @@
 import {atom} from "jotai";
 import {STORAGE_ID} from "@/constants/storage";
 import type {CatalogItem, HistoryEntry, StreakState} from "@/models/video";
-import {getItemsByIds, getShuffledShorts, getVideos} from "@/services/catalog";
+import {
+    getItemsByIds,
+    getShorts,
+    getShuffledShorts,
+    getVideos,
+} from "@/services/catalog";
+import {
+    createSalt,
+    INITIAL_NOTIFICATION_STATE,
+    type NotificationLevel,
+    type NotificationSlot,
+    type NotificationState,
+    registerOpen,
+} from "@/services/notificationPlanner";
+import {favoriteRails, homeRails, type Rail} from "@/services/recommendations";
 import {persistedAtom} from "@/stores/persist";
 
 const HISTORY_LIMIT = 60;
@@ -16,6 +30,10 @@ const RECENT_SEARCH_LIMIT = 8;
 export const videosAtom = atom<CatalogItem[]>((): CatalogItem[] => getVideos());
 export const shortsAtom = atom<CatalogItem[]>((): CatalogItem[] =>
     getShuffledShorts()
+);
+/** Unshuffled shorts, for anything that needs the catalog order (the planner). */
+export const shortsCatalogAtom = atom<CatalogItem[]>((): CatalogItem[] =>
+    getShorts()
 );
 
 /* ---------------------------------- user state --------------------------- */
@@ -37,24 +55,85 @@ export const streakAtom = persistedAtom<StreakState>(STORAGE_ID.streak, {
     totalDays: 0,
 });
 
+/** What the OS last told us about the notification permission. */
+export type PermissionState = "unknown" | "granted" | "denied";
+
+/**
+ * Live permission status, in memory only. The OS is the source of truth and it
+ * can change from outside the app, so this is re-read on every launch rather
+ * than persisted.
+ */
+export const notificationPermissionAtom = atom<PermissionState>("unknown");
+
 export type Settings = {
+    /**
+     * Whether this user wants to hear from us. On by default: an app nobody
+     * hears from is an app nobody opens, and the OS permission below is the
+     * real gate anyway — this flag only decides what happens once it is granted.
+     */
     dailyNotification: boolean;
-    /** 0-23 local hour for the daily reminder. */
+    /**
+     * Set only when the user turns notifications off by hand.
+     *
+     * Without it, "false" is ambiguous — it means both "never asked" and "asked
+     * and refused" — and the launch check that adopts an existing OS grant
+     * would happily switch someone back on after they deliberately switched
+     * themselves off.
+     */
+    notificationOptOut: boolean;
+    /** 0-23 local hour that anchors the primetime slot. */
     reminderHour: number;
+    /** How many pushes a day the user is willing to take. */
+    notificationLevel: NotificationLevel;
     autoplay: boolean;
     reduceMotion: boolean;
 };
 
 export const settingsAtom = persistedAtom<Settings>(STORAGE_ID.settings, {
-    dailyNotification: false,
+    dailyNotification: true,
+    notificationOptOut: false,
     reminderHour: 19,
+    notificationLevel: "normal",
     autoplay: true,
     reduceMotion: false,
 });
 
+/**
+ * Everything the planner has to remember between launches: which clips were
+ * already pushed, which hours this user answers, and how long they have been
+ * ignoring us.
+ */
+export const notificationStateAtom = persistedAtom<NotificationState>(
+    STORAGE_ID.notifications,
+    INITIAL_NOTIFICATION_STATE
+);
+
+/** Lazily seeds the per-install jitter salt on first use. */
+export const ensureNotificationSaltAtom = atom(null, (get, set) => {
+    const current = get(notificationStateAtom);
+    if (current.salt) return current;
+    const next = {...current, salt: createSalt()};
+    set(notificationStateAtom, next);
+    return next;
+});
+
+export const recordNotificationOpenAtom = atom(
+    null,
+    (get, set, slot: NotificationSlot | undefined) => {
+        set(
+            notificationStateAtom,
+            registerOpen(get(notificationStateAtom), slot)
+        );
+    }
+);
+
 export type Engagement = {
     /** Number of app opens, used to time the permission and share prompts. */
     sessions: number;
+    /** When the notification card was last shown, so it can rest between asks. */
+    notificationPromptAt?: number | null;
+    /** How many times it has been shown. Capped — three noes is an answer. */
+    notificationPromptCount?: number;
     /** Videos actually started, the real signal that we delivered value. */
     playsStarted: number;
     firstOpenAt: number | null;
@@ -97,6 +176,40 @@ export const historyItemsAtom = atom<HistoryRow[]>((get): HistoryRow[] => {
         .filter((row): row is HistoryRow => row !== null);
 });
 
+/**
+ * Resume progress by id, quantised to 5% buckets.
+ *
+ * `updateProgressAtom` fires every second while something plays. Handing the
+ * lists a brand new Map on every tick re-renders every card on screen once a
+ * second for a bar that moves one pixel. Bucketing means the identity only
+ * changes when the bar visibly moves.
+ */
+const progressSignature = (entries: HistoryEntry[]): string =>
+    entries
+        .map((entry) =>
+            entry.durationSeconds > 0
+                ? `${entry.id}:${Math.round((entry.positionSeconds / entry.durationSeconds) * 20)}`
+                : entry.id
+        )
+        .join(",");
+
+let progressCache: {signature: string; map: Map<string, number>} | null = null;
+
+export const watchProgressAtom = atom<Map<string, number>>((get) => {
+    const history = get(historyAtom);
+    const signature = progressSignature(history);
+    if (progressCache?.signature === signature) return progressCache.map;
+
+    const map = new Map<string, number>();
+    for (const entry of history) {
+        if (entry.durationSeconds > 0) {
+            map.set(entry.id, entry.positionSeconds / entry.durationSeconds);
+        }
+    }
+    progressCache = {signature, map};
+    return map;
+});
+
 /** Rows for "Seguir viendo": started, not finished, most recent first. */
 export const continueWatchingAtom = atom<HistoryRow[]>((get): HistoryRow[] =>
     get(historyItemsAtom)
@@ -106,6 +219,33 @@ export const continueWatchingAtom = atom<HistoryRow[]>((get): HistoryRow[] =>
             return progress > 0.02 && progress < 0.95;
         })
         .slice(0, 12)
+);
+
+/* ------------------------------ recommendations --------------------------- */
+
+/*
+ * Both rail sets come out of the same engine (`services/recommendations.ts`),
+ * which is memoised on the ids — not on the playback positions — so a video
+ * playing on Inicio does not rebuild eight carousels once a second.
+ */
+
+export const homeRailsAtom = atom<Rail[]>((get): Rail[] =>
+    homeRails({
+        videos: get(videosAtom),
+        shorts: get(shortsCatalogAtom),
+        history: get(historyAtom),
+        favoriteIds: get(favoriteIdsAtom),
+    })
+);
+
+export const favoriteRailsAtom = atom<Rail[]>((get): Rail[] =>
+    favoriteRails({
+        videos: get(videosAtom),
+        shorts: get(shortsCatalogAtom),
+        history: get(historyAtom),
+        favoriteIds: get(favoriteIdsAtom),
+        favorites: get(favoriteItemsAtom),
+    })
 );
 
 /* ---------------------------------- writers ------------------------------- */

@@ -1,5 +1,5 @@
 import {useRouter} from "expo-router";
-import {useAtomValue, useSetAtom} from "jotai";
+import {useAtom, useAtomValue, useSetAtom} from "jotai";
 import {
     Alert,
     Pressable,
@@ -15,19 +15,25 @@ import {Icon} from "@/components/Icon/Icon";
 import {SectionHeader} from "@/components/SectionHeader/SectionHeader";
 import {StreakBadge} from "@/components/StreakBadge/StreakBadge";
 import {Text} from "@/components/Text/Text";
-import {VideoCard} from "@/components/VideoCard/VideoCard";
+import {VideoRail} from "@/components/VideoRail/VideoRail";
 import {COPY} from "@/constants/copy";
 import {PATHS} from "@/constants/routes";
 import {ELEVATION, HIT_SLOP, PRESS, RADII, SPACE} from "@/constants/theme";
 import {useNotifications} from "@/hooks/useNotification";
+import {useOpenItem} from "@/hooks/useOpenItem";
 import {useStreak} from "@/hooks/useStreak";
+import {
+    NOTIFICATION_LEVELS,
+    pushesPerDay,
+} from "@/services/notificationPlanner";
 import {
     clearHistoryAtom,
     favoriteItemsAtom,
     historyItemsAtom,
+    settingsAtom,
 } from "@/stores/store";
 import {useTheme} from "@/theme/colors";
-import {formatRelativeTime} from "@/utils/format";
+import {displayTitle, formatRelativeTime} from "@/utils/format";
 import {tapFeedback} from "@/utils/haptics";
 import {isExpoGo} from "@/utils/notification";
 import {shareStreak} from "@/utils/share";
@@ -38,13 +44,13 @@ const Me = () => {
     const favorites = useAtomValue(favoriteItemsAtom);
     const history = useAtomValue(historyItemsAtom);
     const clearHistory = useSetAtom(clearHistoryAtom);
+    const [settings, setSettings] = useAtom(settingsAtom);
     const {streak, best, totalDays, nextMilestone} = useStreak();
     const notifications = useNotifications();
     const colors = useTheme();
     const insets = useSafeAreaInsets();
     const router = useRouter();
-
-    const openVideo = (id: string) => router.push(PATHS.VIDEO(id));
+    const openItem = useOpenItem();
 
     const confirmClear = () =>
         Alert.alert(COPY.me.historyClearTitle, COPY.me.historyClearBody, [
@@ -99,28 +105,27 @@ const Me = () => {
                 </Pressable>
             </View>
 
-            <SectionHeader title={COPY.me.favorites} />
             {favorites.length === 0 ? (
-                <EmptyState
-                    icon="heart-broken-outline"
-                    title={COPY.me.favoritesEmpty}
-                    actionLabel={COPY.me.favoritesEmptyAction}
-                    onAction={() => router.push(PATHS.HOME)}
-                />
+                <>
+                    <SectionHeader title={COPY.me.favorites} />
+                    <EmptyState
+                        icon="heart-broken-outline"
+                        title={COPY.me.favoritesEmpty}
+                        actionLabel={COPY.me.favoritesEmptyAction}
+                        onAction={() => router.push(PATHS.HOME)}
+                    />
+                </>
             ) : (
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={styles.rail}
-                >
-                    {favorites.map((item) => (
-                        <VideoCard
-                            key={item.id}
-                            item={item}
-                            onPress={() => openVideo(item.id)}
-                        />
-                    ))}
-                </ScrollView>
+                <VideoRail
+                    rail={{
+                        id: "favorites",
+                        title: COPY.me.favorites,
+                        items: favorites,
+                    }}
+                    onPress={openItem}
+                    actionLabel={COPY.me.favoritesAction}
+                    onAction={() => router.push(PATHS.FAVORITES)}
+                />
             )}
 
             <SectionHeader
@@ -155,12 +160,12 @@ const Me = () => {
                                 pressed && styles.pressed,
                             ]}
                             accessibilityRole="button"
-                            accessibilityLabel={`Abrir ${item.title}`}
-                            onPress={() => openVideo(item.id)}
+                            accessibilityLabel={`Abrir ${displayTitle(item)}`}
+                            onPress={() => openItem(item)}
                         >
                             <View style={styles.historyText}>
                                 <Text variant="label" numberOfLines={1}>
-                                    {item.title}
+                                    {displayTitle(item)}
                                 </Text>
                                 <Text variant="caption" tone="faint">
                                     {formatRelativeTime(entry.watchedAt)}
@@ -218,6 +223,38 @@ const Me = () => {
                 {notifications.enabled ? (
                     <View style={styles.hourPicker}>
                         <Text variant="caption" tone="muted">
+                            {COPY.me.settingsLevel}
+                        </Text>
+                        <ScrollView
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            contentContainerStyle={styles.hourRow}
+                        >
+                            {NOTIFICATION_LEVELS.map((level) => (
+                                <Chip
+                                    key={level}
+                                    label={COPY.me.settingsLevels[level]}
+                                    selected={notifications.level === level}
+                                    onPress={() =>
+                                        notifications.setLevel(level)
+                                    }
+                                />
+                            ))}
+                        </ScrollView>
+                        <Text variant="micro" tone="faint">
+                            {COPY.me.settingsLevelHint(
+                                pushesPerDay(notifications.level)
+                            )}
+                        </Text>
+                        <Text variant="micro" tone="faint">
+                            {COPY.me.settingsLevelBackoff}
+                        </Text>
+                    </View>
+                ) : null}
+
+                {notifications.enabled ? (
+                    <View style={styles.hourPicker}>
+                        <Text variant="caption" tone="muted">
                             {COPY.me.settingsHour}
                         </Text>
                         <ScrollView
@@ -240,6 +277,36 @@ const Me = () => {
                         </ScrollView>
                     </View>
                 ) : null}
+
+                <View style={styles.settingRow}>
+                    <View style={styles.settingText}>
+                        <Text variant="label">{COPY.me.settingsAutoplay}</Text>
+                        <Text variant="caption" tone="muted">
+                            {COPY.me.settingsAutoplayHint}
+                        </Text>
+                    </View>
+                    <Switch
+                        value={settings.autoplay}
+                        onValueChange={(next) => {
+                            tapFeedback();
+                            setSettings((current) => ({
+                                ...current,
+                                autoplay: next,
+                            }));
+                        }}
+                        trackColor={{
+                            true: colors.accent,
+                            false: colors.surfaceAlt,
+                        }}
+                        thumbColor={
+                            settings.autoplay
+                                ? colors.accentText
+                                : colors.textMuted
+                        }
+                        ios_backgroundColor={colors.surfaceAlt}
+                        accessibilityLabel={COPY.me.settingsAutoplay}
+                    />
+                </View>
 
                 {isExpoGo ? (
                     <Text variant="micro" tone="faint">
@@ -264,7 +331,6 @@ const styles = StyleSheet.create({
     },
     streakShare: {flexDirection: "row", alignItems: "center", gap: SPACE.xxs},
     pressed: {opacity: PRESS.opacity},
-    rail: {paddingHorizontal: SPACE.md},
     historyCard: {
         marginHorizontal: SPACE.md,
         borderRadius: RADII.lg,

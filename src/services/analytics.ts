@@ -15,6 +15,8 @@ export type AnalyticsEvent =
     | {name: "play_start"; videoId: string; kind: string; surface: string}
     | {name: "play_progress"; videoId: string; percent: number}
     | {name: "search"; termLength: number; results: number}
+    /* Which rail earned the tap. Without this the rail order is a guess. */
+    | {name: "rail_open"; rail: string; videoId: string; position: number}
     | {name: "favorite_add"; videoId: string}
     | {name: "favorite_remove"; videoId: string}
     | {name: "share"; videoId: string; channel: string; surface: string}

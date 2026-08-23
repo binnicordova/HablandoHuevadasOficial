@@ -2,8 +2,7 @@ import Constants, {ExecutionEnvironment} from "expo-constants";
 import * as Notifications from "expo-notifications";
 import {Platform} from "react-native";
 import {COPY} from "@/constants/copy";
-import type {CatalogItem} from "@/models/video";
-import {getDailyPick} from "@/services/catalog";
+import type {PlannedNotification} from "@/services/notificationPlanner";
 import {theme} from "@/theme/colors";
 
 export const ANDROID_CHANNEL_ID = "default";
@@ -16,11 +15,8 @@ export const ANDROID_CHANNEL_ID = "default";
 export const isExpoGo =
     Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
 
-export const NOTIFICATION_IDS = {
-    daily: "hh-daily-digest",
-    streak: "hh-streak-reminder",
-    comeback: "hh-comeback",
-} as const;
+/** Every id this app schedules starts with this. */
+export const NOTIFICATION_PREFIX = "hh-";
 
 let handlerRegistered = false;
 
@@ -79,84 +75,61 @@ export const requestPermission = async (): Promise<boolean> => {
     }
 };
 
-const cancel = async (identifier: string) => {
-    try {
-        await Notifications.cancelScheduledNotificationAsync(identifier);
-    } catch {
-        /* nothing scheduled under that id */
-    }
-};
-
-/** Daily "huevada del día" at the user's chosen hour. */
-export const scheduleDailyDigest = async (
-    hour: number,
-    item?: CatalogItem | null
-) => {
-    await cancel(NOTIFICATION_IDS.daily);
-    const pick = item ?? getDailyPick();
-    await Notifications.scheduleNotificationAsync({
-        identifier: NOTIFICATION_IDS.daily,
-        content: {
-            title: COPY.notification.dailyTitle,
-            body: pick?.title ?? COPY.notification.dailyFallback,
-            data: pick ? {videoId: pick.id, kind: pick.kind} : {},
-        },
-        trigger: {
-            type: Notifications.SchedulableTriggerInputTypes.DAILY,
-            hour,
-            minute: 0,
-            channelId: ANDROID_CHANNEL_ID,
-        },
-    });
-};
-
-/**
- * Fires ~20h after the last open. Rescheduled on every launch, so it only ever
- * reaches users who actually stopped coming back.
- */
-export const scheduleStreakReminder = async (currentStreak: number) => {
-    await cancel(NOTIFICATION_IDS.streak);
-    if (currentStreak < 2) return;
-    await Notifications.scheduleNotificationAsync({
-        identifier: NOTIFICATION_IDS.streak,
-        content: {
-            title: COPY.notification.streakTitle,
-            body: COPY.notification.streakBody(currentStreak),
-            data: {intent: "streak"},
-        },
-        trigger: {
-            type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
-            seconds: 60 * 60 * 20,
-            repeats: false,
-            channelId: ANDROID_CHANNEL_ID,
-        },
-    });
-};
-
-/** Win-back nudge three days out, also rescheduled on every launch. */
-export const scheduleComeback = async () => {
-    await cancel(NOTIFICATION_IDS.comeback);
-    await Notifications.scheduleNotificationAsync({
-        identifier: NOTIFICATION_IDS.comeback,
-        content: {
-            title: COPY.notification.comebackTitle,
-            body: COPY.notification.comebackBody,
-            data: {intent: "comeback"},
-        },
-        trigger: {
-            type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
-            seconds: 60 * 60 * 24 * 3,
-            repeats: false,
-            channelId: ANDROID_CHANNEL_ID,
-        },
-    });
-};
-
 export const cancelAllScheduled = async () => {
     try {
         await Notifications.cancelAllScheduledNotificationsAsync();
     } catch {
         /* nothing scheduled */
+    }
+};
+
+/**
+ * Replaces the whole schedule with a freshly planned one.
+ *
+ * Wholesale replacement rather than diffing: the plan is rebuilt on every
+ * launch from live state (streak, history, back-off), so yesterday's pending
+ * notifications are stale by definition, and a partial update is how you end up
+ * with two "huevada del día" firing an hour apart.
+ */
+export const applyNotificationPlan = async (
+    plan: PlannedNotification[]
+): Promise<number> => {
+    await ensureAndroidChannel();
+    await cancelAllScheduled();
+
+    let scheduled = 0;
+    for (const entry of plan) {
+        // The OS silently drops a past date, so anything that slipped between
+        // planning and applying is skipped here instead of vanishing quietly.
+        if (entry.fireAt <= Date.now() + 30_000) continue;
+        try {
+            await Notifications.scheduleNotificationAsync({
+                identifier: entry.id,
+                content: {
+                    title: entry.title,
+                    body: entry.body,
+                    data: entry.data,
+                },
+                trigger: {
+                    type: Notifications.SchedulableTriggerInputTypes.DATE,
+                    date: new Date(entry.fireAt),
+                    channelId: ANDROID_CHANNEL_ID,
+                },
+            });
+            scheduled += 1;
+        } catch {
+            /* one bad entry must not take the rest of the plan down */
+        }
+    }
+    return scheduled;
+};
+
+/** Debug helper: what the OS is actually holding for us right now. */
+export const getScheduled = async () => {
+    try {
+        return await Notifications.getAllScheduledNotificationsAsync();
+    } catch {
+        return [];
     }
 };
 

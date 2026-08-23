@@ -8,6 +8,7 @@ import {
     STORE_URL_IOS,
 } from "@/constants/env";
 import type {CatalogItem} from "@/models/video";
+import {displayTitle} from "@/utils/format";
 import {successFeedback} from "@/utils/haptics";
 import {watchUrl} from "@/utils/youtube";
 
@@ -48,7 +49,7 @@ export const buildShareMessage = (
     source: ShareSource = "player"
 ): string => {
     return COPY.share.message(
-        item.title,
+        displayTitle(item),
         watchUrl(item.id, item.kind),
         storeUrl(source, item.id)
     );

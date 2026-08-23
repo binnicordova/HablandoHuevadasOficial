@@ -8,9 +8,13 @@ const TASK_INTERVAL_MINUTES = 60 * 12;
 
 /**
  * Background tasks are not available in Expo Go, so registration is guarded.
- * The engagement loop does not depend on this: the daily digest is a local
- * DAILY trigger that fires with the app closed. This task only refreshes the
- * digest copy with a fresh pick when the OS grants us a window.
+ * The engagement loop does not depend on this: every push is already scheduled
+ * locally three days out and fires with the app closed. This task only rolls
+ * that window forward — and re-picks the clips against fresher state — when the
+ * OS grants us a slot.
+ *
+ * The task name is kept from the previous build on purpose: renaming it would
+ * strand the registration on every installed device.
  */
 export const initBackgroundFetch = async () => {
     if (isExpoGo) return;

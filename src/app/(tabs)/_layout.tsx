@@ -79,17 +79,17 @@ const TabsLayout = () => {
                 }}
             />
             <Tabs.Screen
-                name="soundboard"
-                options={{
-                    title: COPY.tabs.soundboard,
-                    tabBarIcon: tabIcon("waveform", "waveform"),
-                }}
-            />
-            <Tabs.Screen
                 name="search"
                 options={{
                     title: COPY.tabs.search,
                     tabBarIcon: tabIcon("magnify", "magnify"),
+                }}
+            />
+            <Tabs.Screen
+                name="favorites"
+                options={{
+                    title: COPY.tabs.favorites,
+                    tabBarIcon: tabIcon("heart-outline", "heart"),
                 }}
             />
             <Tabs.Screen

@@ -181,7 +181,7 @@ These are store-console changes and cannot be made from the codebase.
 | **Server-rendered shareable clips** (watermarked 9:16 MP4) | The real viral loop; a link share is 5–10× weaker than a video share | Needs backend video pipeline; the app only embeds an iframe |
 | **Comments / reactions per clip** | The "community" half of the positioning | Needs a backend, moderation, and abuse handling — see §5 |
 | **Real remote push** (`expo-notifications` + a scheduler) | Lets you push *breaking* content, not just a daily local timer | Needs a server; also unavailable in Expo Go on Android |
-| **Soundboard** | Genuinely differentiated, highly shareable, offline | Needs licensed audio assets that aren't in the repo |
+| **Soundboard** | ~~Genuinely differentiated, highly shareable, offline~~ | Parked: needs rights-cleared audio nobody can ship from here |
 | **Tour / ticketing integration** | Direct revenue, high intent | Needs a data source and a commercial partner |
 
 ### Fill-ins — lower impact, low effort

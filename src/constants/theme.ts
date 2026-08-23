@@ -189,7 +189,7 @@ export const ELEVATION = {
         shadowRadius: 28,
         elevation: 14,
     },
-    /** Lime glow for the primary CTA and active soundboard pads. */
+    /** Lime glow for the primary CTA and other accent surfaces. */
     glow: {
         shadowColor: PALETTE.lime,
         shadowOffset: {width: 0, height: 0},

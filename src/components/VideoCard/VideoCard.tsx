@@ -6,6 +6,7 @@ import {ELEVATION, PRESS, RADII, SPACE} from "@/constants/theme";
 import type {CatalogItem} from "@/models/video";
 import {ABSOLUTE_FILL} from "@/styles";
 import {useTheme} from "@/theme/colors";
+import {displayTitle} from "@/utils/format";
 import {tapFeedback} from "@/utils/haptics";
 
 type VideoCardProps = {
@@ -38,7 +39,7 @@ export const VideoCard = ({
                 pressed && styles.pressed,
             ]}
             accessibilityRole="button"
-            accessibilityLabel={`Reproducir: ${item.title}`}
+            accessibilityLabel={`Reproducir: ${displayTitle(item)}`}
             onPress={() => {
                 tapFeedback();
                 onPress(item);
@@ -68,6 +69,16 @@ export const VideoCard = ({
                         <Text variant="micro">{item.duration_string}</Text>
                     </View>
                 ) : null}
+                {item.season_short ? (
+                    <View
+                        style={[
+                            styles.seasonBadge,
+                            {backgroundColor: colors.overlay},
+                        ]}
+                    >
+                        <Text variant="micro">{item.season_short}</Text>
+                    </View>
+                ) : null}
                 {typeof progress === "number" && progress > 0 ? (
                     <View
                         style={[
@@ -88,7 +99,7 @@ export const VideoCard = ({
                 ) : null}
             </View>
             <Text variant="label" numberOfLines={2} style={styles.title}>
-                {item.title}
+                {displayTitle(item)}
             </Text>
         </Pressable>
     );
@@ -108,6 +119,14 @@ const styles = StyleSheet.create({
     badge: {
         position: "absolute",
         right: SPACE.xxs + 2,
+        top: SPACE.xxs + 2,
+        paddingHorizontal: 6,
+        paddingVertical: 2,
+        borderRadius: RADII.xs,
+    },
+    seasonBadge: {
+        position: "absolute",
+        left: SPACE.xxs + 2,
         top: SPACE.xxs + 2,
         paddingHorizontal: 6,
         paddingVertical: 2,

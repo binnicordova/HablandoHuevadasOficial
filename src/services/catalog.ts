@@ -53,7 +53,18 @@ export const getCatalog = (): Catalog => {
         byId.set(item.id, item);
         searchIndex.set(
             item.id,
-            normalize(`${item.title} ${item.description ?? ""}`)
+            normalize(
+                [
+                    item.title,
+                    item.title_clean,
+                    item.season,
+                    item.season_short,
+                    item.series,
+                    item.description ?? "",
+                ]
+                    .filter(Boolean)
+                    .join(" ")
+            )
         );
     }
 
@@ -101,6 +112,18 @@ export const getShuffledShorts = (date: Date = new Date()): CatalogItem[] => {
     return [...pool.slice(offset), ...pool.slice(0, offset)];
 };
 
+/**
+ * Views alone rank the old viral clips above everything. Likes per view is the
+ * closer proxy for "people liked it", so a strong ratio lifts a video by up to
+ * 50% — enough to reorder neighbours, not enough to float a 2k-view clip.
+ */
+export const popularity = (item: CatalogItem): number => {
+    const views = item.view_count ?? 0;
+    if (!item.like_ratio) return views;
+    // 1.4% likes/views is roughly this channel's average.
+    return views * (1 + Math.min(item.like_ratio / 0.014, 1.5) * 0.5);
+};
+
 export type SearchOptions = {
     kind?: VideoKind | "all";
     limit?: number;
@@ -108,7 +131,9 @@ export type SearchOptions = {
 
 /**
  * Token-AND search over the pre-normalised index. Results are ranked by title
- * prefix match first, then by view count, so the obvious hit lands on top.
+ * prefix match first, then by popularity, so the obvious hit lands on top. The
+ * index also carries the clean title and the season, so "temporada 12" and
+ * "el guardia" both find the episode.
  */
 export const searchCatalog = (
     query: string,
@@ -134,7 +159,7 @@ export const searchCatalog = (
         const startsWith = terms.some((term) => haystack.startsWith(term))
             ? 1_000_000_000
             : 0;
-        scored.push({item, score: startsWith + (item.view_count ?? 0)});
+        scored.push({item, score: startsWith + popularity(item)});
         if (scored.length >= limit * 4) break;
     }
 
@@ -144,16 +169,72 @@ export const searchCatalog = (
         .map((entry) => entry.item);
 };
 
-/** "Porque viste X": same-collection neighbours, cheap and good enough. */
+/**
+ * "Porque viste X": the best of the same season first, then the neighbours in
+ * the list. Season is the strongest similarity signal the dataset carries — the
+ * cast, the era and the running gags all move together with it.
+ *
+ * Pure over whatever pool it is handed, so the rail engine can run it on a
+ * filtered catalog and the tests can run it on a synthetic one.
+ */
+export const relatedIn = (
+    item: CatalogItem,
+    pool: CatalogItem[],
+    count = 10
+): CatalogItem[] => {
+    const id = item.id;
+
+    const out: CatalogItem[] = [];
+    const taken = new Set([id]);
+
+    if (item.season) {
+        /*
+         * Half the row, but never more than six. Callers over-fetch this list
+         * so they have headroom after de-duplication, and an uncapped half
+         * would let one rail swallow most of a season — starving the "más de
+         * esta temporada" row that comes right after it.
+         */
+        const seasonSlots = Math.ceil(Math.min(count, 12) / 2);
+        const sameSeason = pool
+            .filter(
+                (candidate) =>
+                    candidate.season === item.season && candidate.id !== id
+            )
+            .sort((a, b) => popularity(b) - popularity(a))
+            .slice(0, seasonSlots);
+        for (const candidate of sameSeason) {
+            out.push(candidate);
+            taken.add(candidate.id);
+        }
+    }
+
+    const index = pool.findIndex((candidate) => candidate.id === id);
+    const neighbours =
+        index === -1
+            ? pool
+            : [
+                  ...pool.slice(index + 1, index + 1 + count),
+                  ...pool.slice(Math.max(0, index - count), index),
+              ];
+    for (const candidate of neighbours) {
+        if (out.length >= count) break;
+        if (taken.has(candidate.id)) continue;
+        out.push(candidate);
+        taken.add(candidate.id);
+    }
+
+    return out.slice(0, count);
+};
+
+/** Same thing, resolved against the bundled catalog. */
 export const getRelated = (id: string, count = 10): CatalogItem[] => {
     const item = getItemById(id);
     if (!item) return [];
-    const pool = item.kind === "short" ? getShorts() : getVideos();
-    const index = pool.findIndex((candidate) => candidate.id === id);
-    if (index === -1) return pool.slice(0, count);
-    const before = pool.slice(Math.max(0, index - count), index);
-    const after = pool.slice(index + 1, index + 1 + count);
-    return [...after, ...before].slice(0, count);
+    return relatedIn(
+        item,
+        item.kind === "short" ? getShorts() : getVideos(),
+        count
+    );
 };
 
 /** Used by tests and by the reset flow. */

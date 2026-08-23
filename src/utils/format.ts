@@ -1,3 +1,23 @@
+import type {Video} from "@/models/video";
+
+/**
+ * What the UI shows as the title.
+ *
+ * `title` is the raw YouTube string: brand, season and episode all shouted into
+ * one line. `title_clean` is the parsed episode name. Falling back to the raw
+ * title matters — the parser leaves it empty for nothing, but datasets built
+ * before the parser existed have no clean title at all.
+ */
+export const displayTitle = (item: Pick<Video, "title" | "title_clean">) =>
+    item.title_clean?.trim() || item.title;
+
+export const formatLikes = (likes: number | null | undefined): string => {
+    if (!likes) return "";
+    if (likes >= 1_000_000) return `${(likes / 1_000_000).toFixed(1)}M likes`;
+    if (likes >= 1_000) return `${Math.floor(likes / 1_000)}K likes`;
+    return `${likes} likes`;
+};
+
 export const formatViews = (views: number | null | undefined): string => {
     if (views === null || views === undefined) {
         return "";

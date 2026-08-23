@@ -11,6 +11,8 @@ type StorageIdType = {
     engagement: string;
     /** Search terms the user typed, for one-tap repeat searches. */
     recentSearches: string;
+    /** Notification memory: fatigue window, back-off and per-slot opens. */
+    notifications: string;
 };
 
 export const STORAGE_ID: StorageIdType = {
@@ -20,4 +22,5 @@ export const STORAGE_ID: StorageIdType = {
     settings: "hh.settings.v1",
     engagement: "hh.engagement.v1",
     recentSearches: "hh.recentSearches.v1",
+    notifications: "hh.notifications.v1",
 };

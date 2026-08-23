@@ -18,8 +18,8 @@ export const COPY = {
     tabs: {
         home: "Inicio",
         shorts: "Shorts",
-        soundboard: "Audios",
         search: "Buscar",
+        favorites: "Guardados",
         me: "Mi zona",
     },
 
@@ -28,11 +28,7 @@ export const COPY = {
         dailyBadge: "Huevada del día",
         dailyHint: "Cambia a la medianoche. No te hagas el vivo.",
         nowPlaying: "Sonando ahorita",
-        continueTitle: "Seguías viendo esto",
-        continueSubtitle: "Lo dejaste botado. Termínalo.",
         continueAction: "Ver todo",
-        catalogTitle: "Todos los episodios",
-        catalogSubtitle: "535 huevadas completas. Suerte.",
         shuffle: "Sorpréndeme, cjo",
         emptyContinue:
             "No has visto nada todavía. Dale play arriba, no seas tímido.",
@@ -44,15 +40,19 @@ export const COPY = {
         muted: "Sin volumen, sube el sonido",
     },
 
-    soundboard: {
-        title: "Audios",
-        subtitle: "Los audios que ya te sabes de memoria.",
-        tapHint: "Tócalo y suena. Así de simple, cro.",
-        stopAll: "Ya cállalo",
-        locked: "Todavía no",
-        lockedHint: "Este audio aún no está listo. Paciencia, csm.",
-        empty: "Acá no hay ni un audio todavía. Vuelve luego.",
-        playbackFailed: "Ese audio no quiso sonar. Inténtalo de nuevo.",
+    /**
+     * The full catalog. Lives in Buscar, linked from the bottom of Inicio, so
+     * the same two strings are never written twice.
+     */
+    catalog: {
+        /** Keyed by the kind filter, so the heading never lies about the list. */
+        title: {
+            all: "Todo el catálogo",
+            video: "Todos los episodios",
+            short: "Todos los shorts",
+        },
+        subtitle: (n: number) => `${n} huevadas completas. Suerte.`,
+        homeCta: "Ver los episodios completos",
     },
 
     search: {
@@ -61,10 +61,60 @@ export const COPY = {
         results: (n: number) => (n === 1 ? "1 resultado" : `${n} resultados`),
         emptyTitle: "Nada, cro. Cero.",
         emptyHint: "Escríbelo bien o busca a otro invitado. No adivinamos.",
-        idleTitle: "Busca entre 3,600+ huevadas",
-        idleHint: "Un nombre, un episodio, una frase que te acuerdes a medias.",
         filters: {all: "Todo", videos: "Episodios", shorts: "Shorts"},
         clear: "Borrar búsqueda",
+    },
+
+    /**
+     * Rail copy, shared by Inicio y Guardados.
+     *
+     * Cada título es una razón para darle play, no una etiqueta. "Recomendados"
+     * no le dice nada a nadie; "porque viste X" sí. Y el subtítulo es el que
+     * mete el codazo — ahí vive la mala palabra, nunca en la instrucción.
+     */
+    rails: {
+        continueTitle: "Seguías viendo esto",
+        continueSubtitle: "Lo dejaste botado. Termínalo.",
+        forYouTitle: "Hecho para ti, cro",
+        forYouSubtitle: "Armado con las huevadas que te tragas. No juzgamos.",
+        becauseTitle: (title: string) => `Porque viste "${title}"`,
+        becauseSubtitle: "Más de la misma mrda buena.",
+        starterTitle: "Empieza por acá, novato",
+        starterSubtitle: "Los que enganchan a cualquiera. Ni pienses tanto.",
+        trendingTitle: "Lo más visto de siempre",
+        trendingSubtitle: "Los clásicos que todo el mundo cita en el grupo.",
+        lovedTitle: "Los que más gustan",
+        lovedSubtitle: "Puro like. Acá nadie se queja.",
+        gemsTitle: "Joyas escondidas",
+        gemsSubtitle: "Pocas vistas y buenazas. Tú te las estás perdiendo.",
+        seasonTitle: (season: string) => `Sigues clavado en ${season}`,
+        seasonSubtitle: "Te faltan estos de esa temporada, cjo.",
+        seasonMoreTitle: (season: string) => `Más de ${season}`,
+        seasonMoreSubtitle: "Ya estás metido ahí, sigue nomás.",
+        quickTitle: "Un ratito nomás",
+        quickSubtitle: 'Shorts para cuando dices "solo uno" y son las 3am.',
+        vaultTitle: "Del baúl",
+        vaultSubtitle: "Episodios viejos que no viste ni de casualidad.",
+        unfinishedTitle: "Guardaste y no terminaste",
+        unfinishedSubtitle:
+            "Acumulas como si fueras a verlos. Termínalos, csm.",
+        likeFavoritesTitle: "Más de lo que guardas",
+        likeFavoritesSubtitle: "Mismo humor, otra ptada distinta.",
+        seeAll: "Ver todo",
+    },
+
+    favorites: {
+        title: "Guardados",
+        count: (n: number) =>
+            n === 1 ? "1 huevada guardada" : `${n} huevadas guardadas`,
+        emptyTitle: "Cero guardados, csm",
+        emptyBody:
+            "Dale al corazón en cualquier clip y aparece acá. No es tan difícil, cro.",
+        emptyAction: "Ir a ver huevadas",
+        emptyFilterTitle: "Nada de este tipo",
+        emptyFilterBody: "Cambia el filtro o guarda algo, tú sabrás.",
+        shuffle: "Una guardada al azar",
+        rails: "Y ya que estás acá...",
     },
 
     me: {
@@ -83,7 +133,8 @@ export const COPY = {
         streakShareMessage: (days: number) =>
             `Llevo ${days} días seguidos viendo Hablando Huevadas 🔥 ¿tú qué, cro?`,
 
-        favorites: "Favoritos",
+        favorites: "Guardados",
+        favoritesAction: "Ver todo",
         favoritesEmpty:
             "¿Qué esperas, csm? No has guardado ni una sola huevada.",
         favoritesEmptyAction: "Ir a chismear episodios",
@@ -96,16 +147,32 @@ export const COPY = {
         historyClearConfirm: "Bórralo",
 
         settings: "Ajustes",
-        settingsDaily: "Huevada del día",
-        settingsDailyHint: "Un solo aviso al día. Ni uno más, palabra.",
+        settingsDaily: "Avisos",
+        settingsDailyHint:
+            "Te mandamos clips que sí te van a gustar. Tú mandas cuántos.",
         settingsHour: "¿A qué hora te jodemos?",
+        settingsLevel: "¿Qué tan pesados nos ponemos?",
+        settingsLevels: {
+            chill: "Suave",
+            normal: "Normal",
+            hardcore: "Bien pesado",
+        },
+        settingsLevelHint: (perDay: number) =>
+            perDay === 1
+                ? "1 aviso al día, y solo si vale la pena."
+                : `Hasta ${perDay} avisos al día, en tus horas.`,
+        settingsLevelBackoff:
+            "Si los ignoras, bajamos solos. No somos pegajosos.",
+        settingsAutoplay: "Reproducción automática",
+        settingsAutoplayHint:
+            "Los shorts arrancan al deslizar, y cuando un episodio acaba sigue el que viene.",
         expoGoNote: "En Expo Go solo llegan avisos locales. Cosas de la vida.",
     },
 
     notification: {
         optInTitle: "¿Te avisamos de la huevada del día?",
         optInBody:
-            "Un aviso al día con el mejor clip. Nada de spam, y lo apagas cuando te amargue.",
+            "Te mandamos los clips que van contigo, a la hora que tú digas. Si los ignoras, avisamos menos. Y lo apagas cuando te amargue.",
         optInAccept: "Ya, avísame",
         optInDismiss: "Ahora no",
         blockedTitle: "Tienes los avisos apagados",
@@ -119,6 +186,150 @@ export const COPY = {
             `Llevas ${days} días seguidos. Un clip y sigues vivo.`,
         comebackTitle: "Te perdiste, causa",
         comebackBody: "Hay huevadas nuevas y tú sin aparecer.",
+
+        /**
+         * Push variants, one bucket per intent.
+         *
+         * Several a day only works if they never read like the same message.
+         * The planner picks a variant by hash, so the wording rotates on its
+         * own and two pushes in one day are never twins. `subject` is the clip
+         * title, except for the streak buckets where it is the day count.
+         */
+        push: {
+            daily: [
+                {
+                    title: "Huevada del día 🎙️",
+                    body: (subject: string) => `Hoy toca: ${subject}`,
+                },
+                {
+                    title: "La del día ya está lista",
+                    body: (subject: string) =>
+                        `${subject}. Dale play antes de que te la cuenten.`,
+                },
+                {
+                    title: "Ya pues, causa 🎙️",
+                    body: (subject: string) =>
+                        `${subject} te está esperando hace rato.`,
+                },
+            ],
+            resume: [
+                {
+                    title: "Lo dejaste botado, cro",
+                    body: (subject: string) =>
+                        `Te falta terminar "${subject}". Un ratito nomás.`,
+                },
+                {
+                    title: "¿Y el final qué? 🤨",
+                    body: (subject: string) =>
+                        `"${subject}" quedó a medias por tu culpa.`,
+                },
+                {
+                    title: "Termina lo que empezaste",
+                    body: (subject: string) =>
+                        `"${subject}" sigue en pausa esperándote.`,
+                },
+            ],
+            discovery: [
+                {
+                    title: "Una que no has visto 👀",
+                    body: (subject: string) =>
+                        `${subject}. Vas a llorar de risa.`,
+                },
+                {
+                    title: "Te falta esta, cjo",
+                    body: (subject: string) =>
+                        `${subject}. Ni la conocías, ¿no?`,
+                },
+                {
+                    title: "Del baúl 🎁",
+                    body: (subject: string) =>
+                        `${subject}. Vieja pero buenaza.`,
+                },
+            ],
+            short: [
+                {
+                    title: "Un ratito nomás ⏱️",
+                    body: (subject: string) =>
+                        `${subject}. Dura menos que tu break.`,
+                },
+                {
+                    title: "Short rápido 📲",
+                    body: (subject: string) =>
+                        `${subject}. Y vuelves a lo tuyo.`,
+                },
+                {
+                    title: "Para el almuerzo 🍽️",
+                    body: (subject: string) => `${subject}. Un minuto y ya.`,
+                },
+            ],
+            streak: [
+                {
+                    title: "No rompas tu racha, csm 🔥",
+                    body: (subject: string) =>
+                        `Llevas ${subject} días seguidos. Un clip y sigues vivo.`,
+                },
+                {
+                    title: "Se te va la racha 😰",
+                    body: (subject: string) =>
+                        `${subject} días al hilo y lo vas a botar hoy. Qué pena.`,
+                },
+                {
+                    title: "Falta poquito 🔥",
+                    body: (subject: string) =>
+                        `Un clip y tu racha de ${subject} días sigue en pie.`,
+                },
+            ],
+            comeback: [
+                {
+                    title: "Te perdiste, causa",
+                    body: (subject: string) =>
+                        `Mientras no venías subieron esto: ${subject}`,
+                },
+                {
+                    title: "¿Ya te olvidaste de nosotros? 🥺",
+                    body: (subject: string) =>
+                        `${subject}. Vuelve, no seas malo.`,
+                },
+                {
+                    title: "Volvió el que nunca se fue",
+                    body: (subject: string) =>
+                        `Te dejamos ${subject} para que te pongas al día.`,
+                },
+            ],
+            favorite: [
+                {
+                    title: "De las que te gustan 💚",
+                    body: (subject: string) =>
+                        `${subject}. Igualita a las que guardas.`,
+                },
+                {
+                    title: "Sabemos qué te gusta 👀",
+                    body: (subject: string) => `${subject}. Te la debíamos.`,
+                },
+                {
+                    title: "Más de lo tuyo",
+                    body: (subject: string) =>
+                        `${subject}. Misma temporada, misma mrda buena.`,
+                },
+            ],
+            milestone: [
+                {
+                    title: "¡Eres una bestia! 🏆",
+                    body: (subject: string) =>
+                        `${subject} días seguidos. Presúmelo en tu zona.`,
+                },
+                {
+                    title: "Récord personal 🔥",
+                    body: (subject: string) =>
+                        `${subject} días. Ni el trabajo te dura tanto.`,
+                },
+                {
+                    title: "Logro desbloqueado",
+                    body: (subject: string) =>
+                        `${subject} días seguidos viendo huevadas. Respeto.`,
+                },
+            ],
+        },
     },
 
     share: {
@@ -164,6 +375,13 @@ export const COPY = {
         play: "Haz clic acá, cro",
         resume: "Sigue donde lo dejaste",
         related: "Si te gustó esa, mira estas",
+
+        /* The end-of-video handoff: the moment a session either continues or dies. */
+        nextUp: "A continuación",
+        nextUpIn: (seconds: number) =>
+            seconds === 1 ? "Arranca en 1..." : `Arranca en ${seconds}...`,
+        nextUpCancel: "Déjalo ahí",
+        nextUpHint: "Dale play y sigue la maratón.",
     },
 
     loading: {

@@ -25,8 +25,12 @@ jobs:
           sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
           sudo chmod a+rx /usr/local/bin/yt-dlp
 
+      # The listing pass is two requests. The likes pass is one request per
+      # video, so it is capped per run and backfills across weeks; ids that
+      # already have stats are skipped.
       - name: Run update script
-        run: node scripts/update-videos-list.js
+        timeout-minutes: 30
+        run: node scripts/update-videos-list.js --likes=missing --likes-limit=500 --concurrency=6
 
       - name: Commit and push changes
         run: |

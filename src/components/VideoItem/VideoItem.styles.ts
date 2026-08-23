@@ -57,6 +57,13 @@ export const styles = StyleSheet.create({
         paddingBottom: SPACE.sm,
     },
     titleRow: {flexDirection: "row", alignItems: "flex-start", gap: SPACE.xs},
+    metaRow: {flexDirection: "row", alignItems: "center", gap: SPACE.xxs},
+    seasonChip: {
+        paddingHorizontal: SPACE.xxs + 2,
+        paddingVertical: 2,
+        borderRadius: RADII.xs,
+        borderWidth: 1,
+    },
     title: {flex: 1},
     favorite: {paddingTop: 2},
 });

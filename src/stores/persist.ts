@@ -2,7 +2,21 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {atom, type WritableAtom} from "jotai";
 
 export type SetStateAction<T> = T | ((prev: T) => T);
-export type PersistedAtom<T> = WritableAtom<T, [SetStateAction<T>], void>;
+export type PersistedAtom<T> = WritableAtom<T, [SetStateAction<T>], void> & {
+    /**
+     * Resolves once the stored value has been read, or found missing.
+     *
+     * Anything that *writes* at launch has to wait on this. The atom starts at
+     * its default and fills in from storage a tick later, so a write that
+     * lands in that window both persists the defaults over the user's real
+     * settings and sets `dirty`, which cancels the hydration that would have
+     * corrected it. Reads can race harmlessly; writes cannot.
+     *
+     * Only resolves once something has subscribed to the atom — hydration
+     * starts on mount.
+     */
+    hydrated: Promise<void>;
+};
 
 /**
  * A small AsyncStorage-backed atom.
@@ -16,6 +30,10 @@ export type PersistedAtom<T> = WritableAtom<T, [SetStateAction<T>], void>;
 export const persistedAtom = <T>(key: string, initial: T): PersistedAtom<T> => {
     const baseAtom = atom<T>(initial);
     let dirty = false;
+    let settle: () => void = () => {};
+    const hydrated = new Promise<void>((resolve) => {
+        settle = resolve;
+    });
 
     baseAtom.onMount = (setValue) => {
         AsyncStorage.getItem(key)
@@ -25,10 +43,11 @@ export const persistedAtom = <T>(key: string, initial: T): PersistedAtom<T> => {
             })
             .catch(() => {
                 /* corrupted or unavailable storage: keep the default */
-            });
+            })
+            .finally(settle);
     };
 
-    return atom(
+    const writable = atom(
         (get) => get(baseAtom),
         (get, set, update: SetStateAction<T>) => {
             const next =
@@ -41,5 +60,8 @@ export const persistedAtom = <T>(key: string, initial: T): PersistedAtom<T> => {
                 /* best effort; state stays correct in memory */
             });
         }
-    );
+    ) as PersistedAtom<T>;
+
+    writable.hydrated = hydrated;
+    return writable;
 };

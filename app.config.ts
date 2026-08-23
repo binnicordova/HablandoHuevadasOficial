@@ -123,17 +123,6 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
         "expo-status-bar",
         "expo-image",
         [
-            "expo-audio",
-            {
-                // The soundboard only plays bundled files. Declaring the
-                // recording permission or a playback foreground service would
-                // ask for access the app never uses.
-                recordAudioAndroid: false,
-                enableBackgroundPlayback: false,
-                enableBackgroundRecording: false,
-            },
-        ],
-        [
             "expo-font",
             {
                 fonts: [

@@ -1,0 +1,70 @@
+name: Release · Store build
+
+# Requirement 2: the version changed, so no binary in the stores can run this
+# JS. Build one and submit it.
+#
+# The tag is the trigger, and `npm version` creates it alongside the bump, so
+# releasing is two commands:
+#
+#   npm version patch      # 0.0.7 -> 0.0.8, commits package.json and tags v0.0.8
+#   git push --follow-tags
+#
+# app.config.ts reads its version straight from package.json, and EAS runs
+# `expo prebuild` on its own builders, so there is no native project to
+# regenerate and nothing else to keep in step.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-build
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  build:
+    name: Build & submit
+    needs: ci
+    runs-on: ubuntu-latest
+    environment: ENV
+    env:
+      EAS_OWNER: ${{ secrets.EAS_OWNER }}
+      EAS_PROJECT_ID: ${{ secrets.EAS_PROJECT_ID }}
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+          packager: bun
+
+      - name: 💾 Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+          restore-keys: ${{ runner.os }}-bun-
+
+      - name: 📦 Install dependencies
+        run: bun install --frozen-lockfile
+
+      # Both platforms: the previous workflow built android only, so iOS never
+      # reached App Store Connect at all.
+      - name: 🚀 Build and submit
+        run: eas build --platform all --profile production --non-interactive --auto-submit

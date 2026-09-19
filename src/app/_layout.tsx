@@ -1,43 +1,116 @@
 import {useFonts} from "expo-font";
-import {Slot} from "expo-router";
+import {DarkTheme, Stack, type Theme, ThemeProvider} from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import {StatusBar} from "expo-status-bar";
 import {Provider} from "jotai";
 import {useEffect} from "react";
 import {View} from "react-native";
+import {GestureHandlerRootView} from "react-native-gesture-handler";
+import {SafeAreaProvider} from "react-native-safe-area-context";
+import {COLORS} from "@/constants/theme";
+import {useEngagement} from "@/hooks/useEngagement";
+import {
+    useNotificationRouting,
+    useNotifications,
+} from "@/hooks/useNotification";
+import {useStreak} from "@/hooks/useStreak";
 import {styles} from "@/styles";
-import {theme} from "@/theme/colors";
+import {useTheme} from "@/theme/colors";
 
-SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync().catch(() => {});
 
 const FONT_SETTINGS = {
-    MaterialCommunityIcons: require("../../assets/fonts/MaterialCommunityIcons.ttf"),
     LatoLight: require("../../assets/fonts/Lato-Light.ttf"),
     LatoRegular: require("../../assets/fonts/Lato-Regular.ttf"),
     LatoBold: require("../../assets/fonts/Lato-Bold.ttf"),
 };
 
+/**
+ * Session-level side effects. Lives under the jotai Provider so it can touch
+ * persisted state, and renders nothing.
+ */
+const SessionBootstrap = () => {
+    useStreak();
+    useEngagement();
+    useNotificationRouting();
+    /*
+     * Re-arms the notification schedule once per launch. It lives here rather
+     * than on Inicio because a cold start from a notification tap opens the
+     * video screen, and the schedule has to roll forward however the app was
+     * opened — not only when the home tab happens to mount.
+     */
+    useNotifications();
+    return null;
+};
+
+/**
+ * React Navigation paints the scene background behind every screen. Left on the
+ * default light theme it shows through the transparent lists as grey, so the
+ * navigator gets the app palette explicitly rather than only the screens.
+ */
+const NAV_THEME: Theme = {
+    ...DarkTheme,
+    dark: true,
+    colors: {
+        ...DarkTheme.colors,
+        background: COLORS.background,
+        card: COLORS.backgroundRaised,
+        text: COLORS.text,
+        border: COLORS.border,
+        primary: COLORS.accent,
+        notification: COLORS.hot,
+    },
+};
+
+const RootNavigator = () => {
+    const colors = useTheme();
+
+    return (
+        <View style={[styles.baseLayer, {backgroundColor: colors.background}]}>
+            <StatusBar style="light" />
+            <SessionBootstrap />
+            <ThemeProvider value={NAV_THEME}>
+                <Stack
+                    screenOptions={{
+                        headerShown: false,
+                        contentStyle: {backgroundColor: colors.background},
+                        animation: "slide_from_right",
+                    }}
+                >
+                    <Stack.Screen name="(tabs)" />
+                    <Stack.Screen
+                        name="video/[id]"
+                        options={{presentation: "card"}}
+                    />
+                    <Stack.Screen name="web" />
+                </Stack>
+            </ThemeProvider>
+        </View>
+    );
+};
+
 const RootLayout = () => {
-    const {background} = theme();
     const [fontsLoaded, fontError] = useFonts(FONT_SETTINGS);
 
     useEffect(() => {
         if (fontsLoaded || fontError) {
-            SplashScreen.hideAsync();
+            SplashScreen.hideAsync().catch(() => {});
         }
     }, [fontsLoaded, fontError]);
 
-    if (!fontsLoaded) {
+    // Fonts failing to load must not leave the user on a blank splash forever.
+    if (!fontsLoaded && !fontError) {
         return null;
     }
 
     return (
-        <Provider>
-            <View style={[styles.baseLayer, {backgroundColor: background}]}>
-                <StatusBar style="auto" />
-                <Slot />
-            </View>
-        </Provider>
+        <GestureHandlerRootView style={styles.baseLayer}>
+            <SafeAreaProvider>
+                <Provider>
+                    <RootNavigator />
+                </Provider>
+            </SafeAreaProvider>
+        </GestureHandlerRootView>
     );
 };
 
@@ -46,7 +119,7 @@ let AppEntryPoint = RootLayout;
 if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === "true") {
     try {
         AppEntryPoint = require("../../.rnstorybook").default;
-        SplashScreen.hideAsync();
+        SplashScreen.hideAsync().catch(() => {});
     } catch (error) {
         console.warn("Storybook not available:", error);
     }

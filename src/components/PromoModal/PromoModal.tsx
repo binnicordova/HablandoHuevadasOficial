@@ -1,38 +1,47 @@
 import type React from "react";
 import {useState} from "react";
-import {
-    ActivityIndicator,
-    Image,
-    Modal,
-    Pressable,
-    Share,
-    StyleSheet,
-    Text,
-    View,
-} from "react-native";
+import {Modal, Pressable, Share, StyleSheet, View} from "react-native";
+import {Button} from "@/components/Button/Button";
+import {GlassSurface} from "@/components/GlassSurface/GlassSurface";
+import {Icon} from "@/components/Icon/Icon";
+import {Text} from "@/components/Text/Text";
+import {COPY} from "@/constants/copy";
+import {HIT_SLOP, RADII, SPACE} from "@/constants/theme";
+import {useTheme} from "@/theme/colors";
+import {successFeedback, tapFeedback} from "@/utils/haptics";
+import {storeUrl} from "@/utils/share";
 
 interface PromoModalProps {
     visible: boolean;
     onClose: () => void;
+    onShared?: () => void;
 }
 
-const APPLINK =
-    "https://play.google.com/store/apps/details?id=com.hablandohuevadasoficial";
+const shareMessage = `🎉 ${COPY.promo.body}\n\n${storeUrl("promo")}\n\n#HablandoHuevadas`;
 
-const PromoModal: React.FC<PromoModalProps> = ({visible, onClose}) => {
+/**
+ * Community share prompt. Visibility is decided by the caller through the
+ * engagement counters, so it can never appear on a first launch or more than
+ * once a week.
+ */
+const PromoModal: React.FC<PromoModalProps> = ({
+    visible,
+    onClose,
+    onShared,
+}) => {
     const [isSharing, setIsSharing] = useState(false);
-
-    const shareMessage = `🎉 Si disfrutas Hablando Huevadas Oficial, ayúdanos a crecer compartiéndola con tus amigos y familiares.
-
-Descárgala aquí: ${APPLINK}
-
-Tu apoyo hace la diferencia y nos impulsa a seguir mejorando la experiencia para toda la comunidad. 💙
-#HablandoHuevadas #ComparteLaApp`;
+    const colors = useTheme();
 
     const handleShare = async () => {
         try {
             setIsSharing(true);
-            await Share.share({message: shareMessage});
+            const result = await Share.share({message: shareMessage});
+            if (result.action === Share.sharedAction) {
+                successFeedback();
+                onShared?.();
+            }
+            onClose();
+        } catch {
             onClose();
         } finally {
             setIsSharing(false);
@@ -41,97 +50,102 @@ Tu apoyo hace la diferencia y nos impulsa a seguir mejorando la experiencia para
 
     return (
         <Modal
-            animationType="slide"
+            animationType="fade"
             transparent
             visible={visible}
             onRequestClose={onClose}
-            presentationStyle="overFullScreen"
+            statusBarTranslucent
         >
-            <Pressable style={styles.overlay} onPress={onClose}>
+            <Pressable
+                style={[styles.overlay, {backgroundColor: colors.overlay}]}
+                onPress={onClose}
+            >
                 <Pressable
-                    style={styles.modalContainer}
                     onPress={(event) => event.stopPropagation()}
+                    style={styles.sheetWrap}
                 >
-                    <Pressable
-                        style={styles.closeButton}
-                        onPress={onClose}
-                        accessibilityRole="button"
-                        accessibilityLabel="Cerrar promoción"
-                    >
-                        <Text style={styles.closeButtonText}>×</Text>
-                    </Pressable>
+                    <GlassSurface radius={RADII.xxl} style={styles.sheet}>
+                        <Pressable
+                            style={[
+                                styles.close,
+                                {backgroundColor: colors.surfaceAlt},
+                            ]}
+                            onPress={() => {
+                                tapFeedback();
+                                onClose();
+                            }}
+                            hitSlop={HIT_SLOP}
+                            accessibilityRole="button"
+                            accessibilityLabel={COPY.common.close}
+                        >
+                            <Icon name="close" size={18} color={colors.text} />
+                        </Pressable>
 
-                    <View style={styles.badge}>
-                        <Text style={styles.badgeText}>Promo de comunidad</Text>
-                    </View>
-
-                    <Image
-                        source={require("../../../assets/images/tour.png")}
-                        style={styles.image}
-                    />
-
-                    <Text style={styles.title}>
-                        Ayuda a que la comunidad crezca
-                    </Text>
-                    <Text style={styles.description}>
-                        Comparte la app con tus amigos. Y participa por 3
-                        entradas gratis para ti, tu esposa y tu amante...
-                    </Text>
-
-                    <View style={styles.benefits}>
-                        <Text style={styles.bullet}>
-                            • Más comunidad, más beneficios
-                        </Text>
-                        <Text style={styles.bullet}>
-                            • Más usas la app, más ayudas a mejorarla
-                        </Text>
-                        <Text style={styles.bullet}>
-                            • Más compartes, más posibilidades de que ganes
-                        </Text>
-                    </View>
-
-                    <Text style={styles.joke}>
-                        Cada share cuenta. Si te gusta el contenido, este es el
-                        mejor momento para apoyar.
-                    </Text>
-
-                    <Pressable
-                        style={({pressed}) => [
-                            styles.primaryButton,
-                            pressed && styles.primaryButtonPressed,
-                            isSharing && styles.primaryButtonDisabled,
-                        ]}
-                        onPress={handleShare}
-                        disabled={isSharing}
-                        accessibilityRole="button"
-                        accessibilityLabel="Compartir la app"
-                    >
-                        {isSharing ? (
-                            <ActivityIndicator color="#fff" />
-                        ) : (
-                            <Text style={styles.primaryButtonText}>
-                                Compartir y sumar
+                        <View
+                            style={[
+                                styles.badge,
+                                {backgroundColor: colors.surfaceAlt},
+                            ]}
+                        >
+                            <Text variant="micro" tone="accent">
+                                {COPY.promo.badge}
                             </Text>
-                        )}
-                    </Pressable>
+                        </View>
 
-                    <Pressable
-                        style={styles.secondaryButton}
-                        onPress={onClose}
-                        accessibilityRole="button"
-                        accessibilityLabel="Ahora no"
-                    >
-                        <Text style={styles.secondaryButtonText}>Ahora no</Text>
-                    </Pressable>
-                    <Text
-                        style={{
-                            fontSize: 8,
-                            opacity: 0.3,
-                        }}
-                    >
-                        Sorteo sobre cada 1k usuarios nuevos activos por semana.
-                        ¡Gracias por ser parte de esta comunidad!
-                    </Text>
+                        <Text variant="title" style={styles.centered}>
+                            {COPY.promo.title}
+                        </Text>
+                        <Text
+                            variant="body"
+                            tone="muted"
+                            style={styles.centered}
+                        >
+                            {COPY.promo.body}
+                        </Text>
+
+                        <View
+                            style={[
+                                styles.bullets,
+                                {borderColor: colors.border},
+                            ]}
+                        >
+                            {COPY.promo.bullets.map((bullet) => (
+                                <View key={bullet} style={styles.bulletRow}>
+                                    <Icon
+                                        name="check-bold"
+                                        size={16}
+                                        color={colors.accent}
+                                    />
+                                    <Text
+                                        variant="body"
+                                        style={styles.bulletText}
+                                    >
+                                        {bullet}
+                                    </Text>
+                                </View>
+                            ))}
+                        </View>
+
+                        <Button
+                            title={COPY.promo.cta}
+                            icon="share-variant"
+                            loading={isSharing}
+                            onPress={handleShare}
+                        />
+                        <Button
+                            title={COPY.promo.dismiss}
+                            variant="ghost"
+                            onPress={onClose}
+                        />
+
+                        <Text
+                            variant="micro"
+                            tone="faint"
+                            style={styles.centered}
+                        >
+                            {COPY.promo.legal}
+                        </Text>
+                    </GlassSurface>
                 </Pressable>
             </Pressable>
         </Modal>
@@ -143,131 +157,38 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        padding: 20,
+        padding: SPACE.md,
     },
-    modalContainer: {
-        width: "100%",
-        maxWidth: 420,
-        backgroundColor: "#fff",
-        borderRadius: 20,
-        padding: 20,
-        alignItems: "center",
-        borderWidth: 1,
-        borderColor: "rgba(230, 57, 70, 0.12)",
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
-    },
-    closeButton: {
+    sheetWrap: {width: "100%", maxWidth: 420},
+    sheet: {padding: SPACE.lg, gap: SPACE.sm},
+    close: {
         position: "absolute",
-        top: 12,
-        right: 12,
+        top: SPACE.sm,
+        right: SPACE.sm,
         width: 36,
         height: 36,
-        borderRadius: 18,
+        borderRadius: RADII.pill,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "rgba(29, 53, 87, 0.08)",
         zIndex: 1,
     },
-    closeButtonText: {
-        fontSize: 24,
-        lineHeight: 24,
-        color: "#1D3557",
-        fontWeight: "700",
-        marginTop: -2,
-    },
     badge: {
-        backgroundColor: "rgba(230, 57, 70, 0.1)",
+        alignSelf: "center",
         paddingVertical: 6,
-        paddingHorizontal: 12,
-        borderRadius: 999,
-        marginBottom: 14,
+        paddingHorizontal: SPACE.sm,
+        borderRadius: RADII.pill,
+        marginBottom: SPACE.xxs,
     },
-    badgeText: {
-        color: "#E63946",
-        fontSize: 12,
-        fontWeight: "700",
-        letterSpacing: 0.3,
-        textTransform: "uppercase",
+    centered: {textAlign: "center"},
+    bullets: {
+        borderWidth: 1,
+        borderRadius: RADII.md,
+        padding: SPACE.sm,
+        gap: SPACE.xs,
+        marginVertical: SPACE.xs,
     },
-    image: {
-        width: 200,
-        height: 150,
-        resizeMode: "contain",
-        marginBottom: 20,
-    },
-    title: {
-        fontSize: 23,
-        fontWeight: "bold",
-        color: "#E63946",
-        textAlign: "center",
-        marginBottom: 12,
-    },
-    description: {
-        fontSize: 16,
-        color: "#1D3557",
-        textAlign: "center",
-        marginBottom: 16,
-        lineHeight: 23,
-    },
-    benefits: {
-        width: "100%",
-        backgroundColor: "#F8FAFC",
-        borderRadius: 16,
-        paddingVertical: 14,
-        paddingHorizontal: 14,
-        marginBottom: 14,
-    },
-    bullet: {
-        fontSize: 15,
-        color: "#1D3557",
-        lineHeight: 22,
-        marginBottom: 4,
-    },
-    joke: {
-        fontSize: 14,
-        color: "#457B9D",
-        textAlign: "center",
-        marginBottom: 18,
-        lineHeight: 20,
-    },
-    primaryButton: {
-        backgroundColor: "#E63946",
-        borderRadius: 10,
-        paddingVertical: 12,
-        paddingHorizontal: 20,
-        width: "100%",
-        alignItems: "center",
-    },
-    primaryButtonPressed: {
-        opacity: 0.9,
-        transform: [{scale: 0.99}],
-    },
-    primaryButtonDisabled: {
-        opacity: 0.8,
-    },
-    primaryButtonText: {
-        color: "#fff",
-        fontSize: 16,
-        fontWeight: "bold",
-    },
-    secondaryButton: {
-        marginTop: 10,
-        paddingVertical: 8,
-        paddingHorizontal: 20,
-    },
-    secondaryButtonText: {
-        color: "#457B9D",
-        fontSize: 14,
-        fontWeight: "600",
-    },
+    bulletRow: {flexDirection: "row", alignItems: "center", gap: SPACE.xs},
+    bulletText: {flex: 1},
 });
 
 export default PromoModal;

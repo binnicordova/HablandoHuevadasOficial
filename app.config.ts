@@ -45,11 +45,6 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
     version: VERSION,
     orientation: "portrait",
     icon: "./assets/icon.png",
-    splash: {
-        image: "./assets/splash.png",
-        resizeMode: "cover",
-        backgroundColor: "#ffffff",
-    },
     updates: {
         fallbackToCacheTimeout: 1000 * 60,
         url: `https://u.expo.dev/${EAS_PROJECT_ID}`,
@@ -64,9 +59,18 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
     android: {
         adaptiveIcon: {
             foregroundImage: "./assets/adaptive-icon.png",
-            backgroundColor: "#FFFFFF",
+            backgroundColor: "#0B0B0E",
         },
         package: getUniqueIdentifier(),
+        // Lets shared https links open the app directly instead of the browser.
+        intentFilters: [
+            {
+                action: "VIEW",
+                autoVerify: true,
+                data: [{scheme: "https", host: "hablandohuevadasoficial.com"}],
+                category: ["BROWSABLE", "DEFAULT"],
+            },
+        ],
     },
     web: {
         favicon: "./assets/favicon.png",
@@ -82,7 +86,9 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
     },
     owner: EAS_OWNER,
     runtimeVersion: VERSION,
-    userInterfaceStyle: "automatic",
+    // The app ships a single dark theme; letting the OS force light would
+    // repaint native surfaces the design never accounts for.
+    userInterfaceStyle: "dark",
     plugins: [
         [
             "expo-router",
@@ -94,15 +100,37 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
             "expo-notifications",
             {
                 icon: "./assets/images/notification_icon.png",
-                color: "#ffffff",
+                color: "#D4FF00",
                 defaultChannel: "default",
                 sounds: ["./assets/sounds/notification_sound.wav"],
                 enableBackgroundRemoteNotifications: true,
             },
         ],
         "expo-updates",
-         "expo-background-task",
-        "expo-splash-screen",
-        "expo-status-bar"
+        "expo-background-task",
+        [
+            "expo-splash-screen",
+            {
+                image: "./assets/splash.png",
+                resizeMode: "cover",
+                backgroundColor: "#0B0B0E",
+                dark: {
+                    image: "./assets/splash.png",
+                    backgroundColor: "#0B0B0E",
+                },
+            },
+        ],
+        "expo-status-bar",
+        "expo-image",
+        [
+            "expo-font",
+            {
+                fonts: [
+                    "./assets/fonts/Lato-Light.ttf",
+                    "./assets/fonts/Lato-Regular.ttf",
+                    "./assets/fonts/Lato-Bold.ttf",
+                ],
+            },
+        ],
     ],
 });

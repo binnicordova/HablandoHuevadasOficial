@@ -54,19 +54,28 @@ Si quieres apoyar mi trabajo y ayudarme a seguir añadiendo características a e
 
 ## 🚀 Características Actuales
 
-- [x] 🎥 **Reproductor de Videos**: Disfruta de los episodios de Hablando Huevadas directamente desde la aplicación.
-- [x] 📅 **Calendario de Eventos**: Consulta las fechas y lugares del tour mundial.
-- [x] 🔔 **Notificaciones**: Recibe alertas sobre nuevos episodios y eventos.
-- [x] 🌐 **Multiplataforma**: Compatible con dispositivos Android y iPhone.
+- [x] 🎥 **Reproductor de Videos**: 535 episodios completos y +3,000 shorts.
+- [x] 🎯 **Huevada del día**: un clip elegido cada 24 horas, igual para toda la comunidad.
+- [x] 🔎 **Búsqueda**: busca entre todo el catálogo por título o invitado, sin acentos ni mayúsculas.
+- [x] 🗂️ **Favoritos**: guarda cualquier clip con un toque.
+- [x] ⏯️ **Seguir viendo**: retoma cada episodio donde lo dejaste.
+- [x] 🔥 **Racha diaria**: mantén tu racha viendo un clip al día.
+- [x] 🔗 **Compartir Videos**: comparte a WhatsApp, TikTok o Instagram en un toque.
+- [x] 🔔 **Notificaciones inteligentes**: varias al día, elegidas según lo que ves, en tus horas; bajan solas si las ignoras.
+- [x] ⚡ **Autoplay en Shorts**: cada short arranca al deslizar y salta al siguiente cuando termina.
+- [x] 🏷️ **Títulos limpios y temporadas**: el catálogo se lee por episodio, no por el título gritado de YouTube.
+- [x] 🌗 **Modo oscuro**: sigue el ajuste del sistema.
+- [x] 📴 **Catálogo offline**: explora, busca y organiza sin conexión.
+- [x] 🌐 **Multiplataforma**: Android y iPhone, compatible con Expo Go.
 
 ## 🌟 Posibles Características Futuras
 
-- [ ] 🗂️ **Gestión de Favoritos**: Marca tus episodios favoritos para acceder a ellos rápidamente.
-- [ ] 📥 **Videos Offline**: Descarga episodios para verlos sin conexión.
-- [ ] 🗨️ **Chat Comunitario**: Conéctate con otros fans de Hablando Huevadas.
-- [ ] 💬 **Comentarios por Segundo**: Agrega comentarios sincronizados con momentos específicos de los videos.
-- [ ] 🔗 **Compartir Videos**: Comparte el episodio actual con tus amigos fácilmente.
-- [ ] 🚫 **Evitar Anuncios en Videos**: Disfruta de una experiencia sin interrupciones publicitarias.
+- [ ] 📅 **Calendario de Eventos**: consulta las fechas y lugares del tour mundial.
+- [ ] 🎬 **Clips descargables para redes**: exporta un clip vertical con marca de agua.
+- [ ] 🗨️ **Chat Comunitario**: conéctate con otros fans de Hablando Huevadas.
+- [ ] 💬 **Comentarios por Segundo**: comentarios sincronizados con momentos del video.
+
+📊 Auditoría de producto y crecimiento: [`docs/product-audit.md`](docs/product-audit.md) · ASO/CRO: [`docs/aso-cro.md`](docs/aso-cro.md)
 
 ¡Tu apoyo y sugerencias son bienvenidos para seguir mejorando esta aplicación! 💡
 

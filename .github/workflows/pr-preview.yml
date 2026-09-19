@@ -1,0 +1,72 @@
+name: PR Preview
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  # Only what the QR comment needs. `write-all` handed every PR run the ability
+  # to push code and mint releases.
+  pull-requests: write
+
+concurrency:
+  group: preview-${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    name: Publish preview update
+    runs-on: ubuntu-latest
+    environment: ENV
+    env:
+      EAS_OWNER: ${{ secrets.EAS_OWNER }}
+      EAS_PROJECT_ID: ${{ secrets.EAS_PROJECT_ID }}
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+          # Without this the action defaults to yarn to install the CLI and
+          # fails — the original eas-build.yml died exactly there.
+          packager: bun
+
+      - name: 💾 Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+          restore-keys: ${{ runner.os }}-bun-
+
+      - name: 📦 Install dependencies
+        run: bun install --frozen-lockfile
+
+      # Keyed on the PR number, not the head ref: a branch rename or a force
+      # push would otherwise strand the update on a branch the QR no longer
+      # points at, and reviewers would silently test stale code.
+      #
+      # The message carries only the PR number and the commit SHA. It used to
+      # interpolate the PR title, which broke twice over: a literal "#" opened a
+      # YAML comment and truncated the command mid-flag, and a title is
+      # attacker-controlled text being pasted into a shell command.
+      #
+      # NOTE FOR TESTERS: scan this QR with the **development build**, not Expo
+      # Go. This app has native modules (WebView, Firebase) that Expo Go cannot
+      # load, and the `preview` build profile is pinned to the `preview` channel
+      # so it cannot load a per-PR branch either. Only the dev client can open
+      # an arbitrary branch from a QR.
+      - name: 🚀 Create preview
+        uses: expo/expo-github-action/preview@v8
+        with:
+          command: eas update --branch pr-${{ github.event.number }} --message "PR ${{ github.event.number }} at ${{ github.event.pull_request.head.sha }}"

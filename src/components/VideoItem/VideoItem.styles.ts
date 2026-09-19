@@ -1,42 +1,69 @@
 import {StyleSheet} from "react-native";
-import {theme} from "@/theme/colors";
-import {SPACING} from "@/theme/spacing";
-
-const colors = theme();
+import {RADII, SPACE} from "@/constants/theme";
+import {ABSOLUTE_FILL} from "@/styles";
 
 export const styles = StyleSheet.create({
     container: {
-        flexDirection: "column",
-        marginHorizontal: SPACING[3],
-        marginVertical: SPACING[2],
-        backgroundColor: colors.background,
-        borderRadius: 12,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 2,
-            height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
-        elevation: 4,
+        marginHorizontal: SPACE.md,
+        marginBottom: SPACE.sm,
+        borderRadius: RADII.lg,
+        borderWidth: 1,
+        overflow: "hidden",
     },
-    thumbnail: {
+    active: {borderWidth: 2},
+    pressed: {opacity: 0.9, transform: [{scale: 0.99}]},
+    thumbnailWrap: {
         width: "100%",
         aspectRatio: 16 / 9,
-        borderTopLeftRadius: 12,
-        borderTopRightRadius: 12,
-        marginBottom: SPACING[2],
-        resizeMode: "cover",
+        justifyContent: "flex-end",
     },
-    textContainer: {
-        flex: 1,
-        paddingHorizontal: SPACING[2],
-        paddingBottom: SPACING[1],
+    thumbnail: {...ABSOLUTE_FILL, width: "100%", height: "100%"},
+    scrim: {...ABSOLUTE_FILL, top: "45%"},
+    playBadge: {
+        position: "absolute",
+        left: SPACE.sm,
+        bottom: SPACE.sm,
+        width: 36,
+        height: 36,
+        borderRadius: RADII.pill,
+        alignItems: "center",
+        justifyContent: "center",
     },
-    infoContainer: {
+    nowPlaying: {
+        position: "absolute",
+        left: SPACE.sm,
+        bottom: SPACE.sm,
         flexDirection: "row",
-        justifyContent: "space-between",
-        marginTop: SPACING[1],
-        opacity: 0.7,
+        alignItems: "center",
+        gap: 4,
+        paddingHorizontal: SPACE.xs,
+        paddingVertical: 5,
+        borderRadius: RADII.pill,
     },
+    durationBadge: {
+        position: "absolute",
+        right: SPACE.xs,
+        top: SPACE.xs,
+        paddingHorizontal: SPACE.xxs + 2,
+        paddingVertical: 3,
+        borderRadius: RADII.xs,
+    },
+    progressTrack: {height: 3, width: "100%"},
+    progressFill: {height: "100%"},
+    textContainer: {
+        gap: SPACE.xxs,
+        paddingHorizontal: SPACE.sm,
+        paddingTop: SPACE.sm,
+        paddingBottom: SPACE.sm,
+    },
+    titleRow: {flexDirection: "row", alignItems: "flex-start", gap: SPACE.xs},
+    metaRow: {flexDirection: "row", alignItems: "center", gap: SPACE.xxs},
+    seasonChip: {
+        paddingHorizontal: SPACE.xxs + 2,
+        paddingVertical: 2,
+        borderRadius: RADII.xs,
+        borderWidth: 1,
+    },
+    title: {flex: 1},
+    favorite: {paddingTop: 2},
 });

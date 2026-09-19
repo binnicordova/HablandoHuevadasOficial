@@ -2,6 +2,7 @@ import {LinearGradient} from "expo-linear-gradient";
 import type React from "react";
 import type {StyleProp, ViewStyle} from "react-native";
 import {createShimmerPlaceholder} from "react-native-shimmer-placeholder";
+import {useTheme} from "@/theme/colors";
 import {styles} from "./Placeholder.styles";
 
 const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
@@ -21,12 +22,15 @@ export const Placeholder: React.FC<PlaceholderProps> = ({
     width,
     height,
 }) => {
+    const {shimmerFrom, shimmerTo} = useTheme();
+
     return (
         <ShimmerPlaceholder
             style={[styles.container, style]}
             visible={visible}
             width={width}
             height={height}
+            shimmerColors={[shimmerFrom, shimmerTo, shimmerFrom]}
         >
             {children}
         </ShimmerPlaceholder>

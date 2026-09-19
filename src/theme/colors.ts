@@ -1,33 +1,25 @@
-type ThemeType = "light" | "dark";
+import {COLORS, PALETTE} from "@/constants/theme";
 
-type ColorScheme = {
-    background: string;
-    text: string;
-    accent: string;
-    error: string;
+/**
+ * The app ships a single premium dark theme. `useTheme()` stays a hook so
+ * call sites do not change if a second theme is ever added, but it no longer
+ * reads the system colour scheme — there is nothing to switch to.
+ */
+export type ColorScheme = typeof COLORS & {
     lightness: string;
     darkness: string;
 };
 
-const Colors: Record<ThemeType, ColorScheme> = {
-    light: {
-        background: "#FFFFFF",
-        text: "#1e1e1e",
-        accent: "#007AFF",
-        error: "#d32f2f",
-        lightness: "#E5E5EA",
-        darkness: "#8A8A8E",
-    },
-    dark: {
-        background: "#1C1C1E",
-        text: "#f0f0f0",
-        accent: "#0A84FF",
-        error: "#ef5350",
-        lightness: "#3A3A3C",
-        darkness: "#2C2C2E",
-    },
+const SCHEME: ColorScheme = {
+    ...COLORS,
+    // Legacy aliases kept so older call sites keep compiling.
+    lightness: COLORS.surfaceAlt,
+    darkness: COLORS.sunken,
 };
 
-export const theme = (theme?: ThemeType): ColorScheme => {
-    return Colors[theme || "light"];
-};
+/** Non-hook accessor for code that runs outside React (tasks, channels). */
+export const theme = (): ColorScheme => SCHEME;
+
+export const useTheme = (): ColorScheme => SCHEME;
+
+export {PALETTE};

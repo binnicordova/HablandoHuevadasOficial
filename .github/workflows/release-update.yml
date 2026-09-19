@@ -1,0 +1,62 @@
+name: Release · OTA update
+
+# Requirement 1: the version did not change, so the binaries already in the
+# stores can run this JS. Ship it over the air.
+#
+# This is every merge to main — the common case, and it needs no ceremony.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-update
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  update:
+    name: Publish to production
+    needs: ci
+    runs-on: ubuntu-latest
+    environment: ENV
+    env:
+      EAS_OWNER: ${{ secrets.EAS_OWNER }}
+      EAS_PROJECT_ID: ${{ secrets.EAS_PROJECT_ID }}
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+          packager: bun
+
+      - name: 💾 Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+          restore-keys: ${{ runner.os }}-bun-
+
+      - name: 📦 Install dependencies
+        run: bun install --frozen-lockfile
+
+      # The message is the commit SHA, not the commit message: a message is
+      # free text and would be pasted straight into a shell command.
+      - name: 🚀 Publish update
+        run: eas update --branch production --non-interactive --message "main at ${{ github.sha }}"

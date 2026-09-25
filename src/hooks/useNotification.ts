@@ -69,7 +69,7 @@ export const useNotificationRouting = () => {
             recordOpen(data.slot);
 
             if (data.videoId) {
-                router.push(PATHS.VIDEO(data.videoId));
+                router.navigate(PATHS.VIDEO(data.videoId));
                 return;
             }
             if (data.url) {

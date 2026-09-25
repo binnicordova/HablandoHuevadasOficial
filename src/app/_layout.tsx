@@ -7,6 +7,8 @@ import {useEffect} from "react";
 import {View} from "react-native";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
 import {SafeAreaProvider} from "react-native-safe-area-context";
+import {GlobalPlayerHost} from "@/components/VideoPlayer/GlobalPlayerHost";
+import {PlayerUIProvider} from "@/components/VideoPlayer/PlayerUIProvider";
 import {COLORS} from "@/constants/theme";
 import {useEngagement} from "@/hooks/useEngagement";
 import {
@@ -70,20 +72,26 @@ const RootNavigator = () => {
             <StatusBar style="light" />
             <SessionBootstrap />
             <ThemeProvider value={NAV_THEME}>
-                <Stack
-                    screenOptions={{
-                        headerShown: false,
-                        contentStyle: {backgroundColor: colors.background},
-                        animation: "slide_from_right",
-                    }}
-                >
-                    <Stack.Screen name="(tabs)" />
-                    <Stack.Screen
-                        name="video/[id]"
-                        options={{presentation: "card"}}
-                    />
-                    <Stack.Screen name="web" />
-                </Stack>
+                <PlayerUIProvider>
+                    <Stack
+                        screenOptions={{
+                            headerShown: false,
+                            contentStyle: {backgroundColor: colors.background},
+                            animation: "slide_from_right",
+                        }}
+                    >
+                        <Stack.Screen name="(tabs)" />
+                        <Stack.Screen name="video/[id]" />
+                        <Stack.Screen name="web" />
+                    </Stack>
+                    {/*
+                     * The one video player instance for the whole app,
+                     * painted above every screen so switching tabs or
+                     * scrolling Inicio never tears it down. See
+                     * GlobalPlayerHost for why.
+                     */}
+                    <GlobalPlayerHost />
+                </PlayerUIProvider>
             </ThemeProvider>
         </View>
     );

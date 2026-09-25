@@ -15,7 +15,7 @@ import {
     type NotificationState,
     registerOpen,
 } from "@/services/notificationPlanner";
-import {favoriteRails, homeRails, type Rail} from "@/services/recommendations";
+import {favoriteRails, type Rail} from "@/services/recommendations";
 import {persistedAtom} from "@/stores/persist";
 
 const HISTORY_LIMIT = 60;
@@ -224,19 +224,11 @@ export const continueWatchingAtom = atom<HistoryRow[]>((get): HistoryRow[] =>
 /* ------------------------------ recommendations --------------------------- */
 
 /*
- * Both rail sets come out of the same engine (`services/recommendations.ts`),
- * which is memoised on the ids — not on the playback positions — so a video
- * playing on Inicio does not rebuild eight carousels once a second.
+ * Comes out of the same engine as Inicio's own rails
+ * (`services/recommendations.ts`), which is memoised on the ids — not on the
+ * playback positions — so a video playing does not rebuild eight carousels
+ * once a second.
  */
-
-export const homeRailsAtom = atom<Rail[]>((get): Rail[] =>
-    homeRails({
-        videos: get(videosAtom),
-        shorts: get(shortsCatalogAtom),
-        history: get(historyAtom),
-        favoriteIds: get(favoriteIdsAtom),
-    })
-);
 
 export const favoriteRailsAtom = atom<Rail[]>((get): Rail[] =>
     favoriteRails({

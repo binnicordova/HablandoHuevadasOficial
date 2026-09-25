@@ -23,7 +23,13 @@ export const PATHS: PathsProps = {
     SEARCH: "/search",
     FAVORITES: "/favorites",
     ME: "/me",
-    VIDEO: (id) => `/video/${encodeURIComponent(id)}` as Href,
+    /**
+     * The watch screen is Inicio itself (see `(tabs)/index.tsx`) — not a
+     * pushed screen — so opening a video from anywhere else lands on the
+     * same tab, same player, tab bar intact. `/video/[id]` still exists as a
+     * redirect shim for the Android intent filter and any old link.
+     */
+    VIDEO: (id) => `/?id=${encodeURIComponent(id)}` as Href,
     WEB: (uri, title) =>
         `/web?uri=${encodeURIComponent(uri)}&title=${encodeURIComponent(title)}` as Href,
 };

@@ -382,6 +382,16 @@ export const COPY = {
             seconds === 1 ? "Arranca en 1..." : `Arranca en ${seconds}...`,
         nextUpCancel: "Déjalo ahí",
         nextUpHint: "Dale play y sigue la maratón.",
+
+        /**
+         * The floating player once it has scrolled off or you have left
+         * Inicio. Its corners and edge-peek arrow are not independently
+         * reachable by VoiceOver/TalkBack yet — these hints at least name
+         * what a sighted user taps.
+         */
+        pipHint:
+            "Arrástralo para moverlo, pellizca para cambiar el tamaño. Esquina superior izquierda pausa o reproduce, la derecha lo cierra. Tócalo en el centro para volver a Inicio.",
+        pipRevealHint: "Tócalo para volver a mostrarlo.",
     },
 
     loading: {

@@ -1,8 +1,8 @@
-import {LinearGradient} from "expo-linear-gradient";
-import {useRouter} from "expo-router";
+import {useLocalSearchParams, useRouter} from "expo-router";
 import {useAtomValue, useSetAtom} from "jotai";
-import {useCallback, useMemo, useRef, useState} from "react";
-import {ScrollView, StyleSheet, View} from "react-native";
+import {useCallback, useEffect, useMemo, useRef, useState} from "react";
+import {StyleSheet, View} from "react-native";
+import Animated, {useAnimatedScrollHandler} from "react-native-reanimated";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 import {Button} from "@/components/Button/Button";
 import {FloatingActionButton} from "@/components/FloatingActionButton/FloatingActionButton";
@@ -13,7 +13,8 @@ import PromoModal from "@/components/PromoModal/PromoModal";
 import {ShareBar} from "@/components/ShareBar/ShareBar";
 import {StreakBadge} from "@/components/StreakBadge/StreakBadge";
 import {Text} from "@/components/Text/Text";
-import {VideoPlayer} from "@/components/VideoPlayer/VideoPlayer";
+import {HERO_HEIGHT, HeroSlot} from "@/components/VideoPlayer/HeroSlot";
+import {usePlayerUI} from "@/components/VideoPlayer/PlayerUIProvider";
 import {VideoRail} from "@/components/VideoRail/VideoRail";
 import {COPY} from "@/constants/copy";
 import {PATHS} from "@/constants/routes";
@@ -25,91 +26,95 @@ import {useOpenItem} from "@/hooks/useOpenItem";
 import {useStreak} from "@/hooks/useStreak";
 import type {CatalogItem} from "@/models/video";
 import {track} from "@/services/analytics";
-import {getDailyPick} from "@/services/catalog";
-import {type Rail, railPool} from "@/services/recommendations";
+import {getDailyPick, getItemById} from "@/services/catalog";
+import {detailRails, type Rail, railPool} from "@/services/recommendations";
+import {
+    nowPlayingAtom,
+    playerEventAtom,
+    setNowPlayingAtom,
+} from "@/stores/player";
 import {
     continueWatchingAtom,
-    homeRailsAtom,
+    favoriteIdsAtom,
+    historyAtom,
     recordWatchAtom,
-    updateProgressAtom,
+    shortsCatalogAtom,
     videosAtom,
     watchProgressAtom,
 } from "@/stores/store";
 import {useTheme} from "@/theme/colors";
-import {displayTitle, formatLikes, formatViews} from "@/utils/format";
-
-const PLAYER_HEIGHT = 220;
+import {
+    displayTitle,
+    formatDuration,
+    formatLikes,
+    formatViews,
+} from "@/utils/format";
 
 /**
- * Inicio is a stage, not a catalog.
+ * Inicio is the whole watch experience, not a teaser for a separate detail
+ * screen. It used to be: a lightweight "now playing" stage here, and an
+ * almost-identical full screen at `/video/[id]` for anything opened from
+ * Buscar, Guardados or a notification. Splitting them duplicated the entire
+ * layout for no real difference in content, and worse, gave each its own
+ * player — the exact bug the singleton (`GlobalPlayerHost`) exists to kill.
  *
- * One player pinned at the top, and under it only reasons to press play. The
- * 535-episode list moved to Buscar, where browsing belongs — leaving this
- * screen short enough to hold in a plain ScrollView, which matters more than
- * it looks: a virtualised list is free to unmount its own header, and an
- * unmounted header here means the webview dies and the audio stops mid-scroll.
+ * So every entry point now lands here: a rail tap swaps the player in place
+ * (no navigation at all), and everything else — Buscar, Guardados, a
+ * notification, an old `/video/:id` link — arrives via an `id` query param
+ * that this screen consumes once and loads into the shared player. `/video/:id`
+ * itself is now just a redirect into that param (see that file).
+ *
+ * The player is not this screen's own — it is the one global instance every
+ * screen shares. This screen claims the top of the page for it via
+ * `HeroSlot` while it is scrolled into view, and reads what is currently
+ * loaded from `nowPlayingAtom` instead of owning that state locally.
  */
 const Home = () => {
+    const {id: requestedId} = useLocalSearchParams<{id?: string}>();
+    const router = useRouter();
+
     const videos = useAtomValue(videosAtom);
+    const shorts = useAtomValue(shortsCatalogAtom);
+    const history = useAtomValue(historyAtom);
+    const favoriteIds = useAtomValue(favoriteIdsAtom);
     const continueWatching = useAtomValue(continueWatchingAtom);
-    const rails = useAtomValue(homeRailsAtom);
     const progressById = useAtomValue(watchProgressAtom);
     const recordWatch = useSetAtom(recordWatchAtom);
-    const updateProgress = useSetAtom(updateProgressAtom);
+    const nowPlaying = useAtomValue(nowPlayingAtom);
+    const setNowPlaying = useSetAtom(setNowPlayingAtom);
+    const playerEvent = useAtomValue(playerEventAtom);
 
     const colors = useTheme();
     const insets = useSafeAreaInsets();
-    const router = useRouter();
     const {streak} = useStreak();
     const engagement = useEngagement();
     const notifications = useNotifications();
     const openItem = useOpenItem();
+    const {scrollY, homeScrollRef} = usePlayerUI();
 
-    const scrollRef = useRef<ScrollView>(null);
+    const scrollHandler = useAnimatedScrollHandler((event) => {
+        scrollY.value = event.contentOffset.y;
+    });
 
-    // The pick of the day is what plays on open: zero taps to the core action.
     const dailyPick = useMemo(() => getDailyPick(), []);
-    const [currentVideo, setCurrentVideo] = useState<CatalogItem | null>(
-        dailyPick ?? videos[0] ?? null
-    );
-    const [playing, setPlaying] = useState(false);
     const [optInDismissed, setOptInDismissed] = useState(false);
     const [promoVisible, setPromoVisible] = useState(false);
     const promoShownRef = useRef(false);
 
-    const resumeAt = useMemo(() => {
-        if (!currentVideo) return 0;
-        return (
-            continueWatching.find(({entry}) => entry.id === currentVideo.id)
-                ?.entry.positionSeconds ?? 0
-        );
-    }, [continueWatching, currentVideo]);
+    const currentVideo = nowPlaying?.item ?? null;
+    /** The last id counted as a play, so a swap re-arms the tracking. */
+    const startedRef = useRef<string | null>(null);
 
-    /**
-     * "Seguías viendo" is modelled as a rail like every other row so it renders
-     * through the same component — same paddings, same card, same analytics.
-     */
-    const continueRail = useMemo((): Rail | null => {
-        if (continueWatching.length === 0) return null;
-        return {
-            id: "continue",
-            title: COPY.rails.continueTitle,
-            subtitle: COPY.rails.continueSubtitle,
-            items: continueWatching.map(({item}) => item),
-        };
-    }, [continueWatching]);
+    const resumeFor = useCallback(
+        (item: CatalogItem) =>
+            history.find((entry) => entry.id === item.id)?.positionSeconds ?? 0,
+        [history]
+    );
 
-    const playItem = useCallback(
-        (item: CatalogItem, surface = "home") => {
-            setCurrentVideo(item);
-            setPlaying(true);
-            /*
-             * The player lives at the top of the page, so a tap on a rail four
-             * screens down would otherwise start audio from something the user
-             * cannot see and cannot pause. Riding the scroll back up is the
-             * confirmation that the tap did what they meant.
-             */
-            scrollRef.current?.scrollTo({y: 0, animated: true});
+    const recordPlayStart = useCallback(
+        (item: CatalogItem, surface: string) => {
+            if (startedRef.current === item.id) return;
+            startedRef.current = item.id;
             engagement.recordPlay();
             track({
                 name: "play_start",
@@ -120,29 +125,66 @@ const Home = () => {
             recordWatch({
                 id: item.id,
                 kind: item.kind,
-                positionSeconds: 0,
+                positionSeconds: resumeFor(item),
                 durationSeconds: item.duration ?? 0,
             });
+        },
+        [engagement, recordWatch, resumeFor]
+    );
 
+    /*
+     * Arriving from anywhere else: Buscar, Guardados, a notification, a
+     * shared link. Consumed once — a stale param must not keep yanking the
+     * player back to it every time this screen regains focus.
+     */
+    const consumedRef = useRef<string | undefined>(undefined);
+    const requestedItem = useMemo(
+        () => (requestedId ? getItemById(requestedId) : undefined),
+        [requestedId]
+    );
+    useEffect(() => {
+        if (!requestedId || consumedRef.current === requestedId) return;
+        consumedRef.current = requestedId;
+        if (!requestedItem) return;
+        setNowPlaying({
+            item: requestedItem,
+            startAt: resumeFor(requestedItem),
+            playing: true,
+        });
+        // Counted once the player actually confirms it, not the moment the
+        // param arrives — a deep link can take a beat to boot, or fail to.
+    }, [requestedId, requestedItem, resumeFor, setNowPlaying]);
+
+    /*
+     * Nothing loaded anywhere in the app yet: give the stage something to
+     * show. Guarded by `everPlayedRef` rather than just `!nowPlaying`, or
+     * this would refire the instant the mini player's close button clears
+     * it — Home is a tab and stays mounted, so "closed" and "never started"
+     * would otherwise be indistinguishable and the close button would look
+     * broken, immediately replaced by the same daily pick.
+     */
+    const everPlayedRef = useRef(false);
+    useEffect(() => {
+        if (nowPlaying) everPlayedRef.current = true;
+    }, [nowPlaying]);
+    useEffect(() => {
+        if (requestedId || nowPlaying || everPlayedRef.current) return;
+        const seed = dailyPick ?? videos[0];
+        if (!seed) return;
+        setNowPlaying({item: seed, startAt: resumeFor(seed), playing: false});
+    }, [requestedId, nowPlaying, dailyPick, videos, resumeFor, setNowPlaying]);
+
+    const playItem = useCallback(
+        (item: CatalogItem, surface = "home") => {
+            setNowPlaying({item, startAt: resumeFor(item), playing: true});
+            recordPlayStart(item, surface);
             if (engagement.canPromptShare && !promoShownRef.current) {
                 promoShownRef.current = true;
                 setPromoVisible(true);
                 engagement.recordPrompt();
             }
         },
-        [engagement, recordWatch]
-    );
-
-    const handleProgress = useCallback(
-        (positionSeconds: number, durationSeconds: number) => {
-            if (!currentVideo) return;
-            updateProgress({
-                id: currentVideo.id,
-                positionSeconds,
-                durationSeconds,
-            });
-        },
-        [currentVideo, updateProgress]
+        [engagement, recordPlayStart, resumeFor, setNowPlaying]
     );
 
     /**
@@ -169,14 +211,64 @@ const Home = () => {
 
     /*
      * The stage never runs dry: when the hero finishes, the next episode is
-     * already named and counting itself in.
+     * already named and counting itself in — even while the player is
+     * floating as a PIP over another tab, so the queue is ready the moment
+     * the user looks back.
      */
+    const rails = useMemo(
+        (): Rail[] =>
+            currentVideo
+                ? detailRails({
+                      videos,
+                      shorts,
+                      history,
+                      favoriteIds,
+                      current: currentVideo,
+                  })
+                : [],
+        [currentVideo, videos, shorts, history, favoriteIds]
+    );
+
     const handoff = useNextUp({
         rails,
-        kind: "video",
+        kind: currentVideo?.kind,
         excludeId: currentVideo?.id,
         onAdvance: playNext,
     });
+
+    useEffect(() => {
+        if (
+            !playerEvent ||
+            !currentVideo ||
+            playerEvent.itemId !== currentVideo.id
+        )
+            return;
+        if (playerEvent.event === "ready" || playerEvent.event === "playing") {
+            recordPlayStart(currentVideo, "deeplink");
+            handoff.clear();
+        }
+        if (playerEvent.event === "ended") handoff.arm();
+    }, [
+        playerEvent,
+        currentVideo,
+        recordPlayStart,
+        handoff.arm,
+        handoff.clear,
+    ]);
+
+    /**
+     * "Seguías viendo" is modelled as a rail like every other row so it renders
+     * through the same component — same paddings, same card, same analytics.
+     */
+    const continueRail = useMemo((): Rail | null => {
+        if (continueWatching.length === 0) return null;
+        return {
+            id: "continue",
+            title: COPY.rails.continueTitle,
+            subtitle: COPY.rails.continueSubtitle,
+            items: continueWatching.map(({item}) => item),
+        };
+    }, [continueWatching]);
 
     /**
      * "Sorpréndeme" used to roll a die over 535 episodes, which mostly returns
@@ -196,21 +288,29 @@ const Home = () => {
         );
     }, [playItem, shufflePool]);
 
-    /*
-     * Shown when we intend to notify and the OS has not agreed yet. It is a
-     * soft ask: the system dialog only appears if the user taps accept, so an
-     * ignored card costs nothing and the one-shot prompt stays unspent.
-     */
     const showOptIn =
         !optInDismissed &&
         notifications.needsPermission &&
         engagement.canPromptNotifications;
     const isDaily = currentVideo?.id === dailyPick?.id;
+    const resumeAt = currentVideo ? resumeFor(currentVideo) : 0;
+
+    const meta = currentVideo
+        ? [
+              currentVideo.season,
+              formatDuration(currentVideo.duration) ||
+                  currentVideo.duration_string,
+              formatViews(currentVideo.view_count),
+              formatLikes(currentVideo.like_count),
+          ].filter(Boolean)
+        : [];
 
     return (
         <View style={styles.screen}>
-            <ScrollView
-                ref={scrollRef}
+            <Animated.ScrollView
+                ref={homeScrollRef}
+                onScroll={scrollHandler}
+                scrollEventThrottle={16}
                 contentContainerStyle={{
                     paddingBottom: insets.bottom + SPACE.huge,
                 }}
@@ -230,73 +330,77 @@ const Home = () => {
                     />
                 </View>
 
-                <View style={styles.stage}>
-                    <VideoPlayer
-                        videoId={currentVideo?.id ?? null}
-                        playing={playing}
-                        startAt={resumeAt}
-                        poster={currentVideo?.thumbnail}
-                        onProgress={handleProgress}
-                        height={PLAYER_HEIGHT}
-                        onStateChange={(event) => {
-                            if (event === "playing") {
-                                setPlaying(true);
-                                handoff.clear();
-                            }
-                            if (event === "ended") {
-                                setPlaying(false);
-                                handoff.arm();
-                            }
-                        }}
-                    />
-                    <LinearGradient
-                        colors={["transparent", colors.background]}
-                        style={styles.stageFade}
-                        pointerEvents="none"
-                    />
-                </View>
+                <HeroSlot
+                    height={currentVideo?.kind === "short" ? 420 : HERO_HEIGHT}
+                />
 
                 {currentVideo ? (
                     <View style={styles.nowPlaying}>
-                        {isDaily ? (
-                            <View
-                                style={[
-                                    styles.dailyPill,
-                                    {backgroundColor: colors.accent},
-                                ]}
-                            >
-                                <Icon
-                                    name="star-four-points"
-                                    size={13}
-                                    color={colors.accentText}
-                                />
-                                <Text variant="micro" tone="inverse">
-                                    {COPY.home.dailyBadge.toUpperCase()}
+                        <View style={styles.titleRow}>
+                            {isDaily ? (
+                                <View
+                                    style={[
+                                        styles.dailyPill,
+                                        {backgroundColor: colors.accent},
+                                    ]}
+                                >
+                                    <Icon
+                                        name="star-four-points"
+                                        size={13}
+                                        color={colors.accentText}
+                                    />
+                                    <Text variant="micro" tone="inverse">
+                                        {COPY.home.dailyBadge.toUpperCase()}
+                                    </Text>
+                                </View>
+                            ) : resumeAt > 5 ? (
+                                <View style={styles.resume}>
+                                    <Icon
+                                        name="play-circle-outline"
+                                        size={14}
+                                        color={colors.accent}
+                                    />
+                                    <Text variant="micro" tone="accent">
+                                        {COPY.player.resume.toUpperCase()}
+                                    </Text>
+                                </View>
+                            ) : (
+                                <Text variant="micro" tone="faint">
+                                    {COPY.home.nowPlaying.toUpperCase()}
                                 </Text>
-                            </View>
-                        ) : (
-                            <Text variant="micro" tone="faint">
-                                {COPY.home.nowPlaying.toUpperCase()}
-                            </Text>
-                        )}
+                            )}
+                        </View>
 
                         <Text variant="heading" numberOfLines={2}>
                             {displayTitle(currentVideo)}
                         </Text>
 
-                        <View style={styles.metaRow}>
+                        {meta.length > 0 ? (
                             <Text variant="caption" tone="faint">
-                                {[
-                                    currentVideo.season,
-                                    formatViews(currentVideo.view_count),
-                                    formatLikes(currentVideo.like_count),
-                                ]
-                                    .filter(Boolean)
-                                    .join(" · ")}
+                                {meta.join(" · ")}
                             </Text>
+                        ) : null}
+
+                        {currentVideo.description ? (
+                            <Text
+                                variant="body"
+                                tone="muted"
+                                numberOfLines={4}
+                                style={styles.description}
+                            >
+                                {currentVideo.description}
+                            </Text>
+                        ) : null}
+
+                        <View
+                            style={[
+                                styles.actions,
+                                {borderTopColor: colors.border},
+                            ]}
+                        >
                             <ShareBar
                                 item={currentVideo}
-                                source="player"
+                                source="home"
                                 onShared={engagement.recordShare}
                             />
                         </View>
@@ -343,11 +447,6 @@ const Home = () => {
                     />
                 ) : null}
 
-                {/*
-                 * The reasons to press play, ranked. Everything below this point
-                 * is the same catalog the user could already browse — these rows
-                 * are the ones that tell them why to bother.
-                 */}
                 {rails.map((entry) => (
                     <VideoRail
                         key={entry.id}
@@ -363,7 +462,6 @@ const Home = () => {
                     />
                 ))}
 
-                {/* The way out to the full list, now that it lives in Buscar. */}
                 <View style={styles.catalogCta}>
                     <Button
                         title={COPY.catalog.homeCta}
@@ -372,7 +470,7 @@ const Home = () => {
                         onPress={() => router.push(PATHS.SEARCH)}
                     />
                 </View>
-            </ScrollView>
+            </Animated.ScrollView>
 
             <FloatingActionButton
                 onPress={shuffle}
@@ -398,13 +496,12 @@ const styles = StyleSheet.create({
         paddingBottom: SPACE.sm,
     },
     brandBlock: {flex: 1, gap: 2},
-    stage: {borderRadius: RADII.none, overflow: "hidden"},
-    stageFade: {position: "absolute", left: 0, right: 0, bottom: 0, height: 24},
     nowPlaying: {
         paddingHorizontal: SPACE.md,
         paddingTop: SPACE.sm,
         gap: SPACE.xs,
     },
+    titleRow: {flexDirection: "row", alignItems: "center", gap: SPACE.xs},
     dailyPill: {
         alignSelf: "flex-start",
         flexDirection: "row",
@@ -414,12 +511,12 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         borderRadius: RADII.pill,
     },
-    metaRow: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: SPACE.sm,
-        marginTop: SPACE.xxs,
+    resume: {flexDirection: "row", alignItems: "center", gap: SPACE.xxs},
+    description: {marginTop: SPACE.xxs},
+    actions: {
+        marginTop: SPACE.xs,
+        paddingTop: SPACE.sm,
+        borderTopWidth: StyleSheet.hairlineWidth,
     },
     catalogCta: {paddingHorizontal: SPACE.md, paddingTop: SPACE.xl},
 });

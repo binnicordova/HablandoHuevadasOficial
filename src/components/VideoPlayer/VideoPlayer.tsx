@@ -26,15 +26,6 @@ type VideoPlayerProps = {
      * the viewport and centred, cropping the bars away.
      */
     fill?: boolean;
-    /**
-     * Whether the webview is mounted at all.
-     *
-     * A paged feed keeps several pages alive, and each mounted iframe is a full
-     * webview. Passing `false` for the pages that are out of reach keeps the
-     * poster on screen and the memory free; the neighbour of the current page
-     * should stay mounted so swiping into it starts instantly.
-     */
-    mounted?: boolean;
 };
 
 const PROGRESS_INTERVAL_MS = 5000;
@@ -51,7 +42,6 @@ export const VideoPlayer = ({
     width,
     poster,
     fill = false,
-    mounted = true,
 }: VideoPlayerProps) => {
     const playerRef = useRef<YoutubeIframeRef>(null);
     const colors = useTheme();
@@ -62,16 +52,6 @@ export const VideoPlayer = ({
      */
     const [booted, setBooted] = useState(false);
     const seededRef = useRef<string | null>(null);
-
-    // A remounted player (paged feed) boots from nothing, so the stale frame has
-    // to go and the poster has to come back. The reset happens during render
-    // rather than in an effect so the stale frame is never committed for a beat.
-    const mountKeyRef = useRef(mounted);
-    if (mountKeyRef.current !== mounted) {
-        mountKeyRef.current = mounted;
-        seededRef.current = null;
-        if (booted) setBooted(false);
-    }
 
     /*
      * A new id on a live player is not a boot: the library injects
@@ -135,30 +115,6 @@ export const VideoPlayer = ({
 
     if (!videoId) {
         return null;
-    }
-
-    // Unmounted pages keep their cover so the feed still looks full while
-    // scrolling fast past them.
-    if (!mounted) {
-        return (
-            <View
-                style={[
-                    styles.container,
-                    {height, backgroundColor: colors.sunken},
-                    fill && styles.fillContainer,
-                ]}
-            >
-                {poster ? (
-                    <Image
-                        source={poster}
-                        style={StyleSheet.absoluteFill}
-                        contentFit="cover"
-                        transition={120}
-                        cachePolicy="disk"
-                    />
-                ) : null}
-            </View>
-        );
     }
 
     const frameWidth = fill ? Math.ceil(height * YOUTUBE_ASPECT) : width;

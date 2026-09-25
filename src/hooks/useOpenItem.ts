@@ -26,7 +26,9 @@ export const useOpenItem = () => {
                 router.navigate(PATHS.SHORT(item.id));
                 return;
             }
-            router.push(PATHS.VIDEO(item.id));
+            // Same reasoning: the watch screen is the Inicio tab now, not a
+            // pushed screen.
+            router.navigate(PATHS.VIDEO(item.id));
         },
         [router]
     );

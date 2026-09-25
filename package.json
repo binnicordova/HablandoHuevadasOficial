@@ -122,14 +122,17 @@
         "vite": "^6.0.11"
     },
     "resolutions": {
-        "react-docgen-typescript": "2.2.2"
+        "react-docgen-typescript": "2.2.2",
+        "react-native-webview": "13.16.1"
     },
     "overrides": {
-        "react-docgen-typescript": "2.2.2"
+        "react-docgen-typescript": "2.2.2",
+        "react-native-webview": "13.16.1"
     },
     "pnpm": {
         "overrides": {
-            "react-docgen-typescript": "2.2.2"
+            "react-docgen-typescript": "2.2.2",
+            "react-native-webview": "13.16.1"
         },
         "ignoredBuiltDependencies": [
             "esbuild"

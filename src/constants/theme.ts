@@ -113,6 +113,9 @@ export const RADII = {
 export const HIT_SLOP = {top: 12, bottom: 12, left: 12, right: 12} as const;
 export const MIN_TOUCH = 48;
 
+/** Height of the default bottom tab bar, which floats over the content. */
+export const TAB_BAR_HEIGHT = 56;
+
 /* ------------------------------------------------------------- typography */
 
 export const FONTS = {

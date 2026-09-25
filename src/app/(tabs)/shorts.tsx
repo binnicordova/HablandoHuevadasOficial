@@ -1,3 +1,4 @@
+import {Image} from "expo-image";
 import {LinearGradient} from "expo-linear-gradient";
 import {useIsFocused, useLocalSearchParams} from "expo-router";
 import {useAtomValue, useSetAtom} from "jotai";
@@ -16,15 +17,13 @@ import {Icon} from "@/components/Icon/Icon";
 import {ShareBar} from "@/components/ShareBar/ShareBar";
 import {Text} from "@/components/Text/Text";
 import {VideoPlayer} from "@/components/VideoPlayer/VideoPlayer";
-import {SPACE} from "@/constants/theme";
+import {SPACE, TAB_BAR_HEIGHT} from "@/constants/theme";
 import {useEngagement} from "@/hooks/useEngagement";
 import type {CatalogItem} from "@/models/video";
 import {track} from "@/services/analytics";
+import {pauseHeroAtom} from "@/stores/player";
 import {recordWatchAtom, settingsAtom, shortsAtom} from "@/stores/store";
 import {displayTitle, formatViews} from "@/utils/format";
-
-/** Height of the default bottom tab bar, which sits over the feed. */
-const TAB_BAR_HEIGHT = 56;
 
 /**
  * Pages kept mounted on each side of the current one. One is enough: the next
@@ -60,6 +59,23 @@ type PlayerStatus =
     | "paused"
     | "ended";
 
+/**
+ * The vertical feed keeps its own small pool of live webviews — current plus
+ * one preloaded neighbour — deliberately separate from the one global player
+ * Home and the detail screen share (see `GlobalPlayerHost`).
+ *
+ * Folding shorts into that same singleton was tried and reverted: the first
+ * tap of a session has to land on YouTube's own play button for the embed to
+ * ever unlock scripted playback (see `PlayerStatus` above), which only works
+ * when the webview is a real descendant of the `FlatList` doing the swiping —
+ * a player hoisted outside this screen cannot sit in that position without
+ * either breaking the swipe gesture or breaking that first tap. This pool is
+ * the closest a swipeable feed gets to a singleton with this library.
+ *
+ * What the two still share is the one-thing-plays-at-a-time rule: a short
+ * starting silences the hero player instead of overlapping it (`pauseHero`
+ * below), the same way opening one app's audio silences another's.
+ */
 const Shorts = () => {
     /*
      * Opening one short from a rail lands the feed on that clip instead of
@@ -72,6 +88,7 @@ const Shorts = () => {
     const recordWatch = useSetAtom(recordWatchAtom);
     const settings = useAtomValue(settingsAtom);
     const engagement = useEngagement();
+    const pauseHero = useSetAtom(pauseHeroAtom);
 
     const {height, width} = useWindowDimensions();
     const insets = useSafeAreaInsets();
@@ -232,11 +249,16 @@ const Shorts = () => {
         (event: string) => {
             const next = event as PlayerStatus;
             setStatus(next);
-            if (next === "playing") setPaused(false);
-            else if (next === "paused") setPaused(true);
+            if (next === "playing") {
+                setPaused(false);
+                // The app plays at most one thing at a time. A short taking
+                // over silences whatever the hero player was doing elsewhere,
+                // the way opening a different app pauses the last one.
+                pauseHero();
+            } else if (next === "paused") setPaused(true);
             else if (next === "ended") handleEnded();
         },
-        [handleEnded]
+        [handleEnded, pauseHero]
     );
 
     const renderItem = useCallback(
@@ -247,17 +269,28 @@ const Shorts = () => {
 
             return (
                 <View style={[styles.page, {height: pageHeight, width}]}>
-                    <VideoPlayer
-                        videoId={item.id}
-                        playing={wantsPlay}
-                        mounted={Math.abs(itemIndex - index) <= PRELOAD_RADIUS}
-                        height={pageHeight}
-                        poster={item.thumbnail}
-                        onStateChange={
-                            isCurrent ? handleStateChange : undefined
-                        }
-                        fill
-                    />
+                    {Math.abs(itemIndex - index) <= PRELOAD_RADIUS ? (
+                        <VideoPlayer
+                            videoId={item.id}
+                            playing={wantsPlay}
+                            height={pageHeight}
+                            poster={item.thumbnail}
+                            onStateChange={
+                                isCurrent ? handleStateChange : undefined
+                            }
+                            fill
+                        />
+                    ) : (
+                        // Out of reach: a live webview here is memory nobody
+                        // is looking at, so the page keeps just its cover.
+                        <Image
+                            source={item.thumbnail}
+                            style={[styles.cover, {height: pageHeight}]}
+                            contentFit="cover"
+                            cachePolicy="disk"
+                            recyclingKey={item.id}
+                        />
+                    )}
 
                     {/* Tap anywhere to pause, the way every vertical feed
                         behaves. Sits under the overlay so share and favourite
@@ -375,6 +408,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         overflow: "hidden",
     },
+    cover: {width: "100%"},
     topScrim: {position: "absolute", top: 0, left: 0, right: 0},
     bottomScrim: {
         position: "absolute",

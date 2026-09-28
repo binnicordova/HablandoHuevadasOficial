@@ -62,6 +62,26 @@ export const COLORS = {
     hotDim: PALETTE.hotDim,
     info: PALETTE.cyan,
 
+    /** Behind the player while it's a live/upcoming premiere. Same "hot" hue
+     *  the rest of the app already uses for anything live or affectionate,
+     *  just dim enough to sit behind video for minutes at a time. */
+    premiere: "#3D0018",
+    /**
+     * Stage-fade tint for a real live/upcoming premiere — hot red, matching
+     * the "EN VIVO"/"PRÓXIMAMENTE" badge's own colour. Used as a pure alpha
+     * ramp (`*From` is the same hue at 0 alpha) layered over the ordinary
+     * fade, never as a flat colour stop — a solid tinted band is what reads
+     * as a sticker slapped on the footage instead of a colour the scene
+     * itself is casting.
+     */
+    premiereGlowFrom: "rgba(255, 0, 85, 0)",
+    premiereGlow: "rgba(255, 0, 85, 0.3)",
+    /** Same idea, warm amber — a video still inside its "just published"
+     *  window. Deliberately a different hue from the premiere tint, so
+     *  urgency and mere freshness never look the same. */
+    freshGlowFrom: "rgba(255, 184, 77, 0)",
+    freshGlow: "rgba(255, 184, 77, 0.3)",
+
     success: PALETTE.success,
     warning: PALETTE.warning,
     error: PALETTE.danger,

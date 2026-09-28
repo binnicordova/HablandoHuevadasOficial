@@ -52,12 +52,20 @@ export type NotificationIntent =
     | "streak"
     | "comeback"
     | "favorite"
-    | "milestone";
+    | "milestone"
+    | "premiere_announced"
+    | "premiere_soon"
+    | "premiere_live";
 
 export type PlannedNotification = {
     /** Stable per day+slot, so re-planning replaces instead of duplicating. */
     id: string;
-    slot: NotificationSlot;
+    /**
+     * Absent for `premiere_soon`/`premiere_live`: those fire at an exact
+     * real-world clock time, not one of the ranked daily slots, so there is
+     * nothing here to learn a slot preference from.
+     */
+    slot?: NotificationSlot;
     intent: NotificationIntent;
     /** Epoch ms. */
     fireAt: number;
@@ -65,7 +73,7 @@ export type PlannedNotification = {
     body: string;
     data: {
         intent: NotificationIntent;
-        slot: NotificationSlot;
+        slot?: NotificationSlot;
         videoId?: string;
         kind?: VideoKind;
     };
@@ -126,6 +134,17 @@ const MAX_SCHEDULED = 48;
 /** How many past picks are blocked from reappearing. */
 const FATIGUE_WINDOW = 40;
 
+/** Shared empty set: premiere picks are exempt from the anti-repeat rule, so
+ *  they read this instead of the real `taken` set. Never mutated. */
+const EMPTY_TAKEN = new Set<string>();
+
+/** How long a premiere keeps claiming the top slot: from the moment it's
+ *  announced through this many days after it actually airs. */
+const PREMIERE_FOLLOWUP_DAYS = 3;
+
+/** How far ahead of the scheduled premiere the "starting soon" push fires. */
+const PREMIERE_LEAD_MINUTES = 10;
+
 /** Base local time per slot, before jitter. */
 const SLOT_TIMES: Record<NotificationSlot, {hour: number; minute: number}> = {
     morning: {hour: 8, minute: 20},
@@ -166,6 +185,34 @@ const tasteFor = (input: PlannerInput): Taste =>
         history: input.history,
         favoriteIds: input.favoriteIds,
         excludeIds: input.state.recentIds.slice(0, FATIGUE_WINDOW),
+    });
+
+/* -------------------------------- premieres -------------------------------- */
+
+/**
+ * Videos still worth a push about their premiere on a given day: from the
+ * moment they were announced (see `scripts/update-videos-list.js`) through
+ * `PREMIERE_FOLLOWUP_DAYS` after they actually aired, as long as this user
+ * hasn't watched it yet. One list covers both "it's coming" and "you still
+ * haven't seen it" — the same push channel, just at different points in the
+ * same window.
+ */
+const premiereCandidates = (
+    input: PlannerInput,
+    taste: Taste,
+    day: Date
+): CatalogItem[] =>
+    input.videos.filter((item) => {
+        if (!item.premiere_at || taste.watched.has(item.id)) return false;
+        const premiereAt = Date.parse(item.premiere_at);
+        const announcedAt = item.announced_at
+            ? Date.parse(item.announced_at)
+            : premiereAt;
+        const dayTime = day.getTime();
+        return (
+            dayTime >= announcedAt &&
+            dayTime < premiereAt + PREMIERE_FOLLOWUP_DAYS * DAY_MS
+        );
     });
 
 /* --------------------------------- scoring -------------------------------- */
@@ -319,6 +366,14 @@ const assignIntents = (
         if (taste.favorites.size >= 3) claim("favorite", "lunch");
     }
 
+    // Unlike the block above, a premiere's window is a real-world date range
+    // known in advance, so it's valid to check on every day of the horizon,
+    // not just day 0 — claimed ahead of "daily" so it wins the best slot left.
+    const day = new Date(input.now.getTime() + dayOffset * DAY_MS);
+    if (premiereCandidates(input, taste, day).length > 0) {
+        claim("premiere_announced");
+    }
+
     claim("daily", "primetime");
     claim("short", "lunch");
     claim("short", "latenight");
@@ -352,9 +407,12 @@ const renderCopy = (
 const poolFor = (
     intent: NotificationIntent,
     input: PlannerInput,
-    taste: Taste
+    taste: Taste,
+    day: Date
 ): CatalogItem[] => {
     switch (intent) {
+        case "premiere_announced":
+            return premiereCandidates(input, taste, day);
         case "short":
             // Shorts are the low-commitment ask: perfect for a lunch break, and
             // the cheapest way to restart a broken streak.
@@ -429,20 +487,24 @@ export const planNotifications = (
                 continue;
 
             const seed = `${input.state.salt}-${dayKey(day)}-${slot}`;
+            // A premiere is meant to repeat across its whole window — the
+            // opposite of every other intent's "never the same clip twice
+            // this horizon" rule — so it neither reads nor pollutes `taken`.
+            const isPremiere = intent === "premiere_announced";
             const item =
                 intent === "streak" || intent === "milestone"
                     ? null
                     : pickBest(
-                          poolFor(intent, input, taste),
+                          poolFor(intent, input, taste, day),
                           {
                               taste,
                               ceiling,
                               seed,
                           },
-                          taken
+                          isPremiere ? EMPTY_TAKEN : taken
                       );
 
-            if (item) taken.add(item.id);
+            if (item && !isPremiere) taken.add(item.id);
 
             const {title, body} = renderCopy(
                 intent,
@@ -466,7 +528,55 @@ export const planNotifications = (
         }
     }
 
+    plan.push(...premiereClockPushes(input, taste));
+
     return plan.sort((a, b) => a.fireAt - b.fireAt).slice(0, MAX_SCHEDULED);
+};
+
+/**
+ * The two pushes tied to the real premiere clock rather than a daily slot:
+ * "starting soon" and "it's live". Exactly one of each per video, never
+ * budgeted or slotted — there's nothing to rank them against, and letting a
+ * quiet day's back-off swallow "your premiere starts in 10 minutes" would
+ * defeat the point of it.
+ */
+const premiereClockPushes = (
+    input: PlannerInput,
+    taste: Taste
+): PlannedNotification[] => {
+    const pushes: PlannedNotification[] = [];
+
+    for (const item of input.videos) {
+        if (!item.premiere_at || taste.watched.has(item.id)) continue;
+        const premiereAt = Date.parse(item.premiere_at);
+        if (Number.isNaN(premiereAt)) continue;
+
+        const moments: [NotificationIntent, number][] = [
+            ["premiere_soon", premiereAt - PREMIERE_LEAD_MINUTES * MINUTE_MS],
+            ["premiere_live", premiereAt],
+        ];
+
+        for (const [intent, fireAt] of moments) {
+            if (fireAt < input.now.getTime() + MINUTE_MS) continue;
+
+            const seed = `${input.state.salt}-${intent}-${item.id}`;
+            const {title, body} = renderCopy(
+                intent,
+                subjectFor(intent, item, input),
+                seed
+            );
+            pushes.push({
+                id: `hh-${intent}-${item.id}`,
+                intent,
+                fireAt,
+                title,
+                body,
+                data: {intent, videoId: item.id, kind: item.kind},
+            });
+        }
+    }
+
+    return pushes;
 };
 
 /**

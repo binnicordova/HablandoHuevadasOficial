@@ -18,7 +18,7 @@ import {usePlayerUI} from "@/components/VideoPlayer/PlayerUIProvider";
 import {VideoRail} from "@/components/VideoRail/VideoRail";
 import {COPY} from "@/constants/copy";
 import {PATHS} from "@/constants/routes";
-import {RADII, SPACE} from "@/constants/theme";
+import {MIN_TOUCH, RADII, SPACE} from "@/constants/theme";
 import {useEngagement} from "@/hooks/useEngagement";
 import {useNextUp} from "@/hooks/useNextUp";
 import {useNotifications} from "@/hooks/useNotification";
@@ -26,7 +26,14 @@ import {useOpenItem} from "@/hooks/useOpenItem";
 import {useStreak} from "@/hooks/useStreak";
 import type {CatalogItem} from "@/models/video";
 import {track} from "@/services/analytics";
-import {getDailyPick, getItemById} from "@/services/catalog";
+import {
+    getDailyPick,
+    getHeroTint,
+    getItemById,
+    getLatestItem,
+    getLatestVideo,
+    isRecentlyPublished,
+} from "@/services/catalog";
 import {detailRails, type Rail, railPool} from "@/services/recommendations";
 import {
     nowPlayingAtom,
@@ -97,6 +104,11 @@ const Home = () => {
     });
 
     const dailyPick = useMemo(() => getDailyPick(), []);
+    /** Videos-only: the hero player never loads a short (see stores/player.ts). */
+    const latestVideo = useMemo(() => getLatestVideo(), []);
+    /** Videos or shorts — for the flame shortcut, which can send either
+     *  kind to the surface built for it. */
+    const latestItem = useMemo(() => getLatestItem(), []);
     const [optInDismissed, setOptInDismissed] = useState(false);
     const [promoVisible, setPromoVisible] = useState(false);
     const promoShownRef = useRef(false);
@@ -167,12 +179,34 @@ const Home = () => {
     useEffect(() => {
         if (nowPlaying) everPlayedRef.current = true;
     }, [nowPlaying]);
+    /**
+     * A freshly published episode the user hasn't opened yet outranks the
+     * daily pick for the first thing shown on open — same "seguías viendo"
+     * definition of "seen" the rest of the app uses (any history entry at
+     * all, finished or not).
+     */
+    const isLatestUnseen =
+        latestVideo !== null &&
+        isRecentlyPublished(latestVideo) &&
+        !history.some((entry) => entry.id === latestVideo.id);
     useEffect(() => {
         if (requestedId || nowPlaying || everPlayedRef.current) return;
-        const seed = dailyPick ?? videos[0];
+        const seed =
+            isLatestUnseen && latestVideo
+                ? latestVideo
+                : (dailyPick ?? videos[0]);
         if (!seed) return;
         setNowPlaying({item: seed, startAt: resumeFor(seed), playing: false});
-    }, [requestedId, nowPlaying, dailyPick, videos, resumeFor, setNowPlaying]);
+    }, [
+        requestedId,
+        nowPlaying,
+        isLatestUnseen,
+        latestVideo,
+        dailyPick,
+        videos,
+        resumeFor,
+        setNowPlaying,
+    ]);
 
     const playItem = useCallback(
         (item: CatalogItem, surface = "home") => {
@@ -288,11 +322,45 @@ const Home = () => {
         );
     }, [playItem, shufflePool]);
 
+    const showLatestFab =
+        latestItem !== null && isRecentlyPublished(latestItem);
+    /** Same video/short dispatch `playFromRail` uses: a short goes to its own
+     *  feed, an episode swaps into the stage that is already mounted. */
+    const playLatest = useCallback(() => {
+        if (!latestItem) return;
+        if (latestItem.kind === "short") {
+            openItem(latestItem);
+            return;
+        }
+        playItem(latestItem, "home:latest");
+    }, [latestItem, openItem, playItem]);
+
     const showOptIn =
         !optInDismissed &&
         notifications.needsPermission &&
         engagement.canPromptNotifications;
     const isDaily = currentVideo?.id === dailyPick?.id;
+    /**
+     * See `services/catalog.ts#getHeroTint` — the one shared read of this
+     * item's status, so the pill here, the title colour below and the
+     * player's own stage tint never drift out of sync with each other.
+     * Never shown as anything over the player itself — a badge on top of
+     * the frame reads as an interruption while actually watching, so this
+     * status lives in the info panel instead, the same slot the daily/resume
+     * pills already use.
+     */
+    const heroTint = currentVideo ? getHeroTint(currentVideo) : null;
+    /**
+     * A true live/upcoming premiere already gets its own badge, drawn right
+     * on the player by `VideoPlayer` — showing "ESTRENO" here too would just
+     * repeat it. This pill is for the other half of "premiere": an already
+     * -aired episode that went through the announce flow and is still
+     * inside its fresh window.
+     */
+    const showPremierePill =
+        heroTint === "premiere" &&
+        currentVideo?.live_status !== "live" &&
+        currentVideo?.live_status !== "upcoming";
     const resumeAt = currentVideo ? resumeFor(currentVideo) : 0;
 
     const meta = currentVideo
@@ -353,6 +421,44 @@ const Home = () => {
                                         {COPY.home.dailyBadge.toUpperCase()}
                                     </Text>
                                 </View>
+                            ) : heroTint === "new" ? (
+                                <View
+                                    style={[
+                                        styles.dailyPill,
+                                        {backgroundColor: colors.warning},
+                                    ]}
+                                >
+                                    <Icon
+                                        name="fire"
+                                        size={13}
+                                        color={colors.accentText}
+                                    />
+                                    <Text
+                                        variant="micro"
+                                        style={{color: colors.accentText}}
+                                    >
+                                        {COPY.player.justPublished}
+                                    </Text>
+                                </View>
+                            ) : showPremierePill ? (
+                                <View
+                                    style={[
+                                        styles.dailyPill,
+                                        {backgroundColor: colors.hot},
+                                    ]}
+                                >
+                                    <Icon
+                                        name="fire"
+                                        size={13}
+                                        color={colors.text}
+                                    />
+                                    <Text
+                                        variant="micro"
+                                        style={{color: colors.text}}
+                                    >
+                                        {COPY.player.premiereAired}
+                                    </Text>
+                                </View>
                             ) : resumeAt > 5 ? (
                                 <View style={styles.resume}>
                                     <Icon
@@ -371,7 +477,17 @@ const Home = () => {
                             )}
                         </View>
 
-                        <Text variant="heading" numberOfLines={2}>
+                        <Text
+                            variant="heading"
+                            numberOfLines={2}
+                            tone={
+                                heroTint === "premiere"
+                                    ? "hot"
+                                    : heroTint === "new"
+                                      ? "warning"
+                                      : undefined
+                            }
+                        >
                             {displayTitle(currentVideo)}
                         </Text>
 
@@ -472,6 +588,21 @@ const Home = () => {
                 </View>
             </Animated.ScrollView>
 
+            {showLatestFab ? (
+                <FloatingActionButton
+                    onPress={playLatest}
+                    icon="fire"
+                    label={COPY.home.latest}
+                    tint={colors.hot}
+                    tintText={colors.text}
+                    // Hovers directly above the shuffle button — same
+                    // horizontal spot, stacked one button-height plus a gap
+                    // higher, rather than a second row of chrome.
+                    bottom={
+                        insets.bottom + SPACE.xxl + (MIN_TOUCH + 8) + SPACE.sm
+                    }
+                />
+            ) : null}
             <FloatingActionButton
                 onPress={shuffle}
                 bottom={insets.bottom + SPACE.xxl}

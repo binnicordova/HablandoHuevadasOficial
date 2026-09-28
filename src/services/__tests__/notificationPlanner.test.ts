@@ -303,3 +303,89 @@ describe("notification state", () => {
         expect(two.map((entry) => entry.slot)).toContain("lunch");
     });
 });
+
+describe("premiere notifications", () => {
+    const premiere = video("premiere1", {
+        announced_at: new Date(NOW.getTime() - 2 * 86_400_000).toISOString(),
+        premiere_at: new Date(NOW.getTime() + 2 * 3_600_000).toISOString(),
+    });
+    const withPremiere = [...videos, premiere];
+
+    it("schedules a starting-soon push exactly 10 minutes before the premiere and a live push exactly at it", () => {
+        const plan = planNotifications(
+            baseInput({videos: withPremiere, horizonDays: 1})
+        );
+        const soon = plan.find((entry) => entry.intent === "premiere_soon");
+        const live = plan.find((entry) => entry.intent === "premiere_live");
+        const premiereAt = Date.parse(premiere.premiere_at ?? "");
+
+        expect(soon?.fireAt).toBe(premiereAt - 10 * 60_000);
+        expect(live?.fireAt).toBe(premiereAt);
+        expect(soon?.data.videoId).toBe("premiere1");
+        expect(live?.data.videoId).toBe("premiere1");
+        // Exact-clock pushes don't belong to a ranked daily slot.
+        expect(soon?.slot).toBeUndefined();
+    });
+
+    it("claims a daily slot to announce the premiere ahead of the generic daily pick", () => {
+        const plan = planNotifications(
+            baseInput({videos: withPremiere, horizonDays: 1})
+        );
+        const announced = plan.find(
+            (entry) => entry.intent === "premiere_announced"
+        );
+        expect(announced?.data.videoId).toBe("premiere1");
+    });
+
+    it("stops pushing about a premiere once the user has watched it", () => {
+        const plan = planNotifications(
+            baseInput({
+                videos: withPremiere,
+                horizonDays: 1,
+                history: [watched("premiere1", 1)],
+            })
+        );
+        expect(plan.some((entry) => entry.data.videoId === "premiere1")).toBe(
+            false
+        );
+    });
+
+    it("keeps announcing an aired-but-unwatched premiere for the follow-up window, without clock pushes for the past", () => {
+        const aired = video("premiere2", {
+            announced_at: new Date(
+                NOW.getTime() - 4 * 86_400_000
+            ).toISOString(),
+            premiere_at: new Date(NOW.getTime() - 86_400_000).toISOString(),
+        });
+        const plan = planNotifications(
+            baseInput({videos: [...videos, aired], horizonDays: 1})
+        );
+        expect(
+            plan.some(
+                (entry) =>
+                    entry.intent === "premiere_announced" &&
+                    entry.data.videoId === "premiere2"
+            )
+        ).toBe(true);
+        expect(
+            plan.some(
+                (entry) =>
+                    (entry.intent === "premiere_soon" ||
+                        entry.intent === "premiere_live") &&
+                    entry.data.videoId === "premiere2"
+            )
+        ).toBe(false);
+    });
+
+    it("keeps re-announcing the same premiere across every day of the horizon", () => {
+        const plan = planNotifications(
+            baseInput({videos: withPremiere, horizonDays: 3})
+        );
+        const announcedDays = new Set(
+            plan
+                .filter((entry) => entry.intent === "premiere_announced")
+                .map((entry) => dayKey(new Date(entry.fireAt)))
+        );
+        expect(announcedDays.size).toBeGreaterThan(1);
+    });
+});

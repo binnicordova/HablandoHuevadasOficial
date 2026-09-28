@@ -4,6 +4,8 @@ import {StyleSheet, View} from "react-native";
 import YoutubeIframe, {
     type YoutubeIframeRef,
 } from "react-native-youtube-iframe";
+import {Text} from "@/components/Text/Text";
+import {COPY} from "@/constants/copy";
 import {useTheme} from "@/theme/colors";
 import {styles} from "./VideoPlayer.styles";
 
@@ -26,6 +28,15 @@ type VideoPlayerProps = {
      * the viewport and centred, cropping the bars away.
      */
     fill?: boolean;
+    /**
+     * A real live/upcoming premiere only — a genuine "this is happening right
+     * now" event earns an on-screen badge. "Just published a few days ago" is
+     * mere freshness, not urgency, and does not belong here: see
+     * `GlobalPlayerHost`'s ambient glow and the info panel's flame pill in
+     * Inicio for how that's signalled instead, without ever sitting on top of
+     * the frame.
+     */
+    liveStatus?: "upcoming" | "live";
 };
 
 const PROGRESS_INTERVAL_MS = 5000;
@@ -42,6 +53,7 @@ export const VideoPlayer = ({
     width,
     poster,
     fill = false,
+    liveStatus,
 }: VideoPlayerProps) => {
     const playerRef = useRef<YoutubeIframeRef>(null);
     const colors = useTheme();
@@ -123,10 +135,29 @@ export const VideoPlayer = ({
         <View
             style={[
                 styles.container,
-                {height, backgroundColor: colors.sunken},
+                {
+                    height,
+                    backgroundColor: liveStatus
+                        ? colors.premiere
+                        : colors.sunken,
+                },
                 fill && styles.fillContainer,
             ]}
         >
+            {liveStatus ? (
+                <View
+                    style={[
+                        styles.premiereBadge,
+                        {backgroundColor: colors.hot},
+                    ]}
+                >
+                    <Text variant="micro" style={{color: colors.text}}>
+                        {liveStatus === "live"
+                            ? COPY.player.premiereLive
+                            : COPY.player.premiereUpcoming}
+                    </Text>
+                </View>
+            ) : null}
             {poster && !booted ? (
                 <Image
                     source={poster}

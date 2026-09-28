@@ -30,6 +30,7 @@ export type ThemedTextProps = TextProps & {
         | "faint"
         | "accent"
         | "hot"
+        | "warning"
         | "error"
         | "inverse";
     uppercase?: boolean;
@@ -80,6 +81,7 @@ export function Text({
         faint: colors.textFaint,
         accent: colors.accent,
         hot: colors.hot,
+        warning: colors.warning,
         error: colors.error,
         inverse: colors.accentText,
     }[resolvedTone];

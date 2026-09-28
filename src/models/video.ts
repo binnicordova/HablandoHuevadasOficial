@@ -41,6 +41,16 @@ export type Video = {
     upload_date?: string;
     /** ISO timestamp of the last stats fetch. */
     stats_checked_at?: string;
+    /**
+     * ISO timestamp the first time this id was ever seen by the script — the
+     * closest available proxy for "when this was announced", since a
+     * scheduled premiere's id exists on the channel well before it airs.
+     */
+    announced_at?: string;
+    /** Normalized from yt-dlp's `live_status`; absent for an ordinary upload. */
+    live_status?: "upcoming" | "live" | "ended";
+    /** ISO timestamp of the scheduled/actual premiere start. */
+    premiere_at?: string;
 };
 
 /** A catalog entry enriched with the collection it belongs to. */

@@ -71,7 +71,7 @@ console.log(`${plan.length} notifications scheduled over the next 3 days\n`);
 
 for (const entry of plan) {
     console.log(
-        `${time(entry.fireAt).padEnd(18)} ${entry.slot.padEnd(10)} ${entry.intent.padEnd(10)}`
+        `${time(entry.fireAt).padEnd(18)} ${(entry.slot ?? "—").padEnd(10)} ${entry.intent.padEnd(10)}`
     );
     console.log(`   ${entry.title}`);
     console.log(`   ${entry.body}\n`);

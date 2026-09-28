@@ -1,17 +1,19 @@
 import {LinearGradient} from "expo-linear-gradient";
 import {useRouter} from "expo-router";
 import {useAtomValue, useSetAtom} from "jotai";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useMemo, useState} from "react";
 import {useWindowDimensions, View} from "react-native";
 import {Gesture, GestureDetector} from "react-native-gesture-handler";
 import Animated, {
     clamp,
+    Easing,
     runOnJS,
     scrollTo,
     useAnimatedReaction,
     useAnimatedStyle,
     useDerivedValue,
     useSharedValue,
+    withRepeat,
     withSpring,
     withTiming,
 } from "react-native-reanimated";
@@ -20,6 +22,7 @@ import {Icon} from "@/components/Icon/Icon";
 import {COPY} from "@/constants/copy";
 import {PATHS} from "@/constants/routes";
 import {SPACE, TAB_BAR_HEIGHT} from "@/constants/theme";
+import {getHeroTint} from "@/services/catalog";
 import {
     clearNowPlayingAtom,
     emitPlayerEventAtom,
@@ -46,9 +49,14 @@ const PEEK_VISIBLE = 28;
 /** How far past the edge a drag has to go, as a fraction of the box's own
  *  width, before letting go tucks it away instead of snapping to a corner. */
 const PEEK_TRIGGER_RATIO = 0.5;
-/** Corner hit-target for the close/play buttons, generous enough for a
- *  thumb — bigger than the 26px icon actually drawn there. */
+/** Corner hit-target for the close button, generous enough for a thumb —
+ *  bigger than the 26px icon actually drawn there. */
 const CORNER_HIT = 44;
+/** Width of the status ring traced just past the pip box's own edge — a
+ *  hairline, not a halo. */
+const RING_WIDTH = 1.5;
+/** One full breathe, in and out — slow and quiet, not a flashing alert. */
+const RING_PULSE_MS = 2600;
 
 /**
  * The one `<VideoPlayer>` (and therefore the one YouTube WebView) the whole
@@ -120,10 +128,6 @@ export const GlobalPlayerHost = () => {
         (height: number) => setPlayerHeight(height),
         []
     );
-    const togglePlaying = useCallback(() => {
-        tapFeedback();
-        setPlaying(!nowPlaying?.playing);
-    }, [nowPlaying?.playing, setPlaying]);
     const closePip = useCallback(() => {
         tapFeedback();
         clear();
@@ -223,15 +227,9 @@ export const GlobalPlayerHost = () => {
                 runOnJS(reveal)();
                 return;
             }
-            if (e.y < CORNER_HIT) {
-                if (e.x > pipWidth.value - CORNER_HIT) {
-                    runOnJS(closePip)();
-                    return;
-                }
-                if (e.x < CORNER_HIT) {
-                    runOnJS(togglePlaying)();
-                    return;
-                }
+            if (e.y < CORNER_HIT && e.x > pipWidth.value - CORNER_HIT) {
+                runOnJS(closePip)();
+                return;
             }
             if (isHomeFocusedShared.value) {
                 scrollTo(homeScrollRef, 0, 0, true);
@@ -361,6 +359,86 @@ export const GlobalPlayerHost = () => {
         [itemId, updateProgress]
     );
 
+    /**
+     * A real live/upcoming premiere only — an on-screen badge is warranted
+     * because something is genuinely happening right now. Passed straight
+     * into `VideoPlayer`, which draws it over the frame.
+     */
+    const liveStatus = useMemo((): "upcoming" | "live" | undefined => {
+        const status = nowPlaying?.item.live_status;
+        return status === "live" || status === "upcoming" ? status : undefined;
+    }, [nowPlaying?.item]);
+
+    /** See `services/catalog.ts#getHeroTint` — the one shared source for
+     *  what colour story (if any) this item's status gets everywhere. */
+    const heroTint = useMemo(
+        () => getHeroTint(nowPlaying?.item ?? null),
+        [nowPlaying?.item]
+    );
+
+    const glowActive = useSharedValue(false);
+    useEffect(() => {
+        glowActive.value = heroTint !== null;
+    }, [heroTint, glowActive]);
+
+    const glowColors: readonly [string, string] =
+        heroTint === "premiere"
+            ? [colors.hot, colors.hotDim]
+            : [colors.warning, colors.accent];
+
+    /**
+     * The status tint is a second gradient layered over the ordinary stage
+     * fade, not an extra colour stop baked into it. A flat "transparent →
+     * tint → background" stop reads as a sticker — the tint has nowhere
+     * left to fade, so it lands as a hard-edged band. A pure alpha ramp of
+     * the same hue, stacked on top, has nowhere it *isn't* fading, and the
+     * `locations` delay keeps it out of the frame's upper half entirely —
+     * it only ever gathers where the base fade is already going dark.
+     */
+    const stageTintColors: readonly [string, string, string] | null =
+        heroTint === "premiere"
+            ? [
+                  colors.premiereGlowFrom,
+                  colors.premiereGlowFrom,
+                  colors.premiereGlow,
+              ]
+            : heroTint === "new"
+              ? [colors.freshGlowFrom, colors.freshGlowFrom, colors.freshGlow]
+              : null;
+    const stageTintLocations = [0, 0.5, 1] as const;
+
+    const glowPulse = useSharedValue(0);
+    useEffect(() => {
+        glowPulse.value = withRepeat(
+            withTiming(1, {
+                duration: RING_PULSE_MS,
+                easing: Easing.inOut(Easing.sin),
+            }),
+            -1,
+            true
+        );
+    }, [glowPulse]);
+
+    /**
+     * The status ring: a hairline gradient traced just past the pip box's
+     * own edge — the box's opaque video sits in front and covers everything
+     * but that sliver. Only pip has room for it; inline is edge to edge by
+     * design, so it simply reads as inactive there rather than crowding the
+     * video to compensate. No scale, no bloom — a thin line and a slow
+     * breathe in opacity is the whole effect.
+     */
+    const glowRectStyle = useAnimatedStyle(() => ({
+        left: pipX.value - RING_WIDTH,
+        top: pipY.value - RING_WIDTH,
+        width: pipWidth.value + RING_WIDTH * 2,
+        height: pipHeight.value + RING_WIDTH * 2,
+        borderRadius: 14 + RING_WIDTH,
+    }));
+    const glowFadeStyle = useAnimatedStyle(() => {
+        const visible = glowActive.value && mode.value === "pip";
+        return {opacity: visible ? 0.55 + glowPulse.value * 0.2 : 0};
+    });
+
     if (!nowPlaying) return null;
 
     const handleStateChange = (event: string) => {
@@ -371,6 +449,26 @@ export const GlobalPlayerHost = () => {
 
     return (
         <Animated.View style={styles.overlay} pointerEvents="box-none">
+            {/*
+             * "Hot" halo — a real premiere, or a video still inside its
+             * freshly-published window. Painted first (so behind everything
+             * else), inflated past the box on every side: the box's own
+             * opaque video sits on top and covers the middle, so only that
+             * outer margin ever reads as a glow. Never a badge, never on top
+             * of the frame.
+             */}
+            <Animated.View
+                pointerEvents="none"
+                style={[styles.glow, glowRectStyle, glowFadeStyle]}
+            >
+                <LinearGradient
+                    colors={glowColors}
+                    start={{x: 0, y: 0}}
+                    end={{x: 1, y: 1}}
+                    style={styles.flexFull}
+                />
+            </Animated.View>
+
             {/*
              * The video itself carries no gesture handling — inline, the
              * user has to be able to reach YouTube's own control bar
@@ -395,13 +493,24 @@ export const GlobalPlayerHost = () => {
                     height={playerHeight}
                     onStateChange={handleStateChange}
                     onProgress={handleProgress}
+                    liveStatus={liveStatus}
                 />
                 {uiMode === "inline" ? (
-                    <LinearGradient
-                        colors={["transparent", colors.background]}
-                        style={styles.stageFade}
-                        pointerEvents="none"
-                    />
+                    <>
+                        <LinearGradient
+                            colors={["transparent", colors.background]}
+                            style={styles.stageFade}
+                            pointerEvents="none"
+                        />
+                        {stageTintColors ? (
+                            <LinearGradient
+                                colors={stageTintColors}
+                                locations={stageTintLocations}
+                                style={styles.stageFade}
+                                pointerEvents="none"
+                            />
+                        ) : null}
+                    </>
                 ) : null}
             </Animated.View>
 
@@ -450,30 +559,38 @@ export const GlobalPlayerHost = () => {
                             </View>
                         ) : (
                             /*
-                             * Decorative only — the tap that activates these
-                             * corners is handled by `tapGesture` above, keyed
-                             * off where inside the box it landed, not by
-                             * these views themselves. A screen reader user
-                             * gets the whole-box label instead.
+                             * Decorative only. The close corner's tap is
+                             * handled by `tapGesture` above, keyed off where
+                             * inside the box it landed, not by this view
+                             * itself. The status corner has no tap of its
+                             * own at all — it is a read-only echo of
+                             * `heroTint`, the same signal already colouring
+                             * the ring and the stage fade, not a control
+                             * (the old play/pause button here never
+                             * reliably reflected the real state and is gone
+                             * for it). A screen reader user gets the
+                             * whole-box label instead of either corner.
                              */
                             <>
-                                <View
-                                    importantForAccessibility="no-hide-descendants"
-                                    style={[
-                                        styles.pipButton,
-                                        styles.playButton,
-                                    ]}
-                                >
-                                    <Icon
-                                        name={
-                                            nowPlaying.playing
-                                                ? "pause"
-                                                : "play"
-                                        }
-                                        size={15}
-                                        color="#FFFFFF"
-                                    />
-                                </View>
+                                {heroTint ? (
+                                    <View
+                                        importantForAccessibility="no-hide-descendants"
+                                        style={[
+                                            styles.pipButton,
+                                            styles.statusBadge,
+                                        ]}
+                                    >
+                                        <Icon
+                                            name="fire"
+                                            size={14}
+                                            color={
+                                                heroTint === "premiere"
+                                                    ? colors.hot
+                                                    : colors.warning
+                                            }
+                                        />
+                                    </View>
+                                ) : null}
                                 <View
                                     importantForAccessibility="no-hide-descendants"
                                     style={[

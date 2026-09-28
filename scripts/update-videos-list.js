@@ -15,7 +15,8 @@
  * Every field the app already reads is written exactly as before. The new ones
  * (`title_clean`, `season`, `season_number`, `season_short`, `series`,
  * `episode_number`, `hashtags`, `like_count`, `like_ratio`, `upload_date`,
- * `stats_checked_at`) are additive.
+ * `stats_checked_at`, `announced_at`, `live_status`, `premiere_at`) are
+ * additive.
  *
  * Usage:
  *   node scripts/update-videos-list.js                 # full refresh + incremental likes
@@ -124,6 +125,11 @@ const toBaseEntry = (video) => ({
     uploader_id: video.uploader_id,
 });
 
+/** Stamped once per run, used as the "announced" time for any id seen for the
+ *  first time below — not per-entry `Date.now()`, so every video first seen in
+ *  the same run gets the exact same announced_at. */
+const RUN_AT = new Date().toISOString();
+
 /** Fields this script owns. Rewritten on every run, never merged. */
 const DERIVED_FIELDS = [
     "title_clean",
@@ -178,6 +184,16 @@ const enrich = (entry, previous) => {
         "stats_checked_at",
         previous?.stats_checked_at ?? entry.stats_checked_at
     );
+    // First time this id is ever passed here, `previous` is undefined — that
+    // is the "new video" moment, and a scheduled premiere's id exists on the
+    // channel well before it airs, so this doubles as its announcement time.
+    // Carried forward untouched afterward, exactly like `upload_date`.
+    put("announced_at", previous ? previous.announced_at : RUN_AT);
+    // `live_status`/`premiere_at` are filled in later, by the stats pass —
+    // carried forward here so a re-derive (offline/skip-listing) does not
+    // lose them.
+    put("live_status", previous?.live_status ?? entry.live_status);
+    put("premiere_at", previous?.premiere_at ?? entry.premiere_at);
 
     return next;
 };
@@ -240,17 +256,29 @@ const isStale = (entry, maxAgeDays) => {
     return Date.now() - checked > maxAgeDays * DAY_MS;
 };
 
+/** Recently announced (or already known to be upcoming/live) — a fresh
+ *  premiere has ~0 views, so left to the view-count ranking alone it would
+ *  get starved out of the batch before ever revealing its live_status. */
+const isPremiereLead = (entry) => {
+    if (entry.live_status === "upcoming" || entry.live_status === "live")
+        return true;
+    if (!entry.announced_at) return false;
+    return Date.now() - Date.parse(entry.announced_at) < 3 * DAY_MS;
+};
+
 /**
  * Which ids get a full extraction this run.
  *
  * Ordered by view count: likes are a ranking signal, and a signal is worth most
  * where the audience already is. Videos before shorts for the same reason —
- * the home feed is built from videos.
+ * the home feed is built from videos. Premiere leads jump the queue entirely
+ * — see `isPremiereLead` — since view count can't rank what nobody has seen yet.
  */
 const selectForStats = (data, options) => {
     if (options.likes === "none") return [];
 
-    const wanted = [];
+    const leads = [];
+    const rest = [];
     for (const kind of ["videos", "shorts"]) {
         for (const entry of data[kind] ?? []) {
             const needs =
@@ -258,16 +286,18 @@ const selectForStats = (data, options) => {
                     ? isStale(entry, options.likesMaxAgeDays)
                     : entry.like_count === null ||
                       entry.like_count === undefined;
-            if (needs) wanted.push({kind, entry});
+            if (!needs && !isPremiereLead(entry)) continue;
+            (isPremiereLead(entry) ? leads : rest).push({kind, entry});
         }
     }
 
-    wanted.sort((a, b) => {
+    rest.sort((a, b) => {
         if (a.kind !== b.kind) return a.kind === "videos" ? -1 : 1;
         return (b.entry.view_count ?? 0) - (a.entry.view_count ?? 0);
     });
 
-    return wanted.slice(0, Math.max(0, options.likesLimit));
+    const restLimit = Math.max(0, options.likesLimit - leads.length);
+    return [...leads, ...rest.slice(0, restLimit)];
 };
 
 const chunk = (items, size) => {
@@ -275,6 +305,21 @@ const chunk = (items, size) => {
     for (let i = 0; i < items.length; i += size)
         out.push(items.slice(i, i + size));
     return out;
+};
+
+/** yt-dlp's 5-way `live_status` collapsed to what the app actually needs:
+ *  the two transient states worth telling the user about, or `null` (an
+ *  ordinary upload, or the field was missing this fetch). */
+const normalizeLiveStatus = (status) => {
+    if (status === "is_upcoming") return "upcoming";
+    if (status === "is_live") return "live";
+    if (
+        status === "not_live" ||
+        status === "was_live" ||
+        status === "post_live"
+    )
+        return "ended";
+    return null;
 };
 
 const fetchStatsBatch = async (ids) => {
@@ -301,9 +346,35 @@ const fetchStatsBatch = async (ids) => {
             upload_date: video.upload_date
                 ? `${video.upload_date.slice(0, 4)}-${video.upload_date.slice(4, 6)}-${video.upload_date.slice(6, 8)}`
                 : null,
+            live_status: normalizeLiveStatus(video.live_status),
+            premiere_at:
+                typeof video.release_timestamp === "number"
+                    ? new Date(video.release_timestamp * 1000).toISOString()
+                    : null,
         });
     }
     return stats;
+};
+
+/**
+ * Merges the transient live/premiere state onto an entry. Kept separate from
+ * the like-count merge below because it has to run even when likes come back
+ * null — a fresh premiere has no likes yet, and that is exactly the case this
+ * exists to catch.
+ */
+const applyLiveState = (entry, row) => {
+    if (row.live_status === "upcoming" || row.live_status === "live") {
+        entry.live_status = row.live_status;
+    } else if (row.live_status === "ended") {
+        // Aired since the last check: it's a normal video now, and absence of
+        // the field *is* "ended" — nothing to store going forward.
+        delete entry.live_status;
+    }
+    // `row.live_status === null` (fetch didn't say) leaves whatever was there.
+
+    // Write-once: this is the historical premiere time, not a live value.
+    if (!entry.premiere_at && row.premiere_at)
+        entry.premiere_at = row.premiere_at;
 };
 
 /** Runs `worker` over `jobs` with a fixed pool size. */
@@ -347,7 +418,14 @@ const fetchStats = async (targets, options) => {
             const entry = byId.get(id);
             const row = stats.get(id);
             if (!entry) continue;
-            if (!row || row.like_count === null) {
+            if (!row) {
+                entry.stats_checked_at = checkedAt;
+                continue;
+            }
+            // Runs whether or not likes came back: a fresh premiere has no
+            // likes yet, but is exactly the case whose live_status matters.
+            applyLiveState(entry, row);
+            if (row.like_count === null) {
                 // Likes hidden by the uploader, or the video is gone. Stamp the
                 // check anyway so the next run does not retry it forever.
                 entry.stats_checked_at = checkedAt;

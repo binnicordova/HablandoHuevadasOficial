@@ -112,6 +112,84 @@ export const getShuffledShorts = (date: Date = new Date()): CatalogItem[] => {
     return [...pool.slice(offset), ...pool.slice(0, offset)];
 };
 
+const DAY_MS = 86_400_000;
+/** How long "just published" keeps meaning anything to the user. */
+export const RECENT_PUBLISH_WINDOW_DAYS = 3;
+
+/**
+ * Best guess at when an item actually went up: the real premiere clock if it
+ * had one, else the upload date yt-dlp reports, else — for something so new
+ * the stats pass hasn't reached it yet — the moment this script first saw the
+ * id at all. `null` for the historical backlog, which predates all three
+ * fields (see `scripts/update-videos-list.js`).
+ */
+const publishedAt = (item: CatalogItem): number | null => {
+    const candidate = item.premiere_at ?? item.upload_date ?? item.announced_at;
+    if (!candidate) return null;
+    const parsed = Date.parse(candidate);
+    return Number.isNaN(parsed) ? null : parsed;
+};
+
+const latestOf = (pool: CatalogItem[]): CatalogItem | null => {
+    if (pool.length === 0) return null;
+    // The dataset is newest-first, so the first entry is already the right
+    // answer for anything the timestamp fields don't cover.
+    let best = pool[0];
+    let bestAt = publishedAt(best) ?? Number.NEGATIVE_INFINITY;
+    for (const item of pool) {
+        const at = publishedAt(item);
+        if (at !== null && at > bestAt) {
+            best = item;
+            bestAt = at;
+        }
+    }
+    return best;
+};
+
+/** The most recently published video — never a short, since only videos ever
+ *  load into the singleton hero player. */
+export const getLatestVideo = (): CatalogItem | null => latestOf(getVideos());
+
+/** The most recently published item of either kind — for surfaces that can
+ *  dispatch a short to its own feed instead of the hero. */
+export const getLatestItem = (): CatalogItem | null =>
+    latestOf([...getVideos(), ...getShorts()]);
+
+/** Whether `item` went up within the last `RECENT_PUBLISH_WINDOW_DAYS`. */
+export const isRecentlyPublished = (
+    item: CatalogItem,
+    now: Date = new Date()
+): boolean => {
+    const at = publishedAt(item);
+    if (at === null) return false;
+    return now.getTime() - at < RECENT_PUBLISH_WINDOW_DAYS * DAY_MS;
+};
+
+/**
+ * The one place that decides an item's "hot" status, shared by every surface
+ * that colours itself off it (the player's stage tint, Inicio's pill and
+ * title colour) — computed once here instead of three times, slightly
+ * differently, in three files.
+ *
+ *  - "premiere": actually live/upcoming right now, or it went through this
+ *    channel's announce-a-premiere flow and is still inside its fresh window
+ *    (`item.premiere_at` is set — see `scripts/update-videos-list.js`).
+ *  - "new": just published, with no premiere/announcement history at all.
+ *  - `null`: neither.
+ */
+export type HeroTint = "premiere" | "new" | null;
+
+export const getHeroTint = (item: CatalogItem | null): HeroTint => {
+    if (!item) return null;
+    if (item.live_status === "live" || item.live_status === "upcoming") {
+        return "premiere";
+    }
+    if (item.kind !== "video") return null;
+    const latest = getLatestVideo();
+    if (latest?.id !== item.id || !isRecentlyPublished(item)) return null;
+    return item.premiere_at ? "premiere" : "new";
+};
+
 /**
  * Views alone rank the old viral clips above everything. Likes per view is the
  * closer proxy for "people liked it", so a strong ratio lifts a video by up to

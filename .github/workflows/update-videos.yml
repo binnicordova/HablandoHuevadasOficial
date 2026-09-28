@@ -2,7 +2,7 @@ name: Update Videos List
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # Every Sunday at 00:00 UTC
+    - cron: '0 0 * * 5' # Every Friday at 00:00 UTC
   workflow_dispatch: # Allows manual triggering from the Actions tab
 
 jobs:
@@ -37,5 +37,7 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add assets/data/data.json
-          # Only commit if there are changes
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update videos list [skip ci]" && git push)
+          # Only commit if there are changes. Deliberately no [skip ci]: this
+          # push has to reach release-update.yml so premiere/announcement
+          # data actually ships to installed apps over the air.
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update videos list" && git push)

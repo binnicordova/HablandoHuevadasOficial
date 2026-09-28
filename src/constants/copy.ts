@@ -30,6 +30,7 @@ export const COPY = {
         nowPlaying: "Sonando ahorita",
         continueAction: "Ver todo",
         shuffle: "Sorpréndeme, cjo",
+        latest: "Lo último, causa",
         emptyContinue:
             "No has visto nada todavía. Dale play arriba, no seas tímido.",
     },
@@ -329,6 +330,47 @@ export const COPY = {
                         `${subject} días seguidos viendo huevadas. Respeto.`,
                 },
             ],
+            premiere_announced: [
+                {
+                    title: "Se viene un estreno 🎬",
+                    body: (subject: string) =>
+                        `${subject} ya tiene fecha. No te la pierdas.`,
+                },
+                {
+                    title: "Ya anunciamos la nueva",
+                    body: (subject: string) =>
+                        `${subject} está en camino. Guárdate la fecha.`,
+                },
+                {
+                    title: "Falta poquito para el estreno 👀",
+                    body: (subject: string) =>
+                        `${subject} se estrena pronto. Atento.`,
+                },
+            ],
+            premiere_soon: [
+                {
+                    title: "¡Ya casi! ⏰",
+                    body: (subject: string) =>
+                        `${subject} se estrena en 10 minutitos.`,
+                },
+                {
+                    title: "Prepárate, causa",
+                    body: (subject: string) =>
+                        `${subject} arranca en 10 minutos. No llegues tarde.`,
+                },
+            ],
+            premiere_live: [
+                {
+                    title: "¡Ya está en vivo! 🔴",
+                    body: (subject: string) =>
+                        `${subject} se está estrenando ahorita mismo.`,
+                },
+                {
+                    title: "Se estrenó, causa 🎉",
+                    body: (subject: string) =>
+                        `${subject} ya está en vivo. Entra antes que te la cuenten.`,
+                },
+            ],
         },
     },
 
@@ -392,6 +434,14 @@ export const COPY = {
         pipHint:
             "Arrástralo para moverlo, pellizca para cambiar el tamaño. Esquina superior izquierda pausa o reproduce, la derecha lo cierra. Tócalo en el centro para volver a Inicio.",
         pipRevealHint: "Tócalo para volver a mostrarlo.",
+
+        /** Badge over the stage — only for a real live/upcoming premiere. */
+        premiereLive: "EN VIVO",
+        premiereUpcoming: "PRÓXIMAMENTE",
+        /** The flame pill in Inicio's info panel, not over the player. */
+        justPublished: "NUEVO",
+        /** Same pill slot, once an announced premiere has already aired. */
+        premiereAired: "ESTRENO",
     },
 
     loading: {

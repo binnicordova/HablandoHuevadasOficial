@@ -11,6 +11,10 @@ type FloatingActionButtonProps = {
     icon?: IconName;
     label?: string;
     bottom?: number;
+    /** Fill colour, so a second stacked FAB can read as its own action
+     *  instead of a duplicate of the first. Defaults to the usual accent. */
+    tint?: string;
+    tintText?: string;
 };
 
 export const FloatingActionButton = ({
@@ -18,6 +22,8 @@ export const FloatingActionButton = ({
     icon = "shuffle-variant",
     label = COPY.home.shuffle,
     bottom,
+    tint,
+    tintText,
 }: FloatingActionButtonProps) => {
     const colors = useTheme();
 
@@ -26,7 +32,7 @@ export const FloatingActionButton = ({
             style={({pressed}) => [
                 styles.container,
                 ELEVATION.glow,
-                {backgroundColor: colors.accent},
+                {backgroundColor: tint ?? colors.accent},
                 bottom !== undefined && {bottom},
                 pressed && styles.pressed,
             ]}
@@ -37,7 +43,7 @@ export const FloatingActionButton = ({
             accessibilityRole="button"
             accessibilityLabel={label}
         >
-            <Icon name={icon} size={26} color={colors.accentText} />
+            <Icon name={icon} size={26} color={tintText ?? colors.accentText} />
         </Pressable>
     );
 };

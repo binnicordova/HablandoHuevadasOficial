@@ -16,10 +16,12 @@ import {
     useNotifications,
 } from "@/hooks/useNotification";
 import {useStreak} from "@/hooks/useStreak";
+import {configureObserve, withObserveRoot} from "@/services/observe";
 import {styles} from "@/styles";
 import {useTheme} from "@/theme/colors";
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
+configureObserve();
 
 const FONT_SETTINGS = {
     LatoLight: require("../../assets/fonts/Lato-Light.ttf"),
@@ -122,7 +124,7 @@ const RootLayout = () => {
     );
 };
 
-let AppEntryPoint = RootLayout;
+let AppEntryPoint = withObserveRoot(RootLayout);
 
 if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === "true") {
     try {

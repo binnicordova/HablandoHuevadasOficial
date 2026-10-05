@@ -1,7 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import {reportError} from "@/services/observe";
 
 const handleError = (operation: string, key: string, error: unknown): never => {
     console.error(`Storage ${operation} failed for key "${key}":`, error);
+    reportError(error);
     throw error;
 };
 

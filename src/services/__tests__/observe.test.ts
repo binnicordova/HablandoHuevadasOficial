@@ -1,30 +1,32 @@
 type ObserveModule = typeof import("@/services/observe");
 
-const Root = () => null;
+type Runtime = {
+    expoGo: boolean;
+    nativeModules: boolean;
+    channel: string | null;
+};
 
 const NATIVE_MODULES = ["ExpoAppMetrics", "ExpoObserve"];
+const Root = () => null;
 
-/**
- * Loads `services/observe` against a fresh module registry, with the native
- * modules either present (a build that ships expo-observe) or absent (Expo Go,
- * a store binary from before it). `expo-observe` itself is a stub that throws
- * on load without them, as the real package's `requireNativeModule` does.
- */
-const loadObserve = (hasNativeModules: boolean, channel: string | null) => {
+const loadObserve = ({expoGo, nativeModules, channel}: Runtime) => {
     const fake = {
         Observe: {configure: jest.fn(), reportError: jest.fn()},
         ObserveRoot: {wrap: jest.fn(() => Root)},
     };
+    const probe = jest.fn((name: string) =>
+        nativeModules && NATIVE_MODULES.includes(name) ? {} : null
+    );
+    const loadedPackage = jest.fn();
     let observe: ObserveModule | undefined;
 
     jest.isolateModules(() => {
-        jest.doMock("expo", () => ({
-            requireOptionalNativeModule: (name: string) =>
-                hasNativeModules && NATIVE_MODULES.includes(name) ? {} : null,
-        }));
+        jest.doMock("@/utils/notification", () => ({isExpoGo: expoGo}));
+        jest.doMock("expo", () => ({requireOptionalNativeModule: probe}));
         jest.doMock("expo-updates", () => ({channel}));
         jest.doMock("expo-observe", () => {
-            if (!hasNativeModules) {
+            loadedPackage();
+            if (!nativeModules) {
                 throw new Error("Cannot find native module 'ExpoAppMetrics'");
             }
             return fake;
@@ -32,28 +34,81 @@ const loadObserve = (hasNativeModules: boolean, channel: string | null) => {
         observe = require("@/services/observe");
     });
 
-    return {observe: observe as ObserveModule, fake};
+    return {observe: observe as ObserveModule, fake, probe, loadedPackage};
 };
 
-describe("observe without the native module", () => {
-    it("never loads expo-observe, so Expo Go and older binaries boot", () => {
-        const {observe} = loadObserve(false, "production");
+describe("observe in Expo Go", () => {
+    afterEach(() => jest.restoreAllMocks());
 
-        expect(() => observe.configureObserve()).not.toThrow();
-        expect(() => observe.reportError(new Error("boom"))).not.toThrow();
+    it("stops at the Expo Go check without probing or loading anything", () => {
+        const {observe, probe, loadedPackage} = loadObserve({
+            expoGo: true,
+            nativeModules: false,
+            channel: null,
+        });
+
+        expect(observe.OBSERVE_SUPPORTED).toBe(false);
+        expect(probe).not.toHaveBeenCalled();
+        expect(loadedPackage).not.toHaveBeenCalled();
     });
 
-    it("leaves the root layout as it was", () => {
+    it("says it is off once, as a log rather than an error", () => {
+        const log = jest.spyOn(console, "log").mockImplementation(() => {});
+        const error = jest.spyOn(console, "error");
+        const warn = jest.spyOn(console, "warn");
+        const {observe} = loadObserve({
+            expoGo: true,
+            nativeModules: false,
+            channel: null,
+        });
+
+        observe.configureObserve();
+
+        expect(log).toHaveBeenCalledWith(
+            expect.stringContaining("[Observe] Disabled in Expo Go")
+        );
+        expect(error).not.toHaveBeenCalled();
+        expect(warn).not.toHaveBeenCalled();
+    });
+
+    it("leaves the root layout and error reporting as no-ops", () => {
         const Layout = () => null;
-        const {observe} = loadObserve(false, "production");
+        const {observe} = loadObserve({
+            expoGo: true,
+            nativeModules: false,
+            channel: null,
+        });
 
         expect(observe.withObserveRoot(Layout)).toBe(Layout);
+        expect(() => observe.reportError(new Error("boom"))).not.toThrow();
     });
 });
 
-describe("observe with the native module", () => {
+describe("observe in a store binary built before expo-observe", () => {
+    it("never loads the package and stays silent", () => {
+        const log = jest.spyOn(console, "log").mockImplementation(() => {});
+        const {observe, loadedPackage} = loadObserve({
+            expoGo: false,
+            nativeModules: false,
+            channel: "production",
+        });
+
+        observe.configureObserve();
+
+        expect(observe.OBSERVE_SUPPORTED).toBe(false);
+        expect(loadedPackage).not.toHaveBeenCalled();
+        expect(log).not.toHaveBeenCalled();
+        log.mockRestore();
+    });
+});
+
+describe("observe in a build that ships expo-observe", () => {
     it("reports the build's channel as the environment", () => {
-        const {observe, fake} = loadObserve(true, "preview");
+        const {observe, fake} = loadObserve({
+            expoGo: false,
+            nativeModules: true,
+            channel: "preview",
+        });
 
         observe.configureObserve();
 
@@ -64,7 +119,11 @@ describe("observe with the native module", () => {
     });
 
     it("leaves the environment to Observe when there is no channel", () => {
-        const {observe, fake} = loadObserve(true, null);
+        const {observe, fake} = loadObserve({
+            expoGo: false,
+            nativeModules: true,
+            channel: null,
+        });
 
         observe.configureObserve();
 
@@ -76,7 +135,11 @@ describe("observe with the native module", () => {
     it("wraps the root layout and forwards caught errors", () => {
         const Layout = () => null;
         const error = new Error("boom");
-        const {observe, fake} = loadObserve(true, "production");
+        const {observe, fake} = loadObserve({
+            expoGo: false,
+            nativeModules: true,
+            channel: "production",
+        });
 
         expect(observe.withObserveRoot(Layout)).toBe(Root);
         expect(fake.ObserveRoot.wrap).toHaveBeenCalledWith(Layout);

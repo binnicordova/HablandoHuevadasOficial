@@ -115,11 +115,6 @@ const Home = () => {
     const promoShownRef = useRef(false);
 
     const currentVideo = nowPlaying?.item ?? null;
-    /*
-     * Inicio is usable once the stage holds an episode: its info panel and
-     * rails render in the same pass. Mounting is too early — on a cold start
-     * the stage is still empty while the seed effect below picks what to show.
-     */
     useInteractiveWhen(currentVideo !== null, {deepLink: Boolean(requestedId)});
     /** The last id counted as a play, so a swap re-arms the tracking. */
     const startedRef = useRef<string | null>(null);

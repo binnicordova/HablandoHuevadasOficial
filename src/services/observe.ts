@@ -15,7 +15,7 @@ const hasNativeModules = () =>
     requireOptionalNativeModule("ExpoObserve") !== null;
 
 export const OBSERVE_SUPPORTED =
-    !isExpoGo && Platform.OS !== "web" && hasNativeModules();
+    Platform.OS !== "web" && !isExpoGo && hasNativeModules();
 
 const observe: typeof ExpoObserve | null = OBSERVE_SUPPORTED
     ? (require("expo-observe") as typeof ExpoObserve)

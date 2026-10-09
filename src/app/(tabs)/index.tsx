@@ -34,6 +34,7 @@ import {
     getLatestVideo,
     isRecentlyPublished,
 } from "@/services/catalog";
+import {useInteractiveWhen} from "@/services/observe";
 import {detailRails, type Rail, railPool} from "@/services/recommendations";
 import {
     nowPlayingAtom,
@@ -114,6 +115,7 @@ const Home = () => {
     const promoShownRef = useRef(false);
 
     const currentVideo = nowPlaying?.item ?? null;
+    useInteractiveWhen(currentVideo !== null, {deepLink: Boolean(requestedId)});
     /** The last id counted as a play, so a swap re-arms the tracking. */
     const startedRef = useRef<string | null>(null);
 

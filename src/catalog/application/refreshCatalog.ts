@@ -17,6 +17,8 @@ type Deps = {
     /** The dataset currently on screen, to refuse a suspicious shrink. */
     current: () => RawDataset;
     now?: () => number;
+    /** Skip the throttle — for a moment the data is known to be stale. */
+    force?: boolean;
 };
 
 /**
@@ -30,10 +32,11 @@ export const refreshCatalog = async ({
     state,
     current,
     now = Date.now,
+    force = false,
 }: Deps): Promise<RefreshOutcome> => {
     try {
         const saved = await state.read();
-        if (!isRefreshDue(now(), saved.lastCheckedAt)) {
+        if (!force && !isRefreshDue(now(), saved.lastCheckedAt)) {
             return {status: "skipped"};
         }
 

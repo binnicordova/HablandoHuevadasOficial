@@ -132,6 +132,17 @@ describe("refreshCatalog", () => {
         expect(calls).toHaveLength(0);
     });
 
+    it("bypasses the throttle when forced", async () => {
+        const {impl, calls} = source({status: "not-modified"});
+        const state = memoryState({etag: "e", lastCheckedAt: NOW - 1000});
+        const outcome = await refreshCatalog({
+            ...deps(impl, memoryStore("{}"), state),
+            force: true,
+        });
+        expect(outcome.status).toBe("not-modified");
+        expect(calls).toHaveLength(1);
+    });
+
     it("stores a valid download and remembers its etag", async () => {
         const body = JSON.stringify(dataset(["a", "b", "c"]));
         const {impl} = source({status: "ok", body, etag: '"v2"'});

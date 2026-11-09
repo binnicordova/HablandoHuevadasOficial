@@ -444,6 +444,23 @@ export const COPY = {
         premiereAired: "ESTRENO",
     },
 
+    /** The fire button while the newest episode has not aired yet. */
+    premiere: {
+        goLive: "¡Ya salió!",
+        soon: "Próximamente",
+        /** Screen readers get words, not "1h 52m". */
+        spokenDays: (n: number) => (n === 1 ? "1 día" : `${n} días`),
+        spokenHours: (n: number) => (n === 1 ? "1 hora" : `${n} horas`),
+        spokenMinutes: (n: number) => (n === 1 ? "1 minuto" : `${n} minutos`),
+        spokenSeconds: (n: number) => (n === 1 ? "1 segundo" : `${n} segundos`),
+        a11yCountdown: (spoken: string) => `Se estrena en ${spoken}`,
+        a11yLive: "Ya salió el nuevo episodio. Tócalo para verlo.",
+        a11ySoon: "Nuevo episodio próximamente",
+        whenAt: (date: string, time: string) => `${date} a las ${time}`,
+        caption: (when: string) => `Se estrena el ${when}. Aguanta, causa.`,
+        captionSoon: "Todavía no sale, causa. Aguanta un ratito.",
+    },
+
     loading: {
         generic: "Aguanta la respiración, cjo... cargando.",
         catalog: "Sacando las huevadas del baúl...",

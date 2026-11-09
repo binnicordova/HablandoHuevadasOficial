@@ -5,6 +5,7 @@ import type {
     StreakState,
     VideoKind,
 } from "@/models/video";
+import {PREMIERE_LEAD_MINUTES} from "@/premiere/domain/premiere";
 import {popularity} from "@/services/catalog";
 import {
     affinityScore,
@@ -141,9 +142,6 @@ const EMPTY_TAKEN = new Set<string>();
 /** How long a premiere keeps claiming the top slot: from the moment it's
  *  announced through this many days after it actually airs. */
 const PREMIERE_FOLLOWUP_DAYS = 3;
-
-/** How far ahead of the scheduled premiere the "starting soon" push fires. */
-const PREMIERE_LEAD_MINUTES = 10;
 
 /** Base local time per slot, before jitter. */
 const SLOT_TIMES: Record<NotificationSlot, {hour: number; minute: number}> = {

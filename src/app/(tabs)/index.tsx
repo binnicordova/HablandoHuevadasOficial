@@ -25,6 +25,7 @@ import {useNotifications} from "@/hooks/useNotification";
 import {useOpenItem} from "@/hooks/useOpenItem";
 import {useStreak} from "@/hooks/useStreak";
 import type {CatalogItem} from "@/models/video";
+import {PremiereFab, usePremiereLockedId} from "@/premiere";
 import {track} from "@/services/analytics";
 import {
     getDailyPick,
@@ -98,17 +99,25 @@ const Home = () => {
     const notifications = useNotifications();
     const openItem = useOpenItem();
     const {scrollY, homeScrollRef} = usePlayerUI();
+    /** An announced episode the player must not load yet (see src/premiere). */
+    const lockedId = usePremiereLockedId();
 
     const scrollHandler = useAnimatedScrollHandler((event) => {
         scrollY.value = event.contentOffset.y;
     });
 
     const dailyPick = useMemo(() => getDailyPick(), []);
-    /** Videos-only: the hero player never loads a short (see stores/player.ts). */
-    const latestVideo = useMemo(() => getLatestVideo(), []);
+    /**
+     * Videos-only: the hero player never loads a short (see stores/player.ts).
+     * Re-read when the catalog refreshes or a premiere unlocks, so the
+     * button and pills follow the moment an episode goes live.
+     */
+    // biome-ignore lint/correctness/useExhaustiveDependencies: re-read triggers
+    const latestVideo = useMemo(() => getLatestVideo(), [videos, lockedId]);
     /** Videos or shorts — for the flame shortcut, which can send either
      *  kind to the surface built for it. */
-    const latestItem = useMemo(() => getLatestItem(), []);
+    // biome-ignore lint/correctness/useExhaustiveDependencies: re-read triggers
+    const latestItem = useMemo(() => getLatestItem(), [videos, lockedId]);
     const [optInDismissed, setOptInDismissed] = useState(false);
     const [promoVisible, setPromoVisible] = useState(false);
     const promoShownRef = useRef(false);
@@ -191,10 +200,16 @@ const Home = () => {
         !history.some((entry) => entry.id === latestVideo.id);
     useEffect(() => {
         if (requestedId || nowPlaying || everPlayedRef.current) return;
-        const seed =
+        const preferred =
             isLatestUnseen && latestVideo
                 ? latestVideo
                 : (dailyPick ?? videos[0]);
+        // Never open on an episode that has not aired: the countdown lives on
+        // the fire button, and the stage shows the newest one that can play.
+        const seed =
+            preferred?.id === lockedId
+                ? videos.find((video) => video.id !== lockedId)
+                : preferred;
         if (!seed) return;
         setNowPlaying({item: seed, startAt: resumeFor(seed), playing: false});
     }, [
@@ -204,6 +219,7 @@ const Home = () => {
         latestVideo,
         dailyPick,
         videos,
+        lockedId,
         resumeFor,
         setNowPlaying,
     ]);
@@ -334,6 +350,19 @@ const Home = () => {
         }
         playItem(latestItem, "home:latest");
     }, [latestItem, openItem, playItem]);
+
+    /** Only reached once the premiere is live; a pending one never plays. */
+    const playPremiere = useCallback(
+        (id: string) => {
+            const item = getItemById(id);
+            if (item) playItem(item, "home:premiere");
+        },
+        [playItem]
+    );
+    // Hovers directly above the shuffle button — same horizontal spot,
+    // stacked one button-height plus a gap higher, rather than a second row
+    // of chrome.
+    const fireBottom = insets.bottom + SPACE.xxl + (MIN_TOUCH + 8) + SPACE.sm;
 
     const showOptIn =
         !optInDismissed &&
@@ -588,21 +617,22 @@ const Home = () => {
                 </View>
             </Animated.ScrollView>
 
-            {showLatestFab ? (
-                <FloatingActionButton
-                    onPress={playLatest}
-                    icon="fire"
-                    label={COPY.home.latest}
-                    tint={colors.hot}
-                    tintText={colors.text}
-                    // Hovers directly above the shuffle button — same
-                    // horizontal spot, stacked one button-height plus a gap
-                    // higher, rather than a second row of chrome.
-                    bottom={
-                        insets.bottom + SPACE.xxl + (MIN_TOUCH + 8) + SPACE.sm
-                    }
-                />
-            ) : null}
+            <PremiereFab
+                bottom={fireBottom}
+                onPlay={playPremiere}
+                fallback={
+                    showLatestFab ? (
+                        <FloatingActionButton
+                            onPress={playLatest}
+                            icon="fire"
+                            label={COPY.home.latest}
+                            tint={colors.hot}
+                            tintText={colors.text}
+                            bottom={fireBottom}
+                        />
+                    ) : null
+                }
+            />
             <FloatingActionButton
                 onPress={shuffle}
                 bottom={insets.bottom + SPACE.xxl}

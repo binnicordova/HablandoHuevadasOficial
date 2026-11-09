@@ -1,6 +1,7 @@
 import type {RawDataset} from "@/catalog/domain/dataset";
 import {bundledSeed} from "@/catalog/infrastructure/bundledSeed";
 import type {CatalogItem, VideoKind} from "@/models/video";
+import {getPremiereState, isPlayable} from "@/premiere/domain/premiere";
 import {dayKey, hashString} from "@/utils/date";
 import {normalize} from "@/utils/format";
 import {getYoutubeVideoId, isValidVideoId, thumbnailUrl} from "@/utils/youtube";
@@ -150,13 +151,18 @@ const publishedAt = (item: CatalogItem): number | null => {
     return Number.isNaN(parsed) ? null : parsed;
 };
 
-const latestOf = (pool: CatalogItem[]): CatalogItem | null => {
-    if (pool.length === 0) return null;
+const latestOf = (pool: CatalogItem[], now: number): CatalogItem | null => {
+    // An episode that has not aired yet is not "the latest" anything: it
+    // cannot be played, so surfaces built on this never offer it.
+    const aired = pool.filter((item) =>
+        isPlayable(getPremiereState(item, now))
+    );
+    if (aired.length === 0) return null;
     // The dataset is newest-first, so the first entry is already the right
     // answer for anything the timestamp fields don't cover.
-    let best = pool[0];
+    let best = aired[0];
     let bestAt = publishedAt(best) ?? Number.NEGATIVE_INFINITY;
-    for (const item of pool) {
+    for (const item of aired) {
         const at = publishedAt(item);
         if (at !== null && at > bestAt) {
             best = item;
@@ -167,13 +173,14 @@ const latestOf = (pool: CatalogItem[]): CatalogItem | null => {
 };
 
 /** The most recently published video — never a short, since only videos ever
- *  load into the singleton hero player. */
-export const getLatestVideo = (): CatalogItem | null => latestOf(getVideos());
+ *  load into the singleton hero player. Unaired premieres are skipped. */
+export const getLatestVideo = (now: number = Date.now()): CatalogItem | null =>
+    latestOf(getVideos(), now);
 
 /** The most recently published item of either kind — for surfaces that can
  *  dispatch a short to its own feed instead of the hero. */
-export const getLatestItem = (): CatalogItem | null =>
-    latestOf([...getVideos(), ...getShorts()]);
+export const getLatestItem = (now: number = Date.now()): CatalogItem | null =>
+    latestOf([...getVideos(), ...getShorts()], now);
 
 /** Whether `item` went up within the last `RECENT_PUBLISH_WINDOW_DAYS`. */
 export const isRecentlyPublished = (

@@ -31,7 +31,6 @@ import {
     getDailyPick,
     getHeroTint,
     getItemById,
-    getLatestItem,
     getLatestVideo,
     isRecentlyPublished,
 } from "@/services/catalog";
@@ -114,10 +113,6 @@ const Home = () => {
      */
     // biome-ignore lint/correctness/useExhaustiveDependencies: re-read triggers
     const latestVideo = useMemo(() => getLatestVideo(), [videos, lockedId]);
-    /** Videos or shorts — for the flame shortcut, which can send either
-     *  kind to the surface built for it. */
-    // biome-ignore lint/correctness/useExhaustiveDependencies: re-read triggers
-    const latestItem = useMemo(() => getLatestItem(), [videos, lockedId]);
     const [optInDismissed, setOptInDismissed] = useState(false);
     const [promoVisible, setPromoVisible] = useState(false);
     const promoShownRef = useRef(false);
@@ -338,18 +333,13 @@ const Home = () => {
         );
     }, [playItem, shufflePool]);
 
+    /** The flame always goes to the latest episode, never to a fresh short. */
     const showLatestFab =
-        latestItem !== null && isRecentlyPublished(latestItem);
-    /** Same video/short dispatch `playFromRail` uses: a short goes to its own
-     *  feed, an episode swaps into the stage that is already mounted. */
+        latestVideo !== null && isRecentlyPublished(latestVideo);
     const playLatest = useCallback(() => {
-        if (!latestItem) return;
-        if (latestItem.kind === "short") {
-            openItem(latestItem);
-            return;
-        }
-        playItem(latestItem, "home:latest");
-    }, [latestItem, openItem, playItem]);
+        if (!latestVideo) return;
+        playItem(latestVideo, "home:latest");
+    }, [latestVideo, playItem]);
 
     /** Only reached once the premiere is live; a pending one never plays. */
     const playPremiere = useCallback(

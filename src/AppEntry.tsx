@@ -1,3 +1,4 @@
+import {startCatalogSync} from "./catalog";
 import {initBackgroundFetch} from "./hooks/useBackgroundFetch";
 import {registerNotificationHandler} from "./utils/notification";
 
@@ -5,5 +6,6 @@ import {registerNotificationHandler} from "./utils/notification";
 // environments that do not support them (Expo Go, web).
 registerNotificationHandler();
 initBackgroundFetch();
+startCatalogSync();
 
 import "expo-router/entry";

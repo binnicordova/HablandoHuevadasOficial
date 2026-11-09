@@ -13,6 +13,8 @@ type StorageIdType = {
     recentSearches: string;
     /** Notification memory: fatigue window, back-off and per-slot opens. */
     notifications: string;
+    /** ETag and last check of the downloaded catalog (see src/catalog). */
+    catalogSync: string;
 };
 
 export const STORAGE_ID: StorageIdType = {
@@ -23,4 +25,5 @@ export const STORAGE_ID: StorageIdType = {
     engagement: "hh.engagement.v1",
     recentSearches: "hh.recentSearches.v1",
     notifications: "hh.notifications.v1",
+    catalogSync: "hh.catalogSync.v1",
 };

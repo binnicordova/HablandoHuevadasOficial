@@ -6,6 +6,7 @@ import {
     getShorts,
     getShuffledShorts,
     getVideos,
+    subscribeCatalog,
 } from "@/services/catalog";
 import {
     createSalt,
@@ -24,17 +25,30 @@ const RECENT_SEARCH_LIMIT = 8;
 /*
  * Catalog atoms are plain in-memory atoms on purpose. The previous build wrote
  * the whole 3.3MB dataset into AsyncStorage on every launch, which blocks the
- * JS thread and can blow past Android's AsyncStorage size limit. The dataset is
- * already bundled, so persisting it buys nothing.
+ * JS thread and can blow past Android's AsyncStorage size limit. The dataset
+ * lives in src/catalog (bundled seed + verified download); the version atom
+ * only tells these atoms to re-read after a refresh swaps it.
  */
-export const videosAtom = atom<CatalogItem[]>((): CatalogItem[] => getVideos());
-export const shortsAtom = atom<CatalogItem[]>((): CatalogItem[] =>
-    getShuffledShorts()
-);
+const catalogVersionAtom = atom(0);
+catalogVersionAtom.onMount = (set) => {
+    // The download may have landed before anything mounted.
+    set((version) => version + 1);
+    return subscribeCatalog(() => set((version) => version + 1));
+};
+
+export const videosAtom = atom<CatalogItem[]>((get): CatalogItem[] => {
+    get(catalogVersionAtom);
+    return getVideos();
+});
+export const shortsAtom = atom<CatalogItem[]>((get): CatalogItem[] => {
+    get(catalogVersionAtom);
+    return getShuffledShorts();
+});
 /** Unshuffled shorts, for anything that needs the catalog order (the planner). */
-export const shortsCatalogAtom = atom<CatalogItem[]>((): CatalogItem[] =>
-    getShorts()
-);
+export const shortsCatalogAtom = atom<CatalogItem[]>((get): CatalogItem[] => {
+    get(catalogVersionAtom);
+    return getShorts();
+});
 
 /* ---------------------------------- user state --------------------------- */
 

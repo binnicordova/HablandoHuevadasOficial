@@ -1,13 +1,9 @@
-import type {CatalogItem, Video, VideoKind} from "@/models/video";
+import type {RawDataset} from "@/catalog/domain/dataset";
+import {bundledSeed} from "@/catalog/infrastructure/bundledSeed";
+import type {CatalogItem, VideoKind} from "@/models/video";
 import {dayKey, hashString} from "@/utils/date";
 import {normalize} from "@/utils/format";
 import {getYoutubeVideoId, isValidVideoId, thumbnailUrl} from "@/utils/youtube";
-
-type RawDataset = {
-    channel: string;
-    videos: Video[];
-    shorts: Video[];
-};
 
 type Catalog = {
     channel: string;
@@ -20,8 +16,14 @@ type Catalog = {
 };
 
 let cache: Catalog | null = null;
+/** The verified download, once hydrated; until then the bundled seed serves. */
+let downloaded: RawDataset | null = null;
+const listeners = new Set<() => void>();
 
-const toCatalogItem = (raw: Video, kind: VideoKind): CatalogItem => {
+const toCatalogItem = (
+    raw: RawDataset["videos"][number],
+    kind: VideoKind
+): CatalogItem => {
     const id = isValidVideoId(raw.id) ? raw.id : getYoutubeVideoId(raw.link);
     return {
         ...raw,
@@ -36,13 +38,14 @@ const toCatalogItem = (raw: Video, kind: VideoKind): CatalogItem => {
 };
 
 /**
- * Parses the bundled dataset once, lazily. Deferring the require keeps the 3.3MB
- * JSON parse off the cold-start critical path until the first screen asks for it.
+ * Indexes the active dataset once, lazily: the downloaded one when there is
+ * one, otherwise the bundled seed (whose require stays deferred so the JSON
+ * parse is off the cold-start path until the first screen asks for it).
  */
 export const getCatalog = (): Catalog => {
     if (cache) return cache;
 
-    const data = require("@assets/data/data.json") as RawDataset;
+    const data = downloaded ?? bundledSeed();
     const videos = (data.videos ?? []).map((v) => toCatalogItem(v, "video"));
     const shorts = (data.shorts ?? []).map((v) => toCatalogItem(v, "short"));
 
@@ -71,6 +74,23 @@ export const getCatalog = (): Catalog => {
     cache = {channel: data.channel, videos, shorts, byId, searchIndex};
     return cache;
 };
+
+/** Swaps in a freshly verified dataset and tells subscribers to re-read. */
+export const setCatalogDataset = (dataset: RawDataset) => {
+    downloaded = dataset;
+    cache = null;
+    for (const listener of listeners) listener();
+};
+
+export const subscribeCatalog = (listener: () => void) => {
+    listeners.add(listener);
+    return () => {
+        listeners.delete(listener);
+    };
+};
+
+/** The dataset currently served, for sanity checks on a candidate release. */
+export const getActiveDataset = (): RawDataset => downloaded ?? bundledSeed();
 
 export const getVideos = (): CatalogItem[] => getCatalog().videos;
 export const getShorts = (): CatalogItem[] => getCatalog().shorts;
@@ -318,4 +338,5 @@ export const getRelated = (id: string, count = 10): CatalogItem[] => {
 /** Used by tests and by the reset flow. */
 export const resetCatalogCache = () => {
     cache = null;
+    downloaded = null;
 };

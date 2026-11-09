@@ -32,7 +32,12 @@ const path = require("node:path");
 const {spawn} = require("node:child_process");
 const {DEFAULT_SERIES, likeRatio, parseTitle} = require("./lib/titles");
 
-const dataPath = path.join(__dirname, "..", "assets/data", "data.json");
+// Overridable so the same script runs inside the Cloud Function, where the
+// working copy lives in /tmp and yt-dlp is a downloaded binary.
+const dataPath =
+    process.env.VIDEOS_DATA_PATH ??
+    path.join(__dirname, "..", "assets/data", "data.json");
+const ytDlpBin = process.env.YT_DLP_BIN ?? "yt-dlp";
 const channelUrls = {
     videos: "https://www.youtube.com/@HablandoHuevadasOficial/videos",
     shorts: "https://www.youtube.com/@HablandoHuevadasOficial/shorts",
@@ -118,7 +123,6 @@ const toBaseEntry = (video) => ({
         video.thumbnails && video.thumbnails.length > 0
             ? video.thumbnails[video.thumbnails.length - 1].url
             : null,
-    thumbnails: video.thumbnails,
     channel: video.channel,
     channel_id: video.channel_id,
     uploader: video.uploader,
@@ -200,7 +204,7 @@ const enrich = (entry, previous) => {
 
 const runYtDlp = (args) =>
     new Promise((resolve) => {
-        const child = spawn("yt-dlp", args);
+        const child = spawn(ytDlpBin, args);
         let out = "";
         let err = "";
         child.stdout.on("data", (chunk) => {
@@ -567,6 +571,13 @@ const main = async () => {
     if (options.dryRun) {
         console.log("Dry run: data.json was not written.");
         return;
+    }
+
+    // The app rebuilds covers from the id (see src/services/catalog.ts), so the
+    // per-size thumbnail list is pure payload on every download. Also drops it
+    // from records carried over from earlier runs.
+    for (const entry of [...data.videos, ...data.shorts]) {
+        delete entry.thumbnails;
     }
 
     fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));

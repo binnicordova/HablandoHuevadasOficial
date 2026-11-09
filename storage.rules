@@ -1,0 +1,15 @@
+rules_version = '2';
+
+// The catalog is a public, read-only static file. The publisher writes with a
+// service account, which bypasses these rules.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

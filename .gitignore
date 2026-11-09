@@ -40,3 +40,7 @@ app-example
 
 # test coverage
 coverage/
+
+# firebase
+.firebase/
+firebase-debug.log

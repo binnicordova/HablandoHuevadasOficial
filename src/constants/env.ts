@@ -12,3 +12,12 @@ export const CHANNEL_URL = "https://www.youtube.com/@HablandoHuevadas";
  * can attribute installs back to the in-app share loop.
  */
 export const SHARE_CAMPAIGN = "app_share";
+
+/**
+ * Public, static catalog published weekly to Firebase Storage under `public/`
+ * (see .github/workflows/update-videos.yml). Setting it to an empty string
+ * disables downloads and the app stays on the dataset bundled with it.
+ */
+export const CATALOG_URL =
+    process.env.EXPO_PUBLIC_CATALOG_URL ??
+    "https://firebasestorage.googleapis.com/v0/b/hablandohuevadass.firebasestorage.app/o/public%2Fdata.json?alt=media";

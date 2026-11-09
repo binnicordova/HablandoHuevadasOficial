@@ -177,11 +177,6 @@ const latestOf = (pool: CatalogItem[], now: number): CatalogItem | null => {
 export const getLatestVideo = (now: number = Date.now()): CatalogItem | null =>
     latestOf(getVideos(), now);
 
-/** The most recently published item of either kind — for surfaces that can
- *  dispatch a short to its own feed instead of the hero. */
-export const getLatestItem = (now: number = Date.now()): CatalogItem | null =>
-    latestOf([...getVideos(), ...getShorts()], now);
-
 /** Whether `item` went up within the last `RECENT_PUBLISH_WINDOW_DAYS`. */
 export const isRecentlyPublished = (
     item: CatalogItem,

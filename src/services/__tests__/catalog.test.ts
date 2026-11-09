@@ -3,7 +3,6 @@ import {
     getDailyPick,
     getHeroTint,
     getItemById,
-    getLatestItem,
     getLatestVideo,
     getRelated,
     getShorts,
@@ -95,13 +94,6 @@ describe("catalog", () => {
             at(item) > at(best) ? item : best
         );
         expect(getLatestVideo()?.id).toBe(expected.id);
-    });
-
-    it("getLatestItem never returns something outside videos+shorts", () => {
-        const ids = new Set(
-            [...getVideos(), ...getShorts()].map((item) => item.id)
-        );
-        expect(ids.has(getLatestItem()?.id ?? "")).toBe(true);
     });
 });
 

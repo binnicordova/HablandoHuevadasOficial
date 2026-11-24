@@ -8,6 +8,12 @@ const config: Config = {
     preset: "jest-expo",
     verbose: true,
     setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+    // functions/ has its own runner (vitest) and tts-service/ is Python.
+    testPathIgnorePatterns: [
+        "/node_modules/",
+        "<rootDir>/functions/",
+        "<rootDir>/tts-service/",
+    ],
     transformIgnorePatterns: [
         "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|@react-native-async-storage|expo-router|react-native-worklets-core|react-native-reanimated)",
     ],

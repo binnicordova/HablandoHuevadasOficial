@@ -9,5 +9,6 @@
             "@/*": ["./src/*"],
             "@assets/*": ["./assets/*"]
         }
-    }
+    },
+    "exclude": ["node_modules", "functions", "tts-service"]
 }

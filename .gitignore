@@ -44,3 +44,19 @@ coverage/
 # firebase
 .firebase/
 firebase-debug.log
+
+# voice functions: local secrets and build output
+functions/lib/
+functions/node_modules/
+functions/.secret.local
+functions/.env.local
+tts-service/venv/
+tts-service/__pycache__/
+tts-service/refs/
+tts-service/raw/
+firestore-debug.log
+ui-debug.log
+functions/.env.*
+
+# Play Console upload key (service account)
+credentials/

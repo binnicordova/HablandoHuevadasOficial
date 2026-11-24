@@ -8,7 +8,6 @@
     - assets/favicon.png (64x64)
     - resources/app-icon.png (512x512)
     - resources/feature-graphic.png (1024x500)
-    - resources/privacy-policy.html to PlayStore/AppStore
 */
 const fs = require("node:fs");
 const path = require("node:path");

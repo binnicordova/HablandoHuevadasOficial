@@ -14,7 +14,12 @@
             "!**/build",
             "!**/coverage",
             "!**/.rnstorybook/storybook.requires.ts",
-            "!**/.expo"
+            "!**/.expo",
+            "!**/venv",
+            "!**/voices_out",
+            "!**/functions/lib",
+            "!**/.claude",
+            "!**/credentials"
         ]
     },
     "formatter": {

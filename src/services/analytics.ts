@@ -23,7 +23,14 @@ export type AnalyticsEvent =
     | {name: "notification_prompt_shown"}
     | {name: "notification_opt_in"; granted: boolean}
     | {name: "notification_opened"; intent: string}
-    | {name: "streak_day"; streak: number};
+    | {name: "streak_day"; streak: number}
+    /* Voice chat: lengths and outcomes only, never the text. */
+    | {name: "chat_sent"; length: number}
+    | {name: "chat_reply"; replies: number; ms: number}
+    | {name: "chat_failed"; reason: string}
+    | {name: "chat_refused"}
+    | {name: "chat_audio_play"; speaker: string}
+    | {name: "chat_report"; speaker: string};
 
 export type AnalyticsRecord = AnalyticsEvent & {at: number};
 

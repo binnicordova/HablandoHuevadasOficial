@@ -6,11 +6,11 @@ import {useCallback, useEffect, useRef, useState} from "react";
 import {
     AppState,
     FlatList,
+    type ListViewToken,
     Pressable,
     StyleSheet,
     useWindowDimensions,
     View,
-    type ViewToken,
 } from "react-native";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 import {Icon} from "@/components/Icon/Icon";
@@ -197,10 +197,10 @@ const Shorts = () => {
             onViewableItemsChanged: ({
                 viewableItems,
             }: {
-                viewableItems: ViewToken[];
+                viewableItems: ListViewToken[];
             }) => {
                 const first = viewableItems[0];
-                if (!first || first.index === null) return;
+                if (typeof first?.index !== "number") return;
                 handlers.current.onPage(first.index);
             },
         },
@@ -213,7 +213,7 @@ const Shorts = () => {
             onViewableItemsChanged: ({
                 viewableItems,
             }: {
-                viewableItems: ViewToken[];
+                viewableItems: ListViewToken[];
             }) => {
                 const item = viewableItems[0]?.item as CatalogItem | undefined;
                 if (item) handlers.current.onCounted(item);

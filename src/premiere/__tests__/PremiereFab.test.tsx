@@ -39,10 +39,10 @@ const video = (extra: Partial<CatalogItem>): CatalogItem => ({
     ...extra,
 });
 
-const renderFab = (item: CatalogItem, onPlay = jest.fn()) => {
+const renderFab = async (item: CatalogItem, onPlay = jest.fn()) => {
     const store = createStore();
     store.set(videosAtom as unknown as PrimitiveAtom<CatalogItem[]>, [item]);
-    const utils = render(
+    const utils = await render(
         <Provider store={store}>
             <PremiereFab
                 bottom={100}
@@ -62,13 +62,13 @@ describe("PremiereFab", () => {
         jest.useRealTimers();
     });
 
-    it("renders the fallback when nothing is pending", () => {
-        const {getByText} = renderFab(video({}));
+    it("renders the fallback when nothing is pending", async () => {
+        const {getByText} = await renderFab(video({}));
         expect(getByText("fallback")).toBeTruthy();
     });
 
-    it("shows the countdown with a spoken label", () => {
-        const {getByText, getByLabelText} = renderFab(
+    it("shows the countdown with a spoken label", async () => {
+        const {getByText, getByLabelText} = await renderFab(
             video({
                 premiere_at: new Date(NOW + 112 * MIN + 30_000).toISOString(),
             })
@@ -77,36 +77,36 @@ describe("PremiereFab", () => {
         expect(getByLabelText("Se estrena en 1 hora 52 minutos")).toBeTruthy();
     });
 
-    it("explains instead of playing while the premiere is pending", () => {
-        const {getByRole, getByText, queryByText, onPlay} = renderFab(
+    it("explains instead of playing while the premiere is pending", async () => {
+        const {getByRole, getByText, queryByText, onPlay} = await renderFab(
             video({premiere_at: new Date(NOW + 60 * MIN).toISOString()})
         );
         expect(queryByText(/Se estrena el/)).toBeNull();
 
-        fireEvent.press(getByRole("button"));
+        await fireEvent.press(getByRole("button"));
         expect(onPlay).not.toHaveBeenCalled();
         expect(getByText(/Se estrena el/)).toBeTruthy();
 
-        act(() => {
+        await act(async () => {
             jest.advanceTimersByTime(3500);
         });
         expect(queryByText(/Se estrena el/)).toBeNull();
     });
 
-    it("turns into a play button once live", () => {
-        const {getByRole, getByText, onPlay} = renderFab(
+    it("turns into a play button once live", async () => {
+        const {getByRole, getByText, onPlay} = await renderFab(
             video({
                 live_status: "upcoming",
                 premiere_at: new Date(NOW + 2000).toISOString(),
             })
         );
 
-        act(() => {
+        await act(async () => {
             jest.advanceTimersByTime(2000);
         });
         expect(getByText("¡Ya salió!")).toBeTruthy();
 
-        fireEvent.press(getByRole("button"));
+        await fireEvent.press(getByRole("button"));
         expect(onPlay).toHaveBeenCalledWith("premiere");
     });
 });

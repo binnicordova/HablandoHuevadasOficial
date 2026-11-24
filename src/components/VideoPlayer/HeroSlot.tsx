@@ -1,7 +1,7 @@
 import {useIsFocused} from "expo-router";
 import {useSetAtom} from "jotai";
 import {useCallback, useEffect, useRef} from "react";
-import {View} from "react-native";
+import {View, type ViewInstance} from "react-native";
 import {heroFocusedAtom} from "@/stores/player";
 import {usePlayerUI} from "./PlayerUIProvider";
 
@@ -27,7 +27,7 @@ export const HeroSlot = ({height = HERO_HEIGHT}: HeroSlotProps) => {
     const isFocused = useIsFocused();
     const setFocused = useSetAtom(heroFocusedAtom);
     const {inlineRect, scrollY} = usePlayerUI();
-    const anchorRef = useRef<View>(null);
+    const anchorRef = useRef<ViewInstance>(null);
 
     const measure = useCallback(() => {
         anchorRef.current?.measureInWindow((x, y, width) => {

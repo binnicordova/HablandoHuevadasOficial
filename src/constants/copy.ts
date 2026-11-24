@@ -20,7 +20,46 @@ export const COPY = {
         shorts: "Shorts",
         search: "Buscar",
         favorites: "Guardados",
+        chat: "Chat",
         me: "Mi zona",
+    },
+
+    /**
+     * The group chat. Spoken by the app, not by the hosts: whatever Jorge and
+     * Ricardo say comes from the server. The AI notice is the one line here
+     * that must stay literal, it is the honest part.
+     */
+    chat: {
+        title: "Los patas",
+        members: "Elige con quién hablas",
+        pickerLabel: "Con quién hablas",
+        aiNotice:
+            "Voces y respuestas generadas con IA, con permiso de los personajes. No son grabaciones reales. Tus mensajes los procesa DeepSeek: no mandes datos personales.",
+        emptyTitle: "Escríbeles algo, pues",
+        emptyBody:
+            "Mándales un mensaje y te responden con un audio. Pórtate bien, cjo.",
+        placeholder: "Escríbeles, no seas tímido",
+        send: "Enviar mensaje",
+        recording: (name: string) => `${name} está grabando un audio…`,
+        showText: "Ver lo que dice",
+        hideText: "Ocultar texto",
+        play: "Reproducir audio",
+        pause: "Pausar audio",
+        retry: "No se envió. Toca para reintentar.",
+        counter: (left: number) => `${left}`,
+        offline: "Están grabando otra huevada. Vuelve en un rato.",
+        rateLimited: "Calma, que no somos Telegram. Espera un ratito.",
+        failed: "Se les cruzaron los cables. Intenta otra vez.",
+        unavailableTitle: "El chat llega pronto",
+        unavailableBody: "Todavía están afinando la voz, causa. Paciencia.",
+        menu: "Opciones del chat",
+        clear: "Borrar chat",
+        clearConfirmTitle: "¿Borrar todo el chat?",
+        clearConfirmBody: "Se van los mensajes y los audios de este teléfono.",
+        cancel: "Cancelar",
+        report: "Reportar este audio",
+        reportSent: "Gracias. Lo revisamos.",
+        reportFailed: "No se pudo enviar el reporte. Intenta luego.",
     },
 
     home: {
@@ -146,6 +185,16 @@ export const COPY = {
         historyClearTitle: "¿Borramos todo?",
         historyClearBody: "Se va tu historial completo. No hay vuelta, cro.",
         historyClearConfirm: "Bórralo",
+
+        privacy: "Privacidad",
+        privacyPolicy: "Política de privacidad",
+        privacyPolicyHint: "Qué guardamos y qué no, sin floro.",
+        privacyDelete: "Borrar mis datos",
+        privacyDeleteHint: "Te abrimos un correo con tu ID anónimo.",
+        privacyDeleteSubject: "Borrar mis datos - Hablando Huevadas",
+        privacyDeleteBody: (id: string) =>
+            `Quiero que borren los datos de esta instalación.\n\nID anónimo: ${id}`,
+        privacyOpenFailed: (target: string) => `No se pudo abrir: ${target}`,
 
         settings: "Ajustes",
         settingsDaily: "Avisos",

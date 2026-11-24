@@ -1,4 +1,4 @@
-import {router, useNavigation} from "expo-router";
+import {router, useCanGoBack} from "expo-router";
 import {Pressable, View} from "react-native";
 import {Icon} from "@/components/Icon/Icon";
 import {Text} from "@/components/Text/Text";
@@ -17,9 +17,8 @@ export const AppBar: React.FC<AppBarProps> = ({
     title,
     actions: appBarActions,
 }) => {
-    const navigation = useNavigation();
     const colors = useTheme();
-    const canGoBack = navigation.canGoBack();
+    const canGoBack = useCanGoBack();
 
     const handleBackPress = () => {
         tapFeedback();

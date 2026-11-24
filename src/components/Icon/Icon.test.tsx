@@ -11,8 +11,10 @@ jest.mock("@expo/vector-icons", () => {
 });
 
 describe("Icon Component", () => {
-    it("renders correctly with default props", () => {
-        const {getByTestId} = render(<Icon name="home" testID="icon_home" />);
+    it("renders correctly with default props", async () => {
+        const {getByTestId} = await render(
+            <Icon name="home" testID="icon_home" />
+        );
         expect(getByTestId("icon_home")).toBeTruthy();
     });
 });

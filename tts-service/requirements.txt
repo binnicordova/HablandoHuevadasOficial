@@ -1,0 +1,12 @@
+# CPU build of PyTorch: the default Linux wheel drags in ~3 GB of CUDA libraries.
+--extra-index-url https://download.pytorch.org/whl/cpu
+fastapi>=0.115
+uvicorn>=0.30
+google-cloud-storage>=2.18
+huggingface_hub
+torch==2.8.0
+torchaudio==2.8.0
+omnivoice
+numpy
+soundfile
+imageio-ffmpeg

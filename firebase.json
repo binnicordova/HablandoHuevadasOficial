@@ -2,17 +2,59 @@
     "storage": {
         "rules": "storage.rules"
     },
+    "firestore": {
+        "rules": "firestore.rules"
+    },
     "functions": [
         {
             "source": "functions",
             "codebase": "default",
-            "ignore": ["node_modules", ".git", "*.log"],
-            "predeploy": ["node \"$PROJECT_DIR/scripts/vendor-publisher.js\""]
+            "ignore": [
+                "node_modules",
+                ".git",
+                "*.log",
+                "src",
+                "scripts",
+                "*.local",
+                "tsconfig*.json",
+                "vitest.config.ts"
+            ],
+            "predeploy": [
+                "node \"$PROJECT_DIR/scripts/vendor-publisher.js\"",
+                "npm --prefix \"$RESOURCE_DIR\" run build"
+            ]
         }
     ],
     "emulators": {
-        "storage": {"port": 9199},
-        "ui": {"enabled": false},
+        "functions": {
+            "port": 5001
+        },
+        "firestore": {
+            "port": 8085
+        },
+        "storage": {
+            "port": 9199
+        },
+        "ui": {
+            "enabled": false
+        },
         "singleProjectMode": true
+    },
+    "hosting": {
+        "public": "hosting",
+        "cleanUrls": true,
+        "trailingSlash": false,
+        "ignore": ["**/.*"],
+        "headers": [
+            {
+                "source": "**",
+                "headers": [
+                    {
+                        "key": "X-Content-Type-Options",
+                        "value": "nosniff"
+                    }
+                ]
+            }
+        ]
     }
 }

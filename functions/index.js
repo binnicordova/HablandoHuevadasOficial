@@ -3,6 +3,8 @@ const {getStorage} = require("firebase-admin/storage");
 const {logger} = require("firebase-functions");
 const {onSchedule} = require("firebase-functions/v2/scheduler");
 const {publishCatalog} = require("./publish");
+// Voice chat gateway (TypeScript, built to lib/ by `npm run build`).
+const voice = require("./lib/voice");
 
 initializeApp();
 
@@ -29,3 +31,5 @@ exports.publishCatalog = onSchedule(
     {...options, schedule: "0 16 * * 0"},
     publish
 );
+
+exports.voiceApi = voice.voiceApi;

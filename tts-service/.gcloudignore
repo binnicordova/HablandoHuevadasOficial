@@ -1,0 +1,9 @@
+# What `gcloud run deploy --source` uploads. The image needs only the three
+# modules, requirements.txt and the Dockerfile: never the venv (1.5 GB), the
+# private voice material, or dev-only files.
+*
+!Dockerfile
+!requirements.txt
+!engine.py
+!tts_service.py
+!server.py

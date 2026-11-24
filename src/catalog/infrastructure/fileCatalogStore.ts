@@ -45,7 +45,7 @@ export const fileCatalogStore: CatalogStore = {
         // Write beside the live file, prove it landed intact, then rename over
         // it. A crash before the rename leaves the old dataset in place.
         staging.create({overwrite: true});
-        staging.write(body);
+        await staging.write(body);
         if ((await staging.text()) !== body) {
             staging.delete();
             throw new Error("Staged dataset does not match the download");

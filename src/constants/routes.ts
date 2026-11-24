@@ -11,6 +11,7 @@ interface PathsProps {
     SHORT: ShortPath;
     SEARCH: Href;
     FAVORITES: Href;
+    CHAT: Href;
     ME: Href;
     VIDEO: VideoPath;
     WEB: WebPath;
@@ -22,6 +23,7 @@ export const PATHS: PathsProps = {
     SHORT: (id) => `/shorts?id=${encodeURIComponent(id)}` as Href,
     SEARCH: "/search",
     FAVORITES: "/favorites",
+    CHAT: "/chat",
     ME: "/me",
     /**
      * The watch screen is Inicio itself (see `(tabs)/index.tsx`) — not a

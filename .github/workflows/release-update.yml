@@ -63,5 +63,7 @@ jobs:
 
       # The message is the commit SHA, not the commit message: a message is
       # free text and would be pasted straight into a shell command.
+      # --environment loads the EXPO_PUBLIC_* values (voice API, DeepSeek) from
+      # EAS: without it the update ships with them empty and the chat turns off.
       - name: 🚀 Publish update
-        run: eas update --branch production --non-interactive --message "main at ${{ github.sha }}"
+        run: eas update --branch production --environment production --non-interactive --message "main at ${{ github.sha }}"

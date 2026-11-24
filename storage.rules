@@ -2,6 +2,10 @@ rules_version = '2';
 
 // The catalog is a public, read-only static file. The publisher writes with a
 // service account, which bypasses these rules.
+//
+// voices/** (samples of real people's voices) and audio/** (generated notes)
+// fall under the deny-all rule below on purpose: only the voice functions read
+// them, and the app gets audio through the voiceApi function.
 service firebase.storage {
   match /b/{bucket}/o {
     match /public/{allPaths=**} {

@@ -93,6 +93,13 @@ const TabsLayout = () => {
                 }}
             />
             <Tabs.Screen
+                name="chat"
+                options={{
+                    title: COPY.tabs.chat,
+                    tabBarIcon: tabIcon("message-text-outline", "message-text"),
+                }}
+            />
+            <Tabs.Screen
                 name="me"
                 options={{
                     title: COPY.tabs.me,

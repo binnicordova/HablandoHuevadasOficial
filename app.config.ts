@@ -6,7 +6,7 @@ const EAS_SLUG = "hablando-huevadas-oficial";
 const EAS_PROJECT_ID =
     process.env.EAS_PROJECT_ID ?? "327f8c80-0a4f-4b78-84e1-465ebc3a1d19"; // by https://www.binnicordova.com
 
-const VERSION = "0.0.5";
+const VERSION = "0.0.6";
 
 const APP_VARIANTS = {
     development: {
@@ -62,6 +62,15 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
             backgroundColor: "#0B0B0E",
         },
         package: getUniqueIdentifier(),
+        // Merged in by libraries and the template; nothing here uses them, and
+        // the privacy policy says so.
+        blockedPermissions: [
+            "android.permission.RECORD_AUDIO",
+            "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+            "android.permission.SYSTEM_ALERT_WINDOW",
+            "android.permission.READ_EXTERNAL_STORAGE",
+            "android.permission.WRITE_EXTERNAL_STORAGE",
+        ],
         // Lets shared https links open the app directly instead of the browser.
         intentFilters: [
             {
@@ -106,8 +115,28 @@ export default ({config}: {config: ExpoConfig}): ExpoConfig => ({
                 enableBackgroundRemoteNotifications: true,
             },
         ],
+        // Play flags unobfuscated DEX; R8 shrinks and obfuscates release builds.
+        [
+            "expo-build-properties",
+            {
+                android: {
+                    enableMinifyInReleaseBuilds: true,
+                    enableShrinkResourcesInReleaseBuilds: true,
+                },
+            },
+        ],
         "expo-updates",
         "expo-background-task",
+        // Foreground playback only (voice-note chat). The defaults would add the
+        // microphone and a media foreground service, which Play makes you justify.
+        [
+            "expo-audio",
+            {
+                microphonePermission: false,
+                recordAudioAndroid: false,
+                enableBackgroundPlayback: false,
+            },
+        ],
         [
             "expo-splash-screen",
             {

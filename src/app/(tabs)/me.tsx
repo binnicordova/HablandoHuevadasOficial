@@ -1,3 +1,4 @@
+import * as Linking from "expo-linking";
 import {useRouter} from "expo-router";
 import {useAtom, useAtomValue, useSetAtom} from "jotai";
 import {
@@ -9,6 +10,7 @@ import {
     View,
 } from "react-native";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
+import {getInstallId} from "@/chat/infrastructure/installId";
 import {Chip} from "@/components/Chip/Chip";
 import {EmptyState} from "@/components/EmptyState/EmptyState";
 import {Icon} from "@/components/Icon/Icon";
@@ -17,6 +19,7 @@ import {StreakBadge} from "@/components/StreakBadge/StreakBadge";
 import {Text} from "@/components/Text/Text";
 import {VideoRail} from "@/components/VideoRail/VideoRail";
 import {COPY} from "@/constants/copy";
+import {PRIVACY_POLICY_URL, SUPPORT_EMAIL} from "@/constants/env";
 import {PATHS} from "@/constants/routes";
 import {ELEVATION, HIT_SLOP, PRESS, RADII, SPACE} from "@/constants/theme";
 import {useNotifications} from "@/hooks/useNotification";
@@ -39,6 +42,50 @@ import {isExpoGo} from "@/utils/notification";
 import {shareStreak} from "@/utils/share";
 
 const REMINDER_HOURS = [12, 15, 18, 19, 21, 22];
+
+const open = (url: string, label: string) =>
+    Linking.openURL(url).catch(() =>
+        Alert.alert(COPY.me.privacyOpenFailed(label))
+    );
+
+const openPrivacyPolicy = () => {
+    tapFeedback();
+    open(PRIVACY_POLICY_URL, PRIVACY_POLICY_URL);
+};
+
+/** The install id is the only key the server has, so the request carries it. */
+const requestDeletion = async () => {
+    tapFeedback();
+    const subject = encodeURIComponent(COPY.me.privacyDeleteSubject);
+    const body = encodeURIComponent(
+        COPY.me.privacyDeleteBody(await getInstallId())
+    );
+    open(
+        `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`,
+        SUPPORT_EMAIL
+    );
+};
+
+type LinkRowProps = {title: string; hint: string; onPress: () => void};
+
+const LinkRow = ({title, hint, onPress}: LinkRowProps) => (
+    <Pressable
+        onPress={onPress}
+        accessibilityRole="link"
+        accessibilityLabel={title}
+        style={({pressed}) => [
+            styles.settingRow,
+            pressed && {opacity: PRESS.opacity},
+        ]}
+    >
+        <View style={styles.settingText}>
+            <Text variant="label">{title}</Text>
+            <Text variant="caption" tone="muted">
+                {hint}
+            </Text>
+        </View>
+    </Pressable>
+);
 
 const Me = () => {
     const favorites = useAtomValue(favoriteItemsAtom);
@@ -313,6 +360,29 @@ const Me = () => {
                         {COPY.me.expoGoNote}
                     </Text>
                 ) : null}
+            </View>
+
+            <SectionHeader title={COPY.me.privacy} />
+            <View
+                style={[
+                    styles.settingsCard,
+                    ELEVATION.card,
+                    {
+                        backgroundColor: colors.surface,
+                        borderColor: colors.border,
+                    },
+                ]}
+            >
+                <LinkRow
+                    title={COPY.me.privacyPolicy}
+                    hint={COPY.me.privacyPolicyHint}
+                    onPress={openPrivacyPolicy}
+                />
+                <LinkRow
+                    title={COPY.me.privacyDelete}
+                    hint={COPY.me.privacyDeleteHint}
+                    onPress={requestDeletion}
+                />
             </View>
         </ScrollView>
     );
